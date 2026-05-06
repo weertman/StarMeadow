@@ -44,8 +44,7 @@ StarMeadow/
 │   ├── shorezone_utils.py     # ShoreZone/GIS loading and spatial-join helpers
 │   ├── environment.yml        # Conda environment specification
 │   ├── 01_*.py ... 16_*.py    # Core, mapping, and ShoreZone/recovery analyses
-│   ├── 19_probability_density_map.py
-│   └── 20_publication_figures.py
+│   └── 19_probability_density_map.py
 ├── data/                     # Canonical input data and ShoreZone GIS data
 ├── outputs/                  # Generated tables, figures, maps, and model artifacts
 ├── docs/                     # Manuscript/project planning documents
@@ -100,7 +99,7 @@ Coordinate table used by mapping and ShoreZone scripts. One positive longitude i
 
 `data/state_DNR_ShoreZone/`
 
-Washington State DNR ShoreZone FileGDB-style data and metadata used by scripts 15, 15b, 16, 19, and 20.
+Washington State DNR ShoreZone FileGDB-style data and metadata used by scripts 15, 15b, 16, and 19.
 
 Important interpretation note: older documentation described a 250 m buffer method, but the active current `15_shorezone_site_analysis.py` path uses a 3 km nearest-neighbor join from each site to the nearest ShoreZone segment. Under nearest-neighbor mode, output “diversity” metrics are compatibility placeholders rather than true local habitat-diversity estimates.
 
@@ -126,9 +125,8 @@ Important interpretation note: older documentation described a 250 m buffer meth
 | `15b_site_coverage_map.py` | Interactive coverage/diagnostic map and embedded analysis report |
 | `16_shorezone_recovery_analysis.py` | ShoreZone recovery/refugia/model/priority-site analyses |
 | `19_probability_density_map.py` | Segment-level predicted encounter-rate map from trained model |
-| `20_publication_figures.py` | Current manuscript/publication figure panels |
 
-`run_all.py` has been updated to use the available current script list. It does not include missing scripts 17/18 because those files are not present in the workspace.
+`run_all.py` runs the current analysis pipeline through `19_probability_density_map.py`. The previous `20_publication_figures.py` script and generated `outputs/20_publication_figures/` products were removed because manuscript figures will be rebuilt from scratch.
 
 ## Current high-level findings from existing outputs
 
@@ -202,7 +200,7 @@ Before treating outputs as manuscript-final:
 4. Normalize/join site names between survey and coordinate tables.
 5. Decide whether the ShoreZone analysis should remain nearest-neighbor, return to a 250 m buffer approach, or report both.
 6. Treat ShoreZone model/priority-map outputs as exploratory unless validation improves.
-7. Improve publication figures after analysis outputs are revalidated.
+7. Build new publication figures from scratch after analysis outputs are revalidated; the old publication-figure script/output set has been removed.
 
 ## GitHub/publication sharing notes
 

@@ -32,7 +32,6 @@ SCRIPTS = [
     "16_shorezone_recovery_analysis.py",
     "15b_site_coverage_map.py",
     "19_probability_density_map.py",
-    "20_publication_figures.py",
 ]
 
 def main():
@@ -93,7 +92,6 @@ def main():
     print("  - 15b_site_coverage_map/")
     print("  - 16_shorezone_recovery_analysis/")
     print("  - 19_probability_density_map/")
-    print("  - 20_publication_figures/")
 
     if skipped:
         print()

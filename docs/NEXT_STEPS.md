@@ -11,7 +11,7 @@ Last updated: 2026-05-06.
 - Environment spec: `code/environment.yml`
 - Pipeline helper: `./scripts/run_pipeline`
 - Latest successful rerun log: `logs/run_all-20260506-115906.log` (ignored by git)
-- Latest pushed commit at time of this note: `78a0dba` (`Fix pipeline rerun with current environment`)
+- Latest pushed commit at time of this note: see `git log --oneline -5` for the current cleanup/refinement state.
 
 ## What is now done
 
@@ -56,24 +56,24 @@ These did not stop the run but should guide cleanup:
    - Review validation outputs and confidence interval coverage.
    - Decide whether ShoreZone-only prediction is manuscript-relevant or should be demoted to supplemental/exploratory material.
 
-## Figure refinement priorities
+## New publication figure priorities
 
-Start from `outputs/20_publication_figures/`:
+The old `code/20_publication_figures.py` implementation and `outputs/20_publication_figures/` products have been removed. Do not use them as a design base. New manuscript figures should be built from scratch using the validated analysis outputs and shared data-loading utilities.
 
-1. Figure 1: site map by habitat
+1. Figure 1 candidate: site map by habitat/effort
    - Verify site coverage, basins, and coordinate joins.
    - Decide whether point size should represent survey effort, annual effort, total effort, or detections.
 
-2. Figure 2: encounter by habitat and basin
+2. Figure 2 candidate: encounter by habitat and basin
    - Confirm whether habitat categories should include Sponge Garden or be collapsed/excluded due to low sample size.
    - Decide whether mean encounter rate is the primary statistic or whether detection/zero-inflation should be shown alongside it.
 
-3. Figure 3: reef eelgrass effect
+3. Figure 3 candidate: reef eelgrass effect
    - Central manuscript figure candidate.
    - Validate four-category habitat logic and site-level eelgrass classification.
    - Consider paired basin/site controls and effect-size display.
 
-4. Figure 4: size by habitat/basin
+4. Figure 4 candidate: size by habitat/basin
    - Confirm positive-length filtering and treatment of zero/no-observation rows.
    - Decide whether juvenile/recruitment thresholds should be added if manuscript framing emphasizes recruitment.
 

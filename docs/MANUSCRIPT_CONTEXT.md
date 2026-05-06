@@ -34,10 +34,10 @@ The outline calls for figures along these lines:
 4. Length/size by habitat and space.
 5. Settlement/collaborator figure material outside the current StarMeadow script set.
 
-Existing script coverage:
+Publication figure code status:
 
-- `20_publication_figures.py` currently creates four figure panels: site map, encounter by habitat/basin, reef/eelgrass effect, and size by habitat/basin.
-- Additional refinement is expected before manuscript submission.
+- The old `20_publication_figures.py` script and `outputs/20_publication_figures/` products were removed because they are not the desired manuscript figure direction.
+- New publication figures should be designed from scratch around the storyboard needs above, using validated analysis outputs as inputs rather than reviving the deleted script.
 
 ## Analysis priorities implied by the outline
 
