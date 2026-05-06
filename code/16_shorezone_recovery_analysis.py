@@ -840,7 +840,8 @@ def plot_eelgrass_comparison(df: pd.DataFrame):
         df["ShoreZone_Eelgrass"] = zos_p | zos_c
     else:
         df["ShoreZone_Eelgrass"] = df["ZOS_UNIT_Richness"] > 1
-    df["DiveSurvey_Eelgrass"] = df["HasEelgrass"].fillna(False)
+    df["DiveSurvey_Eelgrass"] = df["HasEelgrass"].fillna(False).astype(bool)
+    df["ShoreZone_Eelgrass"] = df["ShoreZone_Eelgrass"].fillna(False).astype(bool)
     df_valid = df.dropna(subset=["MeanEncounterRate"])
     
     # 1. Agreement matrix heatmap
@@ -1038,19 +1039,25 @@ def plot_exposure_analysis(df_exp: pd.DataFrame):
         
         # For binary data (one-hot encoded), use box plot instead of scatter
         df_plot = df_exp.copy()
-        df_plot["Protected"] = df_plot[protected_col].astype(bool)
+        df_plot["Protected_Bool"] = df_plot[protected_col].astype(bool)
+        df_plot["Protected"] = df_plot["Protected_Bool"].map({False: "Not Protected", True: "Protected"})
         
-        colors = {True: "#27ae60", False: "#3498db"}
-        sns.boxplot(data=df_plot, x="Protected", y="MeanEncounterRate",
-                    palette=colors, ax=ax2)
-        ax2.set_xticklabels(["Not Protected", "Protected"])
+        colors = {"Protected": "#27ae60", "Not Protected": "#3498db"}
+        sns.boxplot(
+            data=df_plot,
+            x="Protected",
+            y="MeanEncounterRate",
+            order=["Not Protected", "Protected"],
+            palette=colors,
+            ax=ax2,
+        )
         ax2.set_xlabel("Wave Exposure")
         ax2.set_ylabel("Mean Encounter Rate (Pycno/hr)")
         ax2.set_title("Encounter Rate: Protected vs Exposed Waters")
         
         # Add sample sizes and statistical test
-        protected = df_plot[df_plot["Protected"]]["MeanEncounterRate"]
-        not_protected = df_plot[~df_plot["Protected"]]["MeanEncounterRate"]
+        protected = df_plot[df_plot["Protected_Bool"]]["MeanEncounterRate"]
+        not_protected = df_plot[~df_plot["Protected_Bool"]]["MeanEncounterRate"]
         
         ax2.annotate(f"n={len(not_protected)}", xy=(0, df_plot["MeanEncounterRate"].max() * 0.9),
                      ha="center", fontsize=9)
@@ -1209,14 +1216,22 @@ def plot_prey_analysis(df: pd.DataFrame):
         ax = axes[i]
         
         # Prey is present if any presence column (P or C) is True
-        df_valid[f"{prey_name}_Present"] = df_valid[presence_cols].any(axis=1)
+        present_col = f"{prey_name}_Present"
+        label_col = f"{prey_name}_Presence"
+        df_valid[present_col] = df_valid[presence_cols].any(axis=1).astype(bool)
+        df_valid[label_col] = df_valid[present_col].map({False: "Absent", True: "Present"})
         
-        colors = {True: "#27ae60", False: "#e74c3c"}
+        colors = {"Present": "#27ae60", "Absent": "#e74c3c"}
         
-        sns.boxplot(data=df_valid, x=f"{prey_name}_Present", y="MeanEncounterRate",
-                    palette=colors, ax=ax)
+        sns.boxplot(
+            data=df_valid,
+            x=label_col,
+            y="MeanEncounterRate",
+            order=["Absent", "Present"],
+            palette=colors,
+            ax=ax,
+        )
         
-        ax.set_xticklabels(["Absent", "Present"])
         ax.set_xlabel(prey_name)
         ax.set_ylabel("Mean Encounter Rate (Pycno/hr)")
         ax.set_title(f"Encounter Rate by {prey_name} Presence")

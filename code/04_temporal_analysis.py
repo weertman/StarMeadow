@@ -82,7 +82,10 @@ def plot_monthly_heatmap(df: pd.DataFrame):
     """Heatmap of encounter rates by month and year."""
     fig, ax = plt.subplots(figsize=(12, 6))
     
-    pivot = df.pivot_table(
+    df_valid = df.dropna(subset=["Year", "Month"]).copy()
+    df_valid["Month"] = df_valid["Month"].astype(int)
+    df_valid["Year"] = df_valid["Year"].astype(int)
+    pivot = df_valid.pivot_table(
         values="Encounter.Rate.Hr",
         index="Year",
         columns="Month",
@@ -99,7 +102,7 @@ def plot_monthly_heatmap(df: pd.DataFrame):
         cmap="YlOrRd",
         ax=ax,
         cbar_kws={"label": "Mean Encounter Rate (per hour)"},
-        xticklabels=[month_labels[i-1] for i in pivot.columns]
+        xticklabels=[month_labels[int(i)-1] for i in pivot.columns]
     )
     
     ax.set_title("Encounter Rate by Month and Year")
@@ -115,7 +118,10 @@ def plot_effort_heatmap(df: pd.DataFrame):
     """Heatmap of survey effort by month and year."""
     fig, ax = plt.subplots(figsize=(12, 6))
     
-    pivot = df.pivot_table(
+    df_valid = df.dropna(subset=["Year", "Month"]).copy()
+    df_valid["Month"] = df_valid["Month"].astype(int)
+    df_valid["Year"] = df_valid["Year"].astype(int)
+    pivot = df_valid.pivot_table(
         values="Pycnopodia_count",
         index="Year",
         columns="Month",
@@ -132,7 +138,7 @@ def plot_effort_heatmap(df: pd.DataFrame):
         cmap="Blues",
         ax=ax,
         cbar_kws={"label": "Number of Surveys"},
-        xticklabels=[month_labels[i-1] for i in pivot.columns]
+        xticklabels=[month_labels[int(i)-1] for i in pivot.columns]
     )
     
     ax.set_title("Survey Effort by Month and Year")

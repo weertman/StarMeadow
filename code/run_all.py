@@ -29,8 +29,8 @@ SCRIPTS = [
     "13_static_maps.py",
     "14_interactive_maps.py",
     "15_shorezone_site_analysis.py",
-    "15b_site_coverage_map.py",
     "16_shorezone_recovery_analysis.py",
+    "15b_site_coverage_map.py",
     "19_probability_density_map.py",
     "20_publication_figures.py",
 ]
@@ -43,11 +43,15 @@ def main():
     print("=" * 70)
     print()
     
+    failures = []
+    skipped = []
+
     for script in SCRIPTS:
         script_path = code_dir / script
         
         if not script_path.exists():
             print(f"⚠️  Skipping {script} (not found)")
+            skipped.append(script)
             continue
         
         print(f"\n{'─' * 70}")
@@ -61,6 +65,7 @@ def main():
         
         if result.returncode != 0:
             print(f"❌ {script} failed with exit code {result.returncode}")
+            failures.append((script, result.returncode))
         else:
             print(f"✅ {script} completed successfully")
     
@@ -90,7 +95,22 @@ def main():
     print("  - 19_probability_density_map/")
     print("  - 20_publication_figures/")
 
+    if skipped:
+        print()
+        print("Skipped scripts:")
+        for script in skipped:
+            print(f"  - {script}")
+
+    if failures:
+        print()
+        print("FAILED SCRIPTS:")
+        for script, returncode in failures:
+            print(f"  - {script}: exit code {returncode}")
+        return 1
+
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
 
