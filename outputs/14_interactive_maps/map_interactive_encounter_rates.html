@@ -1,0 +1,3783 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cb8bb70ebc03471d85d09459af94827b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; right: 50px; z-index: 9999;
+                background-color: white; padding: 10px; border-radius: 5px;
+                border: 2px solid gray;">
+        <h4 style="margin: 0 0 5px 0;">Encounter Rate</h4>
+        <p style="margin: 2px;"><span style="background-color: #808080; padding: 2px 10px;">  </span> Zero</p>
+        <p style="margin: 2px;"><span style="background-color: #00c832; padding: 2px 10px;">  </span> Low</p>
+        <p style="margin: 2px;"><span style="background-color: #ffc800; padding: 2px 10px;">  </span> Medium</p>
+        <p style="margin: 2px;"><span style="background-color: #ff3232; padding: 2px 10px;">  </span> High</p>
+        <p style="margin: 5px 0 0 0; font-size: 10px;">Size = Total Pycno</p>
+    </div>
+    
+    
+    <div style="position: fixed; top: 10px; left: 50px; z-index: 9999;
+                background-color: white; padding: 10px; border-radius: 5px;
+                border: 2px solid gray;">
+        <h4 style="margin: 0;">Pycnopodia Encounter Rates</h4>
+    </div>
+    
+    
+            <div class="folium-map" id="map_cb8bb70ebc03471d85d09459af94827b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cb8bb70ebc03471d85d09459af94827b = L.map(
+                "map_cb8bb70ebc03471d85d09459af94827b",
+                {
+                    center: [47.98265147135136, -122.80779323513515],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a8f42ab7703284245b3aef6a8c410acc = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a8f42ab7703284245b3aef6a8c410acc.addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+            var circle_marker_df817236043ee59b9b32ae5352b12408 = L.circleMarker(
+                [47.851581, -122.337599],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#69c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.47213595499958, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_68e660fb944b37d6ea66deb88f2380cf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce22dd7e5f51834841aacf7d817cbf58 = $(`<div id="html_ce22dd7e5f51834841aacf7d817cbf58" style="width: 100.0%; height: 100.0%;">         <b>100 Foot Rock</b><br>         <hr>         Mean Rate: <b>8.00/hr</b><br>         Total Pycno: 4<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 1<br>         Basin: Central         </div>`)[0];
+                popup_68e660fb944b37d6ea66deb88f2380cf.setContent(html_ce22dd7e5f51834841aacf7d817cbf58);
+            
+        
+
+        circle_marker_df817236043ee59b9b32ae5352b12408.bindPopup(popup_68e660fb944b37d6ea66deb88f2380cf)
+        ;
+
+        
+    
+    
+            circle_marker_df817236043ee59b9b32ae5352b12408.bindTooltip(
+                `<div>
+                     100 Foot Rock: 8.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c32a3546493932be474525084f7aa14e = L.circleMarker(
+                [48.163471, -122.641196],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_6fb195c8427af34ea3eee0c17d7af0c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6f304fef0f2187d3de4eb277176a1938 = $(`<div id="html_6f304fef0f2187d3de4eb277176a1938" style="width: 100.0%; height: 100.0%;">         <b>Admiralty Beach</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 2<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_6fb195c8427af34ea3eee0c17d7af0c5.setContent(html_6f304fef0f2187d3de4eb277176a1938);
+            
+        
+
+        circle_marker_c32a3546493932be474525084f7aa14e.bindPopup(popup_6fb195c8427af34ea3eee0c17d7af0c5)
+        ;
+
+        
+    
+    
+            circle_marker_c32a3546493932be474525084f7aa14e.bindTooltip(
+                `<div>
+                     Admiralty Beach: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16e24548af68ba2b495a5ca355c16c2f = L.circleMarker(
+                [47.588746, -122.379068],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#02c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.745966692414834, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_59f2dbe5b487b8cd6a683126115a4fd7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c10c74b4ea48652081f3742e255cd893 = $(`<div id="html_c10c74b4ea48652081f3742e255cd893" style="width: 100.0%; height: 100.0%;">         <b>Alki - Cove 2</b><br>         <hr>         Mean Rate: <b>0.21/hr</b><br>         Total Pycno: 14<br>         Detection Rate: 1.1%<br>         <hr>         Transects: 93<br>         Basin: Central         </div>`)[0];
+                popup_59f2dbe5b487b8cd6a683126115a4fd7.setContent(html_c10c74b4ea48652081f3742e255cd893);
+            
+        
+
+        circle_marker_16e24548af68ba2b495a5ca355c16c2f.bindPopup(popup_59f2dbe5b487b8cd6a683126115a4fd7)
+        ;
+
+        
+    
+    
+            circle_marker_16e24548af68ba2b495a5ca355c16c2f.bindTooltip(
+                `<div>
+                     Alki - Cove 2: 0.21/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b461152643969ca02ae0a3f4051ec64 = L.circleMarker(
+                [47.580873, -122.410246],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1ac832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_3da58fde95efb194f67222491d2fb079 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_05d81bc5e6170357188e42d1073bc635 = $(`<div id="html_05d81bc5e6170357188e42d1073bc635" style="width: 100.0%; height: 100.0%;">         <b>Alki Beach</b><br>         <hr>         Mean Rate: <b>2.00/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 20.0%<br>         <hr>         Transects: 5<br>         Basin: Central         </div>`)[0];
+                popup_3da58fde95efb194f67222491d2fb079.setContent(html_05d81bc5e6170357188e42d1073bc635);
+            
+        
+
+        circle_marker_6b461152643969ca02ae0a3f4051ec64.bindPopup(popup_3da58fde95efb194f67222491d2fb079)
+        ;
+
+        
+    
+    
+            circle_marker_6b461152643969ca02ae0a3f4051ec64.bindTooltip(
+                `<div>
+                     Alki Beach: 2.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b8dea3c58d57971c5cb91f9a7455277e = L.circleMarker(
+                [49.515547, -123.295337],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_4da81a691a7ac8113d2830eec3b61920 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5552d2914e64d175e430641e65152240 = $(`<div id="html_5552d2914e64d175e430641e65152240" style="width: 100.0%; height: 100.0%;">         <b>Anvil Island</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 12<br>         Basin: Howe Sound         </div>`)[0];
+                popup_4da81a691a7ac8113d2830eec3b61920.setContent(html_5552d2914e64d175e430641e65152240);
+            
+        
+
+        circle_marker_b8dea3c58d57971c5cb91f9a7455277e.bindPopup(popup_4da81a691a7ac8113d2830eec3b61920)
+        ;
+
+        
+    
+    
+            circle_marker_b8dea3c58d57971c5cb91f9a7455277e.bindTooltip(
+                `<div>
+                     Anvil Island: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_680a1514702d3eda73e38d2bed26d5b1 = L.circleMarker(
+                [48.151033, -123.636306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3ac832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.47213595499958, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_0d14d04db7cd5b729c20a01144a28112 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_475f4116627064125139da2eb15cf570 = $(`<div id="html_475f4116627064125139da2eb15cf570" style="width: 100.0%; height: 100.0%;">         <b>Bachelor Rock</b><br>         <hr>         Mean Rate: <b>4.43/hr</b><br>         Total Pycno: 4<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 3<br>         Basin: Strait of Juan de Fuca         </div>`)[0];
+                popup_0d14d04db7cd5b729c20a01144a28112.setContent(html_475f4116627064125139da2eb15cf570);
+            
+        
+
+        circle_marker_680a1514702d3eda73e38d2bed26d5b1.bindPopup(popup_0d14d04db7cd5b729c20a01144a28112)
+        ;
+
+        
+    
+    
+            circle_marker_680a1514702d3eda73e38d2bed26d5b1.bindTooltip(
+                `<div>
+                     Bachelor Rock: 4.43/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e444df5ac707d809664be616472b2bb = L.circleMarker(
+                [48.596069, -122.979414],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_5dbc993f74fd89b3743c1a7f1d95af5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40daded8c79bb37087cdfe55bd5a6515 = $(`<div id="html_40daded8c79bb37087cdfe55bd5a6515" style="width: 100.0%; height: 100.0%;">         <b>Bell Island East</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 65<br>         Basin: San Juan         </div>`)[0];
+                popup_5dbc993f74fd89b3743c1a7f1d95af5c.setContent(html_40daded8c79bb37087cdfe55bd5a6515);
+            
+        
+
+        circle_marker_4e444df5ac707d809664be616472b2bb.bindPopup(popup_5dbc993f74fd89b3743c1a7f1d95af5c)
+        ;
+
+        
+    
+    
+            circle_marker_4e444df5ac707d809664be616472b2bb.bindTooltip(
+                `<div>
+                     Bell Island East: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_571afe0a9f42511e625042d721aa8bb7 = L.circleMarker(
+                [48.59602, -122.981588],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_22b9da0d9c0d405e2fd73cf6b1f77e8c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_925d8a34024d78c7aa0de5f2dda140c5 = $(`<div id="html_925d8a34024d78c7aa0de5f2dda140c5" style="width: 100.0%; height: 100.0%;">         <b>Bell Island West</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 44<br>         Basin: San Juan         </div>`)[0];
+                popup_22b9da0d9c0d405e2fd73cf6b1f77e8c.setContent(html_925d8a34024d78c7aa0de5f2dda140c5);
+            
+        
+
+        circle_marker_571afe0a9f42511e625042d721aa8bb7.bindPopup(popup_22b9da0d9c0d405e2fd73cf6b1f77e8c)
+        ;
+
+        
+    
+    
+            circle_marker_571afe0a9f42511e625042d721aa8bb7.bindTooltip(
+                `<div>
+                     Bell Island West: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb63e3dab7f63dc74cf0c33917ce399e = L.circleMarker(
+                [48.060481, -122.514991],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0032", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_31dbeb2562683b704e6b471553db6cb7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a592df71ea0efc0ed849e12a41bc1edf = $(`<div id="html_a592df71ea0efc0ed849e12a41bc1edf" style="width: 100.0%; height: 100.0%;">         <b>Beverly Beach</b><br>         <hr>         Mean Rate: <b>38.83/hr</b><br>         Total Pycno: 611<br>         Detection Rate: 89.4%<br>         <hr>         Transects: 85<br>         Basin: Whidbey         </div>`)[0];
+                popup_31dbeb2562683b704e6b471553db6cb7.setContent(html_a592df71ea0efc0ed849e12a41bc1edf);
+            
+        
+
+        circle_marker_eb63e3dab7f63dc74cf0c33917ce399e.bindPopup(popup_31dbeb2562683b704e6b471553db6cb7)
+        ;
+
+        
+    
+    
+            circle_marker_eb63e3dab7f63dc74cf0c33917ce399e.bindTooltip(
+                `<div>
+                     Beverly Beach: 38.83/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_166fbe1e59c66520c1ce89ad0fc6fb12 = L.circleMarker(
+                [49.36309, -123.291585],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_823606e9e019fb67918d995fc276d407 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf8f5269dbd2bfc0767d7931cf488727 = $(`<div id="html_cf8f5269dbd2bfc0767d7931cf488727" style="width: 100.0%; height: 100.0%;">         <b>Bird Islet</b><br>         <hr>         Mean Rate: <b>0.07/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 2.7%<br>         <hr>         Transects: 37<br>         Basin: Howe Sound         </div>`)[0];
+                popup_823606e9e019fb67918d995fc276d407.setContent(html_cf8f5269dbd2bfc0767d7931cf488727);
+            
+        
+
+        circle_marker_166fbe1e59c66520c1ce89ad0fc6fb12.bindPopup(popup_823606e9e019fb67918d995fc276d407)
+        ;
+
+        
+    
+    
+            circle_marker_166fbe1e59c66520c1ce89ad0fc6fb12.bindTooltip(
+                `<div>
+                     Bird Islet: 0.07/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1035d25eb0fba4d0565f4e4b76cc08b7 = L.circleMarker(
+                [47.596591, -122.498623],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_4415f73c5cf21bb1108b35f81b1a7fe1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dab11de3c27bba88bb0df886783e6b24 = $(`<div id="html_dab11de3c27bba88bb0df886783e6b24" style="width: 100.0%; height: 100.0%;">         <b>Blakely Harbor Reef</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 1<br>         Basin: Central         </div>`)[0];
+                popup_4415f73c5cf21bb1108b35f81b1a7fe1.setContent(html_dab11de3c27bba88bb0df886783e6b24);
+            
+        
+
+        circle_marker_1035d25eb0fba4d0565f4e4b76cc08b7.bindPopup(popup_4415f73c5cf21bb1108b35f81b1a7fe1)
+        ;
+
+        
+    
+    
+            circle_marker_1035d25eb0fba4d0565f4e4b76cc08b7.bindTooltip(
+                `<div>
+                     Blakely Harbor Reef: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43319b97347546fdbbe1799d21ba1b55 = L.circleMarker(
+                [49.490065, -123.329092],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_44d3bb17ebab4d41862631031c436669 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f182b016f3e67d21bc168e8d2f1a7a19 = $(`<div id="html_f182b016f3e67d21bc168e8d2f1a7a19" style="width: 100.0%; height: 100.0%;">         <b>Brigade</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 1<br>         Basin: Howe Sound         </div>`)[0];
+                popup_44d3bb17ebab4d41862631031c436669.setContent(html_f182b016f3e67d21bc168e8d2f1a7a19);
+            
+        
+
+        circle_marker_43319b97347546fdbbe1799d21ba1b55.bindPopup(popup_44d3bb17ebab4d41862631031c436669)
+        ;
+
+        
+    
+    
+            circle_marker_43319b97347546fdbbe1799d21ba1b55.bindTooltip(
+                `<div>
+                     Brigade: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4abfc7d3d6d6c17b45919491e1ecdd7e = L.circleMarker(
+                [48.594083, -122.965431],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_7ed87a3957ff35f30f95e194ed9efcc0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_09650faae472851613108054526aad66 = $(`<div id="html_09650faae472851613108054526aad66" style="width: 100.0%; height: 100.0%;">         <b>Broken Point East</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 14<br>         Basin: San Juan         </div>`)[0];
+                popup_7ed87a3957ff35f30f95e194ed9efcc0.setContent(html_09650faae472851613108054526aad66);
+            
+        
+
+        circle_marker_4abfc7d3d6d6c17b45919491e1ecdd7e.bindPopup(popup_7ed87a3957ff35f30f95e194ed9efcc0)
+        ;
+
+        
+    
+    
+            circle_marker_4abfc7d3d6d6c17b45919491e1ecdd7e.bindTooltip(
+                `<div>
+                     Broken Point East: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f4ff74c0c69d64c1c5beeaa208d185f = L.circleMarker(
+                [48.594669, -122.967602],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_e99f915cd480205832de0a5c17798b02 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1d318243d6ee8efcb8edc907fdb7150 = $(`<div id="html_f1d318243d6ee8efcb8edc907fdb7150" style="width: 100.0%; height: 100.0%;">         <b>Broken Point West</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 49<br>         Basin: San Juan         </div>`)[0];
+                popup_e99f915cd480205832de0a5c17798b02.setContent(html_f1d318243d6ee8efcb8edc907fdb7150);
+            
+        
+
+        circle_marker_1f4ff74c0c69d64c1c5beeaa208d185f.bindPopup(popup_e99f915cd480205832de0a5c17798b02)
+        ;
+
+        
+    
+    
+            circle_marker_1f4ff74c0c69d64c1c5beeaa208d185f.bindTooltip(
+                `<div>
+                     Broken Point West: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee6c054edf8893cdfbaa3374dc060e16 = L.circleMarker(
+                [48.053302, -122.358319],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_fc9c9630d91fb37519d36fdfbe702414 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0d841f865527e60736fdc2d8e3dcc039 = $(`<div id="html_0d841f865527e60736fdc2d8e3dcc039" style="width: 100.0%; height: 100.0%;">         <b>Camano Head</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 5<br>         Basin: Whidbey         </div>`)[0];
+                popup_fc9c9630d91fb37519d36fdfbe702414.setContent(html_0d841f865527e60736fdc2d8e3dcc039);
+            
+        
+
+        circle_marker_ee6c054edf8893cdfbaa3374dc060e16.bindPopup(popup_fc9c9630d91fb37519d36fdfbe702414)
+        ;
+
+        
+    
+    
+            circle_marker_ee6c054edf8893cdfbaa3374dc060e16.bindTooltip(
+                `<div>
+                     Camano Head: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_094d267f9eac340e64e269cf11e2f508 = L.circleMarker(
+                [48.408773, -122.645138],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_07453532611e2cc06b0f85927b8435d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f15bed19399c6c5902cd857d4d4fdb90 = $(`<div id="html_f15bed19399c6c5902cd857d4d4fdb90" style="width: 100.0%; height: 100.0%;">         <b>Canoe Pass</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 3<br>         Basin: San Juan         </div>`)[0];
+                popup_07453532611e2cc06b0f85927b8435d0.setContent(html_f15bed19399c6c5902cd857d4d4fdb90);
+            
+        
+
+        circle_marker_094d267f9eac340e64e269cf11e2f508.bindPopup(popup_07453532611e2cc06b0f85927b8435d0)
+        ;
+
+        
+    
+    
+            circle_marker_094d267f9eac340e64e269cf11e2f508.bindTooltip(
+                `<div>
+                     Canoe Pass: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_21707192322ca7a6407d7c24b63a1a45 = L.circleMarker(
+                [48.860126, -122.74981],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_1ec3a8bd6166f329c8820e8f3f9aff5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e4f81b0e4b5d96ae9db0f62454683df3 = $(`<div id="html_e4f81b0e4b5d96ae9db0f62454683df3" style="width: 100.0%; height: 100.0%;">         <b>Cherry Point</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 3<br>         Basin: San Juan         </div>`)[0];
+                popup_1ec3a8bd6166f329c8820e8f3f9aff5d.setContent(html_e4f81b0e4b5d96ae9db0f62454683df3);
+            
+        
+
+        circle_marker_21707192322ca7a6407d7c24b63a1a45.bindPopup(popup_1ec3a8bd6166f329c8820e8f3f9aff5d)
+        ;
+
+        
+    
+    
+            circle_marker_21707192322ca7a6407d7c24b63a1a45.bindTooltip(
+                `<div>
+                     Cherry Point: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f98d19dbf3302d664657a240037a083f = L.circleMarker(
+                [49.499396, -123.301971],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_2c59a27c54b679f0b6aa106799e4ceb5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_84c3e8230363d9008e4848f9ac42d836 = $(`<div id="html_84c3e8230363d9008e4848f9ac42d836" style="width: 100.0%; height: 100.0%;">         <b>Christie Islet</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 13<br>         Basin: Howe Sound         </div>`)[0];
+                popup_2c59a27c54b679f0b6aa106799e4ceb5.setContent(html_84c3e8230363d9008e4848f9ac42d836);
+            
+        
+
+        circle_marker_f98d19dbf3302d664657a240037a083f.bindPopup(popup_2c59a27c54b679f0b6aa106799e4ceb5)
+        ;
+
+        
+    
+    
+            circle_marker_f98d19dbf3302d664657a240037a083f.bindTooltip(
+                `<div>
+                     Christie Islet: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0551edafcdae35e6452e3ab9d4fbc6b0 = L.circleMarker(
+                [48.590582, -123.011323],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_7844125c295e446e12ecb8cb2d5c1e85 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6451c2e6b993495a3047f3c1dd86f3cc = $(`<div id="html_6451c2e6b993495a3047f3c1dd86f3cc" style="width: 100.0%; height: 100.0%;">         <b>Cliff Island</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 12<br>         Basin: San Juan         </div>`)[0];
+                popup_7844125c295e446e12ecb8cb2d5c1e85.setContent(html_6451c2e6b993495a3047f3c1dd86f3cc);
+            
+        
+
+        circle_marker_0551edafcdae35e6452e3ab9d4fbc6b0.bindPopup(popup_7844125c295e446e12ecb8cb2d5c1e85)
+        ;
+
+        
+    
+    
+            circle_marker_0551edafcdae35e6452e3ab9d4fbc6b0.bindTooltip(
+                `<div>
+                     Cliff Island: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_378c57081945b1a65fe9731e703ec5fa = L.circleMarker(
+                [47.241984, -122.564551],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_c7cbf5d48af4c47e332d328ab7d3e234 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9283babf0f2fa735f0b04dcfd65c9bce = $(`<div id="html_9283babf0f2fa735f0b04dcfd65c9bce" style="width: 100.0%; height: 100.0%;">         <b>Day Island Wall</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 14<br>         Basin: South         </div>`)[0];
+                popup_c7cbf5d48af4c47e332d328ab7d3e234.setContent(html_9283babf0f2fa735f0b04dcfd65c9bce);
+            
+        
+
+        circle_marker_378c57081945b1a65fe9731e703ec5fa.bindPopup(popup_c7cbf5d48af4c47e332d328ab7d3e234)
+        ;
+
+        
+    
+    
+            circle_marker_378c57081945b1a65fe9731e703ec5fa.bindTooltip(
+                `<div>
+                     Day Island Wall: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_caf9124f773b5cbaa87b188cace3bc4c = L.circleMarker(
+                [47.242693, -122.565324],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_f4773e58645ee5c7fd003e53159130f2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb262c815a10238dc0d9032ed9e77372 = $(`<div id="html_bb262c815a10238dc0d9032ed9e77372" style="width: 100.0%; height: 100.0%;">         <b>Day Island Wall - North</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 1<br>         Basin: South         </div>`)[0];
+                popup_f4773e58645ee5c7fd003e53159130f2.setContent(html_bb262c815a10238dc0d9032ed9e77372);
+            
+        
+
+        circle_marker_caf9124f773b5cbaa87b188cace3bc4c.bindPopup(popup_f4773e58645ee5c7fd003e53159130f2)
+        ;
+
+        
+    
+    
+            circle_marker_caf9124f773b5cbaa87b188cace3bc4c.bindTooltip(
+                `<div>
+                     Day Island Wall - North: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ff408981e1c0542ec2adddbd54b5713 = L.circleMarker(
+                [48.458797, -122.943743],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_736cb010f13f9a44a0269a516ed397a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fcbad4bb234457ea0fefdcbcee88025e = $(`<div id="html_fcbad4bb234457ea0fefdcbcee88025e" style="width: 100.0%; height: 100.0%;">         <b>Deadman Island</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 9<br>         Basin: San Juan         </div>`)[0];
+                popup_736cb010f13f9a44a0269a516ed397a8.setContent(html_fcbad4bb234457ea0fefdcbcee88025e);
+            
+        
+
+        circle_marker_1ff408981e1c0542ec2adddbd54b5713.bindPopup(popup_736cb010f13f9a44a0269a516ed397a8)
+        ;
+
+        
+    
+    
+            circle_marker_1ff408981e1c0542ec2adddbd54b5713.bindTooltip(
+                `<div>
+                     Deadman Island: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9c0042c7eafff43e532980f8b230ef8 = L.circleMarker(
+                [48.405541, -122.64517],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_6ffb6f44f9b80a66480a62fda6e528c9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82b28b6b46018a62e6846d85c8cf430f = $(`<div id="html_82b28b6b46018a62e6846d85c8cf430f" style="width: 100.0%; height: 100.0%;">         <b>Deception Pass</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 4<br>         Basin: San Juan         </div>`)[0];
+                popup_6ffb6f44f9b80a66480a62fda6e528c9.setContent(html_82b28b6b46018a62e6846d85c8cf430f);
+            
+        
+
+        circle_marker_b9c0042c7eafff43e532980f8b230ef8.bindPopup(popup_6ffb6f44f9b80a66480a62fda6e528c9)
+        ;
+
+        
+    
+    
+            circle_marker_b9c0042c7eafff43e532980f8b230ef8.bindTooltip(
+                `<div>
+                     Deception Pass: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1b65845f2c3abbcbd4851427a1cfe60 = L.circleMarker(
+                [47.278304, -122.471],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_499c67b5249eebeeb2c3f0ccdb1402b3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_779c69e98fb81077944ae5ce9e7b8ce3 = $(`<div id="html_779c69e98fb81077944ae5ce9e7b8ce3" style="width: 100.0%; height: 100.0%;">         <b>Dickman Mill</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 7<br>         Basin: Central         </div>`)[0];
+                popup_499c67b5249eebeeb2c3f0ccdb1402b3.setContent(html_779c69e98fb81077944ae5ce9e7b8ce3);
+            
+        
+
+        circle_marker_c1b65845f2c3abbcbd4851427a1cfe60.bindPopup(popup_499c67b5249eebeeb2c3f0ccdb1402b3)
+        ;
+
+        
+    
+    
+            circle_marker_c1b65845f2c3abbcbd4851427a1cfe60.bindTooltip(
+                `<div>
+                     Dickman Mill: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bad40b6a87439fa6e9070b69cf60974b = L.circleMarker(
+                [48.162897, -122.637203],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#02c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.291502622129181, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_2ca7ad1338411888904488023f00e6e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1d28095b2161591824cf9737a5c8a76 = $(`<div id="html_b1d28095b2161591824cf9737a5c8a76" style="width: 100.0%; height: 100.0%;">         <b>Driftwood Park</b><br>         <hr>         Mean Rate: <b>0.20/hr</b><br>         Total Pycno: 6<br>         Detection Rate: 9.4%<br>         <hr>         Transects: 32<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_2ca7ad1338411888904488023f00e6e5.setContent(html_b1d28095b2161591824cf9737a5c8a76);
+            
+        
+
+        circle_marker_bad40b6a87439fa6e9070b69cf60974b.bindPopup(popup_2ca7ad1338411888904488023f00e6e5)
+        ;
+
+        
+    
+    
+            circle_marker_bad40b6a87439fa6e9070b69cf60974b.bindTooltip(
+                `<div>
+                     Driftwood Park: 0.20/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a50317cc6c2f8deb73a8f7c56a965fd4 = L.circleMarker(
+                [48.458027, -123.036267],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#04c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.898979485566356, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_4900a8c04f36a84bdb6ca38cce3af2fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6139587f91f0aeb9c5cd03cf1a07c6e2 = $(`<div id="html_6139587f91f0aeb9c5cd03cf1a07c6e2" style="width: 100.0%; height: 100.0%;">         <b>Eagle Point</b><br>         <hr>         Mean Rate: <b>0.34/hr</b><br>         Total Pycno: 5<br>         Detection Rate: 5.9%<br>         <hr>         Transects: 68<br>         Basin: San Juan         </div>`)[0];
+                popup_4900a8c04f36a84bdb6ca38cce3af2fb.setContent(html_6139587f91f0aeb9c5cd03cf1a07c6e2);
+            
+        
+
+        circle_marker_a50317cc6c2f8deb73a8f7c56a965fd4.bindPopup(popup_4900a8c04f36a84bdb6ca38cce3af2fb)
+        ;
+
+        
+    
+    
+            circle_marker_a50317cc6c2f8deb73a8f7c56a965fd4.bindTooltip(
+                `<div>
+                     Eagle Point: 0.34/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0008e35afd41df5844c87278abb41079 = L.circleMarker(
+                [48.141211, -123.436541],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#33c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.88854381999832, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_f5e703237fac306da78c36e679253a1d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_674bf961d225813e9e2998ba5a1e73c3 = $(`<div id="html_674bf961d225813e9e2998ba5a1e73c3" style="width: 100.0%; height: 100.0%;">         <b>Ediz Hook Log Pile</b><br>         <hr>         Mean Rate: <b>3.90/hr</b><br>         Total Pycno: 79<br>         Detection Rate: 39.3%<br>         <hr>         Transects: 56<br>         Basin: Strait of Juan de Fuca         </div>`)[0];
+                popup_f5e703237fac306da78c36e679253a1d.setContent(html_674bf961d225813e9e2998ba5a1e73c3);
+            
+        
+
+        circle_marker_0008e35afd41df5844c87278abb41079.bindPopup(popup_f5e703237fac306da78c36e679253a1d)
+        ;
+
+        
+    
+    
+            circle_marker_0008e35afd41df5844c87278abb41079.bindTooltip(
+                `<div>
+                     Ediz Hook Log Pile: 3.90/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_094b63c3fe4d3a69bd2f0e264ac34d34 = L.circleMarker(
+                [48.140197, -123.422831],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#68c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.2828568570857, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_4a1ed091593f21adb3878ff3541cf464 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_23909b89c27c51b80d017c8ff861e559 = $(`<div id="html_23909b89c27c51b80d017c8ff861e559" style="width: 100.0%; height: 100.0%;">         <b>Ediz Hook RockPile</b><br>         <hr>         Mean Rate: <b>7.92/hr</b><br>         Total Pycno: 50<br>         Detection Rate: 35.9%<br>         <hr>         Transects: 39<br>         Basin: Strait of Juan de Fuca         </div>`)[0];
+                popup_4a1ed091593f21adb3878ff3541cf464.setContent(html_23909b89c27c51b80d017c8ff861e559);
+            
+        
+
+        circle_marker_094b63c3fe4d3a69bd2f0e264ac34d34.bindPopup(popup_4a1ed091593f21adb3878ff3541cf464)
+        ;
+
+        
+    
+    
+            circle_marker_094b63c3fe4d3a69bd2f0e264ac34d34.bindTooltip(
+                `<div>
+                     Ediz Hook RockPile: 7.92/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1c786729b9a5ad3fafe28cf3e067b90 = L.circleMarker(
+                [47.815161, -122.382522],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#08c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.291502622129181, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_1b92c9b65e148bc2d4871ebd1cace4c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5c15e950bea30dfff973c897a3bd98b = $(`<div id="html_a5c15e950bea30dfff973c897a3bd98b" style="width: 100.0%; height: 100.0%;">         <b>Edmonds Underwater Park</b><br>         <hr>         Mean Rate: <b>0.65/hr</b><br>         Total Pycno: 6<br>         Detection Rate: 3.2%<br>         <hr>         Transects: 93<br>         Basin: Central         </div>`)[0];
+                popup_1b92c9b65e148bc2d4871ebd1cace4c1.setContent(html_a5c15e950bea30dfff973c897a3bd98b);
+            
+        
+
+        circle_marker_d1c786729b9a5ad3fafe28cf3e067b90.bindPopup(popup_1b92c9b65e148bc2d4871ebd1cace4c1)
+        ;
+
+        
+    
+    
+            circle_marker_d1c786729b9a5ad3fafe28cf3e067b90.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park: 0.65/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_748f1f3a271dbb13e52034d9a2f8e1eb = L.circleMarker(
+                [47.812101, -122.389429],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#02c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_7ede1e1273348d08c9033fb397790bf9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0505ad0b9f81dac03af961e35715ee84 = $(`<div id="html_0505ad0b9f81dac03af961e35715ee84" style="width: 100.0%; height: 100.0%;">         <b>Edmonds Underwater Park Pipeline</b><br>         <hr>         Mean Rate: <b>0.16/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 2.6%<br>         <hr>         Transects: 38<br>         Basin: Central         </div>`)[0];
+                popup_7ede1e1273348d08c9033fb397790bf9.setContent(html_0505ad0b9f81dac03af961e35715ee84);
+            
+        
+
+        circle_marker_748f1f3a271dbb13e52034d9a2f8e1eb.bindPopup(popup_7ede1e1273348d08c9033fb397790bf9)
+        ;
+
+        
+    
+    
+            circle_marker_748f1f3a271dbb13e52034d9a2f8e1eb.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park Pipeline: 0.16/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2ca72657c772b050efe70058605f584 = L.circleMarker(
+                [47.562416, -123.017743],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_6b2e3bfbe1eb6b5b649ac05d83172dc8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bc9ea047e000b5d87d3fc68bcefca554 = $(`<div id="html_bc9ea047e000b5d87d3fc68bcefca554" style="width: 100.0%; height: 100.0%;">         <b>Elephant Wall</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 2<br>         Basin: Hood Canal         </div>`)[0];
+                popup_6b2e3bfbe1eb6b5b649ac05d83172dc8.setContent(html_bc9ea047e000b5d87d3fc68bcefca554);
+            
+        
+
+        circle_marker_f2ca72657c772b050efe70058605f584.bindPopup(popup_6b2e3bfbe1eb6b5b649ac05d83172dc8)
+        ;
+
+        
+    
+    
+            circle_marker_f2ca72657c772b050efe70058605f584.bindTooltip(
+                `<div>
+                     Elephant Wall: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51cf71e62d055d2ba5a57e9d863d4b72 = L.circleMarker(
+                [49.422304, -123.410877],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_a31ba59321be1004874bc185625f24ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f92e8598e9cf4a0f06e208c4bf8fd9a3 = $(`<div id="html_f92e8598e9cf4a0f06e208c4bf8fd9a3" style="width: 100.0%; height: 100.0%;">         <b>Enchanted Forest</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 35<br>         Basin: Howe Sound         </div>`)[0];
+                popup_a31ba59321be1004874bc185625f24ad.setContent(html_f92e8598e9cf4a0f06e208c4bf8fd9a3);
+            
+        
+
+        circle_marker_51cf71e62d055d2ba5a57e9d863d4b72.bindPopup(popup_a31ba59321be1004874bc185625f24ad)
+        ;
+
+        
+    
+    
+            circle_marker_51cf71e62d055d2ba5a57e9d863d4b72.bindTooltip(
+                `<div>
+                     Enchanted Forest: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12af0acf371b89743fb11f16aa9ca779 = L.circleMarker(
+                [47.564755, -123.01436],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.165525060596439, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_70b44bae0aebd75025d6d458972f17a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff0bb91f4ab8e281cc89cfa1ad3c3e1c = $(`<div id="html_ff0bb91f4ab8e281cc89cfa1ad3c3e1c" style="width: 100.0%; height: 100.0%;">         <b>Flagpole Point</b><br>         <hr>         Mean Rate: <b>4.33/hr</b><br>         Total Pycno: 36<br>         Detection Rate: 24.3%<br>         <hr>         Transects: 70<br>         Basin: Hood Canal         </div>`)[0];
+                popup_70b44bae0aebd75025d6d458972f17a5.setContent(html_ff0bb91f4ab8e281cc89cfa1ad3c3e1c);
+            
+        
+
+        circle_marker_12af0acf371b89743fb11f16aa9ca779.bindPopup(popup_70b44bae0aebd75025d6d458972f17a5)
+        ;
+
+        
+    
+    
+            circle_marker_12af0acf371b89743fb11f16aa9ca779.bindTooltip(
+                `<div>
+                     Flagpole Point: 4.33/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_104483bded332b9192ac4b90681e9e68 = L.circleMarker(
+                [48.136638, -122.760193],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#02c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_6cceaad3be50b0fd2b67d35acd35ba62 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a9d95e44e6cd3aa34afcd6a4b72bdab = $(`<div id="html_8a9d95e44e6cd3aa34afcd6a4b72bdab" style="width: 100.0%; height: 100.0%;">         <b>Fort Worden</b><br>         <hr>         Mean Rate: <b>0.20/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 20.0%<br>         <hr>         Transects: 5<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_6cceaad3be50b0fd2b67d35acd35ba62.setContent(html_8a9d95e44e6cd3aa34afcd6a4b72bdab);
+            
+        
+
+        circle_marker_104483bded332b9192ac4b90681e9e68.bindPopup(popup_6cceaad3be50b0fd2b67d35acd35ba62)
+        ;
+
+        
+    
+    
+            circle_marker_104483bded332b9192ac4b90681e9e68.bindTooltip(
+                `<div>
+                     Fort Worden: 0.20/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2850094116d6dcf4df3a93f02edcc2a5 = L.circleMarker(
+                [47.941083, -122.6012],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_084b1ca1504569f9d90a4c0848bae4a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e2970abec62aa734cc4eb4dc8351ab76 = $(`<div id="html_e2970abec62aa734cc4eb4dc8351ab76" style="width: 100.0%; height: 100.0%;">         <b>Foulweather Bluff</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 8<br>         Basin: Hood Canal         </div>`)[0];
+                popup_084b1ca1504569f9d90a4c0848bae4a4.setContent(html_e2970abec62aa734cc4eb4dc8351ab76);
+            
+        
+
+        circle_marker_2850094116d6dcf4df3a93f02edcc2a5.bindPopup(popup_084b1ca1504569f9d90a4c0848bae4a4)
+        ;
+
+        
+    
+    
+            circle_marker_2850094116d6dcf4df3a93f02edcc2a5.bindTooltip(
+                `<div>
+                     Foulweather Bluff: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d5b7c7b3a8ea2a0aa27d2f5fa6e3653 = L.circleMarker(
+                [47.228514, -122.589606],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_1324e10d13426840161d6753156b52ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d3a0a42227a8b2b769f4200ae923d9e = $(`<div id="html_3d3a0a42227a8b2b769f4200ae923d9e" style="width: 100.0%; height: 100.0%;">         <b>Fox Island East Wall</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 43<br>         Basin: South         </div>`)[0];
+                popup_1324e10d13426840161d6753156b52ef.setContent(html_3d3a0a42227a8b2b769f4200ae923d9e);
+            
+        
+
+        circle_marker_4d5b7c7b3a8ea2a0aa27d2f5fa6e3653.bindPopup(popup_1324e10d13426840161d6753156b52ef)
+        ;
+
+        
+    
+    
+            circle_marker_4d5b7c7b3a8ea2a0aa27d2f5fa6e3653.bindTooltip(
+                `<div>
+                     Fox Island East Wall: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad4f6ce196ade2055904612da6195e0a = L.circleMarker(
+                [47.239321, -122.632894],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_a024446dd1280397f41684f37a60bc7b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f698f76fd60c32822640fcaee115d6dd = $(`<div id="html_f698f76fd60c32822640fcaee115d6dd" style="width: 100.0%; height: 100.0%;">         <b>Fox Island West Wall</b><br>         <hr>         Mean Rate: <b>0.12/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 2.2%<br>         <hr>         Transects: 89<br>         Basin: South         </div>`)[0];
+                popup_a024446dd1280397f41684f37a60bc7b.setContent(html_f698f76fd60c32822640fcaee115d6dd);
+            
+        
+
+        circle_marker_ad4f6ce196ade2055904612da6195e0a.bindPopup(popup_a024446dd1280397f41684f37a60bc7b)
+        ;
+
+        
+    
+    
+            circle_marker_ad4f6ce196ade2055904612da6195e0a.bindTooltip(
+                `<div>
+                     Fox Island West Wall: 0.12/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_811ce0c7f7d1b117ec4812b9203a1844 = L.circleMarker(
+                [48.016187, -122.529818],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#71c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_6115d34ac92515637d222b742cc74352 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c58be27904195a9dcb052227dea31ed = $(`<div id="html_8c58be27904195a9dcb052227dea31ed" style="width: 100.0%; height: 100.0%;">         <b>Freeland Park</b><br>         <hr>         Mean Rate: <b>8.68/hr</b><br>         Total Pycno: 176<br>         Detection Rate: 66.7%<br>         <hr>         Transects: 90<br>         Basin: Whidbey         </div>`)[0];
+                popup_6115d34ac92515637d222b742cc74352.setContent(html_8c58be27904195a9dcb052227dea31ed);
+            
+        
+
+        circle_marker_811ce0c7f7d1b117ec4812b9203a1844.bindPopup(popup_6115d34ac92515637d222b742cc74352)
+        ;
+
+        
+    
+    
+            circle_marker_811ce0c7f7d1b117ec4812b9203a1844.bindTooltip(
+                `<div>
+                     Freeland Park: 8.68/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0dc4ab4bfcc524e019f4777942feb93f = L.circleMarker(
+                [48.15063, -123.636083],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.211102550927978, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_1cdb4fe73de1edf1b07e4ede8fc097d2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3617230ede619d78143097fec5c2d737 = $(`<div id="html_3617230ede619d78143097fec5c2d737" style="width: 100.0%; height: 100.0%;">         <b>Freshwater Bay</b><br>         <hr>         Mean Rate: <b>2.96/hr</b><br>         Total Pycno: 12<br>         Detection Rate: 27.3%<br>         <hr>         Transects: 22<br>         Basin: Strait of Juan de Fuca         </div>`)[0];
+                popup_1cdb4fe73de1edf1b07e4ede8fc097d2.setContent(html_3617230ede619d78143097fec5c2d737);
+            
+        
+
+        circle_marker_0dc4ab4bfcc524e019f4777942feb93f.bindPopup(popup_1cdb4fe73de1edf1b07e4ede8fc097d2)
+        ;
+
+        
+    
+    
+            circle_marker_0dc4ab4bfcc524e019f4777942feb93f.bindTooltip(
+                `<div>
+                     Freshwater Bay: 2.96/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbcec9ffb6a6fbb55cd04139542bb58e = L.circleMarker(
+                [48.549823, -123.005027],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_ab5e5b2841b7dfa5fa05211c144dd978 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c5ff7457c03bf412ac344403180116f5 = $(`<div id="html_c5ff7457c03bf412ac344403180116f5" style="width: 100.0%; height: 100.0%;">         <b>Friday Harbor Reef</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 30<br>         Basin: San Juan         </div>`)[0];
+                popup_ab5e5b2841b7dfa5fa05211c144dd978.setContent(html_c5ff7457c03bf412ac344403180116f5);
+            
+        
+
+        circle_marker_dbcec9ffb6a6fbb55cd04139542bb58e.bindPopup(popup_ab5e5b2841b7dfa5fa05211c144dd978)
+        ;
+
+        
+    
+    
+            circle_marker_dbcec9ffb6a6fbb55cd04139542bb58e.bindTooltip(
+                `<div>
+                     Friday Harbor Reef: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e1452195e7eda5e1be5ac0d2c0ffd216 = L.circleMarker(
+                [47.617983, -122.968183],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ac832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.898979485566356, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_91056526ecdcf9f17cf1fa6f208c511d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f07ca7bdc83168d0f7913dc0e3bebd75 = $(`<div id="html_f07ca7bdc83168d0f7913dc0e3bebd75" style="width: 100.0%; height: 100.0%;">         <b>Fulton Creek</b><br>         <hr>         Mean Rate: <b>3.27/hr</b><br>         Total Pycno: 5<br>         Detection Rate: 75.0%<br>         <hr>         Transects: 4<br>         Basin: Hood Canal         </div>`)[0];
+                popup_91056526ecdcf9f17cf1fa6f208c511d.setContent(html_f07ca7bdc83168d0f7913dc0e3bebd75);
+            
+        
+
+        circle_marker_e1452195e7eda5e1be5ac0d2c0ffd216.bindPopup(popup_91056526ecdcf9f17cf1fa6f208c511d)
+        ;
+
+        
+    
+    
+            circle_marker_e1452195e7eda5e1be5ac0d2c0ffd216.bindTooltip(
+                `<div>
+                     Fulton Creek: 3.27/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de4547fbd2bbdec8c113c973c2a442b0 = L.circleMarker(
+                [47.419888, -123.129494],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_279428b4ce8ad0c79c3cedaecc1ac063 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c6996b17e382fbfc3f8e2799982a618a = $(`<div id="html_c6996b17e382fbfc3f8e2799982a618a" style="width: 100.0%; height: 100.0%;">         <b>Glen Ayr Ravine</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 1<br>         Basin: Hood Canal         </div>`)[0];
+                popup_279428b4ce8ad0c79c3cedaecc1ac063.setContent(html_c6996b17e382fbfc3f8e2799982a618a);
+            
+        
+
+        circle_marker_de4547fbd2bbdec8c113c973c2a442b0.bindPopup(popup_279428b4ce8ad0c79c3cedaecc1ac063)
+        ;
+
+        
+    
+    
+            circle_marker_de4547fbd2bbdec8c113c973c2a442b0.bindTooltip(
+                `<div>
+                     Glen Ayr Ravine: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52b18f8225d37dbdc189e288a4fd1255 = L.circleMarker(
+                [47.63058, -122.942265],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3cc832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_5145bdf49600617e6d2de7927b29a367 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_743e979ecef67108f34187c8658a8f36 = $(`<div id="html_743e979ecef67108f34187c8658a8f36" style="width: 100.0%; height: 100.0%;">         <b>Goby Garden</b><br>         <hr>         Mean Rate: <b>4.62/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 1<br>         Basin: Hood Canal         </div>`)[0];
+                popup_5145bdf49600617e6d2de7927b29a367.setContent(html_743e979ecef67108f34187c8658a8f36);
+            
+        
+
+        circle_marker_52b18f8225d37dbdc189e288a4fd1255.bindPopup(popup_5145bdf49600617e6d2de7927b29a367)
+        ;
+
+        
+    
+    
+            circle_marker_52b18f8225d37dbdc189e288a4fd1255.bindTooltip(
+                `<div>
+                     Goby Garden: 4.62/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a5f54935e5236c1c43ea16bf18a9d0b = L.circleMarker(
+                [48.007259, -122.298823],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ec832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.291502622129181, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_5011d08723d489c1680c6332c2e83d03 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8533a9826a2f4f7dd01b9ae8982839a7 = $(`<div id="html_8533a9826a2f4f7dd01b9ae8982839a7" style="width: 100.0%; height: 100.0%;">         <b>Hat Island Ledge</b><br>         <hr>         Mean Rate: <b>9.66/hr</b><br>         Total Pycno: 6<br>         Detection Rate: 66.7%<br>         <hr>         Transects: 6<br>         Basin: Whidbey         </div>`)[0];
+                popup_5011d08723d489c1680c6332c2e83d03.setContent(html_8533a9826a2f4f7dd01b9ae8982839a7);
+            
+        
+
+        circle_marker_2a5f54935e5236c1c43ea16bf18a9d0b.bindPopup(popup_5011d08723d489c1680c6332c2e83d03)
+        ;
+
+        
+    
+    
+            circle_marker_2a5f54935e5236c1c43ea16bf18a9d0b.bindTooltip(
+                `<div>
+                     Hat Island Ledge: 9.66/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66740bfbfbeaa7c404fcf489f32c239a = L.circleMarker(
+                [48.017692, -122.53879],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_01e3de2e80f4082f67cf230c93972296 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8effb78d8dd21707e910a85642b19c36 = $(`<div id="html_8effb78d8dd21707e910a85642b19c36" style="width: 100.0%; height: 100.0%;">         <b>Holmes Harbor</b><br>         <hr>         Mean Rate: <b>25.59/hr</b><br>         Total Pycno: 301<br>         Detection Rate: 66.7%<br>         <hr>         Transects: 48<br>         Basin: Whidbey         </div>`)[0];
+                popup_01e3de2e80f4082f67cf230c93972296.setContent(html_8effb78d8dd21707e910a85642b19c36);
+            
+        
+
+        circle_marker_66740bfbfbeaa7c404fcf489f32c239a.bindPopup(popup_01e3de2e80f4082f67cf230c93972296)
+        ;
+
+        
+    
+    
+            circle_marker_66740bfbfbeaa7c404fcf489f32c239a.bindTooltip(
+                `<div>
+                     Holmes Harbor: 25.59/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9def7ce6b878ceab96e310c9ff93b01f = L.circleMarker(
+                [48.617667, -123.040383],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#06c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_1332c0833bde4eaa54816e67e3468ca4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a49c19ad4b1378cb4db52e3931b247c6 = $(`<div id="html_a49c19ad4b1378cb4db52e3931b247c6" style="width: 100.0%; height: 100.0%;">         <b>Jones Island</b><br>         <hr>         Mean Rate: <b>0.48/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 5.6%<br>         <hr>         Transects: 18<br>         Basin: San Juan         </div>`)[0];
+                popup_1332c0833bde4eaa54816e67e3468ca4.setContent(html_a49c19ad4b1378cb4db52e3931b247c6);
+            
+        
+
+        circle_marker_9def7ce6b878ceab96e310c9ff93b01f.bindPopup(popup_1332c0833bde4eaa54816e67e3468ca4)
+        ;
+
+        
+    
+    
+            circle_marker_9def7ce6b878ceab96e310c9ff93b01f.bindTooltip(
+                `<div>
+                     Jones Island: 0.48/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_353df302e038cb9c7a2272eb90141d86 = L.circleMarker(
+                [47.522325, -123.048584],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0ec832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_22249db5bd88036436eff99a9fec2fec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db4eb99729d029fe6e3576fe1a2dc267 = $(`<div id="html_db4eb99729d029fe6e3576fe1a2dc267" style="width: 100.0%; height: 100.0%;">         <b>Jorsted Creek</b><br>         <hr>         Mean Rate: <b>1.08/hr</b><br>         Total Pycno: 3<br>         Detection Rate: 27.3%<br>         <hr>         Transects: 11<br>         Basin: Hood Canal         </div>`)[0];
+                popup_22249db5bd88036436eff99a9fec2fec.setContent(html_db4eb99729d029fe6e3576fe1a2dc267);
+            
+        
+
+        circle_marker_353df302e038cb9c7a2272eb90141d86.bindPopup(popup_22249db5bd88036436eff99a9fec2fec)
+        ;
+
+        
+    
+    
+            circle_marker_353df302e038cb9c7a2272eb90141d86.bindTooltip(
+                `<div>
+                     Jorsted Creek: 1.08/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_952682d7aaf3070e5dcc6bb4c2bb1944 = L.circleMarker(
+                [47.420837, -122.429911],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#02c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_6b17479158173ed6fc662182b167cb97 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2c0654ac28eb2713f0932d549267da3 = $(`<div id="html_a2c0654ac28eb2713f0932d549267da3" style="width: 100.0%; height: 100.0%;">         <b>KVI Tower</b><br>         <hr>         Mean Rate: <b>0.21/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 3.3%<br>         <hr>         Transects: 61<br>         Basin: Central         </div>`)[0];
+                popup_6b17479158173ed6fc662182b167cb97.setContent(html_a2c0654ac28eb2713f0932d549267da3);
+            
+        
+
+        circle_marker_952682d7aaf3070e5dcc6bb4c2bb1944.bindPopup(popup_6b17479158173ed6fc662182b167cb97)
+        ;
+
+        
+    
+    
+            circle_marker_952682d7aaf3070e5dcc6bb4c2bb1944.bindTooltip(
+                `<div>
+                     KVI Tower: 0.21/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cacf3f0eaf57f1e84b9e710afc2fe092 = L.circleMarker(
+                [47.416943, -123.130313],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_00dd0032b500bc6fe1f1a525338afd05 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dca4e1e58ec8497d7be12441f2b7aa04 = $(`<div id="html_dca4e1e58ec8497d7be12441f2b7aa04" style="width: 100.0%; height: 100.0%;">         <b>Kat's Corner</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 6<br>         Basin: Hood Canal         </div>`)[0];
+                popup_00dd0032b500bc6fe1f1a525338afd05.setContent(html_dca4e1e58ec8497d7be12441f2b7aa04);
+            
+        
+
+        circle_marker_cacf3f0eaf57f1e84b9e710afc2fe092.bindPopup(popup_00dd0032b500bc6fe1f1a525338afd05)
+        ;
+
+        
+    
+    
+            circle_marker_cacf3f0eaf57f1e84b9e710afc2fe092.bindTooltip(
+                `<div>
+                     Kat's Corner: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38816d726f75d47055561401e667786f = L.circleMarker(
+                [48.590498, -123.202768],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_cd0ba4c39caa23b7b01d3f10f639435e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d7f61350bf1a057d77088523176090af = $(`<div id="html_d7f61350bf1a057d77088523176090af" style="width: 100.0%; height: 100.0%;">         <b>Kellet's Bluff</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 13<br>         Basin: San Juan         </div>`)[0];
+                popup_cd0ba4c39caa23b7b01d3f10f639435e.setContent(html_d7f61350bf1a057d77088523176090af);
+            
+        
+
+        circle_marker_38816d726f75d47055561401e667786f.bindPopup(popup_cd0ba4c39caa23b7b01d3f10f639435e)
+        ;
+
+        
+    
+    
+            circle_marker_38816d726f75d47055561401e667786f.bindTooltip(
+                `<div>
+                     Kellet's Bluff: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3594329a0465c3df34127c5efb0c0de6 = L.circleMarker(
+                [48.156876, -122.67077],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#07c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.392304845413264, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_d9ccb6adefc0f335a83af8982420856e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d07c2652c4ad82a5d228eabf5242e68d = $(`<div id="html_d07c2652c4ad82a5d228eabf5242e68d" style="width: 100.0%; height: 100.0%;">         <b>Keystone Jetty</b><br>         <hr>         Mean Rate: <b>0.60/hr</b><br>         Total Pycno: 26<br>         Detection Rate: 7.0%<br>         <hr>         Transects: 228<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_d9ccb6adefc0f335a83af8982420856e.setContent(html_d07c2652c4ad82a5d228eabf5242e68d);
+            
+        
+
+        circle_marker_3594329a0465c3df34127c5efb0c0de6.bindPopup(popup_d9ccb6adefc0f335a83af8982420856e)
+        ;
+
+        
+    
+    
+            circle_marker_3594329a0465c3df34127c5efb0c0de6.bindTooltip(
+                `<div>
+                     Keystone Jetty: 0.60/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73ddcf5badb262fe2b83140cf40c09fe = L.circleMarker(
+                [48.157998, -122.668452],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_9828d366c8aefe611fda25abf31d32e1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8fd62a98a55d07339b9992aa1d016bc6 = $(`<div id="html_8fd62a98a55d07339b9992aa1d016bc6" style="width: 100.0%; height: 100.0%;">         <b>Keystone Jetty - Pilings</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 3<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_9828d366c8aefe611fda25abf31d32e1.setContent(html_8fd62a98a55d07339b9992aa1d016bc6);
+            
+        
+
+        circle_marker_73ddcf5badb262fe2b83140cf40c09fe.bindPopup(popup_9828d366c8aefe611fda25abf31d32e1)
+        ;
+
+        
+    
+    
+            circle_marker_73ddcf5badb262fe2b83140cf40c09fe.bindTooltip(
+                `<div>
+                     Keystone Jetty - Pilings: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0962868f426ceeadad0c99aa890e619 = L.circleMarker(
+                [48.03919, -122.402904],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c2c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_fad9389dcbcff8f3375efb4b26f96b84 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b7fb0bd17d6d26282c54595f52da988 = $(`<div id="html_0b7fb0bd17d6d26282c54595f52da988" style="width: 100.0%; height: 100.0%;">         <b>Langley Tire Reef</b><br>         <hr>         Mean Rate: <b>14.82/hr</b><br>         Total Pycno: 841<br>         Detection Rate: 60.8%<br>         <hr>         Transects: 212<br>         Basin: Whidbey         </div>`)[0];
+                popup_fad9389dcbcff8f3375efb4b26f96b84.setContent(html_0b7fb0bd17d6d26282c54595f52da988);
+            
+        
+
+        circle_marker_b0962868f426ceeadad0c99aa890e619.bindPopup(popup_fad9389dcbcff8f3375efb4b26f96b84)
+        ;
+
+        
+    
+    
+            circle_marker_b0962868f426ceeadad0c99aa890e619.bindTooltip(
+                `<div>
+                     Langley Tire Reef: 14.82/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5f6c1f1b79f0468ec81eda07e3c5b69 = L.circleMarker(
+                [48.526141, -122.972398],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_b7398c5ba915a631446da5283bf75b4d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb4a0a1065bdc4ebab9d62e8581aed44 = $(`<div id="html_fb4a0a1065bdc4ebab9d62e8581aed44" style="width: 100.0%; height: 100.0%;">         <b>Larry's Lair</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 61<br>         Basin: San Juan         </div>`)[0];
+                popup_b7398c5ba915a631446da5283bf75b4d.setContent(html_fb4a0a1065bdc4ebab9d62e8581aed44);
+            
+        
+
+        circle_marker_b5f6c1f1b79f0468ec81eda07e3c5b69.bindPopup(popup_b7398c5ba915a631446da5283bf75b4d)
+        ;
+
+        
+    
+    
+            circle_marker_b5f6c1f1b79f0468ec81eda07e3c5b69.bindTooltip(
+                `<div>
+                     Larry's Lair: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_41255ef68cc63527a190432d8642b31d = L.circleMarker(
+                [47.2842, -122.48315],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_00179eefa9e61930357045f4e937072d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1a8674d4806bd3ab66f481814209b8f3 = $(`<div id="html_1a8674d4806bd3ab66f481814209b8f3" style="width: 100.0%; height: 100.0%;">         <b>Les Davis Marine Park</b><br>         <hr>         Mean Rate: <b>0.11/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 1.8%<br>         <hr>         Transects: 57<br>         Basin: Central         </div>`)[0];
+                popup_00179eefa9e61930357045f4e937072d.setContent(html_1a8674d4806bd3ab66f481814209b8f3);
+            
+        
+
+        circle_marker_41255ef68cc63527a190432d8642b31d.bindPopup(popup_00179eefa9e61930357045f4e937072d)
+        ;
+
+        
+    
+    
+            circle_marker_41255ef68cc63527a190432d8642b31d.bindTooltip(
+                `<div>
+                     Les Davis Marine Park: 0.11/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_075405cad5f3125941ed572890e101aa = L.circleMarker(
+                [48.515401, -123.152515],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_32b463304dd680fea020645cc5ad74a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80f8c529bad12b1a8d27319b060b9e06 = $(`<div id="html_80f8c529bad12b1a8d27319b060b9e06" style="width: 100.0%; height: 100.0%;">         <b>Lime Kiln</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 7<br>         Basin: San Juan         </div>`)[0];
+                popup_32b463304dd680fea020645cc5ad74a6.setContent(html_80f8c529bad12b1a8d27319b060b9e06);
+            
+        
+
+        circle_marker_075405cad5f3125941ed572890e101aa.bindPopup(popup_32b463304dd680fea020645cc5ad74a6)
+        ;
+
+        
+    
+    
+            circle_marker_075405cad5f3125941ed572890e101aa.bindTooltip(
+                `<div>
+                     Lime Kiln: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6fb91efaebda670e4e201664850eb7e5 = L.circleMarker(
+                [47.288135, -122.489],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_022780e22d49fea88671cd17948b9d94 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_809f458c7383a6820339a12f8ee4e898 = $(`<div id="html_809f458c7383a6820339a12f8ee4e898" style="width: 100.0%; height: 100.0%;">         <b>Lobster Shop Wall</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 55<br>         Basin: Central         </div>`)[0];
+                popup_022780e22d49fea88671cd17948b9d94.setContent(html_809f458c7383a6820339a12f8ee4e898);
+            
+        
+
+        circle_marker_6fb91efaebda670e4e201664850eb7e5.bindPopup(popup_022780e22d49fea88671cd17948b9d94)
+        ;
+
+        
+    
+    
+            circle_marker_6fb91efaebda670e4e201664850eb7e5.bindTooltip(
+                `<div>
+                     Lobster Shop Wall: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64949e04641cd0b27ce40e31f94d4465 = L.circleMarker(
+                [47.540152, -122.397713],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_a18de77caebddc270d68de9619bcc147 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b525a61ceebeda0e64fdf07dd8c7a7a = $(`<div id="html_9b525a61ceebeda0e64fdf07dd8c7a7a" style="width: 100.0%; height: 100.0%;">         <b>Lowman Beach Park</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 7<br>         Basin: Central         </div>`)[0];
+                popup_a18de77caebddc270d68de9619bcc147.setContent(html_9b525a61ceebeda0e64fdf07dd8c7a7a);
+            
+        
+
+        circle_marker_64949e04641cd0b27ce40e31f94d4465.bindPopup(popup_a18de77caebddc270d68de9619bcc147)
+        ;
+
+        
+    
+    
+            circle_marker_64949e04641cd0b27ce40e31f94d4465.bindTooltip(
+                `<div>
+                     Lowman Beach Park: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7affe30ee2d3319fce591641e2567a64 = L.circleMarker(
+                [47.362792, -122.439769],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_b874191f3e41ff81ec5876a34f6d6b5a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb3ea46c1deeab8ccf6424b4f9f25267 = $(`<div id="html_eb3ea46c1deeab8ccf6424b4f9f25267" style="width: 100.0%; height: 100.0%;">         <b>Maury Island Barges</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 14<br>         Basin: Central         </div>`)[0];
+                popup_b874191f3e41ff81ec5876a34f6d6b5a.setContent(html_eb3ea46c1deeab8ccf6424b4f9f25267);
+            
+        
+
+        circle_marker_7affe30ee2d3319fce591641e2567a64.bindPopup(popup_b874191f3e41ff81ec5876a34f6d6b5a)
+        ;
+
+        
+    
+    
+            circle_marker_7affe30ee2d3319fce591641e2567a64.bindTooltip(
+                `<div>
+                     Maury Island Barges: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_676740e96e504bb9d9398e446af6ea43 = L.circleMarker(
+                [47.569882, -123.012899],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ec832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_71842713e33c2baaf56b53047d47b2ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_088453f68e30d917bc35129974d32c49 = $(`<div id="html_088453f68e30d917bc35129974d32c49" style="width: 100.0%; height: 100.0%;">         <b>Mike's Beach Resort</b><br>         <hr>         Mean Rate: <b>6.00/hr</b><br>         Total Pycno: 3<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 1<br>         Basin: Hood Canal         </div>`)[0];
+                popup_71842713e33c2baaf56b53047d47b2ef.setContent(html_088453f68e30d917bc35129974d32c49);
+            
+        
+
+        circle_marker_676740e96e504bb9d9398e446af6ea43.bindPopup(popup_71842713e33c2baaf56b53047d47b2ef)
+        ;
+
+        
+    
+    
+            circle_marker_676740e96e504bb9d9398e446af6ea43.bindTooltip(
+                `<div>
+                     Mike's Beach Resort: 6.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f42766424e05270c9dd6dcb6948a5928 = L.circleMarker(
+                [47.94664, -122.309245],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#06c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.898979485566356, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_29527c3193e24b045e738d35068c7145 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f2a20866563be595e651e1c5ddecf62 = $(`<div id="html_3f2a20866563be595e651e1c5ddecf62" style="width: 100.0%; height: 100.0%;">         <b>Mukilteo Lighthouse</b><br>         <hr>         Mean Rate: <b>0.49/hr</b><br>         Total Pycno: 5<br>         Detection Rate: 6.2%<br>         <hr>         Transects: 65<br>         Basin: Whidbey         </div>`)[0];
+                popup_29527c3193e24b045e738d35068c7145.setContent(html_3f2a20866563be595e651e1c5ddecf62);
+            
+        
+
+        circle_marker_f42766424e05270c9dd6dcb6948a5928.bindPopup(popup_29527c3193e24b045e738d35068c7145)
+        ;
+
+        
+    
+    
+            circle_marker_f42766424e05270c9dd6dcb6948a5928.bindTooltip(
+                `<div>
+                     Mukilteo Lighthouse: 0.49/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ead65c585886e1803e2caf44cad842f5 = L.circleMarker(
+                [47.950451, -122.299001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_c62446f3923dec69dfe01dcc13a61fb7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a601fd6b963d421d877c3a9758ad8c07 = $(`<div id="html_a601fd6b963d421d877c3a9758ad8c07" style="width: 100.0%; height: 100.0%;">         <b>Mukilteo T-Dock</b><br>         <hr>         Mean Rate: <b>0.08/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 2.0%<br>         <hr>         Transects: 101<br>         Basin: Whidbey         </div>`)[0];
+                popup_c62446f3923dec69dfe01dcc13a61fb7.setContent(html_a601fd6b963d421d877c3a9758ad8c07);
+            
+        
+
+        circle_marker_ead65c585886e1803e2caf44cad842f5.bindPopup(popup_c62446f3923dec69dfe01dcc13a61fb7)
+        ;
+
+        
+    
+    
+            circle_marker_ead65c585886e1803e2caf44cad842f5.bindTooltip(
+                `<div>
+                     Mukilteo T-Dock: 0.08/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c7be7b4b2c5ba837d537e71b34e831c = L.circleMarker(
+                [47.60568, -122.497408],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_9d9b6920ebee0dc4d8a5e9753041309c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce2fab48d7cb30894bd5fdb550b660fd = $(`<div id="html_ce2fab48d7cb30894bd5fdb550b660fd" style="width: 100.0%; height: 100.0%;">         <b>Norrander's</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 57<br>         Basin: Central         </div>`)[0];
+                popup_9d9b6920ebee0dc4d8a5e9753041309c.setContent(html_ce2fab48d7cb30894bd5fdb550b660fd);
+            
+        
+
+        circle_marker_2c7be7b4b2c5ba837d537e71b34e831c.bindPopup(popup_9d9b6920ebee0dc4d8a5e9753041309c)
+        ;
+
+        
+    
+    
+            circle_marker_2c7be7b4b2c5ba837d537e71b34e831c.bindTooltip(
+                `<div>
+                     Norrander's: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9262f2b3d2f30b26863735b2ee289218 = L.circleMarker(
+                [48.14372132, -122.7801511],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_2a2b00dd0fe0d3d53234f36ea76efec7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2045bb1d8d64b94fc1356ad7c16b575 = $(`<div id="html_c2045bb1d8d64b94fc1356ad7c16b575" style="width: 100.0%; height: 100.0%;">         <b>North Beach</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 14<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_2a2b00dd0fe0d3d53234f36ea76efec7.setContent(html_c2045bb1d8d64b94fc1356ad7c16b575);
+            
+        
+
+        circle_marker_9262f2b3d2f30b26863735b2ee289218.bindPopup(popup_2a2b00dd0fe0d3d53234f36ea76efec7)
+        ;
+
+        
+    
+    
+            circle_marker_9262f2b3d2f30b26863735b2ee289218.bindTooltip(
+                `<div>
+                     North Beach: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_21ec89df00fd04494678ccfb3588bdfe = L.circleMarker(
+                [48.41883, -122.67067],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_fa29aeb60c0196e6653f2906340da424 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6543b6f815ef0d4c7dc6c8386242fabd = $(`<div id="html_6543b6f815ef0d4c7dc6c8386242fabd" style="width: 100.0%; height: 100.0%;">         <b>Northwest Island</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 43<br>         Basin: San Juan         </div>`)[0];
+                popup_fa29aeb60c0196e6653f2906340da424.setContent(html_6543b6f815ef0d4c7dc6c8386242fabd);
+            
+        
+
+        circle_marker_21ec89df00fd04494678ccfb3588bdfe.bindPopup(popup_fa29aeb60c0196e6653f2906340da424)
+        ;
+
+        
+    
+    
+            circle_marker_21ec89df00fd04494678ccfb3588bdfe.bindTooltip(
+                `<div>
+                     Northwest Island: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a5c34db47fb5bb4bfd495ac44b7b2bf = L.circleMarker(
+                [48.604259, -123.09296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#05c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.47213595499958, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_e27307ad55bacbc0e9d192f6b698537d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9eb8e5e82f1366f90cf0c6cd7b11a992 = $(`<div id="html_9eb8e5e82f1366f90cf0c6cd7b11a992" style="width: 100.0%; height: 100.0%;">         <b>O'Neal Island</b><br>         <hr>         Mean Rate: <b>0.44/hr</b><br>         Total Pycno: 4<br>         Detection Rate: 11.8%<br>         <hr>         Transects: 17<br>         Basin: San Juan         </div>`)[0];
+                popup_e27307ad55bacbc0e9d192f6b698537d.setContent(html_9eb8e5e82f1366f90cf0c6cd7b11a992);
+            
+        
+
+        circle_marker_9a5c34db47fb5bb4bfd495ac44b7b2bf.bindPopup(popup_e27307ad55bacbc0e9d192f6b698537d)
+        ;
+
+        
+    
+    
+            circle_marker_9a5c34db47fb5bb4bfd495ac44b7b2bf.bindTooltip(
+                `<div>
+                     O'Neal Island: 0.44/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e4198707210340deb30046d29b2a52c7 = L.circleMarker(
+                [47.447568, -123.112392],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.2664991614216, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_e99d2513af962233fb881dbca3bfb34a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fbb48c37581b91cb98e5261c46dbc5bc = $(`<div id="html_fbb48c37581b91cb98e5261c46dbc5bc" style="width: 100.0%; height: 100.0%;">         <b>Octopus Hole</b><br>         <hr>         Mean Rate: <b>2.87/hr</b><br>         Total Pycno: 43<br>         Detection Rate: 22.8%<br>         <hr>         Transects: 79<br>         Basin: Hood Canal         </div>`)[0];
+                popup_e99d2513af962233fb881dbca3bfb34a.setContent(html_fbb48c37581b91cb98e5261c46dbc5bc);
+            
+        
+
+        circle_marker_e4198707210340deb30046d29b2a52c7.bindPopup(popup_e99d2513af962233fb881dbca3bfb34a)
+        ;
+
+        
+    
+    
+            circle_marker_e4198707210340deb30046d29b2a52c7.bindTooltip(
+                `<div>
+                     Octopus Hole: 2.87/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18d9f1c03c66474a71dfaf45bbd899cb = L.circleMarker(
+                [47.313981, -122.528086],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_e224c46745fe9d67bde82fdeb23a95e7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc05142cfdf67b90810f7a7215803e6d = $(`<div id="html_cc05142cfdf67b90810f7a7215803e6d" style="width: 100.0%; height: 100.0%;">         <b>Owen Beach</b><br>         <hr>         Mean Rate: <b>1.60/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 6.7%<br>         <hr>         Transects: 15<br>         Basin: Central         </div>`)[0];
+                popup_e224c46745fe9d67bde82fdeb23a95e7.setContent(html_cc05142cfdf67b90810f7a7215803e6d);
+            
+        
+
+        circle_marker_18d9f1c03c66474a71dfaf45bbd899cb.bindPopup(popup_e224c46745fe9d67bde82fdeb23a95e7)
+        ;
+
+        
+    
+    
+            circle_marker_18d9f1c03c66474a71dfaf45bbd899cb.bindTooltip(
+                `<div>
+                     Owen Beach: 1.60/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a08a502a7b3ac6d840039d7701aa4ff4 = L.circleMarker(
+                [49.346019, -123.304703],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#04c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_69ecf95f1b00b0ccf1f972c4e7410235 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4f5bb30eb3f2eb6187fbdc218d658bf1 = $(`<div id="html_4f5bb30eb3f2eb6187fbdc218d658bf1" style="width: 100.0%; height: 100.0%;">         <b>Passage Island</b><br>         <hr>         Mean Rate: <b>0.33/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 3.8%<br>         <hr>         Transects: 26<br>         Basin: Howe Sound         </div>`)[0];
+                popup_69ecf95f1b00b0ccf1f972c4e7410235.setContent(html_4f5bb30eb3f2eb6187fbdc218d658bf1);
+            
+        
+
+        circle_marker_a08a502a7b3ac6d840039d7701aa4ff4.bindPopup(popup_69ecf95f1b00b0ccf1f972c4e7410235)
+        ;
+
+        
+    
+    
+            circle_marker_a08a502a7b3ac6d840039d7701aa4ff4.bindTooltip(
+                `<div>
+                     Passage Island: 0.33/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6972ca793701bef5fe0fd3fc68606ed6 = L.circleMarker(
+                [48.481855, -123.094404],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_be070578e759bcfe23abcfc7dc7df358 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_99aeeeb9c9d8e8cf19f63bb8d84df368 = $(`<div id="html_99aeeeb9c9d8e8cf19f63bb8d84df368" style="width: 100.0%; height: 100.0%;">         <b>Pile Point</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 54<br>         Basin: San Juan         </div>`)[0];
+                popup_be070578e759bcfe23abcfc7dc7df358.setContent(html_99aeeeb9c9d8e8cf19f63bb8d84df368);
+            
+        
+
+        circle_marker_6972ca793701bef5fe0fd3fc68606ed6.bindPopup(popup_be070578e759bcfe23abcfc7dc7df358)
+        ;
+
+        
+    
+    
+            circle_marker_6972ca793701bef5fe0fd3fc68606ed6.bindTooltip(
+                `<div>
+                     Pile Point: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e85f630153cb2df4c247207e1e97aa45 = L.circleMarker(
+                [48.56323, -123.02555],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_2564cb2ebbb547f7ed6c4c5996316573 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_306cd53535f1a54e518e9557f5951deb = $(`<div id="html_306cd53535f1a54e518e9557f5951deb" style="width: 100.0%; height: 100.0%;">         <b>Point Caution</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 5<br>         Basin: San Juan         </div>`)[0];
+                popup_2564cb2ebbb547f7ed6c4c5996316573.setContent(html_306cd53535f1a54e518e9557f5951deb);
+            
+        
+
+        circle_marker_e85f630153cb2df4c247207e1e97aa45.bindPopup(popup_2564cb2ebbb547f7ed6c4c5996316573)
+        ;
+
+        
+    
+    
+            circle_marker_e85f630153cb2df4c247207e1e97aa45.bindTooltip(
+                `<div>
+                     Point Caution: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e83cff8d397d67821142b61883648b90 = L.circleMarker(
+                [47.333038, -122.519207],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_1f3bb52bbbb7bd539020ca5f3d36efc8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f3486909d4958fe1042d646109738b1a = $(`<div id="html_f3486909d4958fe1042d646109738b1a" style="width: 100.0%; height: 100.0%;">         <b>Point Dalco</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 1<br>         Basin: Central         </div>`)[0];
+                popup_1f3bb52bbbb7bd539020ca5f3d36efc8.setContent(html_f3486909d4958fe1042d646109738b1a);
+            
+        
+
+        circle_marker_e83cff8d397d67821142b61883648b90.bindPopup(popup_1f3bb52bbbb7bd539020ca5f3d36efc8)
+        ;
+
+        
+    
+    
+            circle_marker_e83cff8d397d67821142b61883648b90.bindTooltip(
+                `<div>
+                     Point Dalco: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ef0e59a296911834708bb41d859ab5f = L.circleMarker(
+                [47.319055, -122.544862],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_77d53131c2d4fccca9c68eb51952031b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e464375a5f1fd258e39052fe3567632 = $(`<div id="html_1e464375a5f1fd258e39052fe3567632" style="width: 100.0%; height: 100.0%;">         <b>Point Defiance North Wall</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 7<br>         Basin: Central         </div>`)[0];
+                popup_77d53131c2d4fccca9c68eb51952031b.setContent(html_1e464375a5f1fd258e39052fe3567632);
+            
+        
+
+        circle_marker_0ef0e59a296911834708bb41d859ab5f.bindPopup(popup_77d53131c2d4fccca9c68eb51952031b)
+        ;
+
+        
+    
+    
+            circle_marker_0ef0e59a296911834708bb41d859ab5f.bindTooltip(
+                `<div>
+                     Point Defiance North Wall: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7898fd5167ce1e9e36eca0455226191 = L.circleMarker(
+                [47.314675, -122.547696],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_068da250070e3c198bf26cd31d869bef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f255f8539c2cafe0039f68c4d214b684 = $(`<div id="html_f255f8539c2cafe0039f68c4d214b684" style="width: 100.0%; height: 100.0%;">         <b>Point Defiance West Kelp Beds</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 4<br>         Basin: Central         </div>`)[0];
+                popup_068da250070e3c198bf26cd31d869bef.setContent(html_f255f8539c2cafe0039f68c4d214b684);
+            
+        
+
+        circle_marker_a7898fd5167ce1e9e36eca0455226191.bindPopup(popup_068da250070e3c198bf26cd31d869bef)
+        ;
+
+        
+    
+    
+            circle_marker_a7898fd5167ce1e9e36eca0455226191.bindTooltip(
+                `<div>
+                     Point Defiance West Kelp Beds: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_088079780f3d05d295f860ac6a9bf561 = L.circleMarker(
+                [48.560418, -122.988549],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_fb03744b8d15b92457e05b3ea83681f6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf47d732d6cbca13592d0b28a5066d05 = $(`<div id="html_cf47d732d6cbca13592d0b28a5066d05" style="width: 100.0%; height: 100.0%;">         <b>Point George</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 4<br>         Basin: San Juan         </div>`)[0];
+                popup_fb03744b8d15b92457e05b3ea83681f6.setContent(html_cf47d732d6cbca13592d0b28a5066d05);
+            
+        
+
+        circle_marker_088079780f3d05d295f860ac6a9bf561.bindPopup(popup_fb03744b8d15b92457e05b3ea83681f6)
+        ;
+
+        
+    
+    
+            circle_marker_088079780f3d05d295f860ac6a9bf561.bindTooltip(
+                `<div>
+                     Point George: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_780d53396f0822ddce539461446157f6 = L.circleMarker(
+                [48.115774, -122.750321],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#07c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.47213595499958, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_66957a53746292dfde4deb75a9bcb282 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f6d4694573513399a9241cf8761c9ee = $(`<div id="html_3f6d4694573513399a9241cf8761c9ee" style="width: 100.0%; height: 100.0%;">         <b>Point Hudson</b><br>         <hr>         Mean Rate: <b>0.60/hr</b><br>         Total Pycno: 4<br>         Detection Rate: 7.1%<br>         <hr>         Transects: 56<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_66957a53746292dfde4deb75a9bcb282.setContent(html_3f6d4694573513399a9241cf8761c9ee);
+            
+        
+
+        circle_marker_780d53396f0822ddce539461446157f6.bindPopup(popup_66957a53746292dfde4deb75a9bcb282)
+        ;
+
+        
+    
+    
+            circle_marker_780d53396f0822ddce539461446157f6.bindTooltip(
+                `<div>
+                     Point Hudson: 0.60/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5076ce36adbb2f3a92f8f3247915d9f = L.circleMarker(
+                [47.299244, -122.502268],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_ab6c581f97bd250e3e6594cd79588557 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa46b6ad1b603acb628116adb132c5b8 = $(`<div id="html_fa46b6ad1b603acb628116adb132c5b8" style="width: 100.0%; height: 100.0%;">         <b>Point Ruston</b><br>         <hr>         Mean Rate: <b>0.08/hr</b><br>         Total Pycno: 3<br>         Detection Rate: 1.6%<br>         <hr>         Transects: 62<br>         Basin: Central         </div>`)[0];
+                popup_ab6c581f97bd250e3e6594cd79588557.setContent(html_fa46b6ad1b603acb628116adb132c5b8);
+            
+        
+
+        circle_marker_f5076ce36adbb2f3a92f8f3247915d9f.bindPopup(popup_ab6c581f97bd250e3e6594cd79588557)
+        ;
+
+        
+    
+    
+            circle_marker_f5076ce36adbb2f3a92f8f3247915d9f.bindTooltip(
+                `<div>
+                     Point Ruston: 0.08/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_805cf9de900c8f80181243e9f7b2ab05 = L.circleMarker(
+                [47.763705, -122.853794],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#13c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.656854249492381, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_ca0f6bfc3edb7ffeda775377895b17fe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b4546a63cc1bdebff66af0d10c61b1e = $(`<div id="html_9b4546a63cc1bdebff66af0d10c61b1e" style="width: 100.0%; height: 100.0%;">         <b>Point Whitney Shellfish Lab</b><br>         <hr>         Mean Rate: <b>1.51/hr</b><br>         Total Pycno: 7<br>         Detection Rate: 11.8%<br>         <hr>         Transects: 51<br>         Basin: Hood Canal         </div>`)[0];
+                popup_ca0f6bfc3edb7ffeda775377895b17fe.setContent(html_9b4546a63cc1bdebff66af0d10c61b1e);
+            
+        
+
+        circle_marker_805cf9de900c8f80181243e9f7b2ab05.bindPopup(popup_ca0f6bfc3edb7ffeda775377895b17fe)
+        ;
+
+        
+    
+    
+            circle_marker_805cf9de900c8f80181243e9f7b2ab05.bindTooltip(
+                `<div>
+                     Point Whitney Shellfish Lab: 1.51/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0456e29fe09f373eed6f983e8d1027d = L.circleMarker(
+                [47.905306, -122.376914],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_95e7f81f9736ab55bdde330c5e9c2b0b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e49a4d10d4eef83082640cc7d5aed73 = $(`<div id="html_2e49a4d10d4eef83082640cc7d5aed73" style="width: 100.0%; height: 100.0%;">         <b>Possession Point Fingers</b><br>         <hr>         Mean Rate: <b>0.01/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 0.4%<br>         <hr>         Transects: 247<br>         Basin: Whidbey         </div>`)[0];
+                popup_95e7f81f9736ab55bdde330c5e9c2b0b.setContent(html_2e49a4d10d4eef83082640cc7d5aed73);
+            
+        
+
+        circle_marker_d0456e29fe09f373eed6f983e8d1027d.bindPopup(popup_95e7f81f9736ab55bdde330c5e9c2b0b)
+        ;
+
+        
+    
+    
+            circle_marker_d0456e29fe09f373eed6f983e8d1027d.bindTooltip(
+                `<div>
+                     Possession Point Fingers: 0.01/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ae952119770ffa4364f92a605b00d2e = L.circleMarker(
+                [47.761821, -122.849161],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_98be80a39c57cc0020501076fe5245f4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a6711948f9e58fabeaedaf4100a7778 = $(`<div id="html_7a6711948f9e58fabeaedaf4100a7778" style="width: 100.0%; height: 100.0%;">         <b>Pulali Point</b><br>         <hr>         Mean Rate: <b>3.81/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 2<br>         Basin: Hood Canal         </div>`)[0];
+                popup_98be80a39c57cc0020501076fe5245f4.setContent(html_7a6711948f9e58fabeaedaf4100a7778);
+            
+        
+
+        circle_marker_7ae952119770ffa4364f92a605b00d2e.bindPopup(popup_98be80a39c57cc0020501076fe5245f4)
+        ;
+
+        
+    
+    
+            circle_marker_7ae952119770ffa4364f92a605b00d2e.bindTooltip(
+                `<div>
+                     Pulali Point: 3.81/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bcbb4c501417d0afb41d840acfa3af06 = L.circleMarker(
+                [47.735708, -122.85479],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#30c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_dd6b0df09e5a09a909ace1e78e855ec4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9eff1b8e4cd3cd576d59509caba48745 = $(`<div id="html_9eff1b8e4cd3cd576d59509caba48745" style="width: 100.0%; height: 100.0%;">         <b>Pulali Point West Wall</b><br>         <hr>         Mean Rate: <b>3.67/hr</b><br>         Total Pycno: 3<br>         Detection Rate: 40.0%<br>         <hr>         Transects: 5<br>         Basin: Hood Canal         </div>`)[0];
+                popup_dd6b0df09e5a09a909ace1e78e855ec4.setContent(html_9eff1b8e4cd3cd576d59509caba48745);
+            
+        
+
+        circle_marker_bcbb4c501417d0afb41d840acfa3af06.bindPopup(popup_dd6b0df09e5a09a909ace1e78e855ec4)
+        ;
+
+        
+    
+    
+            circle_marker_bcbb4c501417d0afb41d840acfa3af06.bindTooltip(
+                `<div>
+                     Pulali Point West Wall: 3.67/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a652b9b2040b61bd2104853bbe752da = L.circleMarker(
+                [47.34892, -122.325934],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_5b59d625a6ef7f4398b3ca3e7f726282 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b862d10a305aa08f0296453873fb8df8 = $(`<div id="html_b862d10a305aa08f0296453873fb8df8" style="width: 100.0%; height: 100.0%;">         <b>Redondo Beach</b><br>         <hr>         Mean Rate: <b>0.12/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 2.0%<br>         <hr>         Transects: 50<br>         Basin: Central         </div>`)[0];
+                popup_5b59d625a6ef7f4398b3ca3e7f726282.setContent(html_b862d10a305aa08f0296453873fb8df8);
+            
+        
+
+        circle_marker_6a652b9b2040b61bd2104853bbe752da.bindPopup(popup_5b59d625a6ef7f4398b3ca3e7f726282)
+        ;
+
+        
+    
+    
+            circle_marker_6a652b9b2040b61bd2104853bbe752da.bindTooltip(
+                `<div>
+                     Redondo Beach: 0.12/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9656f5968514325b85a11a5c0496235f = L.circleMarker(
+                [48.418732, -122.665668],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_b2f72bce32697293f5e5e66c71bf4550 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6dbbe3cd59f7a7e5ab64981027bc2353 = $(`<div id="html_6dbbe3cd59f7a7e5ab64981027bc2353" style="width: 100.0%; height: 100.0%;">         <b>Rosario Beach Urchin Rocks</b><br>         <hr>         Mean Rate: <b>0.09/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 3.4%<br>         <hr>         Transects: 58<br>         Basin: San Juan         </div>`)[0];
+                popup_b2f72bce32697293f5e5e66c71bf4550.setContent(html_6dbbe3cd59f7a7e5ab64981027bc2353);
+            
+        
+
+        circle_marker_9656f5968514325b85a11a5c0496235f.bindPopup(popup_b2f72bce32697293f5e5e66c71bf4550)
+        ;
+
+        
+    
+    
+            circle_marker_9656f5968514325b85a11a5c0496235f.bindTooltip(
+                `<div>
+                     Rosario Beach Urchin Rocks: 0.09/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_83664aafecdb04096c8fd330e1f73cd7 = L.circleMarker(
+                [48.415477, -122.66477],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_202c329678aa875aec4ed1817082658c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3576e2db7ad72848ab8ef11cf411151a = $(`<div id="html_3576e2db7ad72848ab8ef11cf411151a" style="width: 100.0%; height: 100.0%;">         <b>Rosario Head</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 6<br>         Basin: San Juan         </div>`)[0];
+                popup_202c329678aa875aec4ed1817082658c.setContent(html_3576e2db7ad72848ab8ef11cf411151a);
+            
+        
+
+        circle_marker_83664aafecdb04096c8fd330e1f73cd7.bindPopup(popup_202c329678aa875aec4ed1817082658c)
+        ;
+
+        
+    
+    
+            circle_marker_83664aafecdb04096c8fd330e1f73cd7.bindTooltip(
+                `<div>
+                     Rosario Head: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ccb7588c6bd1dec0086ea18b641e4fd0 = L.circleMarker(
+                [47.630199, -122.940635],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ac832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.898979485566356, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_a4e19a62f6b1bdb2d67dde6561c36bbc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c53f311b09b7895ff14947847192349 = $(`<div id="html_4c53f311b09b7895ff14947847192349" style="width: 100.0%; height: 100.0%;">         <b>Rosie's Ravine</b><br>         <hr>         Mean Rate: <b>9.33/hr</b><br>         Total Pycno: 5<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 3<br>         Basin: Hood Canal         </div>`)[0];
+                popup_a4e19a62f6b1bdb2d67dde6561c36bbc.setContent(html_4c53f311b09b7895ff14947847192349);
+            
+        
+
+        circle_marker_ccb7588c6bd1dec0086ea18b641e4fd0.bindPopup(popup_a4e19a62f6b1bdb2d67dde6561c36bbc)
+        ;
+
+        
+    
+    
+            circle_marker_ccb7588c6bd1dec0086ea18b641e4fd0.bindTooltip(
+                `<div>
+                     Rosie's Ravine: 9.33/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1bf328d7af46142e910a54a3b0aae3c = L.circleMarker(
+                [48.168709, -123.711306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ec832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.6332495807108, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_6c5ea9e8ef229a4ae5c0d1af6af7b207 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8a0ae9843cf1216eb20cc69e70cfe9d = $(`<div id="html_f8a0ae9843cf1216eb20cc69e70cfe9d" style="width: 100.0%; height: 100.0%;">         <b>Salt Creek</b><br>         <hr>         Mean Rate: <b>6.00/hr</b><br>         Total Pycno: 10<br>         Detection Rate: 20.0%<br>         <hr>         Transects: 10<br>         Basin: Strait of Juan de Fuca         </div>`)[0];
+                popup_6c5ea9e8ef229a4ae5c0d1af6af7b207.setContent(html_f8a0ae9843cf1216eb20cc69e70cfe9d);
+            
+        
+
+        circle_marker_c1bf328d7af46142e910a54a3b0aae3c.bindPopup(popup_6c5ea9e8ef229a4ae5c0d1af6af7b207)
+        ;
+
+        
+    
+    
+            circle_marker_c1bf328d7af46142e910a54a3b0aae3c.bindTooltip(
+                `<div>
+                     Salt Creek: 6.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a3fe4de31484d47b7ffb419f3cbc5f3 = L.circleMarker(
+                [47.372727, -122.327878],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_1c3d1dae553b7f20e5802d4dfd60d99f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8101f9e3cb102a85454acb0ba4797f5e = $(`<div id="html_8101f9e3cb102a85454acb0ba4797f5e" style="width: 100.0%; height: 100.0%;">         <b>Saltwater State Park</b><br>         <hr>         Mean Rate: <b>0.02/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 0.8%<br>         <hr>         Transects: 121<br>         Basin: Central         </div>`)[0];
+                popup_1c3d1dae553b7f20e5802d4dfd60d99f.setContent(html_8101f9e3cb102a85454acb0ba4797f5e);
+            
+        
+
+        circle_marker_8a3fe4de31484d47b7ffb419f3cbc5f3.bindPopup(popup_1c3d1dae553b7f20e5802d4dfd60d99f)
+        ;
+
+        
+    
+    
+            circle_marker_8a3fe4de31484d47b7ffb419f3cbc5f3.bindTooltip(
+                `<div>
+                     Saltwater State Park: 0.02/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9f061b3f0985c6cea51003e6f14cd00 = L.circleMarker(
+                [48.423927, -122.675213],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_44ffbf76901d71f099ef919fc49f2d68 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f56d18f58096dcc7111163a557d469f = $(`<div id="html_1f56d18f58096dcc7111163a557d469f" style="width: 100.0%; height: 100.0%;">         <b>Sares Head</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 3<br>         Basin: San Juan         </div>`)[0];
+                popup_44ffbf76901d71f099ef919fc49f2d68.setContent(html_1f56d18f58096dcc7111163a557d469f);
+            
+        
+
+        circle_marker_c9f061b3f0985c6cea51003e6f14cd00.bindPopup(popup_44ffbf76901d71f099ef919fc49f2d68)
+        ;
+
+        
+    
+    
+            circle_marker_c9f061b3f0985c6cea51003e6f14cd00.bindTooltip(
+                `<div>
+                     Sares Head: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0544db0d5993b0dfba6a1359f2cbebc8 = L.circleMarker(
+                [47.651043, -122.845563],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#adc832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.435595774162696, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_118d56d154717c4d9b345c5c001ee760 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb8f2f7ec7b161b92283eee03d4eaffd = $(`<div id="html_bb8f2f7ec7b161b92283eee03d4eaffd" style="width: 100.0%; height: 100.0%;">         <b>Scenic Beach State Park</b><br>         <hr>         Mean Rate: <b>13.19/hr</b><br>         Total Pycno: 75<br>         Detection Rate: 74.1%<br>         <hr>         Transects: 27<br>         Basin: Hood Canal         </div>`)[0];
+                popup_118d56d154717c4d9b345c5c001ee760.setContent(html_bb8f2f7ec7b161b92283eee03d4eaffd);
+            
+        
+
+        circle_marker_0544db0d5993b0dfba6a1359f2cbebc8.bindPopup(popup_118d56d154717c4d9b345c5c001ee760)
+        ;
+
+        
+    
+    
+            circle_marker_0544db0d5993b0dfba6a1359f2cbebc8.bindTooltip(
+                `<div>
+                     Scenic Beach State Park: 13.19/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba5ffc896aa9aab2deedb37cb565e5a9 = L.circleMarker(
+                [47.64656, -122.826454],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_fad252758d88761815cb9ab7d29f8e05 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f86483b908f003a58e15e2f4bad38ac = $(`<div id="html_2f86483b908f003a58e15e2f4bad38ac" style="width: 100.0%; height: 100.0%;">         <b>Seabeck Bay</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 1<br>         Basin: Hood Canal         </div>`)[0];
+                popup_fad252758d88761815cb9ab7d29f8e05.setContent(html_2f86483b908f003a58e15e2f4bad38ac);
+            
+        
+
+        circle_marker_ba5ffc896aa9aab2deedb37cb565e5a9.bindPopup(popup_fad252758d88761815cb9ab7d29f8e05)
+        ;
+
+        
+    
+    
+            circle_marker_ba5ffc896aa9aab2deedb37cb565e5a9.bindTooltip(
+                `<div>
+                     Seabeck Bay: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7bbcf2048b38c1ab86994b502e9fc3d4 = L.circleMarker(
+                [48.267835, -124.297926],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.491933384829668, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_745e06b17eacb3db52c4ed551c9628f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47cd6d6613e38c122aacdc8cc1075e73 = $(`<div id="html_47cd6d6613e38c122aacdc8cc1075e73" style="width: 100.0%; height: 100.0%;">         <b>Sekiu</b><br>         <hr>         Mean Rate: <b>3.00/hr</b><br>         Total Pycno: 59<br>         Detection Rate: 33.3%<br>         <hr>         Transects: 60<br>         Basin: Strait of Juan de Fuca         </div>`)[0];
+                popup_745e06b17eacb3db52c4ed551c9628f8.setContent(html_47cd6d6613e38c122aacdc8cc1075e73);
+            
+        
+
+        circle_marker_7bbcf2048b38c1ab86994b502e9fc3d4.bindPopup(popup_745e06b17eacb3db52c4ed551c9628f8)
+        ;
+
+        
+    
+    
+            circle_marker_7bbcf2048b38c1ab86994b502e9fc3d4.bindTooltip(
+                `<div>
+                     Sekiu: 3.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1bbefdda669e00e7c295df61202ff6a1 = L.circleMarker(
+                [48.5887, -123.021767],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_c4c633e99d0b5d134d94d6c38c160297 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_10c0bffa2e5070731658b2a234a139f5 = $(`<div id="html_10c0bffa2e5070731658b2a234a139f5" style="width: 100.0%; height: 100.0%;">         <b>Shirttail Reef</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 8<br>         Basin: San Juan         </div>`)[0];
+                popup_c4c633e99d0b5d134d94d6c38c160297.setContent(html_10c0bffa2e5070731658b2a234a139f5);
+            
+        
+
+        circle_marker_1bbefdda669e00e7c295df61202ff6a1.bindPopup(popup_c4c633e99d0b5d134d94d6c38c160297)
+        ;
+
+        
+    
+    
+            circle_marker_1bbefdda669e00e7c295df61202ff6a1.bindTooltip(
+                `<div>
+                     Shirttail Reef: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1cc9215b83fa816cdb5a48930163bc90 = L.circleMarker(
+                [48.491072, -122.690203],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_cc0686e1450e32ce06a8bd665b9f77c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_30da74ad68b713e5ba002fff2e6e4960 = $(`<div id="html_30da74ad68b713e5ba002fff2e6e4960" style="width: 100.0%; height: 100.0%;">         <b>Skyline</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 81<br>         Basin: San Juan         </div>`)[0];
+                popup_cc0686e1450e32ce06a8bd665b9f77c5.setContent(html_30da74ad68b713e5ba002fff2e6e4960);
+            
+        
+
+        circle_marker_1cc9215b83fa816cdb5a48930163bc90.bindPopup(popup_cc0686e1450e32ce06a8bd665b9f77c5)
+        ;
+
+        
+    
+    
+            circle_marker_1cc9215b83fa816cdb5a48930163bc90.bindTooltip(
+                `<div>
+                     Skyline: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3117460cda23b2a83dbcd85b296b18a = L.circleMarker(
+                [48.317517, -122.849206],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_a4bb2eb866da1f780d45533fa0308abb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0722b5680bf783817165cd07c75dd426 = $(`<div id="html_0722b5680bf783817165cd07c75dd426" style="width: 100.0%; height: 100.0%;">         <b>Smith Island</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 6<br>         Basin: San Juan         </div>`)[0];
+                popup_a4bb2eb866da1f780d45533fa0308abb.setContent(html_0722b5680bf783817165cd07c75dd426);
+            
+        
+
+        circle_marker_f3117460cda23b2a83dbcd85b296b18a.bindPopup(popup_a4bb2eb866da1f780d45533fa0308abb)
+        ;
+
+        
+    
+    
+            circle_marker_f3117460cda23b2a83dbcd85b296b18a.bindTooltip(
+                `<div>
+                     Smith Island: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_174aef48da78b6c33f9d6cad480315d4 = L.circleMarker(
+                [48.003363, -122.301536],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#12c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_5096c9f229161e898e8bb0518bc8845f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_198db39de0c8734cb76e160f4dc6f6ce = $(`<div id="html_198db39de0c8734cb76e160f4dc6f6ce" style="width: 100.0%; height: 100.0%;">         <b>South Hat Island</b><br>         <hr>         Mean Rate: <b>1.38/hr</b><br>         Total Pycno: 2<br>         Detection Rate: 66.7%<br>         <hr>         Transects: 3<br>         Basin: Whidbey         </div>`)[0];
+                popup_5096c9f229161e898e8bb0518bc8845f.setContent(html_198db39de0c8734cb76e160f4dc6f6ce);
+            
+        
+
+        circle_marker_174aef48da78b6c33f9d6cad480315d4.bindPopup(popup_5096c9f229161e898e8bb0518bc8845f)
+        ;
+
+        
+    
+    
+            circle_marker_174aef48da78b6c33f9d6cad480315d4.bindTooltip(
+                `<div>
+                     South Hat Island: 1.38/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4aa9404eb96c775a255e244d11b0a4b8 = L.circleMarker(
+                [48.441679, -122.931917],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_b675db607b67a3bd6b40b628d5db416f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_328ae9fd5a17b331b948d3b1ddf488a3 = $(`<div id="html_328ae9fd5a17b331b948d3b1ddf488a3" style="width: 100.0%; height: 100.0%;">         <b>Strawberry Falls</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 4<br>         Basin: San Juan         </div>`)[0];
+                popup_b675db607b67a3bd6b40b628d5db416f.setContent(html_328ae9fd5a17b331b948d3b1ddf488a3);
+            
+        
+
+        circle_marker_4aa9404eb96c775a255e244d11b0a4b8.bindPopup(popup_b675db607b67a3bd6b40b628d5db416f)
+        ;
+
+        
+    
+    
+            circle_marker_4aa9404eb96c775a255e244d11b0a4b8.bindTooltip(
+                `<div>
+                     Strawberry Falls: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5011ef658d211760aff4dd58203eea6 = L.circleMarker(
+                [48.76691, -122.918814],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_db06972688b014163c9513991ca0854e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e1d13e3944a445c225d6377197c66f5 = $(`<div id="html_4e1d13e3944a445c225d6377197c66f5" style="width: 100.0%; height: 100.0%;">         <b>Sucia Island - Lawson's Bluff</b><br>         <hr>         Mean Rate: <b>0.08/hr</b><br>         Total Pycno: 1<br>         Detection Rate: 1.8%<br>         <hr>         Transects: 57<br>         Basin: San Juan         </div>`)[0];
+                popup_db06972688b014163c9513991ca0854e.setContent(html_4e1d13e3944a445c225d6377197c66f5);
+            
+        
+
+        circle_marker_b5011ef658d211760aff4dd58203eea6.bindPopup(popup_db06972688b014163c9513991ca0854e)
+        ;
+
+        
+    
+    
+            circle_marker_b5011ef658d211760aff4dd58203eea6.bindTooltip(
+                `<div>
+                     Sucia Island - Lawson's Bluff: 0.08/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ad2f67e5601d81247a81cb60fbe100a = L.circleMarker(
+                [47.435212, -123.119796],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#30c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.3707055437449, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_5e2a2cfbe0447f54bc0b60c6647eda58 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a45fe141a17c913a26e749b9ae7811ab = $(`<div id="html_a45fe141a17c913a26e749b9ae7811ab" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock</b><br>         <hr>         Mean Rate: <b>3.72/hr</b><br>         Total Pycno: 66<br>         Detection Rate: 23.4%<br>         <hr>         Transects: 94<br>         Basin: Hood Canal         </div>`)[0];
+                popup_5e2a2cfbe0447f54bc0b60c6647eda58.setContent(html_a45fe141a17c913a26e749b9ae7811ab);
+            
+        
+
+        circle_marker_1ad2f67e5601d81247a81cb60fbe100a.bindPopup(popup_5e2a2cfbe0447f54bc0b60c6647eda58)
+        ;
+
+        
+    
+    
+            circle_marker_1ad2f67e5601d81247a81cb60fbe100a.bindTooltip(
+                `<div>
+                     Sund Rock: 3.72/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb8652796f73b6f436850bb3128d4926 = L.circleMarker(
+                [47.435963, -123.119565],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#17c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.291502622129181, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_a56273d6fe2f576172ed162803b71130 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2596d422569073bb530db5d6c915ff9b = $(`<div id="html_2596d422569073bb530db5d6c915ff9b" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock North</b><br>         <hr>         Mean Rate: <b>1.79/hr</b><br>         Total Pycno: 6<br>         Detection Rate: 14.3%<br>         <hr>         Transects: 28<br>         Basin: Hood Canal         </div>`)[0];
+                popup_a56273d6fe2f576172ed162803b71130.setContent(html_2596d422569073bb530db5d6c915ff9b);
+            
+        
+
+        circle_marker_bb8652796f73b6f436850bb3128d4926.bindPopup(popup_a56273d6fe2f576172ed162803b71130)
+        ;
+
+        
+    
+    
+            circle_marker_bb8652796f73b6f436850bb3128d4926.bindTooltip(
+                `<div>
+                     Sund Rock North: 1.79/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68e6e7f87c17fd0d6bb1c47b2baafebf = L.circleMarker(
+                [47.434327, -123.119777],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#16c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.246211251235321, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_a41b10abe31596f58919b07a64de55c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4f44ca28953663da07b09f98e70ef679 = $(`<div id="html_4f44ca28953663da07b09f98e70ef679" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock South</b><br>         <hr>         Mean Rate: <b>1.74/hr</b><br>         Total Pycno: 16<br>         Detection Rate: 25.9%<br>         <hr>         Transects: 27<br>         Basin: Hood Canal         </div>`)[0];
+                popup_a41b10abe31596f58919b07a64de55c5.setContent(html_4f44ca28953663da07b09f98e70ef679);
+            
+        
+
+        circle_marker_68e6e7f87c17fd0d6bb1c47b2baafebf.bindPopup(popup_a41b10abe31596f58919b07a64de55c5)
+        ;
+
+        
+    
+    
+            circle_marker_68e6e7f87c17fd0d6bb1c47b2baafebf.bindTooltip(
+                `<div>
+                     Sund Rock South: 1.74/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b5513bee25ffc004fec39b2f3a3128f = L.circleMarker(
+                [47.179051, -122.592],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_bc6efc005e8e9b3b836a405a610aade7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_97c8a27e1c7fa990cd3fbdf74f04bebc = $(`<div id="html_97c8a27e1c7fa990cd3fbdf74f04bebc" style="width: 100.0%; height: 100.0%;">         <b>Sunnyside Beach Park</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 53<br>         Basin: South         </div>`)[0];
+                popup_bc6efc005e8e9b3b836a405a610aade7.setContent(html_97c8a27e1c7fa990cd3fbdf74f04bebc);
+            
+        
+
+        circle_marker_5b5513bee25ffc004fec39b2f3a3128f.bindPopup(popup_bc6efc005e8e9b3b836a405a610aade7)
+        ;
+
+        
+    
+    
+            circle_marker_5b5513bee25ffc004fec39b2f3a3128f.bindTooltip(
+                `<div>
+                     Sunnyside Beach Park: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9fde643b216ebc35c028d15c295553a0 = L.circleMarker(
+                [47.349115, -122.555572],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_8f6a01092c9458ef1a19435c8739f013 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d98ecd2ee849c408b379755681cd97b6 = $(`<div id="html_d98ecd2ee849c408b379755681cd97b6" style="width: 100.0%; height: 100.0%;">         <b>Sunrise Beach State Park</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 22<br>         Basin: Central         </div>`)[0];
+                popup_8f6a01092c9458ef1a19435c8739f013.setContent(html_d98ecd2ee849c408b379755681cd97b6);
+            
+        
+
+        circle_marker_9fde643b216ebc35c028d15c295553a0.bindPopup(popup_8f6a01092c9458ef1a19435c8739f013)
+        ;
+
+        
+    
+    
+            circle_marker_9fde643b216ebc35c028d15c295553a0.bindTooltip(
+                `<div>
+                     Sunrise Beach State Park: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_25a4d4eef9e5457d98a2c7d03edf7de0 = L.circleMarker(
+                [47.265961, -122.550229],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_e92a837ccc1eea7eabff392cb5099710 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1c9cae877f0d8ab32f5a259489c7ca8e = $(`<div id="html_1c9cae877f0d8ab32f5a259489c7ca8e" style="width: 100.0%; height: 100.0%;">         <b>Tacoma Narrows</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 4<br>         Basin: Central         </div>`)[0];
+                popup_e92a837ccc1eea7eabff392cb5099710.setContent(html_1c9cae877f0d8ab32f5a259489c7ca8e);
+            
+        
+
+        circle_marker_25a4d4eef9e5457d98a2c7d03edf7de0.bindPopup(popup_e92a837ccc1eea7eabff392cb5099710)
+        ;
+
+        
+    
+    
+            circle_marker_25a4d4eef9e5457d98a2c7d03edf7de0.bindTooltip(
+                `<div>
+                     Tacoma Narrows: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_add60f2d2fd445b36ac72485d8c303ce = L.circleMarker(
+                [47.283592, -122.547394],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_5d00cc548719d0fb1b5a12239815c81d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fcfe64394bd786c91d5ca45a595a9fad = $(`<div id="html_fcfe64394bd786c91d5ca45a595a9fad" style="width: 100.0%; height: 100.0%;">         <b>Tacoma Narrows - Point Evans</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 1<br>         Basin: South         </div>`)[0];
+                popup_5d00cc548719d0fb1b5a12239815c81d.setContent(html_fcfe64394bd786c91d5ca45a595a9fad);
+            
+        
+
+        circle_marker_add60f2d2fd445b36ac72485d8c303ce.bindPopup(popup_5d00cc548719d0fb1b5a12239815c81d)
+        ;
+
+        
+    
+    
+            circle_marker_add60f2d2fd445b36ac72485d8c303ce.bindTooltip(
+                `<div>
+                     Tacoma Narrows - Point Evans: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a3b4064533c2bcc5fd2a2663baa9e5e = L.circleMarker(
+                [47.721325, -122.88082],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ec832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.47213595499958, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_f46c4fea27b64e8dc44d21092100f651 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d78de8443e0f353f1d2e3d838fec26bf = $(`<div id="html_d78de8443e0f353f1d2e3d838fec26bf" style="width: 100.0%; height: 100.0%;">         <b>The Pinnacle</b><br>         <hr>         Mean Rate: <b>9.60/hr</b><br>         Total Pycno: 4<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 1<br>         Basin: Hood Canal         </div>`)[0];
+                popup_f46c4fea27b64e8dc44d21092100f651.setContent(html_d78de8443e0f353f1d2e3d838fec26bf);
+            
+        
+
+        circle_marker_8a3b4064533c2bcc5fd2a2663baa9e5e.bindPopup(popup_f46c4fea27b64e8dc44d21092100f651)
+        ;
+
+        
+    
+    
+            circle_marker_8a3b4064533c2bcc5fd2a2663baa9e5e.bindTooltip(
+                `<div>
+                     The Pinnacle: 9.60/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ffaed8ac969e7d19db1822f0ead7c289 = L.circleMarker(
+                [47.45313, -122.378457],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_466bb5335e868d7e1c05dcfc9b31ece0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1c3ed26af10729cf0e1c23e457dc1232 = $(`<div id="html_1c3ed26af10729cf0e1c23e457dc1232" style="width: 100.0%; height: 100.0%;">         <b>Three Tree Point</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 24<br>         Basin: Central         </div>`)[0];
+                popup_466bb5335e868d7e1c05dcfc9b31ece0.setContent(html_1c3ed26af10729cf0e1c23e457dc1232);
+            
+        
+
+        circle_marker_ffaed8ac969e7d19db1822f0ead7c289.bindPopup(popup_466bb5335e868d7e1c05dcfc9b31ece0)
+        ;
+
+        
+    
+    
+            circle_marker_ffaed8ac969e7d19db1822f0ead7c289.bindTooltip(
+                `<div>
+                     Three Tree Point: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d44c3fae6f81b351346922662bbceca8 = L.circleMarker(
+                [47.247113, -122.554303],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01c832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_33e59fe98ff95732fec92eb301241a01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bcb89e69a84e17050a4b86499a929761 = $(`<div id="html_bcb89e69a84e17050a4b86499a929761" style="width: 100.0%; height: 100.0%;">         <b>Titlow Beach Park</b><br>         <hr>         Mean Rate: <b>0.10/hr</b><br>         Total Pycno: 3<br>         Detection Rate: 2.0%<br>         <hr>         Transects: 50<br>         Basin: Central         </div>`)[0];
+                popup_33e59fe98ff95732fec92eb301241a01.setContent(html_bcb89e69a84e17050a4b86499a929761);
+            
+        
+
+        circle_marker_d44c3fae6f81b351346922662bbceca8.bindPopup(popup_33e59fe98ff95732fec92eb301241a01)
+        ;
+
+        
+    
+    
+            circle_marker_d44c3fae6f81b351346922662bbceca8.bindTooltip(
+                `<div>
+                     Titlow Beach Park: 0.10/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a41e908f4d73e0ac30544e28178e9899 = L.circleMarker(
+                [47.605289, -122.981388],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3ec832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.491933384829668, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_3a803976143455fd1533a2c24e7afb1c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fec5b149d2fe3cc6bfb3bfd13b584e30 = $(`<div id="html_fec5b149d2fe3cc6bfb3bfd13b584e30" style="width: 100.0%; height: 100.0%;">         <b>Triton Cove</b><br>         <hr>         Mean Rate: <b>4.77/hr</b><br>         Total Pycno: 59<br>         Detection Rate: 39.1%<br>         <hr>         Transects: 64<br>         Basin: Hood Canal         </div>`)[0];
+                popup_3a803976143455fd1533a2c24e7afb1c.setContent(html_fec5b149d2fe3cc6bfb3bfd13b584e30);
+            
+        
+
+        circle_marker_a41e908f4d73e0ac30544e28178e9899.bindPopup(popup_3a803976143455fd1533a2c24e7afb1c)
+        ;
+
+        
+    
+    
+            circle_marker_a41e908f4d73e0ac30544e28178e9899.bindTooltip(
+                `<div>
+                     Triton Cove: 4.77/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8be25f49775a3c27d4c3a6886dca5edf = L.circleMarker(
+                [47.604708, -122.980735],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ac832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.6332495807108, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_beb1047fbafcc622b86f9ffc248993c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_771b682386c8149de2440c641817cbcb = $(`<div id="html_771b682386c8149de2440c641817cbcb" style="width: 100.0%; height: 100.0%;">         <b>Triton Head</b><br>         <hr>         Mean Rate: <b>9.36/hr</b><br>         Total Pycno: 10<br>         Detection Rate: 100.0%<br>         <hr>         Transects: 4<br>         Basin: Hood Canal         </div>`)[0];
+                popup_beb1047fbafcc622b86f9ffc248993c6.setContent(html_771b682386c8149de2440c641817cbcb);
+            
+        
+
+        circle_marker_8be25f49775a3c27d4c3a6886dca5edf.bindPopup(popup_beb1047fbafcc622b86f9ffc248993c6)
+        ;
+
+        
+    
+    
+            circle_marker_8be25f49775a3c27d4c3a6886dca5edf.bindTooltip(
+                `<div>
+                     Triton Head: 9.36/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f72ae07bd85407b929365069f125b4b = L.circleMarker(
+                [48.102921, -122.778725],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0bc832", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_35d688105d9d6c9868c841e2c8751015 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f3c1b963b98b60f9209e3285033346a5 = $(`<div id="html_f3c1b963b98b60f9209e3285033346a5" style="width: 100.0%; height: 100.0%;">         <b>Wreck of the Ranger</b><br>         <hr>         Mean Rate: <b>0.90/hr</b><br>         Total Pycno: 3<br>         Detection Rate: 5.0%<br>         <hr>         Transects: 20<br>         Basin: Admiralty Inlet         </div>`)[0];
+                popup_35d688105d9d6c9868c841e2c8751015.setContent(html_f3c1b963b98b60f9209e3285033346a5);
+            
+        
+
+        circle_marker_9f72ae07bd85407b929365069f125b4b.bindPopup(popup_35d688105d9d6c9868c841e2c8751015)
+        ;
+
+        
+    
+    
+            circle_marker_9f72ae07bd85407b929365069f125b4b.bindTooltip(
+                `<div>
+                     Wreck of the Ranger: 0.90/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b35411a347f003aeb4d010a483a7a198 = L.circleMarker(
+                [47.246737, -122.603261],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1}
+            ).addTo(map_cb8bb70ebc03471d85d09459af94827b);
+        
+    
+        var popup_c9a56934a6ce2966c5cb7af86280878a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_621422b4f1b705b99c23593ec015b083 = $(`<div id="html_621422b4f1b705b99c23593ec015b083" style="width: 100.0%; height: 100.0%;">         <b>Z's Reef</b><br>         <hr>         Mean Rate: <b>0.00/hr</b><br>         Total Pycno: 0<br>         Detection Rate: 0.0%<br>         <hr>         Transects: 20<br>         Basin: South         </div>`)[0];
+                popup_c9a56934a6ce2966c5cb7af86280878a.setContent(html_621422b4f1b705b99c23593ec015b083);
+            
+        
+
+        circle_marker_b35411a347f003aeb4d010a483a7a198.bindPopup(popup_c9a56934a6ce2966c5cb7af86280878a)
+        ;
+
+        
+    
+    
+            circle_marker_b35411a347f003aeb4d010a483a7a198.bindTooltip(
+                `<div>
+                     Z's Reef: 0.00/hr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

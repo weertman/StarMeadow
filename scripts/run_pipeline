@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CONDA_BIN="/home/weertman/miniforge3/bin/conda"
+ENV_NAME="star_meadow"
+LOG_DIR="$REPO_ROOT/logs"
+STAMP="$(date +%Y%m%d-%H%M%S)"
+LOG_FILE="$LOG_DIR/run_all-$STAMP.log"
+
+if [[ ! -x "$CONDA_BIN" ]]; then
+  echo "Error: conda not found at $CONDA_BIN" >&2
+  exit 1
+fi
+
+if ! "$CONDA_BIN" env list | awk '{print $1}' | grep -qx "$ENV_NAME"; then
+  echo "Error: Conda env '$ENV_NAME' not found. Create it with:" >&2
+  echo "  $CONDA_BIN env create -f $REPO_ROOT/code/environment.yml" >&2
+  exit 1
+fi
+
+mkdir -p "$LOG_DIR"
+echo "Running StarMeadow pipeline at $(date)"
+echo "Log: $LOG_FILE"
+cd "$REPO_ROOT/code"
+"$CONDA_BIN" run -n "$ENV_NAME" python run_all.py 2>&1 | tee "$LOG_FILE"

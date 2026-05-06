@@ -1,0 +1,3871 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2d05bd9d44ea17a3ccb69df099802adf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; top: 10px; left: 50px; z-index: 9999;
+                background-color: white; padding: 10px; border-radius: 5px;
+                border: 2px solid gray;">
+        <h4 style="margin: 0;">Sites by Geographic Basin</h4>
+        <p style="margin: 0; font-size: 12px;">Use layer control to filter</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_2d05bd9d44ea17a3ccb69df099802adf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2d05bd9d44ea17a3ccb69df099802adf = L.map(
+                "map_2d05bd9d44ea17a3ccb69df099802adf",
+                {
+                    center: [47.98265147135136, -122.80779323513515],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9b7317d7baa3cbffd0bd0510b5abd7d4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9b7317d7baa3cbffd0bd0510b5abd7d4.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_c23aaeba85651d7e1c56a7f187d10ec7 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_35eed971b3be8a35f0a86de13d50f768 = L.circleMarker(
+                [47.851581, -122.337599],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_fdb86f044e4d3db5bdd6ccfefe28ff36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e856e004dae3fe50c58be2a1c24ce89 = $(`<div id="html_1e856e004dae3fe50c58be2a1c24ce89" style="width: 100.0%; height: 100.0%;">             <b>100 Foot Rock</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 8.00/hr<br>             Total Pycno: 4             </div>`)[0];
+                popup_fdb86f044e4d3db5bdd6ccfefe28ff36.setContent(html_1e856e004dae3fe50c58be2a1c24ce89);
+            
+        
+
+        circle_marker_35eed971b3be8a35f0a86de13d50f768.bindPopup(popup_fdb86f044e4d3db5bdd6ccfefe28ff36)
+        ;
+
+        
+    
+    
+            circle_marker_35eed971b3be8a35f0a86de13d50f768.bindTooltip(
+                `<div>
+                     100 Foot Rock (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b95d83917c84bba114de2bf6c7834b85 = L.circleMarker(
+                [47.588746, -122.379068],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_3c28c0fb8802a1b2fd111e2e2f901278 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b8d06a792dedcc36afaa68133d35fe82 = $(`<div id="html_b8d06a792dedcc36afaa68133d35fe82" style="width: 100.0%; height: 100.0%;">             <b>Alki - Cove 2</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.21/hr<br>             Total Pycno: 14             </div>`)[0];
+                popup_3c28c0fb8802a1b2fd111e2e2f901278.setContent(html_b8d06a792dedcc36afaa68133d35fe82);
+            
+        
+
+        circle_marker_b95d83917c84bba114de2bf6c7834b85.bindPopup(popup_3c28c0fb8802a1b2fd111e2e2f901278)
+        ;
+
+        
+    
+    
+            circle_marker_b95d83917c84bba114de2bf6c7834b85.bindTooltip(
+                `<div>
+                     Alki - Cove 2 (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e6eaf90145be23d593696218819d232 = L.circleMarker(
+                [47.580873, -122.410246],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_bf028dceb8304f171a3e957c36b6697f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0739f22d20b210c1701b7b943e031d51 = $(`<div id="html_0739f22d20b210c1701b7b943e031d51" style="width: 100.0%; height: 100.0%;">             <b>Alki Beach</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 2.00/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_bf028dceb8304f171a3e957c36b6697f.setContent(html_0739f22d20b210c1701b7b943e031d51);
+            
+        
+
+        circle_marker_2e6eaf90145be23d593696218819d232.bindPopup(popup_bf028dceb8304f171a3e957c36b6697f)
+        ;
+
+        
+    
+    
+            circle_marker_2e6eaf90145be23d593696218819d232.bindTooltip(
+                `<div>
+                     Alki Beach (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13c77faf8a73907ac86f146e18c2907e = L.circleMarker(
+                [47.596591, -122.498623],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_6120fd28a900d6b115085c220cc36d90 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0447d0e611180044732d206ca00c936f = $(`<div id="html_0447d0e611180044732d206ca00c936f" style="width: 100.0%; height: 100.0%;">             <b>Blakely Harbor Reef</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_6120fd28a900d6b115085c220cc36d90.setContent(html_0447d0e611180044732d206ca00c936f);
+            
+        
+
+        circle_marker_13c77faf8a73907ac86f146e18c2907e.bindPopup(popup_6120fd28a900d6b115085c220cc36d90)
+        ;
+
+        
+    
+    
+            circle_marker_13c77faf8a73907ac86f146e18c2907e.bindTooltip(
+                `<div>
+                     Blakely Harbor Reef (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43554b9cf93bbec6a45a66c0f7912147 = L.circleMarker(
+                [47.278304, -122.471],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_84db895bb9c4937fe2da51eb1b13c57b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a011905a50400abb119236e2fdda82ee = $(`<div id="html_a011905a50400abb119236e2fdda82ee" style="width: 100.0%; height: 100.0%;">             <b>Dickman Mill</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_84db895bb9c4937fe2da51eb1b13c57b.setContent(html_a011905a50400abb119236e2fdda82ee);
+            
+        
+
+        circle_marker_43554b9cf93bbec6a45a66c0f7912147.bindPopup(popup_84db895bb9c4937fe2da51eb1b13c57b)
+        ;
+
+        
+    
+    
+            circle_marker_43554b9cf93bbec6a45a66c0f7912147.bindTooltip(
+                `<div>
+                     Dickman Mill (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b734c7208ff3c9ae6cfd5896c286850f = L.circleMarker(
+                [47.815161, -122.382522],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_7bf8558f0037ddbbc605c9fefaab170b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21bff42fb29a076deaaca0161ee54f1b = $(`<div id="html_21bff42fb29a076deaaca0161ee54f1b" style="width: 100.0%; height: 100.0%;">             <b>Edmonds Underwater Park</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 0.65/hr<br>             Total Pycno: 6             </div>`)[0];
+                popup_7bf8558f0037ddbbc605c9fefaab170b.setContent(html_21bff42fb29a076deaaca0161ee54f1b);
+            
+        
+
+        circle_marker_b734c7208ff3c9ae6cfd5896c286850f.bindPopup(popup_7bf8558f0037ddbbc605c9fefaab170b)
+        ;
+
+        
+    
+    
+            circle_marker_b734c7208ff3c9ae6cfd5896c286850f.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9f79a496db566b7f863bb0c64eb911e = L.circleMarker(
+                [47.812101, -122.389429],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_546884126aeec1e9fea23f270a6e763c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_74ffe9c52ceffdd5ae60cf5fcf4415b5 = $(`<div id="html_74ffe9c52ceffdd5ae60cf5fcf4415b5" style="width: 100.0%; height: 100.0%;">             <b>Edmonds Underwater Park Pipeline</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 0.16/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_546884126aeec1e9fea23f270a6e763c.setContent(html_74ffe9c52ceffdd5ae60cf5fcf4415b5);
+            
+        
+
+        circle_marker_d9f79a496db566b7f863bb0c64eb911e.bindPopup(popup_546884126aeec1e9fea23f270a6e763c)
+        ;
+
+        
+    
+    
+            circle_marker_d9f79a496db566b7f863bb0c64eb911e.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park Pipeline (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b48f6122f7efd4c95e5dd60d3f5c12d = L.circleMarker(
+                [47.420837, -122.429911],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_a709ac3c104c918a3d1a967e8484ad47 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_61f4760085ac8992a6f05211db118747 = $(`<div id="html_61f4760085ac8992a6f05211db118747" style="width: 100.0%; height: 100.0%;">             <b>KVI Tower</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.21/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_a709ac3c104c918a3d1a967e8484ad47.setContent(html_61f4760085ac8992a6f05211db118747);
+            
+        
+
+        circle_marker_2b48f6122f7efd4c95e5dd60d3f5c12d.bindPopup(popup_a709ac3c104c918a3d1a967e8484ad47)
+        ;
+
+        
+    
+    
+            circle_marker_2b48f6122f7efd4c95e5dd60d3f5c12d.bindTooltip(
+                `<div>
+                     KVI Tower (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86a787767b95ed5e863fc6cfd2c39c65 = L.circleMarker(
+                [47.2842, -122.48315],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_bab636717711ee61845b681d51ae603a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7d00ae4196c3b0f257a1c3f33c5927d9 = $(`<div id="html_7d00ae4196c3b0f257a1c3f33c5927d9" style="width: 100.0%; height: 100.0%;">             <b>Les Davis Marine Park</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.11/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_bab636717711ee61845b681d51ae603a.setContent(html_7d00ae4196c3b0f257a1c3f33c5927d9);
+            
+        
+
+        circle_marker_86a787767b95ed5e863fc6cfd2c39c65.bindPopup(popup_bab636717711ee61845b681d51ae603a)
+        ;
+
+        
+    
+    
+            circle_marker_86a787767b95ed5e863fc6cfd2c39c65.bindTooltip(
+                `<div>
+                     Les Davis Marine Park (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3156f000b481e591ca7b26b1a5edb4a = L.circleMarker(
+                [47.288135, -122.489],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_adb3f5c818c60d050e37609c74bca56a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb121a014af8e87e729cd03bf847a7d9 = $(`<div id="html_bb121a014af8e87e729cd03bf847a7d9" style="width: 100.0%; height: 100.0%;">             <b>Lobster Shop Wall</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_adb3f5c818c60d050e37609c74bca56a.setContent(html_bb121a014af8e87e729cd03bf847a7d9);
+            
+        
+
+        circle_marker_b3156f000b481e591ca7b26b1a5edb4a.bindPopup(popup_adb3f5c818c60d050e37609c74bca56a)
+        ;
+
+        
+    
+    
+            circle_marker_b3156f000b481e591ca7b26b1a5edb4a.bindTooltip(
+                `<div>
+                     Lobster Shop Wall (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_923c6a0673e603f0193668f7b6bb6916 = L.circleMarker(
+                [47.540152, -122.397713],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_489502a75ed3345e67a738687be17441 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8ca948886cdcfd3cda0aec46bc0d8abe = $(`<div id="html_8ca948886cdcfd3cda0aec46bc0d8abe" style="width: 100.0%; height: 100.0%;">             <b>Lowman Beach Park</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_489502a75ed3345e67a738687be17441.setContent(html_8ca948886cdcfd3cda0aec46bc0d8abe);
+            
+        
+
+        circle_marker_923c6a0673e603f0193668f7b6bb6916.bindPopup(popup_489502a75ed3345e67a738687be17441)
+        ;
+
+        
+    
+    
+            circle_marker_923c6a0673e603f0193668f7b6bb6916.bindTooltip(
+                `<div>
+                     Lowman Beach Park (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1985b3fc3ad376367b02363d6b186ac6 = L.circleMarker(
+                [47.362792, -122.439769],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_2f8cac84587c887d20af09f4e4c05def = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5794531bd1fd7c3697a902c8aad2022 = $(`<div id="html_d5794531bd1fd7c3697a902c8aad2022" style="width: 100.0%; height: 100.0%;">             <b>Maury Island Barges</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_2f8cac84587c887d20af09f4e4c05def.setContent(html_d5794531bd1fd7c3697a902c8aad2022);
+            
+        
+
+        circle_marker_1985b3fc3ad376367b02363d6b186ac6.bindPopup(popup_2f8cac84587c887d20af09f4e4c05def)
+        ;
+
+        
+    
+    
+            circle_marker_1985b3fc3ad376367b02363d6b186ac6.bindTooltip(
+                `<div>
+                     Maury Island Barges (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e63b1d40a4b6868f604a42544a206bb6 = L.circleMarker(
+                [47.60568, -122.497408],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_884233ea5b27c16b4713371328fc9483 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_390664c55c3d7faedfaf725cfa689e30 = $(`<div id="html_390664c55c3d7faedfaf725cfa689e30" style="width: 100.0%; height: 100.0%;">             <b>Norrander's</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_884233ea5b27c16b4713371328fc9483.setContent(html_390664c55c3d7faedfaf725cfa689e30);
+            
+        
+
+        circle_marker_e63b1d40a4b6868f604a42544a206bb6.bindPopup(popup_884233ea5b27c16b4713371328fc9483)
+        ;
+
+        
+    
+    
+            circle_marker_e63b1d40a4b6868f604a42544a206bb6.bindTooltip(
+                `<div>
+                     Norrander's (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a52b48485e7a4f924bcb400f1203a054 = L.circleMarker(
+                [47.313981, -122.528086],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_811b6ac85a67ad4680a0a2d5c32b010d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7cd0006c2e4a05ee49c30dba46a19dbc = $(`<div id="html_7cd0006c2e4a05ee49c30dba46a19dbc" style="width: 100.0%; height: 100.0%;">             <b>Owen Beach</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Soft Bottom<br>             <hr>             Mean Rate: 1.60/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_811b6ac85a67ad4680a0a2d5c32b010d.setContent(html_7cd0006c2e4a05ee49c30dba46a19dbc);
+            
+        
+
+        circle_marker_a52b48485e7a4f924bcb400f1203a054.bindPopup(popup_811b6ac85a67ad4680a0a2d5c32b010d)
+        ;
+
+        
+    
+    
+            circle_marker_a52b48485e7a4f924bcb400f1203a054.bindTooltip(
+                `<div>
+                     Owen Beach (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0aa68530c075feee72e6be311f53cd8f = L.circleMarker(
+                [47.333038, -122.519207],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_b80f66db39567938ad3d4b7cbaee94e0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1b759dd84eede4cdf2a38007eabf451c = $(`<div id="html_1b759dd84eede4cdf2a38007eabf451c" style="width: 100.0%; height: 100.0%;">             <b>Point Dalco</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Kelp Forest<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_b80f66db39567938ad3d4b7cbaee94e0.setContent(html_1b759dd84eede4cdf2a38007eabf451c);
+            
+        
+
+        circle_marker_0aa68530c075feee72e6be311f53cd8f.bindPopup(popup_b80f66db39567938ad3d4b7cbaee94e0)
+        ;
+
+        
+    
+    
+            circle_marker_0aa68530c075feee72e6be311f53cd8f.bindTooltip(
+                `<div>
+                     Point Dalco (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e9602e6fb3531fd34798e18c813e500 = L.circleMarker(
+                [47.319055, -122.544862],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_20ba7f9ecb764fd1e017b19db74a6239 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94f810e61dccc622c2efd9452f359502 = $(`<div id="html_94f810e61dccc622c2efd9452f359502" style="width: 100.0%; height: 100.0%;">             <b>Point Defiance North Wall</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_20ba7f9ecb764fd1e017b19db74a6239.setContent(html_94f810e61dccc622c2efd9452f359502);
+            
+        
+
+        circle_marker_6e9602e6fb3531fd34798e18c813e500.bindPopup(popup_20ba7f9ecb764fd1e017b19db74a6239)
+        ;
+
+        
+    
+    
+            circle_marker_6e9602e6fb3531fd34798e18c813e500.bindTooltip(
+                `<div>
+                     Point Defiance North Wall (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9df1fa98de8ae3a5fcad8a3c3e59a9dc = L.circleMarker(
+                [47.314675, -122.547696],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_28ee327b49d8531d8eb481e6d670b2a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3ac9a7d0b296ab029b02af094e59dd7e = $(`<div id="html_3ac9a7d0b296ab029b02af094e59dd7e" style="width: 100.0%; height: 100.0%;">             <b>Point Defiance West Kelp Beds</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Kelp Forest<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_28ee327b49d8531d8eb481e6d670b2a6.setContent(html_3ac9a7d0b296ab029b02af094e59dd7e);
+            
+        
+
+        circle_marker_9df1fa98de8ae3a5fcad8a3c3e59a9dc.bindPopup(popup_28ee327b49d8531d8eb481e6d670b2a6)
+        ;
+
+        
+    
+    
+            circle_marker_9df1fa98de8ae3a5fcad8a3c3e59a9dc.bindTooltip(
+                `<div>
+                     Point Defiance West Kelp Beds (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2ba33811823c04e9c41be5f32a2d914 = L.circleMarker(
+                [47.299244, -122.502268],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_76f164344e0bf067efbdeac89a625cd8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60397926d7c68499888b1af9dbd62a7a = $(`<div id="html_60397926d7c68499888b1af9dbd62a7a" style="width: 100.0%; height: 100.0%;">             <b>Point Ruston</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.08/hr<br>             Total Pycno: 3             </div>`)[0];
+                popup_76f164344e0bf067efbdeac89a625cd8.setContent(html_60397926d7c68499888b1af9dbd62a7a);
+            
+        
+
+        circle_marker_c2ba33811823c04e9c41be5f32a2d914.bindPopup(popup_76f164344e0bf067efbdeac89a625cd8)
+        ;
+
+        
+    
+    
+            circle_marker_c2ba33811823c04e9c41be5f32a2d914.bindTooltip(
+                `<div>
+                     Point Ruston (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc5e956fd56a3348a95d6e85baa5182b = L.circleMarker(
+                [47.34892, -122.325934],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_6e13cdefc11fc16fd5f5d79e9932255a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7d5cc60567ee16767c36a3bfc8894db5 = $(`<div id="html_7d5cc60567ee16767c36a3bfc8894db5" style="width: 100.0%; height: 100.0%;">             <b>Redondo Beach</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.12/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_6e13cdefc11fc16fd5f5d79e9932255a.setContent(html_7d5cc60567ee16767c36a3bfc8894db5);
+            
+        
+
+        circle_marker_fc5e956fd56a3348a95d6e85baa5182b.bindPopup(popup_6e13cdefc11fc16fd5f5d79e9932255a)
+        ;
+
+        
+    
+    
+            circle_marker_fc5e956fd56a3348a95d6e85baa5182b.bindTooltip(
+                `<div>
+                     Redondo Beach (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3bc3b38c76a328061c842962c9132b47 = L.circleMarker(
+                [47.372727, -122.327878],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_cd8369468c3d4a19dc3a3480b6d2182c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60d700b548ee64ec790df48b64755b94 = $(`<div id="html_60d700b548ee64ec790df48b64755b94" style="width: 100.0%; height: 100.0%;">             <b>Saltwater State Park</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.02/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_cd8369468c3d4a19dc3a3480b6d2182c.setContent(html_60d700b548ee64ec790df48b64755b94);
+            
+        
+
+        circle_marker_3bc3b38c76a328061c842962c9132b47.bindPopup(popup_cd8369468c3d4a19dc3a3480b6d2182c)
+        ;
+
+        
+    
+    
+            circle_marker_3bc3b38c76a328061c842962c9132b47.bindTooltip(
+                `<div>
+                     Saltwater State Park (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b756d14f17c593ab820606cb3bae2750 = L.circleMarker(
+                [47.349115, -122.555572],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_c36f78f83a203f606387f611555abd55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f6cf24fef2b6551fd75ae0856e007630 = $(`<div id="html_f6cf24fef2b6551fd75ae0856e007630" style="width: 100.0%; height: 100.0%;">             <b>Sunrise Beach State Park</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_c36f78f83a203f606387f611555abd55.setContent(html_f6cf24fef2b6551fd75ae0856e007630);
+            
+        
+
+        circle_marker_b756d14f17c593ab820606cb3bae2750.bindPopup(popup_c36f78f83a203f606387f611555abd55)
+        ;
+
+        
+    
+    
+            circle_marker_b756d14f17c593ab820606cb3bae2750.bindTooltip(
+                `<div>
+                     Sunrise Beach State Park (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa0711a9f9d79795df008c5cd25c5f2e = L.circleMarker(
+                [47.265961, -122.550229],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_c0f585358e2a7aea338e8510b6bb79d5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_68477174659f43d97a35ccc1bc285dbf = $(`<div id="html_68477174659f43d97a35ccc1bc285dbf" style="width: 100.0%; height: 100.0%;">             <b>Tacoma Narrows</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_c0f585358e2a7aea338e8510b6bb79d5.setContent(html_68477174659f43d97a35ccc1bc285dbf);
+            
+        
+
+        circle_marker_fa0711a9f9d79795df008c5cd25c5f2e.bindPopup(popup_c0f585358e2a7aea338e8510b6bb79d5)
+        ;
+
+        
+    
+    
+            circle_marker_fa0711a9f9d79795df008c5cd25c5f2e.bindTooltip(
+                `<div>
+                     Tacoma Narrows (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54e74decb8317f0e8945a62a377499e9 = L.circleMarker(
+                [47.45313, -122.378457],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_1b00fdeb101381063a5c9f0c465595c9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a796c8a62d08b69236d6189d24addd1 = $(`<div id="html_5a796c8a62d08b69236d6189d24addd1" style="width: 100.0%; height: 100.0%;">             <b>Three Tree Point</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Artificial Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_1b00fdeb101381063a5c9f0c465595c9.setContent(html_5a796c8a62d08b69236d6189d24addd1);
+            
+        
+
+        circle_marker_54e74decb8317f0e8945a62a377499e9.bindPopup(popup_1b00fdeb101381063a5c9f0c465595c9)
+        ;
+
+        
+    
+    
+            circle_marker_54e74decb8317f0e8945a62a377499e9.bindTooltip(
+                `<div>
+                     Three Tree Point (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f124a0786bc78b5a3fe0839c6291c6e = L.circleMarker(
+                [47.247113, -122.554303],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4daf4a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c23aaeba85651d7e1c56a7f187d10ec7);
+        
+    
+        var popup_b5284836d5a9ddc944101c136fd1fafe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf97d0ae5fe1617761ac25ecd52d2a67 = $(`<div id="html_cf97d0ae5fe1617761ac25ecd52d2a67" style="width: 100.0%; height: 100.0%;">             <b>Titlow Beach Park</b><br>             <hr>             Basin: <b>Central</b><br>             Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.10/hr<br>             Total Pycno: 3             </div>`)[0];
+                popup_b5284836d5a9ddc944101c136fd1fafe.setContent(html_cf97d0ae5fe1617761ac25ecd52d2a67);
+            
+        
+
+        circle_marker_2f124a0786bc78b5a3fe0839c6291c6e.bindPopup(popup_b5284836d5a9ddc944101c136fd1fafe)
+        ;
+
+        
+    
+    
+            circle_marker_2f124a0786bc78b5a3fe0839c6291c6e.bindTooltip(
+                `<div>
+                     Titlow Beach Park (Central)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_c23aaeba85651d7e1c56a7f187d10ec7.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_0a1c2ba9229962951148a213b73fba8a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_2b1d8739688ff628a9cf7a2ad619f7a8 = L.circleMarker(
+                [48.163471, -122.641196],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_ef62dfe0aed53489d425f033c1004bf2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_feeeab71523b0cbaf48970a69af2c36f = $(`<div id="html_feeeab71523b0cbaf48970a69af2c36f" style="width: 100.0%; height: 100.0%;">             <b>Admiralty Beach</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_ef62dfe0aed53489d425f033c1004bf2.setContent(html_feeeab71523b0cbaf48970a69af2c36f);
+            
+        
+
+        circle_marker_2b1d8739688ff628a9cf7a2ad619f7a8.bindPopup(popup_ef62dfe0aed53489d425f033c1004bf2)
+        ;
+
+        
+    
+    
+            circle_marker_2b1d8739688ff628a9cf7a2ad619f7a8.bindTooltip(
+                `<div>
+                     Admiralty Beach (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82b7c5f9ecc0df7291b47235e9cac509 = L.circleMarker(
+                [48.162897, -122.637203],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_81e0c385aed713c487b38e2bb4e016dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78467453324c35695ec6cfeb0bd3fc26 = $(`<div id="html_78467453324c35695ec6cfeb0bd3fc26" style="width: 100.0%; height: 100.0%;">             <b>Driftwood Park</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Artificial Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.20/hr<br>             Total Pycno: 6             </div>`)[0];
+                popup_81e0c385aed713c487b38e2bb4e016dd.setContent(html_78467453324c35695ec6cfeb0bd3fc26);
+            
+        
+
+        circle_marker_82b7c5f9ecc0df7291b47235e9cac509.bindPopup(popup_81e0c385aed713c487b38e2bb4e016dd)
+        ;
+
+        
+    
+    
+            circle_marker_82b7c5f9ecc0df7291b47235e9cac509.bindTooltip(
+                `<div>
+                     Driftwood Park (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b1a969475730adf0c30c88fde2a9f09 = L.circleMarker(
+                [48.136638, -122.760193],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_aca22ac47569486d601b119a8d62d393 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_922f370601ced83f96a16eb76b3dd421 = $(`<div id="html_922f370601ced83f96a16eb76b3dd421" style="width: 100.0%; height: 100.0%;">             <b>Fort Worden</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Artificial Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.20/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_aca22ac47569486d601b119a8d62d393.setContent(html_922f370601ced83f96a16eb76b3dd421);
+            
+        
+
+        circle_marker_9b1a969475730adf0c30c88fde2a9f09.bindPopup(popup_aca22ac47569486d601b119a8d62d393)
+        ;
+
+        
+    
+    
+            circle_marker_9b1a969475730adf0c30c88fde2a9f09.bindTooltip(
+                `<div>
+                     Fort Worden (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db3266b803c1a78f5178d1da81b19230 = L.circleMarker(
+                [48.156876, -122.67077],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_574c6c5176a7ff772ad95b8f8edef660 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_113173130be1490f937a72c6998e91f3 = $(`<div id="html_113173130be1490f937a72c6998e91f3" style="width: 100.0%; height: 100.0%;">             <b>Keystone Jetty</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Artificial Reef, Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.60/hr<br>             Total Pycno: 26             </div>`)[0];
+                popup_574c6c5176a7ff772ad95b8f8edef660.setContent(html_113173130be1490f937a72c6998e91f3);
+            
+        
+
+        circle_marker_db3266b803c1a78f5178d1da81b19230.bindPopup(popup_574c6c5176a7ff772ad95b8f8edef660)
+        ;
+
+        
+    
+    
+            circle_marker_db3266b803c1a78f5178d1da81b19230.bindTooltip(
+                `<div>
+                     Keystone Jetty (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc9674066e38e33ede0b338c3feb9499 = L.circleMarker(
+                [48.157998, -122.668452],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_9ddfcb79584348f5c59edcf4ad2c265f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ac0ccf63a4d21fdced83c31d195f988 = $(`<div id="html_2ac0ccf63a4d21fdced83c31d195f988" style="width: 100.0%; height: 100.0%;">             <b>Keystone Jetty - Pilings</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Artificial Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_9ddfcb79584348f5c59edcf4ad2c265f.setContent(html_2ac0ccf63a4d21fdced83c31d195f988);
+            
+        
+
+        circle_marker_bc9674066e38e33ede0b338c3feb9499.bindPopup(popup_9ddfcb79584348f5c59edcf4ad2c265f)
+        ;
+
+        
+    
+    
+            circle_marker_bc9674066e38e33ede0b338c3feb9499.bindTooltip(
+                `<div>
+                     Keystone Jetty - Pilings (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be76939fde0e0f5dbfb585c6e214eee6 = L.circleMarker(
+                [48.14372132, -122.7801511],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_2310cf559c197a472af4f427c3135c78 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e915b6f282ad455dc0feac7decf92287 = $(`<div id="html_e915b6f282ad455dc0feac7decf92287" style="width: 100.0%; height: 100.0%;">             <b>North Beach</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_2310cf559c197a472af4f427c3135c78.setContent(html_e915b6f282ad455dc0feac7decf92287);
+            
+        
+
+        circle_marker_be76939fde0e0f5dbfb585c6e214eee6.bindPopup(popup_2310cf559c197a472af4f427c3135c78)
+        ;
+
+        
+    
+    
+            circle_marker_be76939fde0e0f5dbfb585c6e214eee6.bindTooltip(
+                `<div>
+                     North Beach (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5401c4d7247f895b12c1e5d39909d3fe = L.circleMarker(
+                [48.115774, -122.750321],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_7cbc19c6d9b5d5e640848573e80db781 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee6e83190824c7c461c488bf39b3cfb7 = $(`<div id="html_ee6e83190824c7c461c488bf39b3cfb7" style="width: 100.0%; height: 100.0%;">             <b>Point Hudson</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.60/hr<br>             Total Pycno: 4             </div>`)[0];
+                popup_7cbc19c6d9b5d5e640848573e80db781.setContent(html_ee6e83190824c7c461c488bf39b3cfb7);
+            
+        
+
+        circle_marker_5401c4d7247f895b12c1e5d39909d3fe.bindPopup(popup_7cbc19c6d9b5d5e640848573e80db781)
+        ;
+
+        
+    
+    
+            circle_marker_5401c4d7247f895b12c1e5d39909d3fe.bindTooltip(
+                `<div>
+                     Point Hudson (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec9abc36c1cba2ddb69d3ad42b0b1fec = L.circleMarker(
+                [48.102921, -122.778725],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff33", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_0a1c2ba9229962951148a213b73fba8a);
+        
+    
+        var popup_184ea64c3cb4b1b09732a6623215b469 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_724afaaf77ce45e791fe0e37eb4fc343 = $(`<div id="html_724afaaf77ce45e791fe0e37eb4fc343" style="width: 100.0%; height: 100.0%;">             <b>Wreck of the Ranger</b><br>             <hr>             Basin: <b>Admiralty Inlet</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 0.90/hr<br>             Total Pycno: 3             </div>`)[0];
+                popup_184ea64c3cb4b1b09732a6623215b469.setContent(html_724afaaf77ce45e791fe0e37eb4fc343);
+            
+        
+
+        circle_marker_ec9abc36c1cba2ddb69d3ad42b0b1fec.bindPopup(popup_184ea64c3cb4b1b09732a6623215b469)
+        ;
+
+        
+    
+    
+            circle_marker_ec9abc36c1cba2ddb69d3ad42b0b1fec.bindTooltip(
+                `<div>
+                     Wreck of the Ranger (Admiralty Inlet)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_0a1c2ba9229962951148a213b73fba8a.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_b19449db768a18e9e71961c003fc2998 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_700d7217033c3ee561bbb031203f84c9 = L.circleMarker(
+                [49.515547, -123.295337],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f781bf", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b19449db768a18e9e71961c003fc2998);
+        
+    
+        var popup_2cdae58633c44fdb22ec993ebb4beede = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2449115a23ac819cf5c7d89e159d21a9 = $(`<div id="html_2449115a23ac819cf5c7d89e159d21a9" style="width: 100.0%; height: 100.0%;">             <b>Anvil Island</b><br>             <hr>             Basin: <b>Howe Sound</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_2cdae58633c44fdb22ec993ebb4beede.setContent(html_2449115a23ac819cf5c7d89e159d21a9);
+            
+        
+
+        circle_marker_700d7217033c3ee561bbb031203f84c9.bindPopup(popup_2cdae58633c44fdb22ec993ebb4beede)
+        ;
+
+        
+    
+    
+            circle_marker_700d7217033c3ee561bbb031203f84c9.bindTooltip(
+                `<div>
+                     Anvil Island (Howe Sound)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f61585cd251c163ce76706ffa3b46700 = L.circleMarker(
+                [49.36309, -123.291585],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f781bf", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b19449db768a18e9e71961c003fc2998);
+        
+    
+        var popup_f8f2381940e0e44ae1720fe8d698cc76 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f306421e19e7343299b7887685707c47 = $(`<div id="html_f306421e19e7343299b7887685707c47" style="width: 100.0%; height: 100.0%;">             <b>Bird Islet</b><br>             <hr>             Basin: <b>Howe Sound</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.07/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_f8f2381940e0e44ae1720fe8d698cc76.setContent(html_f306421e19e7343299b7887685707c47);
+            
+        
+
+        circle_marker_f61585cd251c163ce76706ffa3b46700.bindPopup(popup_f8f2381940e0e44ae1720fe8d698cc76)
+        ;
+
+        
+    
+    
+            circle_marker_f61585cd251c163ce76706ffa3b46700.bindTooltip(
+                `<div>
+                     Bird Islet (Howe Sound)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d57c5860cf634ba98c3ef222cffa482b = L.circleMarker(
+                [49.490065, -123.329092],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f781bf", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b19449db768a18e9e71961c003fc2998);
+        
+    
+        var popup_53ce5bc3fc3d2db80353d0acefe29b92 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_92798c1842f808b013aaed0a9b22eee2 = $(`<div id="html_92798c1842f808b013aaed0a9b22eee2" style="width: 100.0%; height: 100.0%;">             <b>Brigade</b><br>             <hr>             Basin: <b>Howe Sound</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_53ce5bc3fc3d2db80353d0acefe29b92.setContent(html_92798c1842f808b013aaed0a9b22eee2);
+            
+        
+
+        circle_marker_d57c5860cf634ba98c3ef222cffa482b.bindPopup(popup_53ce5bc3fc3d2db80353d0acefe29b92)
+        ;
+
+        
+    
+    
+            circle_marker_d57c5860cf634ba98c3ef222cffa482b.bindTooltip(
+                `<div>
+                     Brigade (Howe Sound)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2aa4519190b9c731eba612cfce5818c = L.circleMarker(
+                [49.499396, -123.301971],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f781bf", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b19449db768a18e9e71961c003fc2998);
+        
+    
+        var popup_f321c23e53d96d45d4077f368ea85bfa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3ef8539f918d8638d6eb92c039ae2913 = $(`<div id="html_3ef8539f918d8638d6eb92c039ae2913" style="width: 100.0%; height: 100.0%;">             <b>Christie Islet</b><br>             <hr>             Basin: <b>Howe Sound</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_f321c23e53d96d45d4077f368ea85bfa.setContent(html_3ef8539f918d8638d6eb92c039ae2913);
+            
+        
+
+        circle_marker_e2aa4519190b9c731eba612cfce5818c.bindPopup(popup_f321c23e53d96d45d4077f368ea85bfa)
+        ;
+
+        
+    
+    
+            circle_marker_e2aa4519190b9c731eba612cfce5818c.bindTooltip(
+                `<div>
+                     Christie Islet (Howe Sound)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_debe11ab0ef24970c3b06b25a7fbfc8a = L.circleMarker(
+                [49.422304, -123.410877],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f781bf", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b19449db768a18e9e71961c003fc2998);
+        
+    
+        var popup_47f232afe7e1287304fa716d86afd6e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_519739adef18beb8635a4244da08661e = $(`<div id="html_519739adef18beb8635a4244da08661e" style="width: 100.0%; height: 100.0%;">             <b>Enchanted Forest</b><br>             <hr>             Basin: <b>Howe Sound</b><br>             Habitats: Natural Reef, Sponge Garden<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_47f232afe7e1287304fa716d86afd6e6.setContent(html_519739adef18beb8635a4244da08661e);
+            
+        
+
+        circle_marker_debe11ab0ef24970c3b06b25a7fbfc8a.bindPopup(popup_47f232afe7e1287304fa716d86afd6e6)
+        ;
+
+        
+    
+    
+            circle_marker_debe11ab0ef24970c3b06b25a7fbfc8a.bindTooltip(
+                `<div>
+                     Enchanted Forest (Howe Sound)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_250b1048703953c18ef9b6ba7cf89427 = L.circleMarker(
+                [49.346019, -123.304703],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f781bf", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b19449db768a18e9e71961c003fc2998);
+        
+    
+        var popup_41e3cc94f75826fcd082dd306bc794b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e322d25ac3a3597489ae9f4184cb8bd = $(`<div id="html_6e322d25ac3a3597489ae9f4184cb8bd" style="width: 100.0%; height: 100.0%;">             <b>Passage Island</b><br>             <hr>             Basin: <b>Howe Sound</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.33/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_41e3cc94f75826fcd082dd306bc794b4.setContent(html_6e322d25ac3a3597489ae9f4184cb8bd);
+            
+        
+
+        circle_marker_250b1048703953c18ef9b6ba7cf89427.bindPopup(popup_41e3cc94f75826fcd082dd306bc794b4)
+        ;
+
+        
+    
+    
+            circle_marker_250b1048703953c18ef9b6ba7cf89427.bindTooltip(
+                `<div>
+                     Passage Island (Howe Sound)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_b19449db768a18e9e71961c003fc2998.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_48f4e98e323455a629c9de57d4920fb4 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_8761cf4de4d0a6c714154a43681a91a5 = L.circleMarker(
+                [48.151033, -123.636306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a65628", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_48f4e98e323455a629c9de57d4920fb4);
+        
+    
+        var popup_894007ada50c6a6833a38363c35161ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a816dd15216b12783bac1631c8cf70d = $(`<div id="html_8a816dd15216b12783bac1631c8cf70d" style="width: 100.0%; height: 100.0%;">             <b>Bachelor Rock</b><br>             <hr>             Basin: <b>Strait of Juan de Fuca</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 4.43/hr<br>             Total Pycno: 4             </div>`)[0];
+                popup_894007ada50c6a6833a38363c35161ca.setContent(html_8a816dd15216b12783bac1631c8cf70d);
+            
+        
+
+        circle_marker_8761cf4de4d0a6c714154a43681a91a5.bindPopup(popup_894007ada50c6a6833a38363c35161ca)
+        ;
+
+        
+    
+    
+            circle_marker_8761cf4de4d0a6c714154a43681a91a5.bindTooltip(
+                `<div>
+                     Bachelor Rock (Strait of Juan de Fuca)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d7e2ef140110e02b095e9141b1e332d = L.circleMarker(
+                [48.141211, -123.436541],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a65628", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_48f4e98e323455a629c9de57d4920fb4);
+        
+    
+        var popup_c9a3dae84899e56cb96ae3db9295e6d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_08a8a7a3c1a15e2037ec25b377b729ac = $(`<div id="html_08a8a7a3c1a15e2037ec25b377b729ac" style="width: 100.0%; height: 100.0%;">             <b>Ediz Hook Log Pile</b><br>             <hr>             Basin: <b>Strait of Juan de Fuca</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 3.90/hr<br>             Total Pycno: 79             </div>`)[0];
+                popup_c9a3dae84899e56cb96ae3db9295e6d8.setContent(html_08a8a7a3c1a15e2037ec25b377b729ac);
+            
+        
+
+        circle_marker_7d7e2ef140110e02b095e9141b1e332d.bindPopup(popup_c9a3dae84899e56cb96ae3db9295e6d8)
+        ;
+
+        
+    
+    
+            circle_marker_7d7e2ef140110e02b095e9141b1e332d.bindTooltip(
+                `<div>
+                     Ediz Hook Log Pile (Strait of Juan de Fuca)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee3cfd1941bd8b0d72a472cca0c2856f = L.circleMarker(
+                [48.140197, -123.422831],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a65628", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_48f4e98e323455a629c9de57d4920fb4);
+        
+    
+        var popup_cf286118fc3d0c2c7175e1b065fdc690 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aca6bb290be25bb49ba2d5b35464aede = $(`<div id="html_aca6bb290be25bb49ba2d5b35464aede" style="width: 100.0%; height: 100.0%;">             <b>Ediz Hook RockPile</b><br>             <hr>             Basin: <b>Strait of Juan de Fuca</b><br>             Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 7.92/hr<br>             Total Pycno: 50             </div>`)[0];
+                popup_cf286118fc3d0c2c7175e1b065fdc690.setContent(html_aca6bb290be25bb49ba2d5b35464aede);
+            
+        
+
+        circle_marker_ee3cfd1941bd8b0d72a472cca0c2856f.bindPopup(popup_cf286118fc3d0c2c7175e1b065fdc690)
+        ;
+
+        
+    
+    
+            circle_marker_ee3cfd1941bd8b0d72a472cca0c2856f.bindTooltip(
+                `<div>
+                     Ediz Hook RockPile (Strait of Juan de Fuca)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d5cfa7f04655cc0541d80d211d07047f = L.circleMarker(
+                [48.15063, -123.636083],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a65628", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_48f4e98e323455a629c9de57d4920fb4);
+        
+    
+        var popup_da9bdb25043bc72a38c48b7839bddbd9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0f518ca2301f20198ae68c1298e4f495 = $(`<div id="html_0f518ca2301f20198ae68c1298e4f495" style="width: 100.0%; height: 100.0%;">             <b>Freshwater Bay</b><br>             <hr>             Basin: <b>Strait of Juan de Fuca</b><br>             Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 2.96/hr<br>             Total Pycno: 12             </div>`)[0];
+                popup_da9bdb25043bc72a38c48b7839bddbd9.setContent(html_0f518ca2301f20198ae68c1298e4f495);
+            
+        
+
+        circle_marker_d5cfa7f04655cc0541d80d211d07047f.bindPopup(popup_da9bdb25043bc72a38c48b7839bddbd9)
+        ;
+
+        
+    
+    
+            circle_marker_d5cfa7f04655cc0541d80d211d07047f.bindTooltip(
+                `<div>
+                     Freshwater Bay (Strait of Juan de Fuca)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c43b30036678e20d364fd64f07dca736 = L.circleMarker(
+                [48.168709, -123.711306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a65628", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_48f4e98e323455a629c9de57d4920fb4);
+        
+    
+        var popup_97ed7d860b776555975fbc7a523feeb9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7f9835265e35e81919e97b62f5172898 = $(`<div id="html_7f9835265e35e81919e97b62f5172898" style="width: 100.0%; height: 100.0%;">             <b>Salt Creek</b><br>             <hr>             Basin: <b>Strait of Juan de Fuca</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 6.00/hr<br>             Total Pycno: 10             </div>`)[0];
+                popup_97ed7d860b776555975fbc7a523feeb9.setContent(html_7f9835265e35e81919e97b62f5172898);
+            
+        
+
+        circle_marker_c43b30036678e20d364fd64f07dca736.bindPopup(popup_97ed7d860b776555975fbc7a523feeb9)
+        ;
+
+        
+    
+    
+            circle_marker_c43b30036678e20d364fd64f07dca736.bindTooltip(
+                `<div>
+                     Salt Creek (Strait of Juan de Fuca)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fe497b2eba4e8ff75946d70ab3be996 = L.circleMarker(
+                [48.267835, -124.297926],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a65628", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_48f4e98e323455a629c9de57d4920fb4);
+        
+    
+        var popup_362779500087fed4de7321009294527c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dcdd046a70e6944ca01381b7247ac66e = $(`<div id="html_dcdd046a70e6944ca01381b7247ac66e" style="width: 100.0%; height: 100.0%;">             <b>Sekiu</b><br>             <hr>             Basin: <b>Strait of Juan de Fuca</b><br>             Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 3.00/hr<br>             Total Pycno: 59             </div>`)[0];
+                popup_362779500087fed4de7321009294527c.setContent(html_dcdd046a70e6944ca01381b7247ac66e);
+            
+        
+
+        circle_marker_3fe497b2eba4e8ff75946d70ab3be996.bindPopup(popup_362779500087fed4de7321009294527c)
+        ;
+
+        
+    
+    
+            circle_marker_3fe497b2eba4e8ff75946d70ab3be996.bindTooltip(
+                `<div>
+                     Sekiu (Strait of Juan de Fuca)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_48f4e98e323455a629c9de57d4920fb4.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_10bc9492341244924374a036a39adcc9 = L.circleMarker(
+                [48.596069, -122.979414],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_0169694b7cb2e09eda5ba1bee647d522 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a8b545464eef5a51fee5f08f74bcc817 = $(`<div id="html_a8b545464eef5a51fee5f08f74bcc817" style="width: 100.0%; height: 100.0%;">             <b>Bell Island East</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_0169694b7cb2e09eda5ba1bee647d522.setContent(html_a8b545464eef5a51fee5f08f74bcc817);
+            
+        
+
+        circle_marker_10bc9492341244924374a036a39adcc9.bindPopup(popup_0169694b7cb2e09eda5ba1bee647d522)
+        ;
+
+        
+    
+    
+            circle_marker_10bc9492341244924374a036a39adcc9.bindTooltip(
+                `<div>
+                     Bell Island East (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb880254d27b18be224fa9f185679ecf = L.circleMarker(
+                [48.59602, -122.981588],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_ca4803279d390ded08fd3fc307557c66 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2dd287873ec0b23f58d93cf51533bee = $(`<div id="html_d2dd287873ec0b23f58d93cf51533bee" style="width: 100.0%; height: 100.0%;">             <b>Bell Island West</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_ca4803279d390ded08fd3fc307557c66.setContent(html_d2dd287873ec0b23f58d93cf51533bee);
+            
+        
+
+        circle_marker_bb880254d27b18be224fa9f185679ecf.bindPopup(popup_ca4803279d390ded08fd3fc307557c66)
+        ;
+
+        
+    
+    
+            circle_marker_bb880254d27b18be224fa9f185679ecf.bindTooltip(
+                `<div>
+                     Bell Island West (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ab26b62366a7810e664cf2a7ba26ab3 = L.circleMarker(
+                [48.594083, -122.965431],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_2083a5fde63b8cfc86a48f039c52c7c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bab521c7750f14d240fa8cdc35909cfa = $(`<div id="html_bab521c7750f14d240fa8cdc35909cfa" style="width: 100.0%; height: 100.0%;">             <b>Broken Point East</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_2083a5fde63b8cfc86a48f039c52c7c1.setContent(html_bab521c7750f14d240fa8cdc35909cfa);
+            
+        
+
+        circle_marker_3ab26b62366a7810e664cf2a7ba26ab3.bindPopup(popup_2083a5fde63b8cfc86a48f039c52c7c1)
+        ;
+
+        
+    
+    
+            circle_marker_3ab26b62366a7810e664cf2a7ba26ab3.bindTooltip(
+                `<div>
+                     Broken Point East (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84b7ca4cc1a3fd7db0ed582066b3f5d0 = L.circleMarker(
+                [48.594669, -122.967602],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_372894d1c9764cd122cd296f51385b0c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b03f0d9c46cb08223331e90dc1650315 = $(`<div id="html_b03f0d9c46cb08223331e90dc1650315" style="width: 100.0%; height: 100.0%;">             <b>Broken Point West</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_372894d1c9764cd122cd296f51385b0c.setContent(html_b03f0d9c46cb08223331e90dc1650315);
+            
+        
+
+        circle_marker_84b7ca4cc1a3fd7db0ed582066b3f5d0.bindPopup(popup_372894d1c9764cd122cd296f51385b0c)
+        ;
+
+        
+    
+    
+            circle_marker_84b7ca4cc1a3fd7db0ed582066b3f5d0.bindTooltip(
+                `<div>
+                     Broken Point West (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38981584f75f9ef111109b704623c12e = L.circleMarker(
+                [48.408773, -122.645138],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_8efe82b4f26bc96b264de403def95464 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_33613117b68942d33fdc508bac147fb0 = $(`<div id="html_33613117b68942d33fdc508bac147fb0" style="width: 100.0%; height: 100.0%;">             <b>Canoe Pass</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_8efe82b4f26bc96b264de403def95464.setContent(html_33613117b68942d33fdc508bac147fb0);
+            
+        
+
+        circle_marker_38981584f75f9ef111109b704623c12e.bindPopup(popup_8efe82b4f26bc96b264de403def95464)
+        ;
+
+        
+    
+    
+            circle_marker_38981584f75f9ef111109b704623c12e.bindTooltip(
+                `<div>
+                     Canoe Pass (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2b96ac33075c57dd7bda4a1f0d4cb94 = L.circleMarker(
+                [48.860126, -122.74981],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_12d401fdd884be92e3dce25bb75908ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_96b7dd99acb24bf98e1daa2d7d00a636 = $(`<div id="html_96b7dd99acb24bf98e1daa2d7d00a636" style="width: 100.0%; height: 100.0%;">             <b>Cherry Point</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_12d401fdd884be92e3dce25bb75908ca.setContent(html_96b7dd99acb24bf98e1daa2d7d00a636);
+            
+        
+
+        circle_marker_b2b96ac33075c57dd7bda4a1f0d4cb94.bindPopup(popup_12d401fdd884be92e3dce25bb75908ca)
+        ;
+
+        
+    
+    
+            circle_marker_b2b96ac33075c57dd7bda4a1f0d4cb94.bindTooltip(
+                `<div>
+                     Cherry Point (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e7b61097febf7be96d13150185dea2cf = L.circleMarker(
+                [48.590582, -123.011323],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_8f09292432adc5337490134c885ec99c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae5758e97ae845ed198bc25699ac8deb = $(`<div id="html_ae5758e97ae845ed198bc25699ac8deb" style="width: 100.0%; height: 100.0%;">             <b>Cliff Island</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_8f09292432adc5337490134c885ec99c.setContent(html_ae5758e97ae845ed198bc25699ac8deb);
+            
+        
+
+        circle_marker_e7b61097febf7be96d13150185dea2cf.bindPopup(popup_8f09292432adc5337490134c885ec99c)
+        ;
+
+        
+    
+    
+            circle_marker_e7b61097febf7be96d13150185dea2cf.bindTooltip(
+                `<div>
+                     Cliff Island (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eda96c0e8ea12d417c98d8e0ae735294 = L.circleMarker(
+                [48.458797, -122.943743],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_feecb9df0188234cea4daa5576d8cb35 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a9cacd12a05df3043271b0e07eeff7b = $(`<div id="html_7a9cacd12a05df3043271b0e07eeff7b" style="width: 100.0%; height: 100.0%;">             <b>Deadman Island</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_feecb9df0188234cea4daa5576d8cb35.setContent(html_7a9cacd12a05df3043271b0e07eeff7b);
+            
+        
+
+        circle_marker_eda96c0e8ea12d417c98d8e0ae735294.bindPopup(popup_feecb9df0188234cea4daa5576d8cb35)
+        ;
+
+        
+    
+    
+            circle_marker_eda96c0e8ea12d417c98d8e0ae735294.bindTooltip(
+                `<div>
+                     Deadman Island (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37c5ab3e44591d6ef1e9938802039ecc = L.circleMarker(
+                [48.405541, -122.64517],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_a400d6ea0ed9a5be6ab4ef604aacf562 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b69c1d71aaf2022178b4fc70b09e73c = $(`<div id="html_0b69c1d71aaf2022178b4fc70b09e73c" style="width: 100.0%; height: 100.0%;">             <b>Deception Pass</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_a400d6ea0ed9a5be6ab4ef604aacf562.setContent(html_0b69c1d71aaf2022178b4fc70b09e73c);
+            
+        
+
+        circle_marker_37c5ab3e44591d6ef1e9938802039ecc.bindPopup(popup_a400d6ea0ed9a5be6ab4ef604aacf562)
+        ;
+
+        
+    
+    
+            circle_marker_37c5ab3e44591d6ef1e9938802039ecc.bindTooltip(
+                `<div>
+                     Deception Pass (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d52f58712a825af3e65fa305d633d3a = L.circleMarker(
+                [48.458027, -123.036267],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_f7fedca16658377d85d9b50a6019cf21 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d4a83e831f97d2973935d23e6be4c40 = $(`<div id="html_3d4a83e831f97d2973935d23e6be4c40" style="width: 100.0%; height: 100.0%;">             <b>Eagle Point</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.34/hr<br>             Total Pycno: 5             </div>`)[0];
+                popup_f7fedca16658377d85d9b50a6019cf21.setContent(html_3d4a83e831f97d2973935d23e6be4c40);
+            
+        
+
+        circle_marker_2d52f58712a825af3e65fa305d633d3a.bindPopup(popup_f7fedca16658377d85d9b50a6019cf21)
+        ;
+
+        
+    
+    
+            circle_marker_2d52f58712a825af3e65fa305d633d3a.bindTooltip(
+                `<div>
+                     Eagle Point (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9435f38886eb3ac75be16af85641ebb5 = L.circleMarker(
+                [48.549823, -123.005027],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_6c81b01035b97cc0f3721f788184bf96 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_114a6ea3a81d83edf27799f6d8c74ee3 = $(`<div id="html_114a6ea3a81d83edf27799f6d8c74ee3" style="width: 100.0%; height: 100.0%;">             <b>Friday Harbor Reef</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_6c81b01035b97cc0f3721f788184bf96.setContent(html_114a6ea3a81d83edf27799f6d8c74ee3);
+            
+        
+
+        circle_marker_9435f38886eb3ac75be16af85641ebb5.bindPopup(popup_6c81b01035b97cc0f3721f788184bf96)
+        ;
+
+        
+    
+    
+            circle_marker_9435f38886eb3ac75be16af85641ebb5.bindTooltip(
+                `<div>
+                     Friday Harbor Reef (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5ac6544e9b84bf127748e13df33ac63 = L.circleMarker(
+                [48.617667, -123.040383],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_316af9f82d932875b882e601a9ae2acd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b566ee0be62330ca5798c8add7aedf2e = $(`<div id="html_b566ee0be62330ca5798c8add7aedf2e" style="width: 100.0%; height: 100.0%;">             <b>Jones Island</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.48/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_316af9f82d932875b882e601a9ae2acd.setContent(html_b566ee0be62330ca5798c8add7aedf2e);
+            
+        
+
+        circle_marker_b5ac6544e9b84bf127748e13df33ac63.bindPopup(popup_316af9f82d932875b882e601a9ae2acd)
+        ;
+
+        
+    
+    
+            circle_marker_b5ac6544e9b84bf127748e13df33ac63.bindTooltip(
+                `<div>
+                     Jones Island (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c98a60d011636ecc12bbdeb8c215304e = L.circleMarker(
+                [48.590498, -123.202768],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_8ab7c9bf196ce58bcdfb891e6c2e87a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6490077872a1df664d65b6c0a21aa8f8 = $(`<div id="html_6490077872a1df664d65b6c0a21aa8f8" style="width: 100.0%; height: 100.0%;">             <b>Kellet's Bluff</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_8ab7c9bf196ce58bcdfb891e6c2e87a2.setContent(html_6490077872a1df664d65b6c0a21aa8f8);
+            
+        
+
+        circle_marker_c98a60d011636ecc12bbdeb8c215304e.bindPopup(popup_8ab7c9bf196ce58bcdfb891e6c2e87a2)
+        ;
+
+        
+    
+    
+            circle_marker_c98a60d011636ecc12bbdeb8c215304e.bindTooltip(
+                `<div>
+                     Kellet's Bluff (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60d07a8cd8af4ee2e5e0882d60ae6979 = L.circleMarker(
+                [48.526141, -122.972398],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_989cdd46d324579b5785c8edc98a29ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_02992eb72476db7e0ec0e3d0b2687533 = $(`<div id="html_02992eb72476db7e0ec0e3d0b2687533" style="width: 100.0%; height: 100.0%;">             <b>Larry's Lair</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_989cdd46d324579b5785c8edc98a29ca.setContent(html_02992eb72476db7e0ec0e3d0b2687533);
+            
+        
+
+        circle_marker_60d07a8cd8af4ee2e5e0882d60ae6979.bindPopup(popup_989cdd46d324579b5785c8edc98a29ca)
+        ;
+
+        
+    
+    
+            circle_marker_60d07a8cd8af4ee2e5e0882d60ae6979.bindTooltip(
+                `<div>
+                     Larry's Lair (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_930f398e30f6871b430ae4aa967798b5 = L.circleMarker(
+                [48.515401, -123.152515],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_9976c9fe0b43f2367b0435dde152e030 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_67c23163192e3852f60f741d9ad36e07 = $(`<div id="html_67c23163192e3852f60f741d9ad36e07" style="width: 100.0%; height: 100.0%;">             <b>Lime Kiln</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_9976c9fe0b43f2367b0435dde152e030.setContent(html_67c23163192e3852f60f741d9ad36e07);
+            
+        
+
+        circle_marker_930f398e30f6871b430ae4aa967798b5.bindPopup(popup_9976c9fe0b43f2367b0435dde152e030)
+        ;
+
+        
+    
+    
+            circle_marker_930f398e30f6871b430ae4aa967798b5.bindTooltip(
+                `<div>
+                     Lime Kiln (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ba8a1f8174603f61207beb37a53b803 = L.circleMarker(
+                [48.41883, -122.67067],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_a048ba305fb43e70a539773ab9f1c403 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b89e7c85677d82886ab38af62f1ae7db = $(`<div id="html_b89e7c85677d82886ab38af62f1ae7db" style="width: 100.0%; height: 100.0%;">             <b>Northwest Island</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_a048ba305fb43e70a539773ab9f1c403.setContent(html_b89e7c85677d82886ab38af62f1ae7db);
+            
+        
+
+        circle_marker_6ba8a1f8174603f61207beb37a53b803.bindPopup(popup_a048ba305fb43e70a539773ab9f1c403)
+        ;
+
+        
+    
+    
+            circle_marker_6ba8a1f8174603f61207beb37a53b803.bindTooltip(
+                `<div>
+                     Northwest Island (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b749e36e02c14ced18b8dd823b67134 = L.circleMarker(
+                [48.604259, -123.09296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_8f720b996533ca5e72a2ee8434381701 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b07fc0a5e3f1f7ca9888160508d7f13c = $(`<div id="html_b07fc0a5e3f1f7ca9888160508d7f13c" style="width: 100.0%; height: 100.0%;">             <b>O'Neal Island</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.44/hr<br>             Total Pycno: 4             </div>`)[0];
+                popup_8f720b996533ca5e72a2ee8434381701.setContent(html_b07fc0a5e3f1f7ca9888160508d7f13c);
+            
+        
+
+        circle_marker_5b749e36e02c14ced18b8dd823b67134.bindPopup(popup_8f720b996533ca5e72a2ee8434381701)
+        ;
+
+        
+    
+    
+            circle_marker_5b749e36e02c14ced18b8dd823b67134.bindTooltip(
+                `<div>
+                     O'Neal Island (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b38a7f54a25adafd80865a6115b4976b = L.circleMarker(
+                [48.481855, -123.094404],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_1602dbb8f32be136d4b7061f9ef193ea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f485f038b515b5cc70f795d6a7437142 = $(`<div id="html_f485f038b515b5cc70f795d6a7437142" style="width: 100.0%; height: 100.0%;">             <b>Pile Point</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_1602dbb8f32be136d4b7061f9ef193ea.setContent(html_f485f038b515b5cc70f795d6a7437142);
+            
+        
+
+        circle_marker_b38a7f54a25adafd80865a6115b4976b.bindPopup(popup_1602dbb8f32be136d4b7061f9ef193ea)
+        ;
+
+        
+    
+    
+            circle_marker_b38a7f54a25adafd80865a6115b4976b.bindTooltip(
+                `<div>
+                     Pile Point (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c7816a50f57898123a11a80da758435 = L.circleMarker(
+                [48.56323, -123.02555],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_c994ba5c87e810d570c78bd2eebfb201 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4b61b282d98cad8d3fee8e017e5914cb = $(`<div id="html_4b61b282d98cad8d3fee8e017e5914cb" style="width: 100.0%; height: 100.0%;">             <b>Point Caution</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_c994ba5c87e810d570c78bd2eebfb201.setContent(html_4b61b282d98cad8d3fee8e017e5914cb);
+            
+        
+
+        circle_marker_9c7816a50f57898123a11a80da758435.bindPopup(popup_c994ba5c87e810d570c78bd2eebfb201)
+        ;
+
+        
+    
+    
+            circle_marker_9c7816a50f57898123a11a80da758435.bindTooltip(
+                `<div>
+                     Point Caution (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_342213e97c40bf71d22ec6477e6a12f2 = L.circleMarker(
+                [48.560418, -122.988549],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_0550ee65dd3ff52a5d3dced3a3635c0f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e1fe099528c210519f37097d2234dec4 = $(`<div id="html_e1fe099528c210519f37097d2234dec4" style="width: 100.0%; height: 100.0%;">             <b>Point George</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_0550ee65dd3ff52a5d3dced3a3635c0f.setContent(html_e1fe099528c210519f37097d2234dec4);
+            
+        
+
+        circle_marker_342213e97c40bf71d22ec6477e6a12f2.bindPopup(popup_0550ee65dd3ff52a5d3dced3a3635c0f)
+        ;
+
+        
+    
+    
+            circle_marker_342213e97c40bf71d22ec6477e6a12f2.bindTooltip(
+                `<div>
+                     Point George (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f486d72de4a1aacf566b27cd0b269c47 = L.circleMarker(
+                [48.418732, -122.665668],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_1d20ec99eede5096cd80eb672b2069ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d369aa6278c3cf1dc6e08298a41bfba1 = $(`<div id="html_d369aa6278c3cf1dc6e08298a41bfba1" style="width: 100.0%; height: 100.0%;">             <b>Rosario Beach Urchin Rocks</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.09/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_1d20ec99eede5096cd80eb672b2069ce.setContent(html_d369aa6278c3cf1dc6e08298a41bfba1);
+            
+        
+
+        circle_marker_f486d72de4a1aacf566b27cd0b269c47.bindPopup(popup_1d20ec99eede5096cd80eb672b2069ce)
+        ;
+
+        
+    
+    
+            circle_marker_f486d72de4a1aacf566b27cd0b269c47.bindTooltip(
+                `<div>
+                     Rosario Beach Urchin Rocks (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e7ac7bfd7434157932536db966c27c09 = L.circleMarker(
+                [48.415477, -122.66477],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_ec6862a7b8bd10959c79141b4e0ad629 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_81ae54ff9729ec0977a6b01efe0a86b0 = $(`<div id="html_81ae54ff9729ec0977a6b01efe0a86b0" style="width: 100.0%; height: 100.0%;">             <b>Rosario Head</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_ec6862a7b8bd10959c79141b4e0ad629.setContent(html_81ae54ff9729ec0977a6b01efe0a86b0);
+            
+        
+
+        circle_marker_e7ac7bfd7434157932536db966c27c09.bindPopup(popup_ec6862a7b8bd10959c79141b4e0ad629)
+        ;
+
+        
+    
+    
+            circle_marker_e7ac7bfd7434157932536db966c27c09.bindTooltip(
+                `<div>
+                     Rosario Head (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d8ab1333142452adf1191b49fc1e39c3 = L.circleMarker(
+                [48.423927, -122.675213],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_ffbab13791bbc9b37fb21087251a668f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1c17a752e1500cf3c7e7b71bd1a5bf0 = $(`<div id="html_f1c17a752e1500cf3c7e7b71bd1a5bf0" style="width: 100.0%; height: 100.0%;">             <b>Sares Head</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_ffbab13791bbc9b37fb21087251a668f.setContent(html_f1c17a752e1500cf3c7e7b71bd1a5bf0);
+            
+        
+
+        circle_marker_d8ab1333142452adf1191b49fc1e39c3.bindPopup(popup_ffbab13791bbc9b37fb21087251a668f)
+        ;
+
+        
+    
+    
+            circle_marker_d8ab1333142452adf1191b49fc1e39c3.bindTooltip(
+                `<div>
+                     Sares Head (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92ac52eef9e399d26a1097e3272b8f5d = L.circleMarker(
+                [48.5887, -123.021767],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_c67a3d21bb8e42f9b3b33998620e8c7f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eacb2b059ecdbadda78e414257436eca = $(`<div id="html_eacb2b059ecdbadda78e414257436eca" style="width: 100.0%; height: 100.0%;">             <b>Shirttail Reef</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_c67a3d21bb8e42f9b3b33998620e8c7f.setContent(html_eacb2b059ecdbadda78e414257436eca);
+            
+        
+
+        circle_marker_92ac52eef9e399d26a1097e3272b8f5d.bindPopup(popup_c67a3d21bb8e42f9b3b33998620e8c7f)
+        ;
+
+        
+    
+    
+            circle_marker_92ac52eef9e399d26a1097e3272b8f5d.bindTooltip(
+                `<div>
+                     Shirttail Reef (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c193cf9a0897f50754ff068045d41c3 = L.circleMarker(
+                [48.491072, -122.690203],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_1aa8fa39ebd08d760ff2d4bde36b952c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_41ca38ec10f074cd33bb53127c3887da = $(`<div id="html_41ca38ec10f074cd33bb53127c3887da" style="width: 100.0%; height: 100.0%;">             <b>Skyline</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_1aa8fa39ebd08d760ff2d4bde36b952c.setContent(html_41ca38ec10f074cd33bb53127c3887da);
+            
+        
+
+        circle_marker_6c193cf9a0897f50754ff068045d41c3.bindPopup(popup_1aa8fa39ebd08d760ff2d4bde36b952c)
+        ;
+
+        
+    
+    
+            circle_marker_6c193cf9a0897f50754ff068045d41c3.bindTooltip(
+                `<div>
+                     Skyline (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_feeb18570426ba938cc82685dafc16c3 = L.circleMarker(
+                [48.317517, -122.849206],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_8fba7f5fc9e0ea06119fd7ede51bf865 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a71ff299408bd94b4f51172e52e69f9c = $(`<div id="html_a71ff299408bd94b4f51172e52e69f9c" style="width: 100.0%; height: 100.0%;">             <b>Smith Island</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_8fba7f5fc9e0ea06119fd7ede51bf865.setContent(html_a71ff299408bd94b4f51172e52e69f9c);
+            
+        
+
+        circle_marker_feeb18570426ba938cc82685dafc16c3.bindPopup(popup_8fba7f5fc9e0ea06119fd7ede51bf865)
+        ;
+
+        
+    
+    
+            circle_marker_feeb18570426ba938cc82685dafc16c3.bindTooltip(
+                `<div>
+                     Smith Island (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5f4c6d6af81341ffccd917b7f4ee2e0 = L.circleMarker(
+                [48.441679, -122.931917],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_626a98a1f6b66314002067a5f4a1332d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45f3482864184d8f3f7d6d560f0bfa14 = $(`<div id="html_45f3482864184d8f3f7d6d560f0bfa14" style="width: 100.0%; height: 100.0%;">             <b>Strawberry Falls</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_626a98a1f6b66314002067a5f4a1332d.setContent(html_45f3482864184d8f3f7d6d560f0bfa14);
+            
+        
+
+        circle_marker_f5f4c6d6af81341ffccd917b7f4ee2e0.bindPopup(popup_626a98a1f6b66314002067a5f4a1332d)
+        ;
+
+        
+    
+    
+            circle_marker_f5f4c6d6af81341ffccd917b7f4ee2e0.bindTooltip(
+                `<div>
+                     Strawberry Falls (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47d7978fdbd9ead94166c8f227d54a4b = L.circleMarker(
+                [48.76691, -122.918814],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#984ea3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a);
+        
+    
+        var popup_819dd7b5f518dd72d32876786cc57488 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8cc50620caa89fab491c50899485f5e = $(`<div id="html_d8cc50620caa89fab491c50899485f5e" style="width: 100.0%; height: 100.0%;">             <b>Sucia Island - Lawson's Bluff</b><br>             <hr>             Basin: <b>San Juan</b><br>             Habitats: Kelp Forest, Natural Reef<br>             <hr>             Mean Rate: 0.08/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_819dd7b5f518dd72d32876786cc57488.setContent(html_d8cc50620caa89fab491c50899485f5e);
+            
+        
+
+        circle_marker_47d7978fdbd9ead94166c8f227d54a4b.bindPopup(popup_819dd7b5f518dd72d32876786cc57488)
+        ;
+
+        
+    
+    
+            circle_marker_47d7978fdbd9ead94166c8f227d54a4b.bindTooltip(
+                `<div>
+                     Sucia Island - Lawson's Bluff (San Juan)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_35a792e858620222e7a40c4860cde52c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_be3268dad3f5d0b4983b6b4d4bb42af8 = L.circleMarker(
+                [48.060481, -122.514991],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_9a52f08ecc923d04e8a7f712eb07baca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b7f931b4aa134fddac9b62ac399a26c1 = $(`<div id="html_b7f931b4aa134fddac9b62ac399a26c1" style="width: 100.0%; height: 100.0%;">             <b>Beverly Beach</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 38.83/hr<br>             Total Pycno: 611             </div>`)[0];
+                popup_9a52f08ecc923d04e8a7f712eb07baca.setContent(html_b7f931b4aa134fddac9b62ac399a26c1);
+            
+        
+
+        circle_marker_be3268dad3f5d0b4983b6b4d4bb42af8.bindPopup(popup_9a52f08ecc923d04e8a7f712eb07baca)
+        ;
+
+        
+    
+    
+            circle_marker_be3268dad3f5d0b4983b6b4d4bb42af8.bindTooltip(
+                `<div>
+                     Beverly Beach (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45e8c0ac815ed136d05005dafc2f39dd = L.circleMarker(
+                [48.053302, -122.358319],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_ac1bc642dfbb29784eaf540a1ce40b20 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_662a685691d311c76b550b4737789d04 = $(`<div id="html_662a685691d311c76b550b4737789d04" style="width: 100.0%; height: 100.0%;">             <b>Camano Head</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_ac1bc642dfbb29784eaf540a1ce40b20.setContent(html_662a685691d311c76b550b4737789d04);
+            
+        
+
+        circle_marker_45e8c0ac815ed136d05005dafc2f39dd.bindPopup(popup_ac1bc642dfbb29784eaf540a1ce40b20)
+        ;
+
+        
+    
+    
+            circle_marker_45e8c0ac815ed136d05005dafc2f39dd.bindTooltip(
+                `<div>
+                     Camano Head (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2ecc3093e501da9678e08d6b33beee9 = L.circleMarker(
+                [48.016187, -122.529818],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_61213910cfaa249a379f20bb272cb241 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_02f7d36fe1ed25d86373250cd6f719e3 = $(`<div id="html_02f7d36fe1ed25d86373250cd6f719e3" style="width: 100.0%; height: 100.0%;">             <b>Freeland Park</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 8.68/hr<br>             Total Pycno: 176             </div>`)[0];
+                popup_61213910cfaa249a379f20bb272cb241.setContent(html_02f7d36fe1ed25d86373250cd6f719e3);
+            
+        
+
+        circle_marker_d2ecc3093e501da9678e08d6b33beee9.bindPopup(popup_61213910cfaa249a379f20bb272cb241)
+        ;
+
+        
+    
+    
+            circle_marker_d2ecc3093e501da9678e08d6b33beee9.bindTooltip(
+                `<div>
+                     Freeland Park (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c49ef4ba62ea3625b82140edf55a33c = L.circleMarker(
+                [48.007259, -122.298823],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_2b0156831006f01cd707ac503c01c5bb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_41b3e25dbe6bae28721d33412fcb7e6b = $(`<div id="html_41b3e25dbe6bae28721d33412fcb7e6b" style="width: 100.0%; height: 100.0%;">             <b>Hat Island Ledge</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 9.66/hr<br>             Total Pycno: 6             </div>`)[0];
+                popup_2b0156831006f01cd707ac503c01c5bb.setContent(html_41b3e25dbe6bae28721d33412fcb7e6b);
+            
+        
+
+        circle_marker_7c49ef4ba62ea3625b82140edf55a33c.bindPopup(popup_2b0156831006f01cd707ac503c01c5bb)
+        ;
+
+        
+    
+    
+            circle_marker_7c49ef4ba62ea3625b82140edf55a33c.bindTooltip(
+                `<div>
+                     Hat Island Ledge (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_863cac3223d7fd53207449242244c274 = L.circleMarker(
+                [48.017692, -122.53879],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_36dab25f1c8cec3c7f1f05f9f1c1cde7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_13b809f2a6221309e2eacb6eeaa79eda = $(`<div id="html_13b809f2a6221309e2eacb6eeaa79eda" style="width: 100.0%; height: 100.0%;">             <b>Holmes Harbor</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 25.59/hr<br>             Total Pycno: 301             </div>`)[0];
+                popup_36dab25f1c8cec3c7f1f05f9f1c1cde7.setContent(html_13b809f2a6221309e2eacb6eeaa79eda);
+            
+        
+
+        circle_marker_863cac3223d7fd53207449242244c274.bindPopup(popup_36dab25f1c8cec3c7f1f05f9f1c1cde7)
+        ;
+
+        
+    
+    
+            circle_marker_863cac3223d7fd53207449242244c274.bindTooltip(
+                `<div>
+                     Holmes Harbor (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6b3ea693b96c7a8f88019153f0e25b5 = L.circleMarker(
+                [48.03919, -122.402904],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_389ff2d4a33268d3477438853c1dd3ee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_643f1d2c2bdf7506b4673b8461b8d96d = $(`<div id="html_643f1d2c2bdf7506b4673b8461b8d96d" style="width: 100.0%; height: 100.0%;">             <b>Langley Tire Reef</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 14.82/hr<br>             Total Pycno: 841             </div>`)[0];
+                popup_389ff2d4a33268d3477438853c1dd3ee.setContent(html_643f1d2c2bdf7506b4673b8461b8d96d);
+            
+        
+
+        circle_marker_c6b3ea693b96c7a8f88019153f0e25b5.bindPopup(popup_389ff2d4a33268d3477438853c1dd3ee)
+        ;
+
+        
+    
+    
+            circle_marker_c6b3ea693b96c7a8f88019153f0e25b5.bindTooltip(
+                `<div>
+                     Langley Tire Reef (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fdbeecd970031e55b17377ad4c311b1d = L.circleMarker(
+                [47.94664, -122.309245],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_8555a7a59bad40d83f2c66937363e1db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f2493dab00d63aa3925cb1454bd582e = $(`<div id="html_8f2493dab00d63aa3925cb1454bd582e" style="width: 100.0%; height: 100.0%;">             <b>Mukilteo Lighthouse</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.49/hr<br>             Total Pycno: 5             </div>`)[0];
+                popup_8555a7a59bad40d83f2c66937363e1db.setContent(html_8f2493dab00d63aa3925cb1454bd582e);
+            
+        
+
+        circle_marker_fdbeecd970031e55b17377ad4c311b1d.bindPopup(popup_8555a7a59bad40d83f2c66937363e1db)
+        ;
+
+        
+    
+    
+            circle_marker_fdbeecd970031e55b17377ad4c311b1d.bindTooltip(
+                `<div>
+                     Mukilteo Lighthouse (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84d02fe8563eda9809d1d160f56e39ea = L.circleMarker(
+                [47.950451, -122.299001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_a4165455a2be791468829fe38fa8426d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5013d9a4b2784334589940d5af41999 = $(`<div id="html_b5013d9a4b2784334589940d5af41999" style="width: 100.0%; height: 100.0%;">             <b>Mukilteo T-Dock</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.08/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_a4165455a2be791468829fe38fa8426d.setContent(html_b5013d9a4b2784334589940d5af41999);
+            
+        
+
+        circle_marker_84d02fe8563eda9809d1d160f56e39ea.bindPopup(popup_a4165455a2be791468829fe38fa8426d)
+        ;
+
+        
+    
+    
+            circle_marker_84d02fe8563eda9809d1d160f56e39ea.bindTooltip(
+                `<div>
+                     Mukilteo T-Dock (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e6aaf5327ed66ed3fd98d4bdee851a7d = L.circleMarker(
+                [47.905306, -122.376914],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_3d744f2cd6c423eb6ebc1b0ff8ba88e9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a61dc8a1a2a630e6ced926935e765a6d = $(`<div id="html_a61dc8a1a2a630e6ced926935e765a6d" style="width: 100.0%; height: 100.0%;">             <b>Possession Point Fingers</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.01/hr<br>             Total Pycno: 1             </div>`)[0];
+                popup_3d744f2cd6c423eb6ebc1b0ff8ba88e9.setContent(html_a61dc8a1a2a630e6ced926935e765a6d);
+            
+        
+
+        circle_marker_e6aaf5327ed66ed3fd98d4bdee851a7d.bindPopup(popup_3d744f2cd6c423eb6ebc1b0ff8ba88e9)
+        ;
+
+        
+    
+    
+            circle_marker_e6aaf5327ed66ed3fd98d4bdee851a7d.bindTooltip(
+                `<div>
+                     Possession Point Fingers (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c53e7bb330b3ed411c1295d1bb5658a8 = L.circleMarker(
+                [48.003363, -122.301536],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e41a1c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_35a792e858620222e7a40c4860cde52c);
+        
+    
+        var popup_3eb014e7037ddb24e8ba5e00a21affe4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_14c5b39a866e91c9181ec0f796b33b0d = $(`<div id="html_14c5b39a866e91c9181ec0f796b33b0d" style="width: 100.0%; height: 100.0%;">             <b>South Hat Island</b><br>             <hr>             Basin: <b>Whidbey</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 1.38/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_3eb014e7037ddb24e8ba5e00a21affe4.setContent(html_14c5b39a866e91c9181ec0f796b33b0d);
+            
+        
+
+        circle_marker_c53e7bb330b3ed411c1295d1bb5658a8.bindPopup(popup_3eb014e7037ddb24e8ba5e00a21affe4)
+        ;
+
+        
+    
+    
+            circle_marker_c53e7bb330b3ed411c1295d1bb5658a8.bindTooltip(
+                `<div>
+                     South Hat Island (Whidbey)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_35a792e858620222e7a40c4860cde52c.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_ad9dc6fa0b605200e13604459eca7e81 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_1c021418f8cb3889e9305c6c2a5e1e4c = L.circleMarker(
+                [47.241984, -122.564551],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_ad9dc6fa0b605200e13604459eca7e81);
+        
+    
+        var popup_798bad96f86d6f32df5283b0f9558047 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_928157859ae558c66f8d6bf2a12c682c = $(`<div id="html_928157859ae558c66f8d6bf2a12c682c" style="width: 100.0%; height: 100.0%;">             <b>Day Island Wall</b><br>             <hr>             Basin: <b>South</b><br>             Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_798bad96f86d6f32df5283b0f9558047.setContent(html_928157859ae558c66f8d6bf2a12c682c);
+            
+        
+
+        circle_marker_1c021418f8cb3889e9305c6c2a5e1e4c.bindPopup(popup_798bad96f86d6f32df5283b0f9558047)
+        ;
+
+        
+    
+    
+            circle_marker_1c021418f8cb3889e9305c6c2a5e1e4c.bindTooltip(
+                `<div>
+                     Day Island Wall (South)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d88f8db2fd2fe847054221250392232 = L.circleMarker(
+                [47.242693, -122.565324],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_ad9dc6fa0b605200e13604459eca7e81);
+        
+    
+        var popup_6f1898e93ff8fe82e8bd86ed06718b6a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c8d291cf48360dee91fba0244ad07268 = $(`<div id="html_c8d291cf48360dee91fba0244ad07268" style="width: 100.0%; height: 100.0%;">             <b>Day Island Wall - North</b><br>             <hr>             Basin: <b>South</b><br>             Habitats: Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_6f1898e93ff8fe82e8bd86ed06718b6a.setContent(html_c8d291cf48360dee91fba0244ad07268);
+            
+        
+
+        circle_marker_7d88f8db2fd2fe847054221250392232.bindPopup(popup_6f1898e93ff8fe82e8bd86ed06718b6a)
+        ;
+
+        
+    
+    
+            circle_marker_7d88f8db2fd2fe847054221250392232.bindTooltip(
+                `<div>
+                     Day Island Wall - North (South)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cfeac0b727c7b4c3f51fa263f998282e = L.circleMarker(
+                [47.228514, -122.589606],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_ad9dc6fa0b605200e13604459eca7e81);
+        
+    
+        var popup_8722f4c6accd7d55bb474af17483959f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_08156ce69853e90c974fe57370458f0b = $(`<div id="html_08156ce69853e90c974fe57370458f0b" style="width: 100.0%; height: 100.0%;">             <b>Fox Island East Wall</b><br>             <hr>             Basin: <b>South</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_8722f4c6accd7d55bb474af17483959f.setContent(html_08156ce69853e90c974fe57370458f0b);
+            
+        
+
+        circle_marker_cfeac0b727c7b4c3f51fa263f998282e.bindPopup(popup_8722f4c6accd7d55bb474af17483959f)
+        ;
+
+        
+    
+    
+            circle_marker_cfeac0b727c7b4c3f51fa263f998282e.bindTooltip(
+                `<div>
+                     Fox Island East Wall (South)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a012f4bd29fb8fa11203d0608548b05 = L.circleMarker(
+                [47.239321, -122.632894],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_ad9dc6fa0b605200e13604459eca7e81);
+        
+    
+        var popup_c344e1e3c669ee45246844692043fbd5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e502542b919c6b378812a43571f35ea1 = $(`<div id="html_e502542b919c6b378812a43571f35ea1" style="width: 100.0%; height: 100.0%;">             <b>Fox Island West Wall</b><br>             <hr>             Basin: <b>South</b><br>             Habitats: Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.12/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_c344e1e3c669ee45246844692043fbd5.setContent(html_e502542b919c6b378812a43571f35ea1);
+            
+        
+
+        circle_marker_9a012f4bd29fb8fa11203d0608548b05.bindPopup(popup_c344e1e3c669ee45246844692043fbd5)
+        ;
+
+        
+    
+    
+            circle_marker_9a012f4bd29fb8fa11203d0608548b05.bindTooltip(
+                `<div>
+                     Fox Island West Wall (South)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_686419f21d27ef719a7143e5a7181c33 = L.circleMarker(
+                [47.179051, -122.592],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_ad9dc6fa0b605200e13604459eca7e81);
+        
+    
+        var popup_cc7072af328accebbc02154c076c4098 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_67d1bd6bedd52d31ae8040d4b5738896 = $(`<div id="html_67d1bd6bedd52d31ae8040d4b5738896" style="width: 100.0%; height: 100.0%;">             <b>Sunnyside Beach Park</b><br>             <hr>             Basin: <b>South</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_cc7072af328accebbc02154c076c4098.setContent(html_67d1bd6bedd52d31ae8040d4b5738896);
+            
+        
+
+        circle_marker_686419f21d27ef719a7143e5a7181c33.bindPopup(popup_cc7072af328accebbc02154c076c4098)
+        ;
+
+        
+    
+    
+            circle_marker_686419f21d27ef719a7143e5a7181c33.bindTooltip(
+                `<div>
+                     Sunnyside Beach Park (South)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88cda41ee2195c3b07aeb3e534ebc4f7 = L.circleMarker(
+                [47.283592, -122.547394],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_ad9dc6fa0b605200e13604459eca7e81);
+        
+    
+        var popup_cda45c72ee45979b6d524defcaf1c241 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_885f667f707dbe75459744718f697727 = $(`<div id="html_885f667f707dbe75459744718f697727" style="width: 100.0%; height: 100.0%;">             <b>Tacoma Narrows - Point Evans</b><br>             <hr>             Basin: <b>South</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_cda45c72ee45979b6d524defcaf1c241.setContent(html_885f667f707dbe75459744718f697727);
+            
+        
+
+        circle_marker_88cda41ee2195c3b07aeb3e534ebc4f7.bindPopup(popup_cda45c72ee45979b6d524defcaf1c241)
+        ;
+
+        
+    
+    
+            circle_marker_88cda41ee2195c3b07aeb3e534ebc4f7.bindTooltip(
+                `<div>
+                     Tacoma Narrows - Point Evans (South)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8ea5cb303e0f149eb46f79398a81fa9b = L.circleMarker(
+                [47.246737, -122.603261],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_ad9dc6fa0b605200e13604459eca7e81);
+        
+    
+        var popup_1d4c6c3bbdd8f544a3d3795631dab8bf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2026c771bb734993cb85a2f7ddab7468 = $(`<div id="html_2026c771bb734993cb85a2f7ddab7468" style="width: 100.0%; height: 100.0%;">             <b>Z's Reef</b><br>             <hr>             Basin: <b>South</b><br>             Habitats: Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_1d4c6c3bbdd8f544a3d3795631dab8bf.setContent(html_2026c771bb734993cb85a2f7ddab7468);
+            
+        
+
+        circle_marker_8ea5cb303e0f149eb46f79398a81fa9b.bindPopup(popup_1d4c6c3bbdd8f544a3d3795631dab8bf)
+        ;
+
+        
+    
+    
+            circle_marker_8ea5cb303e0f149eb46f79398a81fa9b.bindTooltip(
+                `<div>
+                     Z's Reef (South)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_ad9dc6fa0b605200e13604459eca7e81.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_9bd8eb7b757e4ca159723f98f70b6a71 = L.circleMarker(
+                [47.562416, -123.017743],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_b3e96ed872146ae00dcb580caa26eba4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0271e8b66830cffbd5eb885d5d84c209 = $(`<div id="html_0271e8b66830cffbd5eb885d5d84c209" style="width: 100.0%; height: 100.0%;">             <b>Elephant Wall</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_b3e96ed872146ae00dcb580caa26eba4.setContent(html_0271e8b66830cffbd5eb885d5d84c209);
+            
+        
+
+        circle_marker_9bd8eb7b757e4ca159723f98f70b6a71.bindPopup(popup_b3e96ed872146ae00dcb580caa26eba4)
+        ;
+
+        
+    
+    
+            circle_marker_9bd8eb7b757e4ca159723f98f70b6a71.bindTooltip(
+                `<div>
+                     Elephant Wall (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a82239f9698e77074c91d50d14c81bf = L.circleMarker(
+                [47.564755, -123.01436],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_e805b2ca574cc923ab31656d78c641b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45084e9f636d232a76b33985b22af54f = $(`<div id="html_45084e9f636d232a76b33985b22af54f" style="width: 100.0%; height: 100.0%;">             <b>Flagpole Point</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 4.33/hr<br>             Total Pycno: 36             </div>`)[0];
+                popup_e805b2ca574cc923ab31656d78c641b2.setContent(html_45084e9f636d232a76b33985b22af54f);
+            
+        
+
+        circle_marker_8a82239f9698e77074c91d50d14c81bf.bindPopup(popup_e805b2ca574cc923ab31656d78c641b2)
+        ;
+
+        
+    
+    
+            circle_marker_8a82239f9698e77074c91d50d14c81bf.bindTooltip(
+                `<div>
+                     Flagpole Point (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37f9c25096ffdc7db7618aca29c4cca5 = L.circleMarker(
+                [47.941083, -122.6012],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_573531adeb436857e52a94123ce54ce5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b9bada6c417c4b435b62e9e972e722b = $(`<div id="html_7b9bada6c417c4b435b62e9e972e722b" style="width: 100.0%; height: 100.0%;">             <b>Foulweather Bluff</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_573531adeb436857e52a94123ce54ce5.setContent(html_7b9bada6c417c4b435b62e9e972e722b);
+            
+        
+
+        circle_marker_37f9c25096ffdc7db7618aca29c4cca5.bindPopup(popup_573531adeb436857e52a94123ce54ce5)
+        ;
+
+        
+    
+    
+            circle_marker_37f9c25096ffdc7db7618aca29c4cca5.bindTooltip(
+                `<div>
+                     Foulweather Bluff (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f5d0c9948ef284816b907b91e84c5c3 = L.circleMarker(
+                [47.617983, -122.968183],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_c701074e31c8e52c92c070fd1e5a6fd3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4b5e66215b58809a668a39bf31cea339 = $(`<div id="html_4b5e66215b58809a668a39bf31cea339" style="width: 100.0%; height: 100.0%;">             <b>Fulton Creek</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 3.27/hr<br>             Total Pycno: 5             </div>`)[0];
+                popup_c701074e31c8e52c92c070fd1e5a6fd3.setContent(html_4b5e66215b58809a668a39bf31cea339);
+            
+        
+
+        circle_marker_1f5d0c9948ef284816b907b91e84c5c3.bindPopup(popup_c701074e31c8e52c92c070fd1e5a6fd3)
+        ;
+
+        
+    
+    
+            circle_marker_1f5d0c9948ef284816b907b91e84c5c3.bindTooltip(
+                `<div>
+                     Fulton Creek (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_96b0aa265ddf57fe0c15deea8b46e2ca = L.circleMarker(
+                [47.419888, -123.129494],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_70925759657c33d627484e594d61599f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f21c4dcbc56b73769d777e681a59b549 = $(`<div id="html_f21c4dcbc56b73769d777e681a59b549" style="width: 100.0%; height: 100.0%;">             <b>Glen Ayr Ravine</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_70925759657c33d627484e594d61599f.setContent(html_f21c4dcbc56b73769d777e681a59b549);
+            
+        
+
+        circle_marker_96b0aa265ddf57fe0c15deea8b46e2ca.bindPopup(popup_70925759657c33d627484e594d61599f)
+        ;
+
+        
+    
+    
+            circle_marker_96b0aa265ddf57fe0c15deea8b46e2ca.bindTooltip(
+                `<div>
+                     Glen Ayr Ravine (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c188d00a012331b30936789797fea585 = L.circleMarker(
+                [47.63058, -122.942265],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_1144667083d39b2f0ceb77a23c49d22e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4eebb4b4334210f699206f0bffcf59eb = $(`<div id="html_4eebb4b4334210f699206f0bffcf59eb" style="width: 100.0%; height: 100.0%;">             <b>Goby Garden</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 4.62/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_1144667083d39b2f0ceb77a23c49d22e.setContent(html_4eebb4b4334210f699206f0bffcf59eb);
+            
+        
+
+        circle_marker_c188d00a012331b30936789797fea585.bindPopup(popup_1144667083d39b2f0ceb77a23c49d22e)
+        ;
+
+        
+    
+    
+            circle_marker_c188d00a012331b30936789797fea585.bindTooltip(
+                `<div>
+                     Goby Garden (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f33845c41dafedea9f420975cf026486 = L.circleMarker(
+                [47.522325, -123.048584],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_be91ecdbcbd0e1c2b9d8fa0937671a28 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_318f41b1accd43f1bf2cee54b3e1059a = $(`<div id="html_318f41b1accd43f1bf2cee54b3e1059a" style="width: 100.0%; height: 100.0%;">             <b>Jorsted Creek</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 1.08/hr<br>             Total Pycno: 3             </div>`)[0];
+                popup_be91ecdbcbd0e1c2b9d8fa0937671a28.setContent(html_318f41b1accd43f1bf2cee54b3e1059a);
+            
+        
+
+        circle_marker_f33845c41dafedea9f420975cf026486.bindPopup(popup_be91ecdbcbd0e1c2b9d8fa0937671a28)
+        ;
+
+        
+    
+    
+            circle_marker_f33845c41dafedea9f420975cf026486.bindTooltip(
+                `<div>
+                     Jorsted Creek (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca6acc194d0ce8a961bf63df5ed2b96d = L.circleMarker(
+                [47.416943, -123.130313],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_a5b5bcf421570ffdf7c648578316c409 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bdde6a7b6f5d6eac1edeea4327055663 = $(`<div id="html_bdde6a7b6f5d6eac1edeea4327055663" style="width: 100.0%; height: 100.0%;">             <b>Kat's Corner</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_a5b5bcf421570ffdf7c648578316c409.setContent(html_bdde6a7b6f5d6eac1edeea4327055663);
+            
+        
+
+        circle_marker_ca6acc194d0ce8a961bf63df5ed2b96d.bindPopup(popup_a5b5bcf421570ffdf7c648578316c409)
+        ;
+
+        
+    
+    
+            circle_marker_ca6acc194d0ce8a961bf63df5ed2b96d.bindTooltip(
+                `<div>
+                     Kat's Corner (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ba3b3e10adb4eed30319973c91a372b = L.circleMarker(
+                [47.569882, -123.012899],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_11892ba57a22950f1b8a6ad15909903c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aadc26916a9178f43f1c68be53027ab0 = $(`<div id="html_aadc26916a9178f43f1c68be53027ab0" style="width: 100.0%; height: 100.0%;">             <b>Mike's Beach Resort</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Artificial Reef<br>             <hr>             Mean Rate: 6.00/hr<br>             Total Pycno: 3             </div>`)[0];
+                popup_11892ba57a22950f1b8a6ad15909903c.setContent(html_aadc26916a9178f43f1c68be53027ab0);
+            
+        
+
+        circle_marker_2ba3b3e10adb4eed30319973c91a372b.bindPopup(popup_11892ba57a22950f1b8a6ad15909903c)
+        ;
+
+        
+    
+    
+            circle_marker_2ba3b3e10adb4eed30319973c91a372b.bindTooltip(
+                `<div>
+                     Mike's Beach Resort (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4362972336d9d3091194a6269aeaa53e = L.circleMarker(
+                [47.447568, -123.112392],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_e839dc577120da7e8b746d9a48c05860 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b85747ecddacd533ae7b9701f55b47df = $(`<div id="html_b85747ecddacd533ae7b9701f55b47df" style="width: 100.0%; height: 100.0%;">             <b>Octopus Hole</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 2.87/hr<br>             Total Pycno: 43             </div>`)[0];
+                popup_e839dc577120da7e8b746d9a48c05860.setContent(html_b85747ecddacd533ae7b9701f55b47df);
+            
+        
+
+        circle_marker_4362972336d9d3091194a6269aeaa53e.bindPopup(popup_e839dc577120da7e8b746d9a48c05860)
+        ;
+
+        
+    
+    
+            circle_marker_4362972336d9d3091194a6269aeaa53e.bindTooltip(
+                `<div>
+                     Octopus Hole (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a77a17b9e2d934187bbba9a93c8792a6 = L.circleMarker(
+                [47.763705, -122.853794],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_118b9bd72837db6a16d96a3100e5a0c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b437e4cfb784f02656ed6f67750334a = $(`<div id="html_6b437e4cfb784f02656ed6f67750334a" style="width: 100.0%; height: 100.0%;">             <b>Point Whitney Shellfish Lab</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 1.51/hr<br>             Total Pycno: 7             </div>`)[0];
+                popup_118b9bd72837db6a16d96a3100e5a0c3.setContent(html_6b437e4cfb784f02656ed6f67750334a);
+            
+        
+
+        circle_marker_a77a17b9e2d934187bbba9a93c8792a6.bindPopup(popup_118b9bd72837db6a16d96a3100e5a0c3)
+        ;
+
+        
+    
+    
+            circle_marker_a77a17b9e2d934187bbba9a93c8792a6.bindTooltip(
+                `<div>
+                     Point Whitney Shellfish Lab (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_866fec8ec821ff4ccfd6e506c688c161 = L.circleMarker(
+                [47.761821, -122.849161],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_bdd67ab36286854aac26a84b7e9012b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b07622134b8d9b62ea0f63a87e5d30fa = $(`<div id="html_b07622134b8d9b62ea0f63a87e5d30fa" style="width: 100.0%; height: 100.0%;">             <b>Pulali Point</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 3.81/hr<br>             Total Pycno: 2             </div>`)[0];
+                popup_bdd67ab36286854aac26a84b7e9012b4.setContent(html_b07622134b8d9b62ea0f63a87e5d30fa);
+            
+        
+
+        circle_marker_866fec8ec821ff4ccfd6e506c688c161.bindPopup(popup_bdd67ab36286854aac26a84b7e9012b4)
+        ;
+
+        
+    
+    
+            circle_marker_866fec8ec821ff4ccfd6e506c688c161.bindTooltip(
+                `<div>
+                     Pulali Point (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7298c4a0d925fa39781e0dfe243c11fd = L.circleMarker(
+                [47.735708, -122.85479],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_bb2bfa7e2293653bd13f7c0e6a06fa13 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa815e429264f88ca7e38be77de617be = $(`<div id="html_aa815e429264f88ca7e38be77de617be" style="width: 100.0%; height: 100.0%;">             <b>Pulali Point West Wall</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 3.67/hr<br>             Total Pycno: 3             </div>`)[0];
+                popup_bb2bfa7e2293653bd13f7c0e6a06fa13.setContent(html_aa815e429264f88ca7e38be77de617be);
+            
+        
+
+        circle_marker_7298c4a0d925fa39781e0dfe243c11fd.bindPopup(popup_bb2bfa7e2293653bd13f7c0e6a06fa13)
+        ;
+
+        
+    
+    
+            circle_marker_7298c4a0d925fa39781e0dfe243c11fd.bindTooltip(
+                `<div>
+                     Pulali Point West Wall (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05035fbf9732f7d7770e1fe074ddcd53 = L.circleMarker(
+                [47.630199, -122.940635],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_c8f61681f6509915d69c3105285f77c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_26d5977d033e24e67b995f34871397ba = $(`<div id="html_26d5977d033e24e67b995f34871397ba" style="width: 100.0%; height: 100.0%;">             <b>Rosie's Ravine</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 9.33/hr<br>             Total Pycno: 5             </div>`)[0];
+                popup_c8f61681f6509915d69c3105285f77c3.setContent(html_26d5977d033e24e67b995f34871397ba);
+            
+        
+
+        circle_marker_05035fbf9732f7d7770e1fe074ddcd53.bindPopup(popup_c8f61681f6509915d69c3105285f77c3)
+        ;
+
+        
+    
+    
+            circle_marker_05035fbf9732f7d7770e1fe074ddcd53.bindTooltip(
+                `<div>
+                     Rosie's Ravine (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c4fb1c3e384f5c591cbfe84e17335270 = L.circleMarker(
+                [47.651043, -122.845563],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_40eecfbed98cdc56f4d70f4906761278 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_88fd84bce83225b7a85096dfe514bf14 = $(`<div id="html_88fd84bce83225b7a85096dfe514bf14" style="width: 100.0%; height: 100.0%;">             <b>Scenic Beach State Park</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Eelgrass, Soft Bottom<br>             <hr>             Mean Rate: 13.19/hr<br>             Total Pycno: 75             </div>`)[0];
+                popup_40eecfbed98cdc56f4d70f4906761278.setContent(html_88fd84bce83225b7a85096dfe514bf14);
+            
+        
+
+        circle_marker_c4fb1c3e384f5c591cbfe84e17335270.bindPopup(popup_40eecfbed98cdc56f4d70f4906761278)
+        ;
+
+        
+    
+    
+            circle_marker_c4fb1c3e384f5c591cbfe84e17335270.bindTooltip(
+                `<div>
+                     Scenic Beach State Park (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a4edc6df445e47fe21740e222d51f40 = L.circleMarker(
+                [47.64656, -122.826454],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_8c3e71ab2942159201bda38c84553bd7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cef82bf28fdad946de179233646e7ade = $(`<div id="html_cef82bf28fdad946de179233646e7ade" style="width: 100.0%; height: 100.0%;">             <b>Seabeck Bay</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Eelgrass<br>             <hr>             Mean Rate: 0.00/hr<br>             Total Pycno: 0             </div>`)[0];
+                popup_8c3e71ab2942159201bda38c84553bd7.setContent(html_cef82bf28fdad946de179233646e7ade);
+            
+        
+
+        circle_marker_6a4edc6df445e47fe21740e222d51f40.bindPopup(popup_8c3e71ab2942159201bda38c84553bd7)
+        ;
+
+        
+    
+    
+            circle_marker_6a4edc6df445e47fe21740e222d51f40.bindTooltip(
+                `<div>
+                     Seabeck Bay (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_48a618fed9be67571640cf1b58cf84f1 = L.circleMarker(
+                [47.435212, -123.119796],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_62f5f672b512b167a1f22aba15e49052 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d9ac1e5a2239c5dc8b676b25a368fa81 = $(`<div id="html_d9ac1e5a2239c5dc8b676b25a368fa81" style="width: 100.0%; height: 100.0%;">             <b>Sund Rock</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 3.72/hr<br>             Total Pycno: 66             </div>`)[0];
+                popup_62f5f672b512b167a1f22aba15e49052.setContent(html_d9ac1e5a2239c5dc8b676b25a368fa81);
+            
+        
+
+        circle_marker_48a618fed9be67571640cf1b58cf84f1.bindPopup(popup_62f5f672b512b167a1f22aba15e49052)
+        ;
+
+        
+    
+    
+            circle_marker_48a618fed9be67571640cf1b58cf84f1.bindTooltip(
+                `<div>
+                     Sund Rock (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e4ead854a1c38e53cbba0c7ac7d02cf6 = L.circleMarker(
+                [47.435963, -123.119565],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_81e9379c0f7fe8a3fdd1718073efafac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a03f95445eb9bf9875767c85cfe55a7 = $(`<div id="html_3a03f95445eb9bf9875767c85cfe55a7" style="width: 100.0%; height: 100.0%;">             <b>Sund Rock North</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 1.79/hr<br>             Total Pycno: 6             </div>`)[0];
+                popup_81e9379c0f7fe8a3fdd1718073efafac.setContent(html_3a03f95445eb9bf9875767c85cfe55a7);
+            
+        
+
+        circle_marker_e4ead854a1c38e53cbba0c7ac7d02cf6.bindPopup(popup_81e9379c0f7fe8a3fdd1718073efafac)
+        ;
+
+        
+    
+    
+            circle_marker_e4ead854a1c38e53cbba0c7ac7d02cf6.bindTooltip(
+                `<div>
+                     Sund Rock North (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb478b19a3ae024e2c2d166d9f88b893 = L.circleMarker(
+                [47.434327, -123.119777],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_621dd9f2e294b12e3c3ecfcc9f1b0e37 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2c89902df1d07a8c1736cb997dbe556e = $(`<div id="html_2c89902df1d07a8c1736cb997dbe556e" style="width: 100.0%; height: 100.0%;">             <b>Sund Rock South</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 1.74/hr<br>             Total Pycno: 16             </div>`)[0];
+                popup_621dd9f2e294b12e3c3ecfcc9f1b0e37.setContent(html_2c89902df1d07a8c1736cb997dbe556e);
+            
+        
+
+        circle_marker_bb478b19a3ae024e2c2d166d9f88b893.bindPopup(popup_621dd9f2e294b12e3c3ecfcc9f1b0e37)
+        ;
+
+        
+    
+    
+            circle_marker_bb478b19a3ae024e2c2d166d9f88b893.bindTooltip(
+                `<div>
+                     Sund Rock South (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d26b92bbb4fa0e747165b19ea1e7ff12 = L.circleMarker(
+                [47.721325, -122.88082],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_1c80b63cf9d11f43dfb24d4fff1c4d91 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_97d4263970a5e64cbb372a9fa54bf0cc = $(`<div id="html_97d4263970a5e64cbb372a9fa54bf0cc" style="width: 100.0%; height: 100.0%;">             <b>The Pinnacle</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 9.60/hr<br>             Total Pycno: 4             </div>`)[0];
+                popup_1c80b63cf9d11f43dfb24d4fff1c4d91.setContent(html_97d4263970a5e64cbb372a9fa54bf0cc);
+            
+        
+
+        circle_marker_d26b92bbb4fa0e747165b19ea1e7ff12.bindPopup(popup_1c80b63cf9d11f43dfb24d4fff1c4d91)
+        ;
+
+        
+    
+    
+            circle_marker_d26b92bbb4fa0e747165b19ea1e7ff12.bindTooltip(
+                `<div>
+                     The Pinnacle (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e9eae7002391a93e21bb26681fe89c1 = L.circleMarker(
+                [47.605289, -122.981388],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_481a8357b0892b0d0efb1a9f85f8ec19 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_76b112a61dc1c551e5f849fdd79bb005 = $(`<div id="html_76b112a61dc1c551e5f849fdd79bb005" style="width: 100.0%; height: 100.0%;">             <b>Triton Cove</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Eelgrass, Natural Reef, Soft Bottom<br>             <hr>             Mean Rate: 4.77/hr<br>             Total Pycno: 59             </div>`)[0];
+                popup_481a8357b0892b0d0efb1a9f85f8ec19.setContent(html_76b112a61dc1c551e5f849fdd79bb005);
+            
+        
+
+        circle_marker_2e9eae7002391a93e21bb26681fe89c1.bindPopup(popup_481a8357b0892b0d0efb1a9f85f8ec19)
+        ;
+
+        
+    
+    
+            circle_marker_2e9eae7002391a93e21bb26681fe89c1.bindTooltip(
+                `<div>
+                     Triton Cove (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_712fc22a19e379f37ddc800c0c6c0b7a = L.circleMarker(
+                [47.604708, -122.980735],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#377eb8", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43);
+        
+    
+        var popup_75461083b3c997a0463a5bcc021a2e1f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec808dcf9827ed718dba491f54cd07c7 = $(`<div id="html_ec808dcf9827ed718dba491f54cd07c7" style="width: 100.0%; height: 100.0%;">             <b>Triton Head</b><br>             <hr>             Basin: <b>Hood Canal</b><br>             Habitats: Natural Reef<br>             <hr>             Mean Rate: 9.36/hr<br>             Total Pycno: 10             </div>`)[0];
+                popup_75461083b3c997a0463a5bcc021a2e1f.setContent(html_ec808dcf9827ed718dba491f54cd07c7);
+            
+        
+
+        circle_marker_712fc22a19e379f37ddc800c0c6c0b7a.bindPopup(popup_75461083b3c997a0463a5bcc021a2e1f)
+        ;
+
+        
+    
+    
+            circle_marker_712fc22a19e379f37ddc800c0c6c0b7a.bindTooltip(
+                `<div>
+                     Triton Head (Hood Canal)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43.addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+        
+    
+            var layer_control_d0803087077f51c49a4e698b8755f600_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_9b7317d7baa3cbffd0bd0510b5abd7d4,
+                },
+                overlays :  {
+                    "Central (n=24)" : feature_group_c23aaeba85651d7e1c56a7f187d10ec7,
+                    "Admiralty Inlet (n=8)" : feature_group_0a1c2ba9229962951148a213b73fba8a,
+                    "Howe Sound (n=6)" : feature_group_b19449db768a18e9e71961c003fc2998,
+                    "Strait of Juan de Fuca (n=6)" : feature_group_48f4e98e323455a629c9de57d4920fb4,
+                    "San Juan (n=28)" : feature_group_c63b7935c8d649e77f7c5c7e6d3eb74a,
+                    "Whidbey (n=10)" : feature_group_35a792e858620222e7a40c4860cde52c,
+                    "South (n=7)" : feature_group_ad9dc6fa0b605200e13604459eca7e81,
+                    "Hood Canal (n=22)" : feature_group_b3913f6ad8bcc0d9103ece4a05cc0e43,
+                },
+            };
+            let layer_control_d0803087077f51c49a4e698b8755f600 = L.control.layers(
+                layer_control_d0803087077f51c49a4e698b8755f600_layers.base_layers,
+                layer_control_d0803087077f51c49a4e698b8755f600_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_2d05bd9d44ea17a3ccb69df099802adf);
+
+        
+</script>
+</html>

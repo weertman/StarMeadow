@@ -1,0 +1,3820 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e86835759a4e776455ee4e035c0459be {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; right: 50px; z-index: 9999;
+                background-color: white; padding: 10px; border-radius: 5px;
+                border: 2px solid gray;">
+        <h4 style="margin: 0 0 5px 0;">Site Type</h4>
+        <p style="margin: 2px;"><span style="background-color: #2ecc71; padding: 2px 10px;">  </span> Eelgrass Site</p>
+        <p style="margin: 2px;"><span style="background-color: #e74c3c; padding: 2px 10px;">  </span> No Eelgrass</p>
+    </div>
+    
+    
+    <div style="position: fixed; top: 10px; left: 50px; z-index: 9999;
+                background-color: white; padding: 10px; border-radius: 5px;
+                border: 2px solid gray;">
+        <h4 style="margin: 0;">Eelgrass Site Distribution</h4>
+        <p style="margin: 0; font-size: 12px;">Use layer control to toggle</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_e86835759a4e776455ee4e035c0459be" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e86835759a4e776455ee4e035c0459be = L.map(
+                "map_e86835759a4e776455ee4e035c0459be",
+                {
+                    center: [47.98265147135136, -122.80779323513515],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_598352192a3a50fd25214c57f3c1747c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_598352192a3a50fd25214c57f3c1747c.addTo(map_e86835759a4e776455ee4e035c0459be);
+        
+    
+            var feature_group_44d488b9e1bba95589b5070512161421 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_8bd8821775de195935aeb6f71707db47 = L.circleMarker(
+                [47.580873, -122.410246],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_162df975cfefada13e9c631e2e3c957e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6655ce4543f81880fe657bf535a06c3c = $(`<div id="html_6655ce4543f81880fe657bf535a06c3c" style="width: 100.0%; height: 100.0%;">         <b>Alki Beach</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 2.00/hr<br>         Total Pycno: 1<br>         Detection Rate: 20.0%         </div>`)[0];
+                popup_162df975cfefada13e9c631e2e3c957e.setContent(html_6655ce4543f81880fe657bf535a06c3c);
+            
+        
+
+        circle_marker_8bd8821775de195935aeb6f71707db47.bindPopup(popup_162df975cfefada13e9c631e2e3c957e)
+        ;
+
+        
+    
+    
+            circle_marker_8bd8821775de195935aeb6f71707db47.bindTooltip(
+                `<div>
+                     Alki Beach (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f84ac5e002762e2a4f511edd7c1f08c = L.circleMarker(
+                [48.060481, -122.514991],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_75bdcc74a22374f2c6c7d845cfa81cac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c38834eb0d46b6d4ef3301fbf7132576 = $(`<div id="html_c38834eb0d46b6d4ef3301fbf7132576" style="width: 100.0%; height: 100.0%;">         <b>Beverly Beach</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 38.83/hr<br>         Total Pycno: 611<br>         Detection Rate: 89.4%         </div>`)[0];
+                popup_75bdcc74a22374f2c6c7d845cfa81cac.setContent(html_c38834eb0d46b6d4ef3301fbf7132576);
+            
+        
+
+        circle_marker_0f84ac5e002762e2a4f511edd7c1f08c.bindPopup(popup_75bdcc74a22374f2c6c7d845cfa81cac)
+        ;
+
+        
+    
+    
+            circle_marker_0f84ac5e002762e2a4f511edd7c1f08c.bindTooltip(
+                `<div>
+                     Beverly Beach (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1eee84555742667db65ea0dc7da19070 = L.circleMarker(
+                [48.141211, -123.436541],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_58f5bd697945658c71d74f3a9d3ce2b3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7d6b72b5db43c4fec60898f119107268 = $(`<div id="html_7d6b72b5db43c4fec60898f119107268" style="width: 100.0%; height: 100.0%;">         <b>Ediz Hook Log Pile</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 3.90/hr<br>         Total Pycno: 79<br>         Detection Rate: 39.3%         </div>`)[0];
+                popup_58f5bd697945658c71d74f3a9d3ce2b3.setContent(html_7d6b72b5db43c4fec60898f119107268);
+            
+        
+
+        circle_marker_1eee84555742667db65ea0dc7da19070.bindPopup(popup_58f5bd697945658c71d74f3a9d3ce2b3)
+        ;
+
+        
+    
+    
+            circle_marker_1eee84555742667db65ea0dc7da19070.bindTooltip(
+                `<div>
+                     Ediz Hook Log Pile (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddd0b5c55cfac647271ce9e70d6ed399 = L.circleMarker(
+                [48.140197, -123.422831],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_a5cab2fba63157df5cf6deabe2777d8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_112911fab99f718594b880e96bf61094 = $(`<div id="html_112911fab99f718594b880e96bf61094" style="width: 100.0%; height: 100.0%;">         <b>Ediz Hook RockPile</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 7.92/hr<br>         Total Pycno: 50<br>         Detection Rate: 35.9%         </div>`)[0];
+                popup_a5cab2fba63157df5cf6deabe2777d8e.setContent(html_112911fab99f718594b880e96bf61094);
+            
+        
+
+        circle_marker_ddd0b5c55cfac647271ce9e70d6ed399.bindPopup(popup_a5cab2fba63157df5cf6deabe2777d8e)
+        ;
+
+        
+    
+    
+            circle_marker_ddd0b5c55cfac647271ce9e70d6ed399.bindTooltip(
+                `<div>
+                     Ediz Hook RockPile (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89db99043058f40ec6bbb5b4a6bd85af = L.circleMarker(
+                [47.815161, -122.382522],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_3d293cec4d583e727379c52f0f25b453 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f6a54dd8fed90457422394256a0cd996 = $(`<div id="html_f6a54dd8fed90457422394256a0cd996" style="width: 100.0%; height: 100.0%;">         <b>Edmonds Underwater Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 0.65/hr<br>         Total Pycno: 6<br>         Detection Rate: 3.2%         </div>`)[0];
+                popup_3d293cec4d583e727379c52f0f25b453.setContent(html_f6a54dd8fed90457422394256a0cd996);
+            
+        
+
+        circle_marker_89db99043058f40ec6bbb5b4a6bd85af.bindPopup(popup_3d293cec4d583e727379c52f0f25b453)
+        ;
+
+        
+    
+    
+            circle_marker_89db99043058f40ec6bbb5b4a6bd85af.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_398af563edc091be42b9c9e49023e376 = L.circleMarker(
+                [47.812101, -122.389429],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_91bbb8f9d00f15952166a983321ecee9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_913107974bbc19929bc11fd03e06e640 = $(`<div id="html_913107974bbc19929bc11fd03e06e640" style="width: 100.0%; height: 100.0%;">         <b>Edmonds Underwater Park Pipeline</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 0.16/hr<br>         Total Pycno: 1<br>         Detection Rate: 2.6%         </div>`)[0];
+                popup_91bbb8f9d00f15952166a983321ecee9.setContent(html_913107974bbc19929bc11fd03e06e640);
+            
+        
+
+        circle_marker_398af563edc091be42b9c9e49023e376.bindPopup(popup_91bbb8f9d00f15952166a983321ecee9)
+        ;
+
+        
+    
+    
+            circle_marker_398af563edc091be42b9c9e49023e376.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park Pipeline (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aae40fe9d5c28cc1b80de641f587a5aa = L.circleMarker(
+                [47.239321, -122.632894],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_ece49e57be282d773b50ff651f2d88ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4cde11c58a70ba1af14e59d908df7a66 = $(`<div id="html_4cde11c58a70ba1af14e59d908df7a66" style="width: 100.0%; height: 100.0%;">         <b>Fox Island West Wall</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.12/hr<br>         Total Pycno: 2<br>         Detection Rate: 2.2%         </div>`)[0];
+                popup_ece49e57be282d773b50ff651f2d88ef.setContent(html_4cde11c58a70ba1af14e59d908df7a66);
+            
+        
+
+        circle_marker_aae40fe9d5c28cc1b80de641f587a5aa.bindPopup(popup_ece49e57be282d773b50ff651f2d88ef)
+        ;
+
+        
+    
+    
+            circle_marker_aae40fe9d5c28cc1b80de641f587a5aa.bindTooltip(
+                `<div>
+                     Fox Island West Wall (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d5b9d4535320efcab1802ce885187d50 = L.circleMarker(
+                [48.016187, -122.529818],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_a245c416e47e0d5748d057fa7105243e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf0ead2dd7a8db44ae3137bf81405d70 = $(`<div id="html_bf0ead2dd7a8db44ae3137bf81405d70" style="width: 100.0%; height: 100.0%;">         <b>Freeland Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 8.68/hr<br>         Total Pycno: 176<br>         Detection Rate: 66.7%         </div>`)[0];
+                popup_a245c416e47e0d5748d057fa7105243e.setContent(html_bf0ead2dd7a8db44ae3137bf81405d70);
+            
+        
+
+        circle_marker_d5b9d4535320efcab1802ce885187d50.bindPopup(popup_a245c416e47e0d5748d057fa7105243e)
+        ;
+
+        
+    
+    
+            circle_marker_d5b9d4535320efcab1802ce885187d50.bindTooltip(
+                `<div>
+                     Freeland Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9a7d7fdff119f7708203a6efbb12117 = L.circleMarker(
+                [48.15063, -123.636083],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_ec1921befa9224ae4df74d2c3c05e7dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89ce67bcf2f9601d407557519bb8ad3d = $(`<div id="html_89ce67bcf2f9601d407557519bb8ad3d" style="width: 100.0%; height: 100.0%;">         <b>Freshwater Bay</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 2.96/hr<br>         Total Pycno: 12<br>         Detection Rate: 27.3%         </div>`)[0];
+                popup_ec1921befa9224ae4df74d2c3c05e7dc.setContent(html_89ce67bcf2f9601d407557519bb8ad3d);
+            
+        
+
+        circle_marker_a9a7d7fdff119f7708203a6efbb12117.bindPopup(popup_ec1921befa9224ae4df74d2c3c05e7dc)
+        ;
+
+        
+    
+    
+            circle_marker_a9a7d7fdff119f7708203a6efbb12117.bindTooltip(
+                `<div>
+                     Freshwater Bay (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c076be172ca627267b0420f8ee5c7bb3 = L.circleMarker(
+                [48.007259, -122.298823],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_2f1a1948926d73f1ca2e8690cdc07a69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_71064a2ceafccb271aefb9a39bbb5ce5 = $(`<div id="html_71064a2ceafccb271aefb9a39bbb5ce5" style="width: 100.0%; height: 100.0%;">         <b>Hat Island Ledge</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 9.66/hr<br>         Total Pycno: 6<br>         Detection Rate: 66.7%         </div>`)[0];
+                popup_2f1a1948926d73f1ca2e8690cdc07a69.setContent(html_71064a2ceafccb271aefb9a39bbb5ce5);
+            
+        
+
+        circle_marker_c076be172ca627267b0420f8ee5c7bb3.bindPopup(popup_2f1a1948926d73f1ca2e8690cdc07a69)
+        ;
+
+        
+    
+    
+            circle_marker_c076be172ca627267b0420f8ee5c7bb3.bindTooltip(
+                `<div>
+                     Hat Island Ledge (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_edafa1e04473416da9d1f671054b0e55 = L.circleMarker(
+                [48.017692, -122.53879],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_de6f36283c506ea3e85fe45b0e485d0f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_006fde08dade1cdf01d37765c48ee1de = $(`<div id="html_006fde08dade1cdf01d37765c48ee1de" style="width: 100.0%; height: 100.0%;">         <b>Holmes Harbor</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 25.59/hr<br>         Total Pycno: 301<br>         Detection Rate: 66.7%         </div>`)[0];
+                popup_de6f36283c506ea3e85fe45b0e485d0f.setContent(html_006fde08dade1cdf01d37765c48ee1de);
+            
+        
+
+        circle_marker_edafa1e04473416da9d1f671054b0e55.bindPopup(popup_de6f36283c506ea3e85fe45b0e485d0f)
+        ;
+
+        
+    
+    
+            circle_marker_edafa1e04473416da9d1f671054b0e55.bindTooltip(
+                `<div>
+                     Holmes Harbor (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5a5583b7f3e9d5e3aeaf9aabda8e013 = L.circleMarker(
+                [47.420837, -122.429911],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_ad2d4b3ef57390ce2ddb1be390f6e226 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cbeb91701ea02c46cb43634bb2aafa82 = $(`<div id="html_cbeb91701ea02c46cb43634bb2aafa82" style="width: 100.0%; height: 100.0%;">         <b>KVI Tower</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.21/hr<br>         Total Pycno: 2<br>         Detection Rate: 3.3%         </div>`)[0];
+                popup_ad2d4b3ef57390ce2ddb1be390f6e226.setContent(html_cbeb91701ea02c46cb43634bb2aafa82);
+            
+        
+
+        circle_marker_f5a5583b7f3e9d5e3aeaf9aabda8e013.bindPopup(popup_ad2d4b3ef57390ce2ddb1be390f6e226)
+        ;
+
+        
+    
+    
+            circle_marker_f5a5583b7f3e9d5e3aeaf9aabda8e013.bindTooltip(
+                `<div>
+                     KVI Tower (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3286f475e63ac0839a53abee1817cd14 = L.circleMarker(
+                [48.03919, -122.402904],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_80f621ad5c178be18cbd232e45d94e41 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_586c33fa090fea01939c8ba43b8b58d4 = $(`<div id="html_586c33fa090fea01939c8ba43b8b58d4" style="width: 100.0%; height: 100.0%;">         <b>Langley Tire Reef</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 14.82/hr<br>         Total Pycno: 841<br>         Detection Rate: 60.8%         </div>`)[0];
+                popup_80f621ad5c178be18cbd232e45d94e41.setContent(html_586c33fa090fea01939c8ba43b8b58d4);
+            
+        
+
+        circle_marker_3286f475e63ac0839a53abee1817cd14.bindPopup(popup_80f621ad5c178be18cbd232e45d94e41)
+        ;
+
+        
+    
+    
+            circle_marker_3286f475e63ac0839a53abee1817cd14.bindTooltip(
+                `<div>
+                     Langley Tire Reef (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ae152bc722bdcb8a274f93ea74d3eba = L.circleMarker(
+                [48.526141, -122.972398],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_f2e969da394fdbd133df629e91cd0e53 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_224a190214399efb2c52d540a5d7ea20 = $(`<div id="html_224a190214399efb2c52d540a5d7ea20" style="width: 100.0%; height: 100.0%;">         <b>Larry's Lair</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_f2e969da394fdbd133df629e91cd0e53.setContent(html_224a190214399efb2c52d540a5d7ea20);
+            
+        
+
+        circle_marker_9ae152bc722bdcb8a274f93ea74d3eba.bindPopup(popup_f2e969da394fdbd133df629e91cd0e53)
+        ;
+
+        
+    
+    
+            circle_marker_9ae152bc722bdcb8a274f93ea74d3eba.bindTooltip(
+                `<div>
+                     Larry's Lair (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90020afdddb9c9de62c4f28d90f5d71d = L.circleMarker(
+                [47.2842, -122.48315],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_00d7651b1c97863ee63b18b702ae9de5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_37978bc648bad52d1cf8499cbe89b128 = $(`<div id="html_37978bc648bad52d1cf8499cbe89b128" style="width: 100.0%; height: 100.0%;">         <b>Les Davis Marine Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.11/hr<br>         Total Pycno: 1<br>         Detection Rate: 1.8%         </div>`)[0];
+                popup_00d7651b1c97863ee63b18b702ae9de5.setContent(html_37978bc648bad52d1cf8499cbe89b128);
+            
+        
+
+        circle_marker_90020afdddb9c9de62c4f28d90f5d71d.bindPopup(popup_00d7651b1c97863ee63b18b702ae9de5)
+        ;
+
+        
+    
+    
+            circle_marker_90020afdddb9c9de62c4f28d90f5d71d.bindTooltip(
+                `<div>
+                     Les Davis Marine Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_146bbca93145084065d4419a2033563d = L.circleMarker(
+                [47.288135, -122.489],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_c9c24ca000e7084a135ac7a7429b14a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_429119339c282bab375b8634f179e7ee = $(`<div id="html_429119339c282bab375b8634f179e7ee" style="width: 100.0%; height: 100.0%;">         <b>Lobster Shop Wall</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_c9c24ca000e7084a135ac7a7429b14a8.setContent(html_429119339c282bab375b8634f179e7ee);
+            
+        
+
+        circle_marker_146bbca93145084065d4419a2033563d.bindPopup(popup_c9c24ca000e7084a135ac7a7429b14a8)
+        ;
+
+        
+    
+    
+            circle_marker_146bbca93145084065d4419a2033563d.bindTooltip(
+                `<div>
+                     Lobster Shop Wall (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec2df2597512e1aee7baa7e99193335f = L.circleMarker(
+                [47.540152, -122.397713],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_10a6fd5f8e245a7ef6b76a7794745082 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8debe49e034ce805e0406a3981afc38b = $(`<div id="html_8debe49e034ce805e0406a3981afc38b" style="width: 100.0%; height: 100.0%;">         <b>Lowman Beach Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_10a6fd5f8e245a7ef6b76a7794745082.setContent(html_8debe49e034ce805e0406a3981afc38b);
+            
+        
+
+        circle_marker_ec2df2597512e1aee7baa7e99193335f.bindPopup(popup_10a6fd5f8e245a7ef6b76a7794745082)
+        ;
+
+        
+    
+    
+            circle_marker_ec2df2597512e1aee7baa7e99193335f.bindTooltip(
+                `<div>
+                     Lowman Beach Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe60b74a998f33d15baa52a9e5397144 = L.circleMarker(
+                [47.362792, -122.439769],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_c64b392ba552c67d6e243ec34322a6aa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31e26c7af3b78352addb7eebf2ca3d73 = $(`<div id="html_31e26c7af3b78352addb7eebf2ca3d73" style="width: 100.0%; height: 100.0%;">         <b>Maury Island Barges</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_c64b392ba552c67d6e243ec34322a6aa.setContent(html_31e26c7af3b78352addb7eebf2ca3d73);
+            
+        
+
+        circle_marker_fe60b74a998f33d15baa52a9e5397144.bindPopup(popup_c64b392ba552c67d6e243ec34322a6aa)
+        ;
+
+        
+    
+    
+            circle_marker_fe60b74a998f33d15baa52a9e5397144.bindTooltip(
+                `<div>
+                     Maury Island Barges (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0fa0f318f870d67576757414506fa5d3 = L.circleMarker(
+                [47.94664, -122.309245],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_da4fad9cf96dbcb6982f4ecae2a28e0f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a898e40a09fbf36540271566783ed5f4 = $(`<div id="html_a898e40a09fbf36540271566783ed5f4" style="width: 100.0%; height: 100.0%;">         <b>Mukilteo Lighthouse</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.49/hr<br>         Total Pycno: 5<br>         Detection Rate: 6.2%         </div>`)[0];
+                popup_da4fad9cf96dbcb6982f4ecae2a28e0f.setContent(html_a898e40a09fbf36540271566783ed5f4);
+            
+        
+
+        circle_marker_0fa0f318f870d67576757414506fa5d3.bindPopup(popup_da4fad9cf96dbcb6982f4ecae2a28e0f)
+        ;
+
+        
+    
+    
+            circle_marker_0fa0f318f870d67576757414506fa5d3.bindTooltip(
+                `<div>
+                     Mukilteo Lighthouse (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_902f999c53150dd6f590ec3e50f6a1b3 = L.circleMarker(
+                [48.14372132, -122.7801511],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_1a650cee582e23871d29cbf4f728c0d1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_127c2c6145d63abee14bc8103d6abd6f = $(`<div id="html_127c2c6145d63abee14bc8103d6abd6f" style="width: 100.0%; height: 100.0%;">         <b>North Beach</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_1a650cee582e23871d29cbf4f728c0d1.setContent(html_127c2c6145d63abee14bc8103d6abd6f);
+            
+        
+
+        circle_marker_902f999c53150dd6f590ec3e50f6a1b3.bindPopup(popup_1a650cee582e23871d29cbf4f728c0d1)
+        ;
+
+        
+    
+    
+            circle_marker_902f999c53150dd6f590ec3e50f6a1b3.bindTooltip(
+                `<div>
+                     North Beach (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f5fd221c2b414aee70e84af10e3b5ed = L.circleMarker(
+                [48.115774, -122.750321],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_dfba8e854deb69a794e7e139bb51cac6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_779f1d9ed121f137d4d2f5bd427403e1 = $(`<div id="html_779f1d9ed121f137d4d2f5bd427403e1" style="width: 100.0%; height: 100.0%;">         <b>Point Hudson</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.60/hr<br>         Total Pycno: 4<br>         Detection Rate: 7.1%         </div>`)[0];
+                popup_dfba8e854deb69a794e7e139bb51cac6.setContent(html_779f1d9ed121f137d4d2f5bd427403e1);
+            
+        
+
+        circle_marker_6f5fd221c2b414aee70e84af10e3b5ed.bindPopup(popup_dfba8e854deb69a794e7e139bb51cac6)
+        ;
+
+        
+    
+    
+            circle_marker_6f5fd221c2b414aee70e84af10e3b5ed.bindTooltip(
+                `<div>
+                     Point Hudson (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b4fcafab870c10be53a104f3bf62f92 = L.circleMarker(
+                [47.763705, -122.853794],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_3e691cda3377b6370f3635c747cb0f69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab520397b194f3de9a6b7ace5bedfc0c = $(`<div id="html_ab520397b194f3de9a6b7ace5bedfc0c" style="width: 100.0%; height: 100.0%;">         <b>Point Whitney Shellfish Lab</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 1.51/hr<br>         Total Pycno: 7<br>         Detection Rate: 11.8%         </div>`)[0];
+                popup_3e691cda3377b6370f3635c747cb0f69.setContent(html_ab520397b194f3de9a6b7ace5bedfc0c);
+            
+        
+
+        circle_marker_7b4fcafab870c10be53a104f3bf62f92.bindPopup(popup_3e691cda3377b6370f3635c747cb0f69)
+        ;
+
+        
+    
+    
+            circle_marker_7b4fcafab870c10be53a104f3bf62f92.bindTooltip(
+                `<div>
+                     Point Whitney Shellfish Lab (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b110ee560ef362c2e71e13bbef11c261 = L.circleMarker(
+                [47.372727, -122.327878],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_4733700e59d91536d78e9de970ba4bdb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff2de6fe35eeb076e94cd6d60148b454 = $(`<div id="html_ff2de6fe35eeb076e94cd6d60148b454" style="width: 100.0%; height: 100.0%;">         <b>Saltwater State Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.02/hr<br>         Total Pycno: 1<br>         Detection Rate: 0.8%         </div>`)[0];
+                popup_4733700e59d91536d78e9de970ba4bdb.setContent(html_ff2de6fe35eeb076e94cd6d60148b454);
+            
+        
+
+        circle_marker_b110ee560ef362c2e71e13bbef11c261.bindPopup(popup_4733700e59d91536d78e9de970ba4bdb)
+        ;
+
+        
+    
+    
+            circle_marker_b110ee560ef362c2e71e13bbef11c261.bindTooltip(
+                `<div>
+                     Saltwater State Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2718b6682976ec1aa560a8a580e8c37c = L.circleMarker(
+                [47.651043, -122.845563],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_be7b6abe4f87706fd10201981f176c17 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0689fbcf4dc684ff61b06ac916c708b2 = $(`<div id="html_0689fbcf4dc684ff61b06ac916c708b2" style="width: 100.0%; height: 100.0%;">         <b>Scenic Beach State Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 13.19/hr<br>         Total Pycno: 75<br>         Detection Rate: 74.1%         </div>`)[0];
+                popup_be7b6abe4f87706fd10201981f176c17.setContent(html_0689fbcf4dc684ff61b06ac916c708b2);
+            
+        
+
+        circle_marker_2718b6682976ec1aa560a8a580e8c37c.bindPopup(popup_be7b6abe4f87706fd10201981f176c17)
+        ;
+
+        
+    
+    
+            circle_marker_2718b6682976ec1aa560a8a580e8c37c.bindTooltip(
+                `<div>
+                     Scenic Beach State Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75aa4c0bf5ce418007f2bf74bc6f8cf8 = L.circleMarker(
+                [47.64656, -122.826454],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_bb0871e4b1d202ee4a7fd61322071c02 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4146c0b2d8570ca04c84873714921b95 = $(`<div id="html_4146c0b2d8570ca04c84873714921b95" style="width: 100.0%; height: 100.0%;">         <b>Seabeck Bay</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_bb0871e4b1d202ee4a7fd61322071c02.setContent(html_4146c0b2d8570ca04c84873714921b95);
+            
+        
+
+        circle_marker_75aa4c0bf5ce418007f2bf74bc6f8cf8.bindPopup(popup_bb0871e4b1d202ee4a7fd61322071c02)
+        ;
+
+        
+    
+    
+            circle_marker_75aa4c0bf5ce418007f2bf74bc6f8cf8.bindTooltip(
+                `<div>
+                     Seabeck Bay (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_728d1bbbd6db480519e965060c7fbfed = L.circleMarker(
+                [48.267835, -124.297926],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_e959f480ceee3656cb92b8b36178e038 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a62dba54112b76f75674b3c315a2982c = $(`<div id="html_a62dba54112b76f75674b3c315a2982c" style="width: 100.0%; height: 100.0%;">         <b>Sekiu</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 3.00/hr<br>         Total Pycno: 59<br>         Detection Rate: 33.3%         </div>`)[0];
+                popup_e959f480ceee3656cb92b8b36178e038.setContent(html_a62dba54112b76f75674b3c315a2982c);
+            
+        
+
+        circle_marker_728d1bbbd6db480519e965060c7fbfed.bindPopup(popup_e959f480ceee3656cb92b8b36178e038)
+        ;
+
+        
+    
+    
+            circle_marker_728d1bbbd6db480519e965060c7fbfed.bindTooltip(
+                `<div>
+                     Sekiu (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_094a8633314b5ae474f6aa99f685391b = L.circleMarker(
+                [48.491072, -122.690203],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_d1e83a564fa75725e74d0b427c3386f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d015c056e1a3f74fed05170a6d55c9de = $(`<div id="html_d015c056e1a3f74fed05170a6d55c9de" style="width: 100.0%; height: 100.0%;">         <b>Skyline</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_d1e83a564fa75725e74d0b427c3386f1.setContent(html_d015c056e1a3f74fed05170a6d55c9de);
+            
+        
+
+        circle_marker_094a8633314b5ae474f6aa99f685391b.bindPopup(popup_d1e83a564fa75725e74d0b427c3386f1)
+        ;
+
+        
+    
+    
+            circle_marker_094a8633314b5ae474f6aa99f685391b.bindTooltip(
+                `<div>
+                     Skyline (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f55fe4a0397a9d12d5ab1e0c421e9e69 = L.circleMarker(
+                [47.179051, -122.592],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_92fd811c9c00a57be69d8bb5473adb51 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0020f594ff8e1b5fc318aa74efee8f4 = $(`<div id="html_b0020f594ff8e1b5fc318aa74efee8f4" style="width: 100.0%; height: 100.0%;">         <b>Sunnyside Beach Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_92fd811c9c00a57be69d8bb5473adb51.setContent(html_b0020f594ff8e1b5fc318aa74efee8f4);
+            
+        
+
+        circle_marker_f55fe4a0397a9d12d5ab1e0c421e9e69.bindPopup(popup_92fd811c9c00a57be69d8bb5473adb51)
+        ;
+
+        
+    
+    
+            circle_marker_f55fe4a0397a9d12d5ab1e0c421e9e69.bindTooltip(
+                `<div>
+                     Sunnyside Beach Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2fcd9dcf4d055ce1e7cbe55132144ca = L.circleMarker(
+                [47.247113, -122.554303],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_caac91d4e287269e4d05ecac40795a50 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a1f10a8124f7157a164b03e966ae3897 = $(`<div id="html_a1f10a8124f7157a164b03e966ae3897" style="width: 100.0%; height: 100.0%;">         <b>Titlow Beach Park</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.10/hr<br>         Total Pycno: 3<br>         Detection Rate: 2.0%         </div>`)[0];
+                popup_caac91d4e287269e4d05ecac40795a50.setContent(html_a1f10a8124f7157a164b03e966ae3897);
+            
+        
+
+        circle_marker_e2fcd9dcf4d055ce1e7cbe55132144ca.bindPopup(popup_caac91d4e287269e4d05ecac40795a50)
+        ;
+
+        
+    
+    
+            circle_marker_e2fcd9dcf4d055ce1e7cbe55132144ca.bindTooltip(
+                `<div>
+                     Titlow Beach Park (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f39338ff3297316b3a1e767f7ec8a091 = L.circleMarker(
+                [47.605289, -122.981388],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_211ca058e61589f8efdd78c918066a6c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3fafb7edd21821a1e35b292a921fca77 = $(`<div id="html_3fafb7edd21821a1e35b292a921fca77" style="width: 100.0%; height: 100.0%;">         <b>Triton Cove</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 4.77/hr<br>         Total Pycno: 59<br>         Detection Rate: 39.1%         </div>`)[0];
+                popup_211ca058e61589f8efdd78c918066a6c.setContent(html_3fafb7edd21821a1e35b292a921fca77);
+            
+        
+
+        circle_marker_f39338ff3297316b3a1e767f7ec8a091.bindPopup(popup_211ca058e61589f8efdd78c918066a6c)
+        ;
+
+        
+    
+    
+            circle_marker_f39338ff3297316b3a1e767f7ec8a091.bindTooltip(
+                `<div>
+                     Triton Cove (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43a8a5a7faef9b28479e595919fb17a1 = L.circleMarker(
+                [48.102921, -122.778725],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_0728874f5e3d0ab0df1cc20da9eaaca2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9776dbfdbdad45f5c1e0d2776dc13901 = $(`<div id="html_9776dbfdbdad45f5c1e0d2776dc13901" style="width: 100.0%; height: 100.0%;">         <b>Wreck of the Ranger</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Mean Rate: 0.90/hr<br>         Total Pycno: 3<br>         Detection Rate: 5.0%         </div>`)[0];
+                popup_0728874f5e3d0ab0df1cc20da9eaaca2.setContent(html_9776dbfdbdad45f5c1e0d2776dc13901);
+            
+        
+
+        circle_marker_43a8a5a7faef9b28479e595919fb17a1.bindPopup(popup_0728874f5e3d0ab0df1cc20da9eaaca2)
+        ;
+
+        
+    
+    
+            circle_marker_43a8a5a7faef9b28479e595919fb17a1.bindTooltip(
+                `<div>
+                     Wreck of the Ranger (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51674fca4210aaf4cfaa9cd794c545c2 = L.circleMarker(
+                [47.246737, -122.603261],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_44d488b9e1bba95589b5070512161421);
+        
+    
+        var popup_c1725c86ac31324663405f4bd80c8487 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1aba2f28687e9e52836b8981c901a7d = $(`<div id="html_b1aba2f28687e9e52836b8981c901a7d" style="width: 100.0%; height: 100.0%;">         <b>Z's Reef</b><br>         <hr>         Eelgrass: <b>Yes</b><br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_c1725c86ac31324663405f4bd80c8487.setContent(html_b1aba2f28687e9e52836b8981c901a7d);
+            
+        
+
+        circle_marker_51674fca4210aaf4cfaa9cd794c545c2.bindPopup(popup_c1725c86ac31324663405f4bd80c8487)
+        ;
+
+        
+    
+    
+            circle_marker_51674fca4210aaf4cfaa9cd794c545c2.bindTooltip(
+                `<div>
+                     Z's Reef (Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_44d488b9e1bba95589b5070512161421.addTo(map_e86835759a4e776455ee4e035c0459be);
+        
+    
+            var feature_group_f20e603a9b552999aac2dd034d9dfcfe = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_58af69fa6d145e0b983d2dd845cf6e50 = L.circleMarker(
+                [47.851581, -122.337599],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_109068b6a00ad0a5746c4ad7f4bcaf69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7e971f1a5fbfd7e94436d55d36f2ecf7 = $(`<div id="html_7e971f1a5fbfd7e94436d55d36f2ecf7" style="width: 100.0%; height: 100.0%;">         <b>100 Foot Rock</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 8.00/hr<br>         Total Pycno: 4<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_109068b6a00ad0a5746c4ad7f4bcaf69.setContent(html_7e971f1a5fbfd7e94436d55d36f2ecf7);
+            
+        
+
+        circle_marker_58af69fa6d145e0b983d2dd845cf6e50.bindPopup(popup_109068b6a00ad0a5746c4ad7f4bcaf69)
+        ;
+
+        
+    
+    
+            circle_marker_58af69fa6d145e0b983d2dd845cf6e50.bindTooltip(
+                `<div>
+                     100 Foot Rock (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_95707eb6e7261caa80b50e13677c539e = L.circleMarker(
+                [48.163471, -122.641196],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_0d0748679e3f7c8cadf813517a1241f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_320208ac542fc4d7c4ec8ab2421964da = $(`<div id="html_320208ac542fc4d7c4ec8ab2421964da" style="width: 100.0%; height: 100.0%;">         <b>Admiralty Beach</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_0d0748679e3f7c8cadf813517a1241f1.setContent(html_320208ac542fc4d7c4ec8ab2421964da);
+            
+        
+
+        circle_marker_95707eb6e7261caa80b50e13677c539e.bindPopup(popup_0d0748679e3f7c8cadf813517a1241f1)
+        ;
+
+        
+    
+    
+            circle_marker_95707eb6e7261caa80b50e13677c539e.bindTooltip(
+                `<div>
+                     Admiralty Beach (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c540a5593a42ffafac14030d255d7839 = L.circleMarker(
+                [47.588746, -122.379068],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_faefa54b85196aa87d0779431e6cd9ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0081ed3affd2e3f5c884f498e964307c = $(`<div id="html_0081ed3affd2e3f5c884f498e964307c" style="width: 100.0%; height: 100.0%;">         <b>Alki - Cove 2</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.21/hr<br>         Total Pycno: 14<br>         Detection Rate: 1.1%         </div>`)[0];
+                popup_faefa54b85196aa87d0779431e6cd9ed.setContent(html_0081ed3affd2e3f5c884f498e964307c);
+            
+        
+
+        circle_marker_c540a5593a42ffafac14030d255d7839.bindPopup(popup_faefa54b85196aa87d0779431e6cd9ed)
+        ;
+
+        
+    
+    
+            circle_marker_c540a5593a42ffafac14030d255d7839.bindTooltip(
+                `<div>
+                     Alki - Cove 2 (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_322850c323e2c9ddc4d2427eded74e4c = L.circleMarker(
+                [49.515547, -123.295337],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_595f4ef7cb8b9c0fa8c2cf4d21648a5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_463894cd1fa72461aaf447f486bfd6ed = $(`<div id="html_463894cd1fa72461aaf447f486bfd6ed" style="width: 100.0%; height: 100.0%;">         <b>Anvil Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_595f4ef7cb8b9c0fa8c2cf4d21648a5c.setContent(html_463894cd1fa72461aaf447f486bfd6ed);
+            
+        
+
+        circle_marker_322850c323e2c9ddc4d2427eded74e4c.bindPopup(popup_595f4ef7cb8b9c0fa8c2cf4d21648a5c)
+        ;
+
+        
+    
+    
+            circle_marker_322850c323e2c9ddc4d2427eded74e4c.bindTooltip(
+                `<div>
+                     Anvil Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5eb29e4ca856157c78b60a85889197e = L.circleMarker(
+                [48.151033, -123.636306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_94e23ff340fb7754b8e6c04e9585b849 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_49f0d08eaaa7a40709103be668a3316e = $(`<div id="html_49f0d08eaaa7a40709103be668a3316e" style="width: 100.0%; height: 100.0%;">         <b>Bachelor Rock</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 4.43/hr<br>         Total Pycno: 4<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_94e23ff340fb7754b8e6c04e9585b849.setContent(html_49f0d08eaaa7a40709103be668a3316e);
+            
+        
+
+        circle_marker_b5eb29e4ca856157c78b60a85889197e.bindPopup(popup_94e23ff340fb7754b8e6c04e9585b849)
+        ;
+
+        
+    
+    
+            circle_marker_b5eb29e4ca856157c78b60a85889197e.bindTooltip(
+                `<div>
+                     Bachelor Rock (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_093d263448cd6579f62998b8c17176e7 = L.circleMarker(
+                [48.596069, -122.979414],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_ef575d8f9ef4058ffc23a592416d4817 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd84d8efac1cdaaec617cdc2e74a0ceb = $(`<div id="html_fd84d8efac1cdaaec617cdc2e74a0ceb" style="width: 100.0%; height: 100.0%;">         <b>Bell Island East</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_ef575d8f9ef4058ffc23a592416d4817.setContent(html_fd84d8efac1cdaaec617cdc2e74a0ceb);
+            
+        
+
+        circle_marker_093d263448cd6579f62998b8c17176e7.bindPopup(popup_ef575d8f9ef4058ffc23a592416d4817)
+        ;
+
+        
+    
+    
+            circle_marker_093d263448cd6579f62998b8c17176e7.bindTooltip(
+                `<div>
+                     Bell Island East (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81f99adea39f576d976e3987726537c2 = L.circleMarker(
+                [48.59602, -122.981588],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_f90bdb460748737c110c6279a4411e4e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd1bdc1e03f2978da92d3f9ff77632ca = $(`<div id="html_fd1bdc1e03f2978da92d3f9ff77632ca" style="width: 100.0%; height: 100.0%;">         <b>Bell Island West</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_f90bdb460748737c110c6279a4411e4e.setContent(html_fd1bdc1e03f2978da92d3f9ff77632ca);
+            
+        
+
+        circle_marker_81f99adea39f576d976e3987726537c2.bindPopup(popup_f90bdb460748737c110c6279a4411e4e)
+        ;
+
+        
+    
+    
+            circle_marker_81f99adea39f576d976e3987726537c2.bindTooltip(
+                `<div>
+                     Bell Island West (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be2abf55618dbe576812ef4818c5a68d = L.circleMarker(
+                [49.36309, -123.291585],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_59292b3c2031cbb7ab3f8d9a4b50436f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c43f69853093d0e02b4eaf2edf170ac5 = $(`<div id="html_c43f69853093d0e02b4eaf2edf170ac5" style="width: 100.0%; height: 100.0%;">         <b>Bird Islet</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.07/hr<br>         Total Pycno: 1<br>         Detection Rate: 2.7%         </div>`)[0];
+                popup_59292b3c2031cbb7ab3f8d9a4b50436f.setContent(html_c43f69853093d0e02b4eaf2edf170ac5);
+            
+        
+
+        circle_marker_be2abf55618dbe576812ef4818c5a68d.bindPopup(popup_59292b3c2031cbb7ab3f8d9a4b50436f)
+        ;
+
+        
+    
+    
+            circle_marker_be2abf55618dbe576812ef4818c5a68d.bindTooltip(
+                `<div>
+                     Bird Islet (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_216956d79cb1c363ecab612a57bc2409 = L.circleMarker(
+                [47.596591, -122.498623],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_fb1aac3f124f9c21039876e317836e95 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f2ea40331a098d03954525b2f9cbb057 = $(`<div id="html_f2ea40331a098d03954525b2f9cbb057" style="width: 100.0%; height: 100.0%;">         <b>Blakely Harbor Reef</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_fb1aac3f124f9c21039876e317836e95.setContent(html_f2ea40331a098d03954525b2f9cbb057);
+            
+        
+
+        circle_marker_216956d79cb1c363ecab612a57bc2409.bindPopup(popup_fb1aac3f124f9c21039876e317836e95)
+        ;
+
+        
+    
+    
+            circle_marker_216956d79cb1c363ecab612a57bc2409.bindTooltip(
+                `<div>
+                     Blakely Harbor Reef (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51ed2bc937dbc27ea1f1460a7a35fce7 = L.circleMarker(
+                [49.490065, -123.329092],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_236ad54c000844d1d38a988da4e7e30b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5e51c7287a96594312675c802d36fc6e = $(`<div id="html_5e51c7287a96594312675c802d36fc6e" style="width: 100.0%; height: 100.0%;">         <b>Brigade</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_236ad54c000844d1d38a988da4e7e30b.setContent(html_5e51c7287a96594312675c802d36fc6e);
+            
+        
+
+        circle_marker_51ed2bc937dbc27ea1f1460a7a35fce7.bindPopup(popup_236ad54c000844d1d38a988da4e7e30b)
+        ;
+
+        
+    
+    
+            circle_marker_51ed2bc937dbc27ea1f1460a7a35fce7.bindTooltip(
+                `<div>
+                     Brigade (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17f7c620dabd945449e10158a0fd8c7d = L.circleMarker(
+                [48.594083, -122.965431],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_4250c8bd81da24400d515fee62636374 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bba7763d6fb0ac98f64f877363fb7551 = $(`<div id="html_bba7763d6fb0ac98f64f877363fb7551" style="width: 100.0%; height: 100.0%;">         <b>Broken Point East</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_4250c8bd81da24400d515fee62636374.setContent(html_bba7763d6fb0ac98f64f877363fb7551);
+            
+        
+
+        circle_marker_17f7c620dabd945449e10158a0fd8c7d.bindPopup(popup_4250c8bd81da24400d515fee62636374)
+        ;
+
+        
+    
+    
+            circle_marker_17f7c620dabd945449e10158a0fd8c7d.bindTooltip(
+                `<div>
+                     Broken Point East (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89b2423a950e2d9b5e722a6a6bae1f0b = L.circleMarker(
+                [48.594669, -122.967602],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_4cde03b9fa63816b79228b0938bdfdf4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_574c36406504e026281b9c3080c18523 = $(`<div id="html_574c36406504e026281b9c3080c18523" style="width: 100.0%; height: 100.0%;">         <b>Broken Point West</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_4cde03b9fa63816b79228b0938bdfdf4.setContent(html_574c36406504e026281b9c3080c18523);
+            
+        
+
+        circle_marker_89b2423a950e2d9b5e722a6a6bae1f0b.bindPopup(popup_4cde03b9fa63816b79228b0938bdfdf4)
+        ;
+
+        
+    
+    
+            circle_marker_89b2423a950e2d9b5e722a6a6bae1f0b.bindTooltip(
+                `<div>
+                     Broken Point West (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb3d42aaa1e44560dfcf805697596125 = L.circleMarker(
+                [48.053302, -122.358319],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_59e583329421d2fd60a4572f87ad78b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8b249c7d2b243f11153878443b5f4e30 = $(`<div id="html_8b249c7d2b243f11153878443b5f4e30" style="width: 100.0%; height: 100.0%;">         <b>Camano Head</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_59e583329421d2fd60a4572f87ad78b1.setContent(html_8b249c7d2b243f11153878443b5f4e30);
+            
+        
+
+        circle_marker_eb3d42aaa1e44560dfcf805697596125.bindPopup(popup_59e583329421d2fd60a4572f87ad78b1)
+        ;
+
+        
+    
+    
+            circle_marker_eb3d42aaa1e44560dfcf805697596125.bindTooltip(
+                `<div>
+                     Camano Head (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e1f6b40a4616b0f79b0152e33989517d = L.circleMarker(
+                [48.408773, -122.645138],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_784ff4198ebca229a140563add6b44fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efcc10fd5f75087eab0647a342e576cf = $(`<div id="html_efcc10fd5f75087eab0647a342e576cf" style="width: 100.0%; height: 100.0%;">         <b>Canoe Pass</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_784ff4198ebca229a140563add6b44fb.setContent(html_efcc10fd5f75087eab0647a342e576cf);
+            
+        
+
+        circle_marker_e1f6b40a4616b0f79b0152e33989517d.bindPopup(popup_784ff4198ebca229a140563add6b44fb)
+        ;
+
+        
+    
+    
+            circle_marker_e1f6b40a4616b0f79b0152e33989517d.bindTooltip(
+                `<div>
+                     Canoe Pass (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bfd48c68147ff3ff4cafaf9697b13cb1 = L.circleMarker(
+                [48.860126, -122.74981],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_392054667b35fc11f29936e32385495d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f708b6038ce572f602750ea5440befd = $(`<div id="html_8f708b6038ce572f602750ea5440befd" style="width: 100.0%; height: 100.0%;">         <b>Cherry Point</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_392054667b35fc11f29936e32385495d.setContent(html_8f708b6038ce572f602750ea5440befd);
+            
+        
+
+        circle_marker_bfd48c68147ff3ff4cafaf9697b13cb1.bindPopup(popup_392054667b35fc11f29936e32385495d)
+        ;
+
+        
+    
+    
+            circle_marker_bfd48c68147ff3ff4cafaf9697b13cb1.bindTooltip(
+                `<div>
+                     Cherry Point (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d6ddf0559a3942a22a580da3b0d84fc = L.circleMarker(
+                [49.499396, -123.301971],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_e06a1dade43a2157d0ffab4d7506799c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_59bb57a8d53922e8af1ba809b0ab7bcf = $(`<div id="html_59bb57a8d53922e8af1ba809b0ab7bcf" style="width: 100.0%; height: 100.0%;">         <b>Christie Islet</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_e06a1dade43a2157d0ffab4d7506799c.setContent(html_59bb57a8d53922e8af1ba809b0ab7bcf);
+            
+        
+
+        circle_marker_3d6ddf0559a3942a22a580da3b0d84fc.bindPopup(popup_e06a1dade43a2157d0ffab4d7506799c)
+        ;
+
+        
+    
+    
+            circle_marker_3d6ddf0559a3942a22a580da3b0d84fc.bindTooltip(
+                `<div>
+                     Christie Islet (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18e7e204ec4ae6a3775df4b1a8a9646f = L.circleMarker(
+                [48.590582, -123.011323],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_2c9bcd1d48c0efe8606b9168c53ed47e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_548dad224fef08849ce4644ee2e666d4 = $(`<div id="html_548dad224fef08849ce4644ee2e666d4" style="width: 100.0%; height: 100.0%;">         <b>Cliff Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_2c9bcd1d48c0efe8606b9168c53ed47e.setContent(html_548dad224fef08849ce4644ee2e666d4);
+            
+        
+
+        circle_marker_18e7e204ec4ae6a3775df4b1a8a9646f.bindPopup(popup_2c9bcd1d48c0efe8606b9168c53ed47e)
+        ;
+
+        
+    
+    
+            circle_marker_18e7e204ec4ae6a3775df4b1a8a9646f.bindTooltip(
+                `<div>
+                     Cliff Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_614768c67efd1ef1f454de15805e56fb = L.circleMarker(
+                [47.241984, -122.564551],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_4cc39883f757e6826f46e38add35e64d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_99624b27b936646ff97b5cc47af712a7 = $(`<div id="html_99624b27b936646ff97b5cc47af712a7" style="width: 100.0%; height: 100.0%;">         <b>Day Island Wall</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_4cc39883f757e6826f46e38add35e64d.setContent(html_99624b27b936646ff97b5cc47af712a7);
+            
+        
+
+        circle_marker_614768c67efd1ef1f454de15805e56fb.bindPopup(popup_4cc39883f757e6826f46e38add35e64d)
+        ;
+
+        
+    
+    
+            circle_marker_614768c67efd1ef1f454de15805e56fb.bindTooltip(
+                `<div>
+                     Day Island Wall (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2cc717b808a7b1f5c75f0baf06d3142f = L.circleMarker(
+                [47.242693, -122.565324],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_2af4528ba3baa92df6a245cc3ccc4ca9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_addb9269c57d8ed2f5351cc57cf4720d = $(`<div id="html_addb9269c57d8ed2f5351cc57cf4720d" style="width: 100.0%; height: 100.0%;">         <b>Day Island Wall - North</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_2af4528ba3baa92df6a245cc3ccc4ca9.setContent(html_addb9269c57d8ed2f5351cc57cf4720d);
+            
+        
+
+        circle_marker_2cc717b808a7b1f5c75f0baf06d3142f.bindPopup(popup_2af4528ba3baa92df6a245cc3ccc4ca9)
+        ;
+
+        
+    
+    
+            circle_marker_2cc717b808a7b1f5c75f0baf06d3142f.bindTooltip(
+                `<div>
+                     Day Island Wall - North (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af7a992d05c3fba10efad646aaff1cc3 = L.circleMarker(
+                [48.458797, -122.943743],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_261040a06eb2f184016b671ec44d4403 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c1a1af207d3a90aa7c86a00a6e2af497 = $(`<div id="html_c1a1af207d3a90aa7c86a00a6e2af497" style="width: 100.0%; height: 100.0%;">         <b>Deadman Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_261040a06eb2f184016b671ec44d4403.setContent(html_c1a1af207d3a90aa7c86a00a6e2af497);
+            
+        
+
+        circle_marker_af7a992d05c3fba10efad646aaff1cc3.bindPopup(popup_261040a06eb2f184016b671ec44d4403)
+        ;
+
+        
+    
+    
+            circle_marker_af7a992d05c3fba10efad646aaff1cc3.bindTooltip(
+                `<div>
+                     Deadman Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b510c60240d13b5b33411a8d45df05f = L.circleMarker(
+                [48.405541, -122.64517],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_20b79df43a20d0336e624e7d52e218d6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_15848e3b45814fa1203fbb1747b3aff0 = $(`<div id="html_15848e3b45814fa1203fbb1747b3aff0" style="width: 100.0%; height: 100.0%;">         <b>Deception Pass</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_20b79df43a20d0336e624e7d52e218d6.setContent(html_15848e3b45814fa1203fbb1747b3aff0);
+            
+        
+
+        circle_marker_6b510c60240d13b5b33411a8d45df05f.bindPopup(popup_20b79df43a20d0336e624e7d52e218d6)
+        ;
+
+        
+    
+    
+            circle_marker_6b510c60240d13b5b33411a8d45df05f.bindTooltip(
+                `<div>
+                     Deception Pass (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64e8313cf9d708699d5907fa2fd2e855 = L.circleMarker(
+                [47.278304, -122.471],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_9351c373fb165c7551c3f02be70ca8e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_01048aaaf161f65feb7097838f8fdb5d = $(`<div id="html_01048aaaf161f65feb7097838f8fdb5d" style="width: 100.0%; height: 100.0%;">         <b>Dickman Mill</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_9351c373fb165c7551c3f02be70ca8e2.setContent(html_01048aaaf161f65feb7097838f8fdb5d);
+            
+        
+
+        circle_marker_64e8313cf9d708699d5907fa2fd2e855.bindPopup(popup_9351c373fb165c7551c3f02be70ca8e2)
+        ;
+
+        
+    
+    
+            circle_marker_64e8313cf9d708699d5907fa2fd2e855.bindTooltip(
+                `<div>
+                     Dickman Mill (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2ced7aa68ee20381d55bd300e646b2c = L.circleMarker(
+                [48.162897, -122.637203],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_4ff464159a681b740249519fd4ded6ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6e09b78df008b4e6d227b3b76738a45 = $(`<div id="html_d6e09b78df008b4e6d227b3b76738a45" style="width: 100.0%; height: 100.0%;">         <b>Driftwood Park</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.20/hr<br>         Total Pycno: 6<br>         Detection Rate: 9.4%         </div>`)[0];
+                popup_4ff464159a681b740249519fd4ded6ca.setContent(html_d6e09b78df008b4e6d227b3b76738a45);
+            
+        
+
+        circle_marker_b2ced7aa68ee20381d55bd300e646b2c.bindPopup(popup_4ff464159a681b740249519fd4ded6ca)
+        ;
+
+        
+    
+    
+            circle_marker_b2ced7aa68ee20381d55bd300e646b2c.bindTooltip(
+                `<div>
+                     Driftwood Park (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_752346c3b7556f7d911392e9028504de = L.circleMarker(
+                [48.458027, -123.036267],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_aab7c900e10b9d6fb5fbcf2ca1152059 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6997c03e487d66d617cbc4a7a56532b4 = $(`<div id="html_6997c03e487d66d617cbc4a7a56532b4" style="width: 100.0%; height: 100.0%;">         <b>Eagle Point</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.34/hr<br>         Total Pycno: 5<br>         Detection Rate: 5.9%         </div>`)[0];
+                popup_aab7c900e10b9d6fb5fbcf2ca1152059.setContent(html_6997c03e487d66d617cbc4a7a56532b4);
+            
+        
+
+        circle_marker_752346c3b7556f7d911392e9028504de.bindPopup(popup_aab7c900e10b9d6fb5fbcf2ca1152059)
+        ;
+
+        
+    
+    
+            circle_marker_752346c3b7556f7d911392e9028504de.bindTooltip(
+                `<div>
+                     Eagle Point (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f9e0cf54e3fb87226c435cd387a41b47 = L.circleMarker(
+                [47.562416, -123.017743],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_2ea289913dfe8132514bd832f6c3e96c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9221c005899e86329e2691bbd27aad2f = $(`<div id="html_9221c005899e86329e2691bbd27aad2f" style="width: 100.0%; height: 100.0%;">         <b>Elephant Wall</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_2ea289913dfe8132514bd832f6c3e96c.setContent(html_9221c005899e86329e2691bbd27aad2f);
+            
+        
+
+        circle_marker_f9e0cf54e3fb87226c435cd387a41b47.bindPopup(popup_2ea289913dfe8132514bd832f6c3e96c)
+        ;
+
+        
+    
+    
+            circle_marker_f9e0cf54e3fb87226c435cd387a41b47.bindTooltip(
+                `<div>
+                     Elephant Wall (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f737c8c2147e94e393fdb403a783b3fd = L.circleMarker(
+                [49.422304, -123.410877],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_09f7669cbedeada2b6d52f215a31147e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e859fc1208761ef8f6baa6718609374a = $(`<div id="html_e859fc1208761ef8f6baa6718609374a" style="width: 100.0%; height: 100.0%;">         <b>Enchanted Forest</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Sponge Garden<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_09f7669cbedeada2b6d52f215a31147e.setContent(html_e859fc1208761ef8f6baa6718609374a);
+            
+        
+
+        circle_marker_f737c8c2147e94e393fdb403a783b3fd.bindPopup(popup_09f7669cbedeada2b6d52f215a31147e)
+        ;
+
+        
+    
+    
+            circle_marker_f737c8c2147e94e393fdb403a783b3fd.bindTooltip(
+                `<div>
+                     Enchanted Forest (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9eefd55509bd1a76097365eedbe20492 = L.circleMarker(
+                [47.564755, -123.01436],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_1c85e1cb003c5e048b6896f142f2fa28 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f02d39d33b9a256d21da08e9daa30495 = $(`<div id="html_f02d39d33b9a256d21da08e9daa30495" style="width: 100.0%; height: 100.0%;">         <b>Flagpole Point</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 4.33/hr<br>         Total Pycno: 36<br>         Detection Rate: 24.3%         </div>`)[0];
+                popup_1c85e1cb003c5e048b6896f142f2fa28.setContent(html_f02d39d33b9a256d21da08e9daa30495);
+            
+        
+
+        circle_marker_9eefd55509bd1a76097365eedbe20492.bindPopup(popup_1c85e1cb003c5e048b6896f142f2fa28)
+        ;
+
+        
+    
+    
+            circle_marker_9eefd55509bd1a76097365eedbe20492.bindTooltip(
+                `<div>
+                     Flagpole Point (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62960a468390db9bd4ae2aa62d990e27 = L.circleMarker(
+                [48.136638, -122.760193],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_219ea3bf18d73005bece2e4f113a7c21 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b2a7d0668bcd87b34d5c98b11e843362 = $(`<div id="html_b2a7d0668bcd87b34d5c98b11e843362" style="width: 100.0%; height: 100.0%;">         <b>Fort Worden</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.20/hr<br>         Total Pycno: 1<br>         Detection Rate: 20.0%         </div>`)[0];
+                popup_219ea3bf18d73005bece2e4f113a7c21.setContent(html_b2a7d0668bcd87b34d5c98b11e843362);
+            
+        
+
+        circle_marker_62960a468390db9bd4ae2aa62d990e27.bindPopup(popup_219ea3bf18d73005bece2e4f113a7c21)
+        ;
+
+        
+    
+    
+            circle_marker_62960a468390db9bd4ae2aa62d990e27.bindTooltip(
+                `<div>
+                     Fort Worden (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5283f999939724387852b8bacfd34516 = L.circleMarker(
+                [47.941083, -122.6012],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_eac516b6ceccbf5aee42686267c6e6a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40115e21100000db4a9e4e3737cd3235 = $(`<div id="html_40115e21100000db4a9e4e3737cd3235" style="width: 100.0%; height: 100.0%;">         <b>Foulweather Bluff</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_eac516b6ceccbf5aee42686267c6e6a5.setContent(html_40115e21100000db4a9e4e3737cd3235);
+            
+        
+
+        circle_marker_5283f999939724387852b8bacfd34516.bindPopup(popup_eac516b6ceccbf5aee42686267c6e6a5)
+        ;
+
+        
+    
+    
+            circle_marker_5283f999939724387852b8bacfd34516.bindTooltip(
+                `<div>
+                     Foulweather Bluff (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ddce4af1c45c6f12b795adf3a46c1de = L.circleMarker(
+                [47.228514, -122.589606],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_1ae994ed44e00801342e60f44234b5b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5bd8c5c1e349b12c404d67d9b269fca = $(`<div id="html_d5bd8c5c1e349b12c404d67d9b269fca" style="width: 100.0%; height: 100.0%;">         <b>Fox Island East Wall</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_1ae994ed44e00801342e60f44234b5b6.setContent(html_d5bd8c5c1e349b12c404d67d9b269fca);
+            
+        
+
+        circle_marker_4ddce4af1c45c6f12b795adf3a46c1de.bindPopup(popup_1ae994ed44e00801342e60f44234b5b6)
+        ;
+
+        
+    
+    
+            circle_marker_4ddce4af1c45c6f12b795adf3a46c1de.bindTooltip(
+                `<div>
+                     Fox Island East Wall (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb30be101095eae0e07cfb94252e5d38 = L.circleMarker(
+                [48.549823, -123.005027],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_4e8cef2d1ea112b8974e6696a009abbd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_43d558bc8150665c4403dab03463f8ae = $(`<div id="html_43d558bc8150665c4403dab03463f8ae" style="width: 100.0%; height: 100.0%;">         <b>Friday Harbor Reef</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_4e8cef2d1ea112b8974e6696a009abbd.setContent(html_43d558bc8150665c4403dab03463f8ae);
+            
+        
+
+        circle_marker_bb30be101095eae0e07cfb94252e5d38.bindPopup(popup_4e8cef2d1ea112b8974e6696a009abbd)
+        ;
+
+        
+    
+    
+            circle_marker_bb30be101095eae0e07cfb94252e5d38.bindTooltip(
+                `<div>
+                     Friday Harbor Reef (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8a6ce3dd744a9ad694bbf8661e78ffa = L.circleMarker(
+                [47.617983, -122.968183],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_8717b02dc391752d0030fbf2aaa88f4a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8fcb0e61fead4acc651da6f40fd2444d = $(`<div id="html_8fcb0e61fead4acc651da6f40fd2444d" style="width: 100.0%; height: 100.0%;">         <b>Fulton Creek</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 3.27/hr<br>         Total Pycno: 5<br>         Detection Rate: 75.0%         </div>`)[0];
+                popup_8717b02dc391752d0030fbf2aaa88f4a.setContent(html_8fcb0e61fead4acc651da6f40fd2444d);
+            
+        
+
+        circle_marker_f8a6ce3dd744a9ad694bbf8661e78ffa.bindPopup(popup_8717b02dc391752d0030fbf2aaa88f4a)
+        ;
+
+        
+    
+    
+            circle_marker_f8a6ce3dd744a9ad694bbf8661e78ffa.bindTooltip(
+                `<div>
+                     Fulton Creek (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73d767a11240088d90f64448d6e8cba7 = L.circleMarker(
+                [47.419888, -123.129494],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_8e43309ca3b0e2748ef7c527439c8063 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8b7a903eb261a98b470678c3f92d33ca = $(`<div id="html_8b7a903eb261a98b470678c3f92d33ca" style="width: 100.0%; height: 100.0%;">         <b>Glen Ayr Ravine</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_8e43309ca3b0e2748ef7c527439c8063.setContent(html_8b7a903eb261a98b470678c3f92d33ca);
+            
+        
+
+        circle_marker_73d767a11240088d90f64448d6e8cba7.bindPopup(popup_8e43309ca3b0e2748ef7c527439c8063)
+        ;
+
+        
+    
+    
+            circle_marker_73d767a11240088d90f64448d6e8cba7.bindTooltip(
+                `<div>
+                     Glen Ayr Ravine (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90dcb6daa4e2ba58db02a8c575cd124a = L.circleMarker(
+                [47.63058, -122.942265],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_f6cfdd163b134203c1c247cc55c81934 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82f3556ba7c5a2b6ef86adb1216b584a = $(`<div id="html_82f3556ba7c5a2b6ef86adb1216b584a" style="width: 100.0%; height: 100.0%;">         <b>Goby Garden</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 4.62/hr<br>         Total Pycno: 2<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_f6cfdd163b134203c1c247cc55c81934.setContent(html_82f3556ba7c5a2b6ef86adb1216b584a);
+            
+        
+
+        circle_marker_90dcb6daa4e2ba58db02a8c575cd124a.bindPopup(popup_f6cfdd163b134203c1c247cc55c81934)
+        ;
+
+        
+    
+    
+            circle_marker_90dcb6daa4e2ba58db02a8c575cd124a.bindTooltip(
+                `<div>
+                     Goby Garden (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f986e98bb88e48bdd59fd78dd08260ca = L.circleMarker(
+                [48.617667, -123.040383],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_aeb3141175ea2238576129c87d45768a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b9f921c686f578b8a118cafa22f3e8f = $(`<div id="html_0b9f921c686f578b8a118cafa22f3e8f" style="width: 100.0%; height: 100.0%;">         <b>Jones Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.48/hr<br>         Total Pycno: 1<br>         Detection Rate: 5.6%         </div>`)[0];
+                popup_aeb3141175ea2238576129c87d45768a.setContent(html_0b9f921c686f578b8a118cafa22f3e8f);
+            
+        
+
+        circle_marker_f986e98bb88e48bdd59fd78dd08260ca.bindPopup(popup_aeb3141175ea2238576129c87d45768a)
+        ;
+
+        
+    
+    
+            circle_marker_f986e98bb88e48bdd59fd78dd08260ca.bindTooltip(
+                `<div>
+                     Jones Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_04432a4951286c3339530c10922dcd4b = L.circleMarker(
+                [47.522325, -123.048584],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_0c5a4595dda1c948436dac89fa1f9f46 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9a19556324d30a0db6d6d11f33f517b5 = $(`<div id="html_9a19556324d30a0db6d6d11f33f517b5" style="width: 100.0%; height: 100.0%;">         <b>Jorsted Creek</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 1.08/hr<br>         Total Pycno: 3<br>         Detection Rate: 27.3%         </div>`)[0];
+                popup_0c5a4595dda1c948436dac89fa1f9f46.setContent(html_9a19556324d30a0db6d6d11f33f517b5);
+            
+        
+
+        circle_marker_04432a4951286c3339530c10922dcd4b.bindPopup(popup_0c5a4595dda1c948436dac89fa1f9f46)
+        ;
+
+        
+    
+    
+            circle_marker_04432a4951286c3339530c10922dcd4b.bindTooltip(
+                `<div>
+                     Jorsted Creek (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_964ac64103cd4b82b405c715916a7008 = L.circleMarker(
+                [47.416943, -123.130313],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_449358491f18dbaa85e4063360d4aacd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b293c8cf60a7a3b0136262025c211d0 = $(`<div id="html_0b293c8cf60a7a3b0136262025c211d0" style="width: 100.0%; height: 100.0%;">         <b>Kat's Corner</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_449358491f18dbaa85e4063360d4aacd.setContent(html_0b293c8cf60a7a3b0136262025c211d0);
+            
+        
+
+        circle_marker_964ac64103cd4b82b405c715916a7008.bindPopup(popup_449358491f18dbaa85e4063360d4aacd)
+        ;
+
+        
+    
+    
+            circle_marker_964ac64103cd4b82b405c715916a7008.bindTooltip(
+                `<div>
+                     Kat's Corner (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53fd30b3e5a7028a37b9b503165e31fc = L.circleMarker(
+                [48.590498, -123.202768],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_abb0a6b46695d82dfb3d1bd29b523d0b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87fb715d04c4be73e2cc6600cf4d9275 = $(`<div id="html_87fb715d04c4be73e2cc6600cf4d9275" style="width: 100.0%; height: 100.0%;">         <b>Kellet's Bluff</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_abb0a6b46695d82dfb3d1bd29b523d0b.setContent(html_87fb715d04c4be73e2cc6600cf4d9275);
+            
+        
+
+        circle_marker_53fd30b3e5a7028a37b9b503165e31fc.bindPopup(popup_abb0a6b46695d82dfb3d1bd29b523d0b)
+        ;
+
+        
+    
+    
+            circle_marker_53fd30b3e5a7028a37b9b503165e31fc.bindTooltip(
+                `<div>
+                     Kellet's Bluff (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3a5c7344db90a63822b2103c9133cb1d = L.circleMarker(
+                [48.156876, -122.67077],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_15818c9e7bf0fd73e9847dbc44bc2b21 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a67c6cf8eef7c9bf7e3956c0aae6957a = $(`<div id="html_a67c6cf8eef7c9bf7e3956c0aae6957a" style="width: 100.0%; height: 100.0%;">         <b>Keystone Jetty</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.60/hr<br>         Total Pycno: 26<br>         Detection Rate: 7.0%         </div>`)[0];
+                popup_15818c9e7bf0fd73e9847dbc44bc2b21.setContent(html_a67c6cf8eef7c9bf7e3956c0aae6957a);
+            
+        
+
+        circle_marker_3a5c7344db90a63822b2103c9133cb1d.bindPopup(popup_15818c9e7bf0fd73e9847dbc44bc2b21)
+        ;
+
+        
+    
+    
+            circle_marker_3a5c7344db90a63822b2103c9133cb1d.bindTooltip(
+                `<div>
+                     Keystone Jetty (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7a026e7ffb4734a750b7534841812da = L.circleMarker(
+                [48.157998, -122.668452],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_14d1ece9c78d17e2c26ea8ed8e0ba94a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62ca24f10ffd698f171f9fce093f384e = $(`<div id="html_62ca24f10ffd698f171f9fce093f384e" style="width: 100.0%; height: 100.0%;">         <b>Keystone Jetty - Pilings</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_14d1ece9c78d17e2c26ea8ed8e0ba94a.setContent(html_62ca24f10ffd698f171f9fce093f384e);
+            
+        
+
+        circle_marker_d7a026e7ffb4734a750b7534841812da.bindPopup(popup_14d1ece9c78d17e2c26ea8ed8e0ba94a)
+        ;
+
+        
+    
+    
+            circle_marker_d7a026e7ffb4734a750b7534841812da.bindTooltip(
+                `<div>
+                     Keystone Jetty - Pilings (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a163aaedac482aa74c4ab34b87ac7d03 = L.circleMarker(
+                [48.515401, -123.152515],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_36dfec0f22b8311878dd164e9d04c36a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d53116c65c1a201c2db27dfbc04d262 = $(`<div id="html_4d53116c65c1a201c2db27dfbc04d262" style="width: 100.0%; height: 100.0%;">         <b>Lime Kiln</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_36dfec0f22b8311878dd164e9d04c36a.setContent(html_4d53116c65c1a201c2db27dfbc04d262);
+            
+        
+
+        circle_marker_a163aaedac482aa74c4ab34b87ac7d03.bindPopup(popup_36dfec0f22b8311878dd164e9d04c36a)
+        ;
+
+        
+    
+    
+            circle_marker_a163aaedac482aa74c4ab34b87ac7d03.bindTooltip(
+                `<div>
+                     Lime Kiln (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_074fd195b809d7ca2c0189cf9ba4fe58 = L.circleMarker(
+                [47.569882, -123.012899],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_87afc5a680969144edc93824cf741d36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_771713007c18f7f3267d60f7d30de690 = $(`<div id="html_771713007c18f7f3267d60f7d30de690" style="width: 100.0%; height: 100.0%;">         <b>Mike's Beach Resort</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef<br>         <hr>         Mean Rate: 6.00/hr<br>         Total Pycno: 3<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_87afc5a680969144edc93824cf741d36.setContent(html_771713007c18f7f3267d60f7d30de690);
+            
+        
+
+        circle_marker_074fd195b809d7ca2c0189cf9ba4fe58.bindPopup(popup_87afc5a680969144edc93824cf741d36)
+        ;
+
+        
+    
+    
+            circle_marker_074fd195b809d7ca2c0189cf9ba4fe58.bindTooltip(
+                `<div>
+                     Mike's Beach Resort (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d2ec3ca746dffccd5cb1f198a9f5cc5 = L.circleMarker(
+                [47.950451, -122.299001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_d93c4b180a42f9a652c3a77055252dcd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0036aef0d94bf1a7ce2f1ab5648cf3ae = $(`<div id="html_0036aef0d94bf1a7ce2f1ab5648cf3ae" style="width: 100.0%; height: 100.0%;">         <b>Mukilteo T-Dock</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.08/hr<br>         Total Pycno: 2<br>         Detection Rate: 2.0%         </div>`)[0];
+                popup_d93c4b180a42f9a652c3a77055252dcd.setContent(html_0036aef0d94bf1a7ce2f1ab5648cf3ae);
+            
+        
+
+        circle_marker_9d2ec3ca746dffccd5cb1f198a9f5cc5.bindPopup(popup_d93c4b180a42f9a652c3a77055252dcd)
+        ;
+
+        
+    
+    
+            circle_marker_9d2ec3ca746dffccd5cb1f198a9f5cc5.bindTooltip(
+                `<div>
+                     Mukilteo T-Dock (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27e17eb2e5d2ebfdb2305abb39214096 = L.circleMarker(
+                [47.60568, -122.497408],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_3dda7def1d13594d3dfae8caebb9151f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb4e3181de1e1831a5541e50f684bcc7 = $(`<div id="html_bb4e3181de1e1831a5541e50f684bcc7" style="width: 100.0%; height: 100.0%;">         <b>Norrander's</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_3dda7def1d13594d3dfae8caebb9151f.setContent(html_bb4e3181de1e1831a5541e50f684bcc7);
+            
+        
+
+        circle_marker_27e17eb2e5d2ebfdb2305abb39214096.bindPopup(popup_3dda7def1d13594d3dfae8caebb9151f)
+        ;
+
+        
+    
+    
+            circle_marker_27e17eb2e5d2ebfdb2305abb39214096.bindTooltip(
+                `<div>
+                     Norrander's (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae18d17c64fe58753badc85dc953b87c = L.circleMarker(
+                [48.41883, -122.67067],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_cff16386df2b11b4b6a772813e4e084a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5751cd8c41f20a58cb745e3139e84599 = $(`<div id="html_5751cd8c41f20a58cb745e3139e84599" style="width: 100.0%; height: 100.0%;">         <b>Northwest Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_cff16386df2b11b4b6a772813e4e084a.setContent(html_5751cd8c41f20a58cb745e3139e84599);
+            
+        
+
+        circle_marker_ae18d17c64fe58753badc85dc953b87c.bindPopup(popup_cff16386df2b11b4b6a772813e4e084a)
+        ;
+
+        
+    
+    
+            circle_marker_ae18d17c64fe58753badc85dc953b87c.bindTooltip(
+                `<div>
+                     Northwest Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2a1894cbe69d44e890c969f24e394f2 = L.circleMarker(
+                [48.604259, -123.09296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_11bb67f2217a3450b2558ae49d88af2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_65a0350e445287a3d3afcc9920985f58 = $(`<div id="html_65a0350e445287a3d3afcc9920985f58" style="width: 100.0%; height: 100.0%;">         <b>O'Neal Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.44/hr<br>         Total Pycno: 4<br>         Detection Rate: 11.8%         </div>`)[0];
+                popup_11bb67f2217a3450b2558ae49d88af2b.setContent(html_65a0350e445287a3d3afcc9920985f58);
+            
+        
+
+        circle_marker_b2a1894cbe69d44e890c969f24e394f2.bindPopup(popup_11bb67f2217a3450b2558ae49d88af2b)
+        ;
+
+        
+    
+    
+            circle_marker_b2a1894cbe69d44e890c969f24e394f2.bindTooltip(
+                `<div>
+                     O'Neal Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1454b5e1e4d7e24fb354b06ffb869de4 = L.circleMarker(
+                [47.447568, -123.112392],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_c132c9131d9c62fea68e9fea79c2882c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de8addc15913e0657e85a93c2eab3c81 = $(`<div id="html_de8addc15913e0657e85a93c2eab3c81" style="width: 100.0%; height: 100.0%;">         <b>Octopus Hole</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 2.87/hr<br>         Total Pycno: 43<br>         Detection Rate: 22.8%         </div>`)[0];
+                popup_c132c9131d9c62fea68e9fea79c2882c.setContent(html_de8addc15913e0657e85a93c2eab3c81);
+            
+        
+
+        circle_marker_1454b5e1e4d7e24fb354b06ffb869de4.bindPopup(popup_c132c9131d9c62fea68e9fea79c2882c)
+        ;
+
+        
+    
+    
+            circle_marker_1454b5e1e4d7e24fb354b06ffb869de4.bindTooltip(
+                `<div>
+                     Octopus Hole (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3a28a767aaf02e531110efb3da541de = L.circleMarker(
+                [47.313981, -122.528086],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_addb749122b84d3e63334541d3a23be3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5fc50b4548eec5ad8d2000827e0896cc = $(`<div id="html_5fc50b4548eec5ad8d2000827e0896cc" style="width: 100.0%; height: 100.0%;">         <b>Owen Beach</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Soft Bottom<br>         <hr>         Mean Rate: 1.60/hr<br>         Total Pycno: 2<br>         Detection Rate: 6.7%         </div>`)[0];
+                popup_addb749122b84d3e63334541d3a23be3.setContent(html_5fc50b4548eec5ad8d2000827e0896cc);
+            
+        
+
+        circle_marker_c3a28a767aaf02e531110efb3da541de.bindPopup(popup_addb749122b84d3e63334541d3a23be3)
+        ;
+
+        
+    
+    
+            circle_marker_c3a28a767aaf02e531110efb3da541de.bindTooltip(
+                `<div>
+                     Owen Beach (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71f67cf37504555da043a95386c03578 = L.circleMarker(
+                [49.346019, -123.304703],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_f43c84d06158eb657075bb774c79df39 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_608b060890a1c3074702b42c19dcfed5 = $(`<div id="html_608b060890a1c3074702b42c19dcfed5" style="width: 100.0%; height: 100.0%;">         <b>Passage Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.33/hr<br>         Total Pycno: 2<br>         Detection Rate: 3.8%         </div>`)[0];
+                popup_f43c84d06158eb657075bb774c79df39.setContent(html_608b060890a1c3074702b42c19dcfed5);
+            
+        
+
+        circle_marker_71f67cf37504555da043a95386c03578.bindPopup(popup_f43c84d06158eb657075bb774c79df39)
+        ;
+
+        
+    
+    
+            circle_marker_71f67cf37504555da043a95386c03578.bindTooltip(
+                `<div>
+                     Passage Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55900d9a047a62dfa60ae752067d7b9d = L.circleMarker(
+                [48.481855, -123.094404],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_84b9974ac2e9f6ebb62d5f03ea0fac9e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd6fd6c7eb7cc91a3632d8bb89c4e244 = $(`<div id="html_dd6fd6c7eb7cc91a3632d8bb89c4e244" style="width: 100.0%; height: 100.0%;">         <b>Pile Point</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_84b9974ac2e9f6ebb62d5f03ea0fac9e.setContent(html_dd6fd6c7eb7cc91a3632d8bb89c4e244);
+            
+        
+
+        circle_marker_55900d9a047a62dfa60ae752067d7b9d.bindPopup(popup_84b9974ac2e9f6ebb62d5f03ea0fac9e)
+        ;
+
+        
+    
+    
+            circle_marker_55900d9a047a62dfa60ae752067d7b9d.bindTooltip(
+                `<div>
+                     Pile Point (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d94874b3170ae628c3d3e392231dde8f = L.circleMarker(
+                [48.56323, -123.02555],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_f7e4fa8233751c921766e3c8aca22cc7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87c1c47a34ba9900fc8ca79fbabf3b1d = $(`<div id="html_87c1c47a34ba9900fc8ca79fbabf3b1d" style="width: 100.0%; height: 100.0%;">         <b>Point Caution</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_f7e4fa8233751c921766e3c8aca22cc7.setContent(html_87c1c47a34ba9900fc8ca79fbabf3b1d);
+            
+        
+
+        circle_marker_d94874b3170ae628c3d3e392231dde8f.bindPopup(popup_f7e4fa8233751c921766e3c8aca22cc7)
+        ;
+
+        
+    
+    
+            circle_marker_d94874b3170ae628c3d3e392231dde8f.bindTooltip(
+                `<div>
+                     Point Caution (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d0e6eb62330f1eb9421fb5a25af1ae9 = L.circleMarker(
+                [47.333038, -122.519207],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_d1d2c2b8ae85352de32429e8839a26bc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ec0a8a4c1b9619002d3660b2d454b24 = $(`<div id="html_7ec0a8a4c1b9619002d3660b2d454b24" style="width: 100.0%; height: 100.0%;">         <b>Point Dalco</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_d1d2c2b8ae85352de32429e8839a26bc.setContent(html_7ec0a8a4c1b9619002d3660b2d454b24);
+            
+        
+
+        circle_marker_4d0e6eb62330f1eb9421fb5a25af1ae9.bindPopup(popup_d1d2c2b8ae85352de32429e8839a26bc)
+        ;
+
+        
+    
+    
+            circle_marker_4d0e6eb62330f1eb9421fb5a25af1ae9.bindTooltip(
+                `<div>
+                     Point Dalco (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99d90826bfe8d0545e034747ff564381 = L.circleMarker(
+                [47.319055, -122.544862],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_ad7a6b19af85379a50dc0956a293cab6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c793603728960934535f9269551b38a4 = $(`<div id="html_c793603728960934535f9269551b38a4" style="width: 100.0%; height: 100.0%;">         <b>Point Defiance North Wall</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_ad7a6b19af85379a50dc0956a293cab6.setContent(html_c793603728960934535f9269551b38a4);
+            
+        
+
+        circle_marker_99d90826bfe8d0545e034747ff564381.bindPopup(popup_ad7a6b19af85379a50dc0956a293cab6)
+        ;
+
+        
+    
+    
+            circle_marker_99d90826bfe8d0545e034747ff564381.bindTooltip(
+                `<div>
+                     Point Defiance North Wall (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d115e6f6428cd4218126534b32e80c1d = L.circleMarker(
+                [47.314675, -122.547696],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_b2aa484125777a020aca9a0bdbf38c30 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_67c50ce45c5de552f4f310654567c220 = $(`<div id="html_67c50ce45c5de552f4f310654567c220" style="width: 100.0%; height: 100.0%;">         <b>Point Defiance West Kelp Beds</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_b2aa484125777a020aca9a0bdbf38c30.setContent(html_67c50ce45c5de552f4f310654567c220);
+            
+        
+
+        circle_marker_d115e6f6428cd4218126534b32e80c1d.bindPopup(popup_b2aa484125777a020aca9a0bdbf38c30)
+        ;
+
+        
+    
+    
+            circle_marker_d115e6f6428cd4218126534b32e80c1d.bindTooltip(
+                `<div>
+                     Point Defiance West Kelp Beds (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c4e9315c109a7904bf1c0b84b990097 = L.circleMarker(
+                [48.560418, -122.988549],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_4e565505eac81a2f9759f44d7cc06f2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e5a0d4158c95d0187a4b84673109aa3 = $(`<div id="html_3e5a0d4158c95d0187a4b84673109aa3" style="width: 100.0%; height: 100.0%;">         <b>Point George</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_4e565505eac81a2f9759f44d7cc06f2b.setContent(html_3e5a0d4158c95d0187a4b84673109aa3);
+            
+        
+
+        circle_marker_8c4e9315c109a7904bf1c0b84b990097.bindPopup(popup_4e565505eac81a2f9759f44d7cc06f2b)
+        ;
+
+        
+    
+    
+            circle_marker_8c4e9315c109a7904bf1c0b84b990097.bindTooltip(
+                `<div>
+                     Point George (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c7d2f1eb5589bcbd001ddf9858e5507 = L.circleMarker(
+                [47.299244, -122.502268],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_70ecd1418073a878c305ce7bfab47f8b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4a88b9685b19fee41af00448cb5cc95f = $(`<div id="html_4a88b9685b19fee41af00448cb5cc95f" style="width: 100.0%; height: 100.0%;">         <b>Point Ruston</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.08/hr<br>         Total Pycno: 3<br>         Detection Rate: 1.6%         </div>`)[0];
+                popup_70ecd1418073a878c305ce7bfab47f8b.setContent(html_4a88b9685b19fee41af00448cb5cc95f);
+            
+        
+
+        circle_marker_2c7d2f1eb5589bcbd001ddf9858e5507.bindPopup(popup_70ecd1418073a878c305ce7bfab47f8b)
+        ;
+
+        
+    
+    
+            circle_marker_2c7d2f1eb5589bcbd001ddf9858e5507.bindTooltip(
+                `<div>
+                     Point Ruston (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c219d2c866f1d95f016f287342777ff = L.circleMarker(
+                [47.905306, -122.376914],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_fb0a58f7425e36518c9277254a4b732c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94e661ee51be81d278edbfb471101e8f = $(`<div id="html_94e661ee51be81d278edbfb471101e8f" style="width: 100.0%; height: 100.0%;">         <b>Possession Point Fingers</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.01/hr<br>         Total Pycno: 1<br>         Detection Rate: 0.4%         </div>`)[0];
+                popup_fb0a58f7425e36518c9277254a4b732c.setContent(html_94e661ee51be81d278edbfb471101e8f);
+            
+        
+
+        circle_marker_8c219d2c866f1d95f016f287342777ff.bindPopup(popup_fb0a58f7425e36518c9277254a4b732c)
+        ;
+
+        
+    
+    
+            circle_marker_8c219d2c866f1d95f016f287342777ff.bindTooltip(
+                `<div>
+                     Possession Point Fingers (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e390387fbf04bfece435f860d2c6aab6 = L.circleMarker(
+                [47.761821, -122.849161],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_e9f04f2e9f608daf076958005dcab655 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5d77379a889c5554e8d556f2526d34fe = $(`<div id="html_5d77379a889c5554e8d556f2526d34fe" style="width: 100.0%; height: 100.0%;">         <b>Pulali Point</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 3.81/hr<br>         Total Pycno: 2<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_e9f04f2e9f608daf076958005dcab655.setContent(html_5d77379a889c5554e8d556f2526d34fe);
+            
+        
+
+        circle_marker_e390387fbf04bfece435f860d2c6aab6.bindPopup(popup_e9f04f2e9f608daf076958005dcab655)
+        ;
+
+        
+    
+    
+            circle_marker_e390387fbf04bfece435f860d2c6aab6.bindTooltip(
+                `<div>
+                     Pulali Point (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72d48836bf2c29f1f3797a745d1f8401 = L.circleMarker(
+                [47.735708, -122.85479],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_0bcef7fd8dae1d9559237de1e36657b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e21d238b84fe960d3486a9893a16f20 = $(`<div id="html_6e21d238b84fe960d3486a9893a16f20" style="width: 100.0%; height: 100.0%;">         <b>Pulali Point West Wall</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 3.67/hr<br>         Total Pycno: 3<br>         Detection Rate: 40.0%         </div>`)[0];
+                popup_0bcef7fd8dae1d9559237de1e36657b7.setContent(html_6e21d238b84fe960d3486a9893a16f20);
+            
+        
+
+        circle_marker_72d48836bf2c29f1f3797a745d1f8401.bindPopup(popup_0bcef7fd8dae1d9559237de1e36657b7)
+        ;
+
+        
+    
+    
+            circle_marker_72d48836bf2c29f1f3797a745d1f8401.bindTooltip(
+                `<div>
+                     Pulali Point West Wall (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d1091b31e91910de0e5552773760c76 = L.circleMarker(
+                [47.34892, -122.325934],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_2c6d2f9d65b02bd058bdc8606fa5c83a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e937a3f5b51f50c752ca29015e70014e = $(`<div id="html_e937a3f5b51f50c752ca29015e70014e" style="width: 100.0%; height: 100.0%;">         <b>Redondo Beach</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.12/hr<br>         Total Pycno: 1<br>         Detection Rate: 2.0%         </div>`)[0];
+                popup_2c6d2f9d65b02bd058bdc8606fa5c83a.setContent(html_e937a3f5b51f50c752ca29015e70014e);
+            
+        
+
+        circle_marker_7d1091b31e91910de0e5552773760c76.bindPopup(popup_2c6d2f9d65b02bd058bdc8606fa5c83a)
+        ;
+
+        
+    
+    
+            circle_marker_7d1091b31e91910de0e5552773760c76.bindTooltip(
+                `<div>
+                     Redondo Beach (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3367ce1c7b459f1ff2b1dbbbbc87aac = L.circleMarker(
+                [48.418732, -122.665668],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_b9ae61a9c687305d37c79d31d63d0598 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_16a9166b97f91fdca8edf0a98fd7d136 = $(`<div id="html_16a9166b97f91fdca8edf0a98fd7d136" style="width: 100.0%; height: 100.0%;">         <b>Rosario Beach Urchin Rocks</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.09/hr<br>         Total Pycno: 2<br>         Detection Rate: 3.4%         </div>`)[0];
+                popup_b9ae61a9c687305d37c79d31d63d0598.setContent(html_16a9166b97f91fdca8edf0a98fd7d136);
+            
+        
+
+        circle_marker_c3367ce1c7b459f1ff2b1dbbbbc87aac.bindPopup(popup_b9ae61a9c687305d37c79d31d63d0598)
+        ;
+
+        
+    
+    
+            circle_marker_c3367ce1c7b459f1ff2b1dbbbbc87aac.bindTooltip(
+                `<div>
+                     Rosario Beach Urchin Rocks (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_874adbac806bcdfc822f0b30b4379553 = L.circleMarker(
+                [48.415477, -122.66477],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_94ef3357584e8a80a43b3318ee80c15f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_557421c2a9ada91a10944d0482044366 = $(`<div id="html_557421c2a9ada91a10944d0482044366" style="width: 100.0%; height: 100.0%;">         <b>Rosario Head</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_94ef3357584e8a80a43b3318ee80c15f.setContent(html_557421c2a9ada91a10944d0482044366);
+            
+        
+
+        circle_marker_874adbac806bcdfc822f0b30b4379553.bindPopup(popup_94ef3357584e8a80a43b3318ee80c15f)
+        ;
+
+        
+    
+    
+            circle_marker_874adbac806bcdfc822f0b30b4379553.bindTooltip(
+                `<div>
+                     Rosario Head (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ec15773e48c1874318164c73f054353 = L.circleMarker(
+                [47.630199, -122.940635],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_09b06f914dbf7dcf0dda420e32c63af5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e16f93911b9ffe3c30ff5e95c81a5efb = $(`<div id="html_e16f93911b9ffe3c30ff5e95c81a5efb" style="width: 100.0%; height: 100.0%;">         <b>Rosie's Ravine</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 9.33/hr<br>         Total Pycno: 5<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_09b06f914dbf7dcf0dda420e32c63af5.setContent(html_e16f93911b9ffe3c30ff5e95c81a5efb);
+            
+        
+
+        circle_marker_5ec15773e48c1874318164c73f054353.bindPopup(popup_09b06f914dbf7dcf0dda420e32c63af5)
+        ;
+
+        
+    
+    
+            circle_marker_5ec15773e48c1874318164c73f054353.bindTooltip(
+                `<div>
+                     Rosie's Ravine (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db71852d5de56b1db5800b1ca6525900 = L.circleMarker(
+                [48.168709, -123.711306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_18625254f66445ea0600baccf79105cb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e0e22fce9083611f5071b3f35203e67 = $(`<div id="html_2e0e22fce9083611f5071b3f35203e67" style="width: 100.0%; height: 100.0%;">         <b>Salt Creek</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 6.00/hr<br>         Total Pycno: 10<br>         Detection Rate: 20.0%         </div>`)[0];
+                popup_18625254f66445ea0600baccf79105cb.setContent(html_2e0e22fce9083611f5071b3f35203e67);
+            
+        
+
+        circle_marker_db71852d5de56b1db5800b1ca6525900.bindPopup(popup_18625254f66445ea0600baccf79105cb)
+        ;
+
+        
+    
+    
+            circle_marker_db71852d5de56b1db5800b1ca6525900.bindTooltip(
+                `<div>
+                     Salt Creek (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f825bf8f91211df49aecd1b26411d95 = L.circleMarker(
+                [48.423927, -122.675213],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_80b2b537afdbd64d6e6533a1c04a5b44 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2bd752093c857232e672faa60b323121 = $(`<div id="html_2bd752093c857232e672faa60b323121" style="width: 100.0%; height: 100.0%;">         <b>Sares Head</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_80b2b537afdbd64d6e6533a1c04a5b44.setContent(html_2bd752093c857232e672faa60b323121);
+            
+        
+
+        circle_marker_1f825bf8f91211df49aecd1b26411d95.bindPopup(popup_80b2b537afdbd64d6e6533a1c04a5b44)
+        ;
+
+        
+    
+    
+            circle_marker_1f825bf8f91211df49aecd1b26411d95.bindTooltip(
+                `<div>
+                     Sares Head (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65649091a26113cc99dc0925ebc1cf07 = L.circleMarker(
+                [48.5887, -123.021767],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_72e269df303ce33e11fad56cfd4be9ee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b13455ad3c12e4e081880bac5ebcb4fc = $(`<div id="html_b13455ad3c12e4e081880bac5ebcb4fc" style="width: 100.0%; height: 100.0%;">         <b>Shirttail Reef</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_72e269df303ce33e11fad56cfd4be9ee.setContent(html_b13455ad3c12e4e081880bac5ebcb4fc);
+            
+        
+
+        circle_marker_65649091a26113cc99dc0925ebc1cf07.bindPopup(popup_72e269df303ce33e11fad56cfd4be9ee)
+        ;
+
+        
+    
+    
+            circle_marker_65649091a26113cc99dc0925ebc1cf07.bindTooltip(
+                `<div>
+                     Shirttail Reef (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_faad9c1724d7ae655d831b2fb43051d6 = L.circleMarker(
+                [48.317517, -122.849206],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_887f6bc464df093454b97d472e1189df = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d80a11d795849f695820f025cdd9b01 = $(`<div id="html_6d80a11d795849f695820f025cdd9b01" style="width: 100.0%; height: 100.0%;">         <b>Smith Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_887f6bc464df093454b97d472e1189df.setContent(html_6d80a11d795849f695820f025cdd9b01);
+            
+        
+
+        circle_marker_faad9c1724d7ae655d831b2fb43051d6.bindPopup(popup_887f6bc464df093454b97d472e1189df)
+        ;
+
+        
+    
+    
+            circle_marker_faad9c1724d7ae655d831b2fb43051d6.bindTooltip(
+                `<div>
+                     Smith Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71026ba37918a49c4f569d4210d4603d = L.circleMarker(
+                [48.003363, -122.301536],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_337f7e96112493cbbdfc62fb73951592 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0fe3943db3a4df3ab33453b852d08466 = $(`<div id="html_0fe3943db3a4df3ab33453b852d08466" style="width: 100.0%; height: 100.0%;">         <b>South Hat Island</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 1.38/hr<br>         Total Pycno: 2<br>         Detection Rate: 66.7%         </div>`)[0];
+                popup_337f7e96112493cbbdfc62fb73951592.setContent(html_0fe3943db3a4df3ab33453b852d08466);
+            
+        
+
+        circle_marker_71026ba37918a49c4f569d4210d4603d.bindPopup(popup_337f7e96112493cbbdfc62fb73951592)
+        ;
+
+        
+    
+    
+            circle_marker_71026ba37918a49c4f569d4210d4603d.bindTooltip(
+                `<div>
+                     South Hat Island (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9fc38b48d46904054f45d246bffaac72 = L.circleMarker(
+                [48.441679, -122.931917],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_d31dbc7536d0bdb2ac21121335ec388b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d58e4c3a28eb1e37e27f172f697ff1d9 = $(`<div id="html_d58e4c3a28eb1e37e27f172f697ff1d9" style="width: 100.0%; height: 100.0%;">         <b>Strawberry Falls</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_d31dbc7536d0bdb2ac21121335ec388b.setContent(html_d58e4c3a28eb1e37e27f172f697ff1d9);
+            
+        
+
+        circle_marker_9fc38b48d46904054f45d246bffaac72.bindPopup(popup_d31dbc7536d0bdb2ac21121335ec388b)
+        ;
+
+        
+    
+    
+            circle_marker_9fc38b48d46904054f45d246bffaac72.bindTooltip(
+                `<div>
+                     Strawberry Falls (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_837dd62baf21840c404e103afbb5b8ec = L.circleMarker(
+                [48.76691, -122.918814],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_86fa1d5714985bf51f5f11376a1c3b19 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5366e47ab32618e78057178bfa1a0c67 = $(`<div id="html_5366e47ab32618e78057178bfa1a0c67" style="width: 100.0%; height: 100.0%;">         <b>Sucia Island - Lawson's Bluff</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Mean Rate: 0.08/hr<br>         Total Pycno: 1<br>         Detection Rate: 1.8%         </div>`)[0];
+                popup_86fa1d5714985bf51f5f11376a1c3b19.setContent(html_5366e47ab32618e78057178bfa1a0c67);
+            
+        
+
+        circle_marker_837dd62baf21840c404e103afbb5b8ec.bindPopup(popup_86fa1d5714985bf51f5f11376a1c3b19)
+        ;
+
+        
+    
+    
+            circle_marker_837dd62baf21840c404e103afbb5b8ec.bindTooltip(
+                `<div>
+                     Sucia Island - Lawson's Bluff (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3afab06edea4d023f3ecaca3b3733781 = L.circleMarker(
+                [47.435212, -123.119796],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_c8416c566ff0de9071fb0533c6d59705 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b77859baa21f3dcc6c7c638045f8f1d8 = $(`<div id="html_b77859baa21f3dcc6c7c638045f8f1d8" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 3.72/hr<br>         Total Pycno: 66<br>         Detection Rate: 23.4%         </div>`)[0];
+                popup_c8416c566ff0de9071fb0533c6d59705.setContent(html_b77859baa21f3dcc6c7c638045f8f1d8);
+            
+        
+
+        circle_marker_3afab06edea4d023f3ecaca3b3733781.bindPopup(popup_c8416c566ff0de9071fb0533c6d59705)
+        ;
+
+        
+    
+    
+            circle_marker_3afab06edea4d023f3ecaca3b3733781.bindTooltip(
+                `<div>
+                     Sund Rock (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2df8a4ac1ae08870416302486186a1bf = L.circleMarker(
+                [47.435963, -123.119565],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_4d63c39c0861e74bc02763d997d75cae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_819fd95c62940c493add011174c25463 = $(`<div id="html_819fd95c62940c493add011174c25463" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock North</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 1.79/hr<br>         Total Pycno: 6<br>         Detection Rate: 14.3%         </div>`)[0];
+                popup_4d63c39c0861e74bc02763d997d75cae.setContent(html_819fd95c62940c493add011174c25463);
+            
+        
+
+        circle_marker_2df8a4ac1ae08870416302486186a1bf.bindPopup(popup_4d63c39c0861e74bc02763d997d75cae)
+        ;
+
+        
+    
+    
+            circle_marker_2df8a4ac1ae08870416302486186a1bf.bindTooltip(
+                `<div>
+                     Sund Rock North (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b8955e114cdc2cb75300b3dddb3647d = L.circleMarker(
+                [47.434327, -123.119777],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_5fd059be95010c14aa76be661634d7a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f75baaf9ee6aa2c4bbcc84abc72e14d = $(`<div id="html_1f75baaf9ee6aa2c4bbcc84abc72e14d" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock South</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 1.74/hr<br>         Total Pycno: 16<br>         Detection Rate: 25.9%         </div>`)[0];
+                popup_5fd059be95010c14aa76be661634d7a4.setContent(html_1f75baaf9ee6aa2c4bbcc84abc72e14d);
+            
+        
+
+        circle_marker_3b8955e114cdc2cb75300b3dddb3647d.bindPopup(popup_5fd059be95010c14aa76be661634d7a4)
+        ;
+
+        
+    
+    
+            circle_marker_3b8955e114cdc2cb75300b3dddb3647d.bindTooltip(
+                `<div>
+                     Sund Rock South (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3200a7592d34ecc7d3af12117f61e0c9 = L.circleMarker(
+                [47.349115, -122.555572],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_f6a2218b76e8a40574cab37c5085cdff = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_784d9bb586e1bce7bb34ffa3b5879792 = $(`<div id="html_784d9bb586e1bce7bb34ffa3b5879792" style="width: 100.0%; height: 100.0%;">         <b>Sunrise Beach State Park</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_f6a2218b76e8a40574cab37c5085cdff.setContent(html_784d9bb586e1bce7bb34ffa3b5879792);
+            
+        
+
+        circle_marker_3200a7592d34ecc7d3af12117f61e0c9.bindPopup(popup_f6a2218b76e8a40574cab37c5085cdff)
+        ;
+
+        
+    
+    
+            circle_marker_3200a7592d34ecc7d3af12117f61e0c9.bindTooltip(
+                `<div>
+                     Sunrise Beach State Park (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_11dbe10303fa41cdcc8baec28fadcd0a = L.circleMarker(
+                [47.265961, -122.550229],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_e6e79f05ed6ad732fc448c2e3c3eb091 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_328486ae0e65c47878686d4d0863be68 = $(`<div id="html_328486ae0e65c47878686d4d0863be68" style="width: 100.0%; height: 100.0%;">         <b>Tacoma Narrows</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_e6e79f05ed6ad732fc448c2e3c3eb091.setContent(html_328486ae0e65c47878686d4d0863be68);
+            
+        
+
+        circle_marker_11dbe10303fa41cdcc8baec28fadcd0a.bindPopup(popup_e6e79f05ed6ad732fc448c2e3c3eb091)
+        ;
+
+        
+    
+    
+            circle_marker_11dbe10303fa41cdcc8baec28fadcd0a.bindTooltip(
+                `<div>
+                     Tacoma Narrows (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59600735a074f9ff67c132feeadce685 = L.circleMarker(
+                [47.283592, -122.547394],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_1c8485a97418e589ddefc3ca906725c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7003ff611d252cdeafed29906682c674 = $(`<div id="html_7003ff611d252cdeafed29906682c674" style="width: 100.0%; height: 100.0%;">         <b>Tacoma Narrows - Point Evans</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_1c8485a97418e589ddefc3ca906725c1.setContent(html_7003ff611d252cdeafed29906682c674);
+            
+        
+
+        circle_marker_59600735a074f9ff67c132feeadce685.bindPopup(popup_1c8485a97418e589ddefc3ca906725c1)
+        ;
+
+        
+    
+    
+            circle_marker_59600735a074f9ff67c132feeadce685.bindTooltip(
+                `<div>
+                     Tacoma Narrows - Point Evans (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5c1092847402ce101a1f74b71f92c2d = L.circleMarker(
+                [47.721325, -122.88082],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_04f738b63bad791069d77c01685da6c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_478946d6607033444c8984dd4aabd3a5 = $(`<div id="html_478946d6607033444c8984dd4aabd3a5" style="width: 100.0%; height: 100.0%;">         <b>The Pinnacle</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 9.60/hr<br>         Total Pycno: 4<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_04f738b63bad791069d77c01685da6c4.setContent(html_478946d6607033444c8984dd4aabd3a5);
+            
+        
+
+        circle_marker_f5c1092847402ce101a1f74b71f92c2d.bindPopup(popup_04f738b63bad791069d77c01685da6c4)
+        ;
+
+        
+    
+    
+            circle_marker_f5c1092847402ce101a1f74b71f92c2d.bindTooltip(
+                `<div>
+                     The Pinnacle (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d527ba80f8d3155a46854eb19bd513e = L.circleMarker(
+                [47.45313, -122.378457],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_99982594f365697ff1ffa75e6d34e936 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b16d442d8d2fbcd0878f3129a5a14124 = $(`<div id="html_b16d442d8d2fbcd0878f3129a5a14124" style="width: 100.0%; height: 100.0%;">         <b>Three Tree Point</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Mean Rate: 0.00/hr<br>         Total Pycno: 0<br>         Detection Rate: 0.0%         </div>`)[0];
+                popup_99982594f365697ff1ffa75e6d34e936.setContent(html_b16d442d8d2fbcd0878f3129a5a14124);
+            
+        
+
+        circle_marker_7d527ba80f8d3155a46854eb19bd513e.bindPopup(popup_99982594f365697ff1ffa75e6d34e936)
+        ;
+
+        
+    
+    
+            circle_marker_7d527ba80f8d3155a46854eb19bd513e.bindTooltip(
+                `<div>
+                     Three Tree Point (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f84ab778979874e844fb5e071709a471 = L.circleMarker(
+                [47.604708, -122.980735],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f20e603a9b552999aac2dd034d9dfcfe);
+        
+    
+        var popup_50cb39e668345f80222603a672f604ea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52f071a3805a0dd3605bae38d37749f1 = $(`<div id="html_52f071a3805a0dd3605bae38d37749f1" style="width: 100.0%; height: 100.0%;">         <b>Triton Head</b><br>         <hr>         Eelgrass: <b>No</b><br>         Habitats: Natural Reef<br>         <hr>         Mean Rate: 9.36/hr<br>         Total Pycno: 10<br>         Detection Rate: 100.0%         </div>`)[0];
+                popup_50cb39e668345f80222603a672f604ea.setContent(html_52f071a3805a0dd3605bae38d37749f1);
+            
+        
+
+        circle_marker_f84ab778979874e844fb5e071709a471.bindPopup(popup_50cb39e668345f80222603a672f604ea)
+        ;
+
+        
+    
+    
+            circle_marker_f84ab778979874e844fb5e071709a471.bindTooltip(
+                `<div>
+                     Triton Head (No Eelgrass)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_f20e603a9b552999aac2dd034d9dfcfe.addTo(map_e86835759a4e776455ee4e035c0459be);
+        
+    
+            var layer_control_6f2285554105f40c8b238a28b0b55c23_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_598352192a3a50fd25214c57f3c1747c,
+                },
+                overlays :  {
+                    "Eelgrass Sites" : feature_group_44d488b9e1bba95589b5070512161421,
+                    "Non-Eelgrass Sites" : feature_group_f20e603a9b552999aac2dd034d9dfcfe,
+                },
+            };
+            let layer_control_6f2285554105f40c8b238a28b0b55c23 = L.control.layers(
+                layer_control_6f2285554105f40c8b238a28b0b55c23_layers.base_layers,
+                layer_control_6f2285554105f40c8b238a28b0b55c23_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_e86835759a4e776455ee4e035c0459be);
+
+        
+</script>
+</html>

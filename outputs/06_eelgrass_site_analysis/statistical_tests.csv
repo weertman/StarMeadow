@@ -1,0 +1,4 @@
+Test,Statistic,p-value,Effect Size,Significant
+Site Eelgrass Presence (transect-level),2341237.0,1.2598476405973846e-63,-0.19086559687812188,True
+Four-Category Habitat (Kruskal-Wallis),290.40727298318126,1.1852051871297947e-62,,True
+Site-Level Mean Encounter Rate,2401.0,0.0011088882220000051,-0.3450980392156864,True

@@ -1,0 +1,5 @@
+Test,Group1_Mean,Group2_Mean,Statistic,p-value,Significant
+Size by Site Eelgrass (Mann-Whitney),18.95110718492344,22.14092664092664,220365.5,0.9553340824510396,False
+Size by Habitat (Kruskal-Wallis),,,128.7706055185899,7.133430510977074e-27,True
+"Size Bin Distribution (5cm bins, Chi-Square)",,,351.02447472153005,2.5091838565366027e-66,True
+Distribution Comparison (Kolmogorov-Smirnov),,,0.2624891423477996,3.914483123490023e-14,True

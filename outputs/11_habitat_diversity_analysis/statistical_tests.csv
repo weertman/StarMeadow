@@ -1,0 +1,11 @@
+Test,Statistic,Value,p_value
+HabitatRichness vs Encounter Rate,Pearson r,0.012061798516128656,0.8879272399265148
+HabitatRichness vs Encounter Rate,Spearman ρ,0.22606740523402824,0.007451509651241042
+ShannonDiversity vs Encounter Rate,Pearson r,0.04966485635660595,0.5615026988913625
+ShannonDiversity vs Encounter Rate,Spearman ρ,0.21159353335066652,0.012401695112401393
+SimpsonDiversity vs Encounter Rate,Pearson r,0.06979858886722357,0.4142264873712036
+SimpsonDiversity vs Encounter Rate,Spearman ρ,0.21170516405568435,0.012354510803859735
+HabitatsPerTransect vs Encounter Rate,Pearson r,0.04343016764641943,0.6116988409672839
+HabitatsPerTransect vs Encounter Rate,Spearman ρ,0.13499360498964497,0.11309349651056132
+Simple Regression,R²,0.00014548698344368362,0.8879272399265156
+Single vs Multi-Habitat,t,-1.0823429525490726,0.2810015323020703

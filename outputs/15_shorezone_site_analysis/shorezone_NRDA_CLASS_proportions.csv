@@ -1,0 +1,223 @@
+SiteName,NRDA_CLASS_1.0,NRDA_CLASS_3.0,NRDA_CLASS_4.0,NRDA_CLASS_5.0,NRDA_CLASS_7.0,NRDA_CLASS_9.0,NRDA_CLASS_10.0,NRDA_CLASS_11.0
+100 Foot Rock,False,False,False,False,False,False,True,False
+7 Seas Dock,False,False,False,False,False,False,True,False
+Admiralty Beach,False,False,False,False,False,False,True,False
+"Agate Beach, Lopez Is",False,False,True,False,False,False,False,False
+Alki - Cove 1,False,False,False,False,False,False,True,False
+Alki - Cove 2,False,False,False,False,False,False,True,False
+Alki - Cove 3,False,False,False,False,False,False,True,False
+Alki - Pipeline,False,False,False,False,False,False,True,False
+Alki Beach,False,False,False,False,False,False,False,True
+Andy's Marine Park,False,False,False,False,False,False,False,True
+Arsenic Wall,False,False,False,False,False,True,False,False
+Bachelor Rock,True,False,False,False,False,False,False,False
+Bayrich Bay,False,False,False,False,True,False,False,False
+Bell Island East,False,True,False,False,False,False,False,False
+Bell Island West,False,True,False,False,False,False,False,False
+Beverly Beach,False,False,False,False,False,False,False,True
+Blake Island South,False,False,False,False,False,False,False,True
+Blakely Harbor Reef,False,False,False,False,False,False,True,False
+"Blakely Harbor, North",False,False,False,False,False,False,True,False
+Boeing Creek Reef,False,False,False,False,False,False,False,True
+Broken Point Cove Shaw,False,False,False,False,True,False,False,False
+Broken Point East,False,True,False,False,False,False,False,False
+Broken Point West,False,True,False,False,False,False,False,False
+Burrows Lighthouse,True,False,False,False,False,False,False,False
+Camano Head,False,False,False,False,False,False,True,False
+Camano Island State Park,False,False,False,False,False,False,True,False
+Camp Casey,False,False,True,False,False,False,False,False
+Canoe Pass,False,True,False,False,False,False,False,False
+Cattle Point,True,False,False,False,False,False,False,False
+Cherry Point,False,False,False,False,False,False,True,False
+Clallam Bay West,True,False,False,False,False,False,False,False
+Cliff Island,False,False,False,False,True,False,False,False
+Dalco Shallows,False,False,False,False,False,False,True,False
+Dalco Wall,False,False,False,False,False,False,True,False
+Dallas Banks,False,False,True,False,False,False,False,False
+Dash Point State Park,False,False,False,False,False,False,False,True
+Day Island Kelp,False,False,False,False,False,False,False,True
+Day Island Wall,False,False,False,False,False,False,False,True
+Day Island Wall - North,False,False,False,False,False,False,False,True
+Day Island Wall - South,False,False,False,False,False,False,False,True
+Deadman Island,False,True,False,False,False,False,False,False
+Deadmans Bay,True,False,False,False,False,False,False,False
+Deception Pass,False,True,False,False,False,False,False,False
+Derelict Conveyor,False,False,False,False,False,False,True,False
+Devils Head,False,False,False,False,False,False,False,True
+Dickman Mill,False,False,False,False,False,True,False,False
+Driftwood Park,False,False,False,False,False,False,True,False
+Dune Peninsula Breakwater,False,False,False,False,False,True,False,False
+Eagle Cove,True,False,False,False,False,False,False,False
+Eagle Point,True,False,False,False,False,False,False,False
+Ebeys Landing,False,False,True,False,False,False,False,False
+Edgewater Beach Park,False,False,False,False,False,True,False,False
+Ediz Hook Log Pile,False,False,False,False,True,False,False,False
+Ediz Hook Rock Pile,False,False,False,False,False,True,False,False
+Ediz Hook RockPile,False,False,False,False,True,False,False,False
+Edmonds Pipeline,False,False,False,False,False,True,False,False
+Edmonds Underwater Park,False,False,False,False,False,False,False,True
+Edmonds Underwater Park Fishing Pier,False,False,False,False,False,True,False,False
+Edmonds Underwater Park Kelp,False,False,False,False,False,False,True,False
+Edmonds Underwater Park Pipeline,False,False,False,False,False,True,False,False
+Edmonds Underwater Park Shell Creek,False,False,False,False,False,False,True,False
+Elephant Wall,False,False,False,False,False,True,False,False
+Elliot Bay Marina,False,False,False,False,False,True,False,False
+Everett Pipeline,False,False,False,False,False,True,False,False
+Flagpole Point,False,False,False,False,False,False,False,True
+Flat Top Island,False,True,False,False,False,False,False,False
+Fort Worden,False,False,False,False,False,False,False,True
+Foulweather Bluff,False,False,False,False,False,False,True,False
+Fox Island Bridge,False,False,False,False,False,False,False,True
+Fox Island East Wall,False,False,False,False,False,False,False,True
+Fox Island West Wall,False,False,False,False,False,False,False,True
+Freeland Park,False,False,False,False,False,False,True,False
+Freshwater Bay,True,False,False,False,False,False,False,False
+Friday Harbor Reef,False,True,False,False,False,False,False,False
+Fulton Creek,False,False,False,False,False,False,False,True
+Glen Acres,False,False,False,False,False,False,True,False
+Glen Ayr Ravine,False,False,False,False,False,False,False,True
+Goby Garden,False,False,False,False,False,True,False,False
+Grain Terminal,False,False,False,False,False,True,False,False
+Green Point,False,False,False,True,False,False,False,False
+"Green Point, Spieden Island",False,True,False,False,False,False,False,False
+Hat Island,False,False,False,False,False,False,True,False
+Hat Island Ledge,False,False,False,False,False,False,True,False
+Hat Island Marina,False,False,False,False,False,True,False,False
+Hat Island Sponge Garden,False,False,False,False,False,False,False,True
+Holmes Harbor,False,False,False,False,False,False,True,False
+Intake Tower/Between Owens and Boathouse,False,False,False,False,False,False,True,False
+"Jack Block, Seattle, Washington",False,False,False,False,False,True,False,False
+Jack Hyde Park,False,False,False,False,False,False,False,True
+Jefferson Head,False,False,False,False,False,False,True,False
+Jones Island,False,True,False,False,False,False,False,False
+Jorsted Creek,False,False,False,False,False,False,False,True
+KVI Tower,False,False,False,False,False,False,False,True
+Kat's Corner,False,False,False,False,False,False,False,True
+Kellet's Bluff,False,True,False,False,False,False,False,False
+Ketron Island,False,False,False,False,False,False,True,False
+Keystone Jetty,False,False,False,False,False,False,True,False
+Keystone Jetty - Pilings,False,False,False,False,False,False,True,False
+Keystone Jetty Preserve,False,False,False,False,False,False,True,False
+Keystone Preserve,False,False,False,False,False,False,True,False
+Kopachuck State Park,False,False,False,False,False,False,False,True
+Langley Marina,False,False,False,False,False,False,False,True
+Langley Tire Reef,False,False,False,False,False,False,False,True
+Larry's Lair,False,True,False,False,False,False,False,False
+Lawrence Point,False,False,True,False,False,True,False,False
+Les Davis Marine Park,False,False,False,False,False,True,False,False
+Les Davis Marine Park Pier,False,False,False,False,False,True,False,False
+Les Davis Marine Park Pipeline,False,False,False,False,False,True,False,False
+Lime Kiln,False,True,False,False,False,False,False,False
+Lincoln Park,False,False,False,False,False,False,True,False
+Lobster Shop Wall,False,False,False,False,False,False,True,False
+Long Island Wall,True,False,False,False,False,False,False,False
+Lowell Point,False,False,False,False,False,False,True,False
+Lower Elwha,False,False,False,True,False,False,False,False
+Lowman Beach Park,False,False,False,False,False,False,True,False
+Magnolia,False,False,False,False,False,False,True,False
+Marina Beach,False,False,False,False,False,False,False,True
+Maritime Pier,False,False,False,False,False,False,True,False
+Maury Island Barges,False,False,False,False,False,False,False,True
+McCracken Point,False,True,False,False,False,False,False,False
+McCurdy Point,False,False,False,True,False,False,False,False
+Metridium Wall,False,False,False,False,False,False,True,False
+Mike's Beach Resort,False,False,False,False,False,False,False,True
+Misery Point,False,False,False,False,False,False,False,True
+Mukilteo Edgewater Park,False,False,False,False,False,False,True,False
+Mukilteo Fuel Pier,False,False,False,False,False,True,False,False
+Mukilteo Lighthouse,False,False,False,False,False,False,True,False
+Mukilteo T-Dock,False,False,False,False,False,True,False,False
+Narrows Bridge (Tacoma Side),False,False,False,False,False,False,True,False
+Narrows Bridge (Tacoma side),False,False,False,False,False,False,True,False
+Norrander's,False,False,False,False,False,False,True,False
+North Beach,False,False,False,True,False,False,False,False
+North Wall Deception Pass,False,False,False,False,False,True,False,False
+North Wall Point Defiance,False,False,False,False,False,False,True,False
+Northwest Island,False,False,True,False,False,False,False,False
+O'Neal Island,False,True,False,False,False,False,False,False
+Octopus Hole,False,False,False,False,False,False,True,False
+Olalla Boat Launch,False,False,False,False,False,False,True,False
+Old Tacoma Outboard Association,False,False,False,False,False,False,True,False
+Old Town Dock,False,False,False,False,False,True,False,False
+Orcas Island Eelgrass,False,False,False,False,True,False,False,False
+Owen Beach,False,False,False,False,False,False,True,False
+Partridge Point,False,False,True,False,False,False,False,False
+Picnic Cove,False,True,False,False,False,False,False,False
+Pile Point,True,False,False,False,False,False,False,False
+Pirate Cove,False,True,False,False,False,False,False,False
+Point Caution,False,True,False,False,False,False,False,False
+Point Dalco,False,False,False,False,False,False,True,False
+Point Defiance Boathouse,False,False,False,False,False,False,True,False
+Point Defiance North Wall,False,False,False,False,False,True,False,False
+Point Defiance Wall,False,False,False,False,False,True,False,False
+Point Defiance West Kelp Beds,False,False,False,False,False,False,True,False
+Point Defiance West Wall,False,False,False,False,False,True,False,False
+Point George,False,True,False,False,False,False,False,False
+Point Hudson,False,False,False,False,False,True,False,False
+Point Ruston,False,False,False,False,False,True,False,False
+Point Ruston Ferry,False,False,False,False,False,True,False,False
+Point Vashon,False,False,False,False,False,False,True,False
+Point Whitehorn,False,False,False,False,False,False,True,False
+Point Whitney Shellfish Lab,False,False,False,False,False,False,False,True
+Possession Point Ferry,False,False,False,False,False,True,False,False
+Possession Point Fingers,False,False,False,False,False,False,True,False
+Pulali Point,False,False,False,False,False,False,False,True
+Pulali Point West Wall,False,False,False,False,False,True,False,False
+Redondo Beach,False,False,False,False,False,False,True,False
+Reef Point,False,False,False,False,False,True,False,False
+Reuben Tarte,False,True,False,False,False,False,False,False
+Richmond Beach,False,False,False,False,False,False,False,True
+Rock 305,True,False,False,False,False,False,False,False
+Rosario Beach Urchin Rocks,False,False,True,False,False,False,False,False
+Rosario Beach Urchin Rocks North,False,False,True,False,False,False,False,False
+Rosario Head,True,False,False,False,False,False,False,False
+Rosario Wall,False,False,False,False,False,True,False,False
+Rosie's Ravine,False,False,False,False,False,True,False,False
+Ruston - Katie Downs,False,False,False,False,False,True,False,False
+Salmon Beach,False,False,False,False,False,False,True,False
+Salt Creek,True,False,False,False,False,False,False,False
+Saltar's Point,False,False,False,False,False,False,False,True
+Saltwater State Park,False,False,False,False,False,False,True,False
+Sares Head,True,False,False,False,False,False,False,False
+Scenic Beach State Park,False,False,False,False,False,False,False,True
+Seabeck Bay,False,False,False,False,False,False,False,True
+Seattle Waterfront,False,False,False,False,False,True,False,False
+Sekiu,False,False,False,False,False,True,False,False
+Shirttail Reef,False,True,False,False,False,False,False,False
+Sirens of Spring,False,False,False,False,False,True,False,False
+Skyline,True,False,False,False,False,False,False,False
+Smallpox Bay,True,False,False,False,False,False,False,False
+South Hat Island,False,False,False,False,False,False,True,False
+Speiden Southwest,False,True,False,False,False,False,False,False
+Squaxin Island,False,False,False,False,False,False,False,True
+Steilacoom Marina,False,False,False,False,False,False,False,True
+Strawberry Falls,True,False,False,False,False,False,False,False
+Sucia Island - Lawson's Bluff,False,False,False,False,False,True,False,False
+Sucia Island - Shallow Bay,False,False,False,False,False,True,False,False
+Sund Rock,False,False,False,False,False,False,True,False
+Sund Rock North,False,False,False,False,False,False,True,False
+Sund Rock South,False,False,False,False,False,True,False,False
+Sunnyside Beach Park,False,False,False,False,False,False,False,True
+Sunrise Beach State Park,False,False,False,False,False,False,True,False
+Tacoma Narrows,False,False,False,False,False,False,True,False
+Tacoma Narrows - Point Evans,False,False,False,False,False,False,True,False
+Tacoma Old Town Pier,False,False,False,False,False,True,False,False
+Teahwhit Head,True,False,False,False,False,False,False,False
+The Pinnacle,False,False,False,False,False,False,False,True
+Thea's Park - Foss Waterway,False,False,False,False,False,True,False,False
+Three Tree Point,False,False,False,False,False,False,True,False
+Three Tree Point North,False,False,False,False,False,False,True,False
+Tire Reef N Saltwater State Park,False,False,False,False,False,True,False,False
+Titlow Beach Park,False,False,False,False,False,False,False,True
+Tongue Point,True,False,False,False,False,False,False,False
+Triton Cove,False,False,False,False,False,False,False,True
+Triton Head,False,False,False,False,False,False,False,True
+Urchin Rocks South,True,False,False,False,False,False,False,False
+Watmaugh Bay,False,True,False,False,False,False,False,False
+Whale Rocks,True,False,False,False,False,False,False,False
+Widmer Reef,False,False,False,False,False,True,False,False
+Wing Point,False,False,False,False,False,False,True,False
+Wreck of the Ranger,False,False,False,False,False,True,False,False
+Yellow House,False,False,False,False,False,False,False,True
+Young Island West,False,True,False,False,False,False,False,False
+Z's Reef,False,False,False,False,False,False,False,True

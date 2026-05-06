@@ -1,0 +1,5450 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_634fa598f2658a10928f725ee9c5c674 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="position: fixed; top: 10px; left: 50px; z-index: 9999;
+                background-color: white; padding: 10px; border-radius: 5px;
+                border: 2px solid gray;">
+        <h4 style="margin: 0;">Clustered Survey Sites</h4>
+        <p style="margin: 0; font-size: 12px;">Green = Pycno detected, Red = None</p>
+        <p style="margin: 0; font-size: 12px;">Zoom in to expand clusters</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_634fa598f2658a10928f725ee9c5c674" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_634fa598f2658a10928f725ee9c5c674 = L.map(
+                "map_634fa598f2658a10928f725ee9c5c674",
+                {
+                    center: [47.98265147135136, -122.80779323513515],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_dcf5c3832b2894cb8781fac8e76534b6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_dcf5c3832b2894cb8781fac8e76534b6.addTo(map_634fa598f2658a10928f725ee9c5c674);
+        
+    
+            var marker_cluster_e6261cdfdefd275a400489b41ee11f99 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_019de0254397b58a6c218a6ee42c0f4d = L.marker(
+                [47.851581, -122.337599],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_3b99d1a67eb6b7d0a28e3e6aa64079fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73167fd9d459370f57973be2b53bf1cf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5988d9d7302c236c7e45906eef70ece9 = $(`<div id="html_5988d9d7302c236c7e45906eef70ece9" style="width: 100.0%; height: 100.0%;">         <b>100 Foot Rock</b><br>         <hr>         Basin: Central<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 4<br>         Mean Rate: 8.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_73167fd9d459370f57973be2b53bf1cf.setContent(html_5988d9d7302c236c7e45906eef70ece9);
+            
+        
+
+        marker_019de0254397b58a6c218a6ee42c0f4d.bindPopup(popup_73167fd9d459370f57973be2b53bf1cf)
+        ;
+
+        
+    
+    
+            marker_019de0254397b58a6c218a6ee42c0f4d.bindTooltip(
+                `<div>
+                     100 Foot Rock
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_019de0254397b58a6c218a6ee42c0f4d.setIcon(icon_3b99d1a67eb6b7d0a28e3e6aa64079fb);
+            
+    
+            var marker_341c125638def18183221b333e54c4b6 = L.marker(
+                [48.163471, -122.641196],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_0020e648d0d73c2a52b4d7741dfa4f73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5a82f8d5eeeaaecba4132b27ebe7f8a7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c9e8d7422d62ee4891743a4ed56f7d8 = $(`<div id="html_0c9e8d7422d62ee4891743a4ed56f7d8" style="width: 100.0%; height: 100.0%;">         <b>Admiralty Beach</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 2         </div>`)[0];
+                popup_5a82f8d5eeeaaecba4132b27ebe7f8a7.setContent(html_0c9e8d7422d62ee4891743a4ed56f7d8);
+            
+        
+
+        marker_341c125638def18183221b333e54c4b6.bindPopup(popup_5a82f8d5eeeaaecba4132b27ebe7f8a7)
+        ;
+
+        
+    
+    
+            marker_341c125638def18183221b333e54c4b6.bindTooltip(
+                `<div>
+                     Admiralty Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_341c125638def18183221b333e54c4b6.setIcon(icon_0020e648d0d73c2a52b4d7741dfa4f73);
+            
+    
+            var marker_c2fbeb17a5272e2b70d1320db66f370c = L.marker(
+                [47.588746, -122.379068],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_b593e86b567b64b88a50e372d2bc63a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d2c68476e206881d40aa1f5ad4a25b62 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_72b742d6e67966c9e00743651784bf87 = $(`<div id="html_72b742d6e67966c9e00743651784bf87" style="width: 100.0%; height: 100.0%;">         <b>Alki - Cove 2</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Total Pycno: 14<br>         Mean Rate: 0.21/hr<br>         Transects: 93         </div>`)[0];
+                popup_d2c68476e206881d40aa1f5ad4a25b62.setContent(html_72b742d6e67966c9e00743651784bf87);
+            
+        
+
+        marker_c2fbeb17a5272e2b70d1320db66f370c.bindPopup(popup_d2c68476e206881d40aa1f5ad4a25b62)
+        ;
+
+        
+    
+    
+            marker_c2fbeb17a5272e2b70d1320db66f370c.bindTooltip(
+                `<div>
+                     Alki - Cove 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c2fbeb17a5272e2b70d1320db66f370c.setIcon(icon_b593e86b567b64b88a50e372d2bc63a4);
+            
+    
+            var marker_295cd95e47ebfd61e0a6d295d512b71d = L.marker(
+                [47.580873, -122.410246],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_4fdc3a1ca0544e459c36db8781dca5eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a96814b24120e22298d0e7a7dc37770 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d68e5de5f2a1c1aeb861c611d237b9fe = $(`<div id="html_d68e5de5f2a1c1aeb861c611d237b9fe" style="width: 100.0%; height: 100.0%;">         <b>Alki Beach</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 2.00/hr<br>         Transects: 5         </div>`)[0];
+                popup_2a96814b24120e22298d0e7a7dc37770.setContent(html_d68e5de5f2a1c1aeb861c611d237b9fe);
+            
+        
+
+        marker_295cd95e47ebfd61e0a6d295d512b71d.bindPopup(popup_2a96814b24120e22298d0e7a7dc37770)
+        ;
+
+        
+    
+    
+            marker_295cd95e47ebfd61e0a6d295d512b71d.bindTooltip(
+                `<div>
+                     Alki Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_295cd95e47ebfd61e0a6d295d512b71d.setIcon(icon_4fdc3a1ca0544e459c36db8781dca5eb);
+            
+    
+            var marker_9f7055af2154947a2fdfffd5102d1def = L.marker(
+                [49.515547, -123.295337],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_938440d3134ae3768ad59360187c774f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_43069c54b02b55c7b3f8513589c5a8e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80ab8c6f82d32dcc1264eb9002a7ed4f = $(`<div id="html_80ab8c6f82d32dcc1264eb9002a7ed4f" style="width: 100.0%; height: 100.0%;">         <b>Anvil Island</b><br>         <hr>         Basin: Howe Sound<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 12         </div>`)[0];
+                popup_43069c54b02b55c7b3f8513589c5a8e2.setContent(html_80ab8c6f82d32dcc1264eb9002a7ed4f);
+            
+        
+
+        marker_9f7055af2154947a2fdfffd5102d1def.bindPopup(popup_43069c54b02b55c7b3f8513589c5a8e2)
+        ;
+
+        
+    
+    
+            marker_9f7055af2154947a2fdfffd5102d1def.bindTooltip(
+                `<div>
+                     Anvil Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f7055af2154947a2fdfffd5102d1def.setIcon(icon_938440d3134ae3768ad59360187c774f);
+            
+    
+            var marker_c8dd0e937555bf56fea2c9e1ebfee8ef = L.marker(
+                [48.151033, -123.636306],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_d85c7be05957b5e7e2a4f33dc26cae8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a706d07eac25b6afcaa69a999d477f53 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b4357d0b49db551e3997d9015a4c957 = $(`<div id="html_9b4357d0b49db551e3997d9015a4c957" style="width: 100.0%; height: 100.0%;">         <b>Bachelor Rock</b><br>         <hr>         Basin: Strait of Juan de Fuca<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 4<br>         Mean Rate: 4.43/hr<br>         Transects: 3         </div>`)[0];
+                popup_a706d07eac25b6afcaa69a999d477f53.setContent(html_9b4357d0b49db551e3997d9015a4c957);
+            
+        
+
+        marker_c8dd0e937555bf56fea2c9e1ebfee8ef.bindPopup(popup_a706d07eac25b6afcaa69a999d477f53)
+        ;
+
+        
+    
+    
+            marker_c8dd0e937555bf56fea2c9e1ebfee8ef.bindTooltip(
+                `<div>
+                     Bachelor Rock
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8dd0e937555bf56fea2c9e1ebfee8ef.setIcon(icon_d85c7be05957b5e7e2a4f33dc26cae8e);
+            
+    
+            var marker_5194f55baecc6910d50fd9204f2a5a85 = L.marker(
+                [48.596069, -122.979414],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_5f315f6286cd7b8d1a42dd034df04e29 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4972e98a67ee3d8f4b27a27a7678efc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_116099bc7fa0bee6f76251d0d40916da = $(`<div id="html_116099bc7fa0bee6f76251d0d40916da" style="width: 100.0%; height: 100.0%;">         <b>Bell Island East</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 65         </div>`)[0];
+                popup_c4972e98a67ee3d8f4b27a27a7678efc.setContent(html_116099bc7fa0bee6f76251d0d40916da);
+            
+        
+
+        marker_5194f55baecc6910d50fd9204f2a5a85.bindPopup(popup_c4972e98a67ee3d8f4b27a27a7678efc)
+        ;
+
+        
+    
+    
+            marker_5194f55baecc6910d50fd9204f2a5a85.bindTooltip(
+                `<div>
+                     Bell Island East
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5194f55baecc6910d50fd9204f2a5a85.setIcon(icon_5f315f6286cd7b8d1a42dd034df04e29);
+            
+    
+            var marker_1d5f7d191b7253e62443bef459845213 = L.marker(
+                [48.59602, -122.981588],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_a3d65cf3e853c24b32461bcca436a1ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d21e8dd256b6cbdc35d7576dcc2ff30 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_922b6428ee285619c290288ccac4ab75 = $(`<div id="html_922b6428ee285619c290288ccac4ab75" style="width: 100.0%; height: 100.0%;">         <b>Bell Island West</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 44         </div>`)[0];
+                popup_2d21e8dd256b6cbdc35d7576dcc2ff30.setContent(html_922b6428ee285619c290288ccac4ab75);
+            
+        
+
+        marker_1d5f7d191b7253e62443bef459845213.bindPopup(popup_2d21e8dd256b6cbdc35d7576dcc2ff30)
+        ;
+
+        
+    
+    
+            marker_1d5f7d191b7253e62443bef459845213.bindTooltip(
+                `<div>
+                     Bell Island West
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d5f7d191b7253e62443bef459845213.setIcon(icon_a3d65cf3e853c24b32461bcca436a1ec);
+            
+    
+            var marker_cc402e2e446f4a6f6c056788d423d0b4 = L.marker(
+                [48.060481, -122.514991],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_8452a2a495486e31aac2f11aa2176142 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d000a526f03d750d6445516ab723cd4a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_975b7861d676ef5b04275f6d7dff1d9a = $(`<div id="html_975b7861d676ef5b04275f6d7dff1d9a" style="width: 100.0%; height: 100.0%;">         <b>Beverly Beach</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 611<br>         Mean Rate: 38.83/hr<br>         Transects: 85         </div>`)[0];
+                popup_d000a526f03d750d6445516ab723cd4a.setContent(html_975b7861d676ef5b04275f6d7dff1d9a);
+            
+        
+
+        marker_cc402e2e446f4a6f6c056788d423d0b4.bindPopup(popup_d000a526f03d750d6445516ab723cd4a)
+        ;
+
+        
+    
+    
+            marker_cc402e2e446f4a6f6c056788d423d0b4.bindTooltip(
+                `<div>
+                     Beverly Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cc402e2e446f4a6f6c056788d423d0b4.setIcon(icon_8452a2a495486e31aac2f11aa2176142);
+            
+    
+            var marker_ac1dcf65e1a40b47bb6e456d8025cd6d = L.marker(
+                [49.36309, -123.291585],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_a3b64b2e23ec225b21ba7bae5b9c98de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_992611d7dd4bb37965b3d2a822ca746f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_35ac63ffcb431459124100e6dcc274bf = $(`<div id="html_35ac63ffcb431459124100e6dcc274bf" style="width: 100.0%; height: 100.0%;">         <b>Bird Islet</b><br>         <hr>         Basin: Howe Sound<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.07/hr<br>         Transects: 37         </div>`)[0];
+                popup_992611d7dd4bb37965b3d2a822ca746f.setContent(html_35ac63ffcb431459124100e6dcc274bf);
+            
+        
+
+        marker_ac1dcf65e1a40b47bb6e456d8025cd6d.bindPopup(popup_992611d7dd4bb37965b3d2a822ca746f)
+        ;
+
+        
+    
+    
+            marker_ac1dcf65e1a40b47bb6e456d8025cd6d.bindTooltip(
+                `<div>
+                     Bird Islet
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ac1dcf65e1a40b47bb6e456d8025cd6d.setIcon(icon_a3b64b2e23ec225b21ba7bae5b9c98de);
+            
+    
+            var marker_52b2ee0ae277baf479ee4e272bcb1435 = L.marker(
+                [47.596591, -122.498623],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_70f5eaeb5a23fb22714646c1bbe63968 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_71a12fdaa588de9cc23c938046fd7e32 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f7c6bbd6b9506982a29f8cc402e8203c = $(`<div id="html_f7c6bbd6b9506982a29f8cc402e8203c" style="width: 100.0%; height: 100.0%;">         <b>Blakely Harbor Reef</b><br>         <hr>         Basin: Central<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_71a12fdaa588de9cc23c938046fd7e32.setContent(html_f7c6bbd6b9506982a29f8cc402e8203c);
+            
+        
+
+        marker_52b2ee0ae277baf479ee4e272bcb1435.bindPopup(popup_71a12fdaa588de9cc23c938046fd7e32)
+        ;
+
+        
+    
+    
+            marker_52b2ee0ae277baf479ee4e272bcb1435.bindTooltip(
+                `<div>
+                     Blakely Harbor Reef
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_52b2ee0ae277baf479ee4e272bcb1435.setIcon(icon_70f5eaeb5a23fb22714646c1bbe63968);
+            
+    
+            var marker_fb0aaaa8f9dd8e1f3e909fe944fa89a2 = L.marker(
+                [49.490065, -123.329092],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_6323cda9146a988bb4eddbad98240ffc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_71e8648591bf1b3334d954eb6de4f96e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_be3c1242174de9fc4576d32787e0f2f4 = $(`<div id="html_be3c1242174de9fc4576d32787e0f2f4" style="width: 100.0%; height: 100.0%;">         <b>Brigade</b><br>         <hr>         Basin: Howe Sound<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_71e8648591bf1b3334d954eb6de4f96e.setContent(html_be3c1242174de9fc4576d32787e0f2f4);
+            
+        
+
+        marker_fb0aaaa8f9dd8e1f3e909fe944fa89a2.bindPopup(popup_71e8648591bf1b3334d954eb6de4f96e)
+        ;
+
+        
+    
+    
+            marker_fb0aaaa8f9dd8e1f3e909fe944fa89a2.bindTooltip(
+                `<div>
+                     Brigade
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb0aaaa8f9dd8e1f3e909fe944fa89a2.setIcon(icon_6323cda9146a988bb4eddbad98240ffc);
+            
+    
+            var marker_bca485f4aacb8a38308d2c6ce6275be1 = L.marker(
+                [48.594083, -122.965431],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_fadbbcecfba22835855161b5b214f78d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d5f06c5ed90c5aa8449b3c898c830a9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_346cb066efcede65285018aeb89a28ef = $(`<div id="html_346cb066efcede65285018aeb89a28ef" style="width: 100.0%; height: 100.0%;">         <b>Broken Point East</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 14         </div>`)[0];
+                popup_1d5f06c5ed90c5aa8449b3c898c830a9.setContent(html_346cb066efcede65285018aeb89a28ef);
+            
+        
+
+        marker_bca485f4aacb8a38308d2c6ce6275be1.bindPopup(popup_1d5f06c5ed90c5aa8449b3c898c830a9)
+        ;
+
+        
+    
+    
+            marker_bca485f4aacb8a38308d2c6ce6275be1.bindTooltip(
+                `<div>
+                     Broken Point East
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bca485f4aacb8a38308d2c6ce6275be1.setIcon(icon_fadbbcecfba22835855161b5b214f78d);
+            
+    
+            var marker_f7fd5cc2c38c83ce2a3cae9dc4e19c6b = L.marker(
+                [48.594669, -122.967602],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_2fb0216e422046b6f999fdca15b588ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e76e69641fad829855214bca0fb4c26f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b960b89768d3c3dab68f629d69770bfb = $(`<div id="html_b960b89768d3c3dab68f629d69770bfb" style="width: 100.0%; height: 100.0%;">         <b>Broken Point West</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 49         </div>`)[0];
+                popup_e76e69641fad829855214bca0fb4c26f.setContent(html_b960b89768d3c3dab68f629d69770bfb);
+            
+        
+
+        marker_f7fd5cc2c38c83ce2a3cae9dc4e19c6b.bindPopup(popup_e76e69641fad829855214bca0fb4c26f)
+        ;
+
+        
+    
+    
+            marker_f7fd5cc2c38c83ce2a3cae9dc4e19c6b.bindTooltip(
+                `<div>
+                     Broken Point West
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f7fd5cc2c38c83ce2a3cae9dc4e19c6b.setIcon(icon_2fb0216e422046b6f999fdca15b588ea);
+            
+    
+            var marker_f477087d5730b1c59f634b9a4d90f64c = L.marker(
+                [48.053302, -122.358319],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_4816b18cbc968c4b6e660a79c910701e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57db55f43c279b7dffd804724d059931 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2b8180d40d52aa7d069fe39fc9eb767 = $(`<div id="html_d2b8180d40d52aa7d069fe39fc9eb767" style="width: 100.0%; height: 100.0%;">         <b>Camano Head</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 5         </div>`)[0];
+                popup_57db55f43c279b7dffd804724d059931.setContent(html_d2b8180d40d52aa7d069fe39fc9eb767);
+            
+        
+
+        marker_f477087d5730b1c59f634b9a4d90f64c.bindPopup(popup_57db55f43c279b7dffd804724d059931)
+        ;
+
+        
+    
+    
+            marker_f477087d5730b1c59f634b9a4d90f64c.bindTooltip(
+                `<div>
+                     Camano Head
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f477087d5730b1c59f634b9a4d90f64c.setIcon(icon_4816b18cbc968c4b6e660a79c910701e);
+            
+    
+            var marker_e8f96ee56a8f4183a4e7b00e674cfc68 = L.marker(
+                [48.408773, -122.645138],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_a52059bb8c0b94673744d50566902ee5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_793ede7d4f494710a79671b21405160a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_23e449ca4ab91d44122a9aeaed6a8d44 = $(`<div id="html_23e449ca4ab91d44122a9aeaed6a8d44" style="width: 100.0%; height: 100.0%;">         <b>Canoe Pass</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 3         </div>`)[0];
+                popup_793ede7d4f494710a79671b21405160a.setContent(html_23e449ca4ab91d44122a9aeaed6a8d44);
+            
+        
+
+        marker_e8f96ee56a8f4183a4e7b00e674cfc68.bindPopup(popup_793ede7d4f494710a79671b21405160a)
+        ;
+
+        
+    
+    
+            marker_e8f96ee56a8f4183a4e7b00e674cfc68.bindTooltip(
+                `<div>
+                     Canoe Pass
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e8f96ee56a8f4183a4e7b00e674cfc68.setIcon(icon_a52059bb8c0b94673744d50566902ee5);
+            
+    
+            var marker_9f39ec7dc83e9d04721ec5437fe4643a = L.marker(
+                [48.860126, -122.74981],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_5d6db2161819435f9791ade3ea50622f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_65c7983b854aae44609b778ac31ef87f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4cb18b78eeeeab79b037e04dec956436 = $(`<div id="html_4cb18b78eeeeab79b037e04dec956436" style="width: 100.0%; height: 100.0%;">         <b>Cherry Point</b><br>         <hr>         Basin: San Juan<br>         Habitats: Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 3         </div>`)[0];
+                popup_65c7983b854aae44609b778ac31ef87f.setContent(html_4cb18b78eeeeab79b037e04dec956436);
+            
+        
+
+        marker_9f39ec7dc83e9d04721ec5437fe4643a.bindPopup(popup_65c7983b854aae44609b778ac31ef87f)
+        ;
+
+        
+    
+    
+            marker_9f39ec7dc83e9d04721ec5437fe4643a.bindTooltip(
+                `<div>
+                     Cherry Point
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f39ec7dc83e9d04721ec5437fe4643a.setIcon(icon_5d6db2161819435f9791ade3ea50622f);
+            
+    
+            var marker_6369e5b4b0dde187f5279efd9d2a5439 = L.marker(
+                [49.499396, -123.301971],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_9cd4949fc1b89b443d25598961fc748a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7d7763bb124286b52052e4e9acfc3f2f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b3c897d2d5b7c20cac311bbb31656c0 = $(`<div id="html_5b3c897d2d5b7c20cac311bbb31656c0" style="width: 100.0%; height: 100.0%;">         <b>Christie Islet</b><br>         <hr>         Basin: Howe Sound<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 13         </div>`)[0];
+                popup_7d7763bb124286b52052e4e9acfc3f2f.setContent(html_5b3c897d2d5b7c20cac311bbb31656c0);
+            
+        
+
+        marker_6369e5b4b0dde187f5279efd9d2a5439.bindPopup(popup_7d7763bb124286b52052e4e9acfc3f2f)
+        ;
+
+        
+    
+    
+            marker_6369e5b4b0dde187f5279efd9d2a5439.bindTooltip(
+                `<div>
+                     Christie Islet
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6369e5b4b0dde187f5279efd9d2a5439.setIcon(icon_9cd4949fc1b89b443d25598961fc748a);
+            
+    
+            var marker_5dd4b2a342c95e0a73793538e9d00824 = L.marker(
+                [48.590582, -123.011323],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_c682b298b7d433d3ec497e199c1f6bcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_398a2c9f8f3564af74abb0465c6b87a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6160d546e7b51a82ef14198c79333645 = $(`<div id="html_6160d546e7b51a82ef14198c79333645" style="width: 100.0%; height: 100.0%;">         <b>Cliff Island</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 12         </div>`)[0];
+                popup_398a2c9f8f3564af74abb0465c6b87a5.setContent(html_6160d546e7b51a82ef14198c79333645);
+            
+        
+
+        marker_5dd4b2a342c95e0a73793538e9d00824.bindPopup(popup_398a2c9f8f3564af74abb0465c6b87a5)
+        ;
+
+        
+    
+    
+            marker_5dd4b2a342c95e0a73793538e9d00824.bindTooltip(
+                `<div>
+                     Cliff Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5dd4b2a342c95e0a73793538e9d00824.setIcon(icon_c682b298b7d433d3ec497e199c1f6bcd);
+            
+    
+            var marker_4f50bc9f92fa0105ceff1a8484559f69 = L.marker(
+                [47.241984, -122.564551],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_6fd0cd7a756b0603450b517a1d42bab1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a87c750ecb9e5386bdeeefd9f09b1b8c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9a895f9e1227dd4c52dec791ed174a97 = $(`<div id="html_9a895f9e1227dd4c52dec791ed174a97" style="width: 100.0%; height: 100.0%;">         <b>Day Island Wall</b><br>         <hr>         Basin: South<br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 14         </div>`)[0];
+                popup_a87c750ecb9e5386bdeeefd9f09b1b8c.setContent(html_9a895f9e1227dd4c52dec791ed174a97);
+            
+        
+
+        marker_4f50bc9f92fa0105ceff1a8484559f69.bindPopup(popup_a87c750ecb9e5386bdeeefd9f09b1b8c)
+        ;
+
+        
+    
+    
+            marker_4f50bc9f92fa0105ceff1a8484559f69.bindTooltip(
+                `<div>
+                     Day Island Wall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4f50bc9f92fa0105ceff1a8484559f69.setIcon(icon_6fd0cd7a756b0603450b517a1d42bab1);
+            
+    
+            var marker_093117c71d796d94f121654412903393 = L.marker(
+                [47.242693, -122.565324],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_f7c512bdc2d9950917254ce163fc042d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4e20049d623c6db571a6504a9a5d26d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91c5ecc204b842c6bb88949c7f36028a = $(`<div id="html_91c5ecc204b842c6bb88949c7f36028a" style="width: 100.0%; height: 100.0%;">         <b>Day Island Wall - North</b><br>         <hr>         Basin: South<br>         Habitats: Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_c4e20049d623c6db571a6504a9a5d26d.setContent(html_91c5ecc204b842c6bb88949c7f36028a);
+            
+        
+
+        marker_093117c71d796d94f121654412903393.bindPopup(popup_c4e20049d623c6db571a6504a9a5d26d)
+        ;
+
+        
+    
+    
+            marker_093117c71d796d94f121654412903393.bindTooltip(
+                `<div>
+                     Day Island Wall - North
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_093117c71d796d94f121654412903393.setIcon(icon_f7c512bdc2d9950917254ce163fc042d);
+            
+    
+            var marker_c3d424f86324e0317947f25fc31e40ad = L.marker(
+                [48.458797, -122.943743],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_3d82a50ad2ff3c3968d91eaf40b8e5eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a291ca2d7bc15da6a4bf8e526739b56 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f185c2e8230a17c854ee48fdad207b7 = $(`<div id="html_8f185c2e8230a17c854ee48fdad207b7" style="width: 100.0%; height: 100.0%;">         <b>Deadman Island</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 9         </div>`)[0];
+                popup_2a291ca2d7bc15da6a4bf8e526739b56.setContent(html_8f185c2e8230a17c854ee48fdad207b7);
+            
+        
+
+        marker_c3d424f86324e0317947f25fc31e40ad.bindPopup(popup_2a291ca2d7bc15da6a4bf8e526739b56)
+        ;
+
+        
+    
+    
+            marker_c3d424f86324e0317947f25fc31e40ad.bindTooltip(
+                `<div>
+                     Deadman Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3d424f86324e0317947f25fc31e40ad.setIcon(icon_3d82a50ad2ff3c3968d91eaf40b8e5eb);
+            
+    
+            var marker_02a76c19017a3553eb8069c6e0dc6744 = L.marker(
+                [48.405541, -122.64517],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_615e6fc2449ce3a48abfa5ed06734af9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba4d3db51ce6e04cc8c165dac96aee9e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2804f44794d2feefa203f3f2e51602c3 = $(`<div id="html_2804f44794d2feefa203f3f2e51602c3" style="width: 100.0%; height: 100.0%;">         <b>Deception Pass</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 4         </div>`)[0];
+                popup_ba4d3db51ce6e04cc8c165dac96aee9e.setContent(html_2804f44794d2feefa203f3f2e51602c3);
+            
+        
+
+        marker_02a76c19017a3553eb8069c6e0dc6744.bindPopup(popup_ba4d3db51ce6e04cc8c165dac96aee9e)
+        ;
+
+        
+    
+    
+            marker_02a76c19017a3553eb8069c6e0dc6744.bindTooltip(
+                `<div>
+                     Deception Pass
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_02a76c19017a3553eb8069c6e0dc6744.setIcon(icon_615e6fc2449ce3a48abfa5ed06734af9);
+            
+    
+            var marker_c9bd4ba5c132bc6c6628b147fe7e339b = L.marker(
+                [47.278304, -122.471],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_09613a0afe988960dcf6d0581fe25371 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c8d53630b2441ce271bacc1e3c41fd2c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_033a0a96a9d11a319c6f66ae7366562a = $(`<div id="html_033a0a96a9d11a319c6f66ae7366562a" style="width: 100.0%; height: 100.0%;">         <b>Dickman Mill</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 7         </div>`)[0];
+                popup_c8d53630b2441ce271bacc1e3c41fd2c.setContent(html_033a0a96a9d11a319c6f66ae7366562a);
+            
+        
+
+        marker_c9bd4ba5c132bc6c6628b147fe7e339b.bindPopup(popup_c8d53630b2441ce271bacc1e3c41fd2c)
+        ;
+
+        
+    
+    
+            marker_c9bd4ba5c132bc6c6628b147fe7e339b.bindTooltip(
+                `<div>
+                     Dickman Mill
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c9bd4ba5c132bc6c6628b147fe7e339b.setIcon(icon_09613a0afe988960dcf6d0581fe25371);
+            
+    
+            var marker_70b4f88b10859866ae231cfc6a080479 = L.marker(
+                [48.162897, -122.637203],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_e4f9cc719f2a1ea60d39132be6160caf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3425d69f346013b99ae9702fe6b0d691 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c8f20480dad56971814a80797bbd4aea = $(`<div id="html_c8f20480dad56971814a80797bbd4aea" style="width: 100.0%; height: 100.0%;">         <b>Driftwood Park</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Total Pycno: 6<br>         Mean Rate: 0.20/hr<br>         Transects: 32         </div>`)[0];
+                popup_3425d69f346013b99ae9702fe6b0d691.setContent(html_c8f20480dad56971814a80797bbd4aea);
+            
+        
+
+        marker_70b4f88b10859866ae231cfc6a080479.bindPopup(popup_3425d69f346013b99ae9702fe6b0d691)
+        ;
+
+        
+    
+    
+            marker_70b4f88b10859866ae231cfc6a080479.bindTooltip(
+                `<div>
+                     Driftwood Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_70b4f88b10859866ae231cfc6a080479.setIcon(icon_e4f9cc719f2a1ea60d39132be6160caf);
+            
+    
+            var marker_8da4b54d2c4f9acc14d8bb1872ff21e1 = L.marker(
+                [48.458027, -123.036267],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_83171af9cf4cd66f3fc17978c9ddb77e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5a0544641927a5c6db3737bac34669c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63c18f26443bb4c891e231219b882eef = $(`<div id="html_63c18f26443bb4c891e231219b882eef" style="width: 100.0%; height: 100.0%;">         <b>Eagle Point</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 5<br>         Mean Rate: 0.34/hr<br>         Transects: 68         </div>`)[0];
+                popup_5a0544641927a5c6db3737bac34669c2.setContent(html_63c18f26443bb4c891e231219b882eef);
+            
+        
+
+        marker_8da4b54d2c4f9acc14d8bb1872ff21e1.bindPopup(popup_5a0544641927a5c6db3737bac34669c2)
+        ;
+
+        
+    
+    
+            marker_8da4b54d2c4f9acc14d8bb1872ff21e1.bindTooltip(
+                `<div>
+                     Eagle Point
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8da4b54d2c4f9acc14d8bb1872ff21e1.setIcon(icon_83171af9cf4cd66f3fc17978c9ddb77e);
+            
+    
+            var marker_608e0809cd307c4a2b4f0d6e573d85e3 = L.marker(
+                [48.141211, -123.436541],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_c76674fa2384b266103f1c24e38d34b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78373fae84ddb159f1423a42566ad7c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_64bf0cd572df74d282a7a4a3c37f35f0 = $(`<div id="html_64bf0cd572df74d282a7a4a3c37f35f0" style="width: 100.0%; height: 100.0%;">         <b>Ediz Hook Log Pile</b><br>         <hr>         Basin: Strait of Juan de Fuca<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 79<br>         Mean Rate: 3.90/hr<br>         Transects: 56         </div>`)[0];
+                popup_78373fae84ddb159f1423a42566ad7c1.setContent(html_64bf0cd572df74d282a7a4a3c37f35f0);
+            
+        
+
+        marker_608e0809cd307c4a2b4f0d6e573d85e3.bindPopup(popup_78373fae84ddb159f1423a42566ad7c1)
+        ;
+
+        
+    
+    
+            marker_608e0809cd307c4a2b4f0d6e573d85e3.bindTooltip(
+                `<div>
+                     Ediz Hook Log Pile
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_608e0809cd307c4a2b4f0d6e573d85e3.setIcon(icon_c76674fa2384b266103f1c24e38d34b9);
+            
+    
+            var marker_1d6934190020a63dd34adafbf6358b64 = L.marker(
+                [48.140197, -123.422831],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_8e7a04736ab61c94f0abdc40e72319a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b156376e01dc04860498a7c9b6faa288 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f781187edc1b9241235561c00d2ec072 = $(`<div id="html_f781187edc1b9241235561c00d2ec072" style="width: 100.0%; height: 100.0%;">         <b>Ediz Hook RockPile</b><br>         <hr>         Basin: Strait of Juan de Fuca<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 50<br>         Mean Rate: 7.92/hr<br>         Transects: 39         </div>`)[0];
+                popup_b156376e01dc04860498a7c9b6faa288.setContent(html_f781187edc1b9241235561c00d2ec072);
+            
+        
+
+        marker_1d6934190020a63dd34adafbf6358b64.bindPopup(popup_b156376e01dc04860498a7c9b6faa288)
+        ;
+
+        
+    
+    
+            marker_1d6934190020a63dd34adafbf6358b64.bindTooltip(
+                `<div>
+                     Ediz Hook RockPile
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d6934190020a63dd34adafbf6358b64.setIcon(icon_8e7a04736ab61c94f0abdc40e72319a0);
+            
+    
+            var marker_20457310882153a38a146c805d62b34d = L.marker(
+                [47.815161, -122.382522],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_48560560169c0b224f39dda231f84050 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5830ce9cb56a52dabb0f667929aa4fc0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c6a5b1298733a6d09e6048dfef0aaf5 = $(`<div id="html_0c6a5b1298733a6d09e6048dfef0aaf5" style="width: 100.0%; height: 100.0%;">         <b>Edmonds Underwater Park</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 6<br>         Mean Rate: 0.65/hr<br>         Transects: 93         </div>`)[0];
+                popup_5830ce9cb56a52dabb0f667929aa4fc0.setContent(html_0c6a5b1298733a6d09e6048dfef0aaf5);
+            
+        
+
+        marker_20457310882153a38a146c805d62b34d.bindPopup(popup_5830ce9cb56a52dabb0f667929aa4fc0)
+        ;
+
+        
+    
+    
+            marker_20457310882153a38a146c805d62b34d.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_20457310882153a38a146c805d62b34d.setIcon(icon_48560560169c0b224f39dda231f84050);
+            
+    
+            var marker_59c150d104f7973e9e030a37777706a6 = L.marker(
+                [47.812101, -122.389429],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_9fbc7f00c203ca0aad925b1cf8ec4e8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2dce7d427b46aaf8d93e136a1941b34d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4ec81207aef110f55656e30ae1592466 = $(`<div id="html_4ec81207aef110f55656e30ae1592466" style="width: 100.0%; height: 100.0%;">         <b>Edmonds Underwater Park Pipeline</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.16/hr<br>         Transects: 38         </div>`)[0];
+                popup_2dce7d427b46aaf8d93e136a1941b34d.setContent(html_4ec81207aef110f55656e30ae1592466);
+            
+        
+
+        marker_59c150d104f7973e9e030a37777706a6.bindPopup(popup_2dce7d427b46aaf8d93e136a1941b34d)
+        ;
+
+        
+    
+    
+            marker_59c150d104f7973e9e030a37777706a6.bindTooltip(
+                `<div>
+                     Edmonds Underwater Park Pipeline
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59c150d104f7973e9e030a37777706a6.setIcon(icon_9fbc7f00c203ca0aad925b1cf8ec4e8d);
+            
+    
+            var marker_fa4a9722d2fff95f94d7429579c1abdc = L.marker(
+                [47.562416, -123.017743],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_1fc78b7d1f9cb52b5c9de58703948e96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a81d4aa386f075373d986764e6e7fb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6fa38a8730a0deca9cb60b7478ac9b7f = $(`<div id="html_6fa38a8730a0deca9cb60b7478ac9b7f" style="width: 100.0%; height: 100.0%;">         <b>Elephant Wall</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 2         </div>`)[0];
+                popup_0a81d4aa386f075373d986764e6e7fb2.setContent(html_6fa38a8730a0deca9cb60b7478ac9b7f);
+            
+        
+
+        marker_fa4a9722d2fff95f94d7429579c1abdc.bindPopup(popup_0a81d4aa386f075373d986764e6e7fb2)
+        ;
+
+        
+    
+    
+            marker_fa4a9722d2fff95f94d7429579c1abdc.bindTooltip(
+                `<div>
+                     Elephant Wall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fa4a9722d2fff95f94d7429579c1abdc.setIcon(icon_1fc78b7d1f9cb52b5c9de58703948e96);
+            
+    
+            var marker_5219c7ce45aea03fdb6cd8bf7bf21152 = L.marker(
+                [49.422304, -123.410877],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_9685e4e74c400f63fb610b29e6ae2c2e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_831cd86bcc74ee5c015a354829c89575 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_be31af8fa9ba24f4c6d8f0f3edbc0f9c = $(`<div id="html_be31af8fa9ba24f4c6d8f0f3edbc0f9c" style="width: 100.0%; height: 100.0%;">         <b>Enchanted Forest</b><br>         <hr>         Basin: Howe Sound<br>         Habitats: Natural Reef, Sponge Garden<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 35         </div>`)[0];
+                popup_831cd86bcc74ee5c015a354829c89575.setContent(html_be31af8fa9ba24f4c6d8f0f3edbc0f9c);
+            
+        
+
+        marker_5219c7ce45aea03fdb6cd8bf7bf21152.bindPopup(popup_831cd86bcc74ee5c015a354829c89575)
+        ;
+
+        
+    
+    
+            marker_5219c7ce45aea03fdb6cd8bf7bf21152.bindTooltip(
+                `<div>
+                     Enchanted Forest
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5219c7ce45aea03fdb6cd8bf7bf21152.setIcon(icon_9685e4e74c400f63fb610b29e6ae2c2e);
+            
+    
+            var marker_231a05c7e39d15cac6d79c8c95d277ba = L.marker(
+                [47.564755, -123.01436],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_73128975aa9bfcdd5cdee779fecc85d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e086f70a7aad65d9dc6db9b01dbb7d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d1e945dd029cc5f94341c704ef9f55f1 = $(`<div id="html_d1e945dd029cc5f94341c704ef9f55f1" style="width: 100.0%; height: 100.0%;">         <b>Flagpole Point</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 36<br>         Mean Rate: 4.33/hr<br>         Transects: 70         </div>`)[0];
+                popup_6e086f70a7aad65d9dc6db9b01dbb7d3.setContent(html_d1e945dd029cc5f94341c704ef9f55f1);
+            
+        
+
+        marker_231a05c7e39d15cac6d79c8c95d277ba.bindPopup(popup_6e086f70a7aad65d9dc6db9b01dbb7d3)
+        ;
+
+        
+    
+    
+            marker_231a05c7e39d15cac6d79c8c95d277ba.bindTooltip(
+                `<div>
+                     Flagpole Point
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_231a05c7e39d15cac6d79c8c95d277ba.setIcon(icon_73128975aa9bfcdd5cdee779fecc85d1);
+            
+    
+            var marker_284c10dc88db3f51492269bc079263df = L.marker(
+                [48.136638, -122.760193],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_226cb0fb9ee2e61a21e2388d52704083 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4402eae6a7bcb5ffade198a6ec24678 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a1337b6be2598e6f5b5f339454b0c274 = $(`<div id="html_a1337b6be2598e6f5b5f339454b0c274" style="width: 100.0%; height: 100.0%;">         <b>Fort Worden</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.20/hr<br>         Transects: 5         </div>`)[0];
+                popup_b4402eae6a7bcb5ffade198a6ec24678.setContent(html_a1337b6be2598e6f5b5f339454b0c274);
+            
+        
+
+        marker_284c10dc88db3f51492269bc079263df.bindPopup(popup_b4402eae6a7bcb5ffade198a6ec24678)
+        ;
+
+        
+    
+    
+            marker_284c10dc88db3f51492269bc079263df.bindTooltip(
+                `<div>
+                     Fort Worden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_284c10dc88db3f51492269bc079263df.setIcon(icon_226cb0fb9ee2e61a21e2388d52704083);
+            
+    
+            var marker_45e1f4f6884b449ff827008b47800ab8 = L.marker(
+                [47.941083, -122.6012],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_9182c1a81750f34793258b9a18aa19b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7049cdaaa093bd015768f87fbf455c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d925b2cf0bf7055e3b063b9ad04d4c1 = $(`<div id="html_4d925b2cf0bf7055e3b063b9ad04d4c1" style="width: 100.0%; height: 100.0%;">         <b>Foulweather Bluff</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 8         </div>`)[0];
+                popup_c7049cdaaa093bd015768f87fbf455c7.setContent(html_4d925b2cf0bf7055e3b063b9ad04d4c1);
+            
+        
+
+        marker_45e1f4f6884b449ff827008b47800ab8.bindPopup(popup_c7049cdaaa093bd015768f87fbf455c7)
+        ;
+
+        
+    
+    
+            marker_45e1f4f6884b449ff827008b47800ab8.bindTooltip(
+                `<div>
+                     Foulweather Bluff
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_45e1f4f6884b449ff827008b47800ab8.setIcon(icon_9182c1a81750f34793258b9a18aa19b1);
+            
+    
+            var marker_c6571721d13703402efff4f5a5ad8e2a = L.marker(
+                [47.228514, -122.589606],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_87f4ba442cac54d083298bc5dd8b0880 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac0aff8dee671110c6f524fea32a65ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_69e2b8d9ba12e444a13b628e5db1dfc1 = $(`<div id="html_69e2b8d9ba12e444a13b628e5db1dfc1" style="width: 100.0%; height: 100.0%;">         <b>Fox Island East Wall</b><br>         <hr>         Basin: South<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 43         </div>`)[0];
+                popup_ac0aff8dee671110c6f524fea32a65ce.setContent(html_69e2b8d9ba12e444a13b628e5db1dfc1);
+            
+        
+
+        marker_c6571721d13703402efff4f5a5ad8e2a.bindPopup(popup_ac0aff8dee671110c6f524fea32a65ce)
+        ;
+
+        
+    
+    
+            marker_c6571721d13703402efff4f5a5ad8e2a.bindTooltip(
+                `<div>
+                     Fox Island East Wall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c6571721d13703402efff4f5a5ad8e2a.setIcon(icon_87f4ba442cac54d083298bc5dd8b0880);
+            
+    
+            var marker_cd6cab7f4d4cac62425ac40016ba2a4d = L.marker(
+                [47.239321, -122.632894],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_6e61ba880406cf5d37b238f5df02bf79 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62b839d6857ef4973a2424ac2a1a1a5b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_36542feb811b002118ada60c20146d9d = $(`<div id="html_36542feb811b002118ada60c20146d9d" style="width: 100.0%; height: 100.0%;">         <b>Fox Island West Wall</b><br>         <hr>         Basin: South<br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 0.12/hr<br>         Transects: 89         </div>`)[0];
+                popup_62b839d6857ef4973a2424ac2a1a1a5b.setContent(html_36542feb811b002118ada60c20146d9d);
+            
+        
+
+        marker_cd6cab7f4d4cac62425ac40016ba2a4d.bindPopup(popup_62b839d6857ef4973a2424ac2a1a1a5b)
+        ;
+
+        
+    
+    
+            marker_cd6cab7f4d4cac62425ac40016ba2a4d.bindTooltip(
+                `<div>
+                     Fox Island West Wall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cd6cab7f4d4cac62425ac40016ba2a4d.setIcon(icon_6e61ba880406cf5d37b238f5df02bf79);
+            
+    
+            var marker_6fcd0a26272122371a969777763596cf = L.marker(
+                [48.016187, -122.529818],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_3e28e3025228ee046f0adee1f12f0719 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b9d87d35ad33024a8687f2b7bee0486 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d688453901fc03eb19e9559afa029a38 = $(`<div id="html_d688453901fc03eb19e9559afa029a38" style="width: 100.0%; height: 100.0%;">         <b>Freeland Park</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 176<br>         Mean Rate: 8.68/hr<br>         Transects: 90         </div>`)[0];
+                popup_1b9d87d35ad33024a8687f2b7bee0486.setContent(html_d688453901fc03eb19e9559afa029a38);
+            
+        
+
+        marker_6fcd0a26272122371a969777763596cf.bindPopup(popup_1b9d87d35ad33024a8687f2b7bee0486)
+        ;
+
+        
+    
+    
+            marker_6fcd0a26272122371a969777763596cf.bindTooltip(
+                `<div>
+                     Freeland Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6fcd0a26272122371a969777763596cf.setIcon(icon_3e28e3025228ee046f0adee1f12f0719);
+            
+    
+            var marker_bb0cbf9586769c3726e7eb5fd207ac35 = L.marker(
+                [48.15063, -123.636083],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_b0559ab7f4ddb7eb02cd530eeef7d2d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6370a99236bf8032ed72a08e196171ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bd350df12ced83ac941b7a10146431e0 = $(`<div id="html_bd350df12ced83ac941b7a10146431e0" style="width: 100.0%; height: 100.0%;">         <b>Freshwater Bay</b><br>         <hr>         Basin: Strait of Juan de Fuca<br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 12<br>         Mean Rate: 2.96/hr<br>         Transects: 22         </div>`)[0];
+                popup_6370a99236bf8032ed72a08e196171ce.setContent(html_bd350df12ced83ac941b7a10146431e0);
+            
+        
+
+        marker_bb0cbf9586769c3726e7eb5fd207ac35.bindPopup(popup_6370a99236bf8032ed72a08e196171ce)
+        ;
+
+        
+    
+    
+            marker_bb0cbf9586769c3726e7eb5fd207ac35.bindTooltip(
+                `<div>
+                     Freshwater Bay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bb0cbf9586769c3726e7eb5fd207ac35.setIcon(icon_b0559ab7f4ddb7eb02cd530eeef7d2d2);
+            
+    
+            var marker_53e809bd371b51015ac17233b83c5df3 = L.marker(
+                [48.549823, -123.005027],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_464dc088c684b3d08c5bb689ce32f67a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2a57a5efa008117686ce0bef5021129 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_95e36048140206b1c25d5f11f106c4b0 = $(`<div id="html_95e36048140206b1c25d5f11f106c4b0" style="width: 100.0%; height: 100.0%;">         <b>Friday Harbor Reef</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 30         </div>`)[0];
+                popup_e2a57a5efa008117686ce0bef5021129.setContent(html_95e36048140206b1c25d5f11f106c4b0);
+            
+        
+
+        marker_53e809bd371b51015ac17233b83c5df3.bindPopup(popup_e2a57a5efa008117686ce0bef5021129)
+        ;
+
+        
+    
+    
+            marker_53e809bd371b51015ac17233b83c5df3.bindTooltip(
+                `<div>
+                     Friday Harbor Reef
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_53e809bd371b51015ac17233b83c5df3.setIcon(icon_464dc088c684b3d08c5bb689ce32f67a);
+            
+    
+            var marker_9930bfab97daef40b844c41c776ee6b2 = L.marker(
+                [47.617983, -122.968183],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_b6f1bf7400cc8084ff198567f9847cd9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e22eb8879cb1567bac50fc8e15ee42e7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5e582643d6e90f3a0211b0e15ce01822 = $(`<div id="html_5e582643d6e90f3a0211b0e15ce01822" style="width: 100.0%; height: 100.0%;">         <b>Fulton Creek</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 5<br>         Mean Rate: 3.27/hr<br>         Transects: 4         </div>`)[0];
+                popup_e22eb8879cb1567bac50fc8e15ee42e7.setContent(html_5e582643d6e90f3a0211b0e15ce01822);
+            
+        
+
+        marker_9930bfab97daef40b844c41c776ee6b2.bindPopup(popup_e22eb8879cb1567bac50fc8e15ee42e7)
+        ;
+
+        
+    
+    
+            marker_9930bfab97daef40b844c41c776ee6b2.bindTooltip(
+                `<div>
+                     Fulton Creek
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9930bfab97daef40b844c41c776ee6b2.setIcon(icon_b6f1bf7400cc8084ff198567f9847cd9);
+            
+    
+            var marker_60d429c9b84bf8cb93ae0c03a0df5e29 = L.marker(
+                [47.419888, -123.129494],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_e92a9cd980fba604c4c7208d157390ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af33cac647514279272a0e3e3ef12d72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_353338321e6e637a535cce77d9039b68 = $(`<div id="html_353338321e6e637a535cce77d9039b68" style="width: 100.0%; height: 100.0%;">         <b>Glen Ayr Ravine</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_af33cac647514279272a0e3e3ef12d72.setContent(html_353338321e6e637a535cce77d9039b68);
+            
+        
+
+        marker_60d429c9b84bf8cb93ae0c03a0df5e29.bindPopup(popup_af33cac647514279272a0e3e3ef12d72)
+        ;
+
+        
+    
+    
+            marker_60d429c9b84bf8cb93ae0c03a0df5e29.bindTooltip(
+                `<div>
+                     Glen Ayr Ravine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_60d429c9b84bf8cb93ae0c03a0df5e29.setIcon(icon_e92a9cd980fba604c4c7208d157390ab);
+            
+    
+            var marker_8364b23769456ee9fe11c982737d102a = L.marker(
+                [47.63058, -122.942265],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_68c3beba97bc4f43975f9c3f3ef2c3e0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_56da3fb0983f4bbad0facec656156662 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_15dc99928074769548e9f42884f91ddf = $(`<div id="html_15dc99928074769548e9f42884f91ddf" style="width: 100.0%; height: 100.0%;">         <b>Goby Garden</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 4.62/hr<br>         Transects: 1         </div>`)[0];
+                popup_56da3fb0983f4bbad0facec656156662.setContent(html_15dc99928074769548e9f42884f91ddf);
+            
+        
+
+        marker_8364b23769456ee9fe11c982737d102a.bindPopup(popup_56da3fb0983f4bbad0facec656156662)
+        ;
+
+        
+    
+    
+            marker_8364b23769456ee9fe11c982737d102a.bindTooltip(
+                `<div>
+                     Goby Garden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8364b23769456ee9fe11c982737d102a.setIcon(icon_68c3beba97bc4f43975f9c3f3ef2c3e0);
+            
+    
+            var marker_2802582e1dee2dee816619df055490f5 = L.marker(
+                [48.007259, -122.298823],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_4ba897fc606344b01a41660c08c0030c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21a3a043074d73ed1aac94a9db5f89d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d39aab81211a92a29349c9a70d4ad4c = $(`<div id="html_4d39aab81211a92a29349c9a70d4ad4c" style="width: 100.0%; height: 100.0%;">         <b>Hat Island Ledge</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 6<br>         Mean Rate: 9.66/hr<br>         Transects: 6         </div>`)[0];
+                popup_21a3a043074d73ed1aac94a9db5f89d9.setContent(html_4d39aab81211a92a29349c9a70d4ad4c);
+            
+        
+
+        marker_2802582e1dee2dee816619df055490f5.bindPopup(popup_21a3a043074d73ed1aac94a9db5f89d9)
+        ;
+
+        
+    
+    
+            marker_2802582e1dee2dee816619df055490f5.bindTooltip(
+                `<div>
+                     Hat Island Ledge
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2802582e1dee2dee816619df055490f5.setIcon(icon_4ba897fc606344b01a41660c08c0030c);
+            
+    
+            var marker_f6740500c3cb73a10dd80eebdc2011a5 = L.marker(
+                [48.017692, -122.53879],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_34835a2217f22c80ce5789ec75e13017 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e0056bcd3bc694b1d758d3511520857 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5010bcac34426cc2207f6f99e16a5c9e = $(`<div id="html_5010bcac34426cc2207f6f99e16a5c9e" style="width: 100.0%; height: 100.0%;">         <b>Holmes Harbor</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 301<br>         Mean Rate: 25.59/hr<br>         Transects: 48         </div>`)[0];
+                popup_4e0056bcd3bc694b1d758d3511520857.setContent(html_5010bcac34426cc2207f6f99e16a5c9e);
+            
+        
+
+        marker_f6740500c3cb73a10dd80eebdc2011a5.bindPopup(popup_4e0056bcd3bc694b1d758d3511520857)
+        ;
+
+        
+    
+    
+            marker_f6740500c3cb73a10dd80eebdc2011a5.bindTooltip(
+                `<div>
+                     Holmes Harbor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f6740500c3cb73a10dd80eebdc2011a5.setIcon(icon_34835a2217f22c80ce5789ec75e13017);
+            
+    
+            var marker_2c96198af096d622ec1d14eda3e3136f = L.marker(
+                [48.617667, -123.040383],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_94592241068f15d437e2c4ec7e9baaec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_768670d411daa54b35f2ec5106059248 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_29b147731fa3f09933b0a95a9eaa0c4e = $(`<div id="html_29b147731fa3f09933b0a95a9eaa0c4e" style="width: 100.0%; height: 100.0%;">         <b>Jones Island</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.48/hr<br>         Transects: 18         </div>`)[0];
+                popup_768670d411daa54b35f2ec5106059248.setContent(html_29b147731fa3f09933b0a95a9eaa0c4e);
+            
+        
+
+        marker_2c96198af096d622ec1d14eda3e3136f.bindPopup(popup_768670d411daa54b35f2ec5106059248)
+        ;
+
+        
+    
+    
+            marker_2c96198af096d622ec1d14eda3e3136f.bindTooltip(
+                `<div>
+                     Jones Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2c96198af096d622ec1d14eda3e3136f.setIcon(icon_94592241068f15d437e2c4ec7e9baaec);
+            
+    
+            var marker_1659035f0b98da8bdf9b23418239e004 = L.marker(
+                [47.522325, -123.048584],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_aacac0416da44130ffee7493f2b52501 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2781a03fa9f542e7d8e607932b821480 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1373ee9585ef575cc2ff5b2dec850db8 = $(`<div id="html_1373ee9585ef575cc2ff5b2dec850db8" style="width: 100.0%; height: 100.0%;">         <b>Jorsted Creek</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 3<br>         Mean Rate: 1.08/hr<br>         Transects: 11         </div>`)[0];
+                popup_2781a03fa9f542e7d8e607932b821480.setContent(html_1373ee9585ef575cc2ff5b2dec850db8);
+            
+        
+
+        marker_1659035f0b98da8bdf9b23418239e004.bindPopup(popup_2781a03fa9f542e7d8e607932b821480)
+        ;
+
+        
+    
+    
+            marker_1659035f0b98da8bdf9b23418239e004.bindTooltip(
+                `<div>
+                     Jorsted Creek
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1659035f0b98da8bdf9b23418239e004.setIcon(icon_aacac0416da44130ffee7493f2b52501);
+            
+    
+            var marker_207dea2acdcbf86a55e0c3ea5e72caf8 = L.marker(
+                [47.420837, -122.429911],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_27fe40555057322c65f673bf913e06c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7bc1e263e363dd17f5bdd51b4406ff9b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e84e637a90dfa749a01353b2a11415a6 = $(`<div id="html_e84e637a90dfa749a01353b2a11415a6" style="width: 100.0%; height: 100.0%;">         <b>KVI Tower</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 0.21/hr<br>         Transects: 61         </div>`)[0];
+                popup_7bc1e263e363dd17f5bdd51b4406ff9b.setContent(html_e84e637a90dfa749a01353b2a11415a6);
+            
+        
+
+        marker_207dea2acdcbf86a55e0c3ea5e72caf8.bindPopup(popup_7bc1e263e363dd17f5bdd51b4406ff9b)
+        ;
+
+        
+    
+    
+            marker_207dea2acdcbf86a55e0c3ea5e72caf8.bindTooltip(
+                `<div>
+                     KVI Tower
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_207dea2acdcbf86a55e0c3ea5e72caf8.setIcon(icon_27fe40555057322c65f673bf913e06c1);
+            
+    
+            var marker_465cb08b9ffc96b75163a5fcc67c1015 = L.marker(
+                [47.416943, -123.130313],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_1982dd11ac3706e368039dbed589d15e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fde3a48394b751f1e46c8093d8e4423a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5c0251c53dc6c3f573559f96b6837a5 = $(`<div id="html_a5c0251c53dc6c3f573559f96b6837a5" style="width: 100.0%; height: 100.0%;">         <b>Kat's Corner</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 6         </div>`)[0];
+                popup_fde3a48394b751f1e46c8093d8e4423a.setContent(html_a5c0251c53dc6c3f573559f96b6837a5);
+            
+        
+
+        marker_465cb08b9ffc96b75163a5fcc67c1015.bindPopup(popup_fde3a48394b751f1e46c8093d8e4423a)
+        ;
+
+        
+    
+    
+            marker_465cb08b9ffc96b75163a5fcc67c1015.bindTooltip(
+                `<div>
+                     Kat's Corner
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_465cb08b9ffc96b75163a5fcc67c1015.setIcon(icon_1982dd11ac3706e368039dbed589d15e);
+            
+    
+            var marker_072c0aa4ea195faa29dbcadc67063b9b = L.marker(
+                [48.590498, -123.202768],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_20a0fcdaea68719ec9dc5c96e68b5019 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa4f4405829bab5c04154ef6494030bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c041328fb2d7d4dca277315abe7bf521 = $(`<div id="html_c041328fb2d7d4dca277315abe7bf521" style="width: 100.0%; height: 100.0%;">         <b>Kellet's Bluff</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 13         </div>`)[0];
+                popup_fa4f4405829bab5c04154ef6494030bd.setContent(html_c041328fb2d7d4dca277315abe7bf521);
+            
+        
+
+        marker_072c0aa4ea195faa29dbcadc67063b9b.bindPopup(popup_fa4f4405829bab5c04154ef6494030bd)
+        ;
+
+        
+    
+    
+            marker_072c0aa4ea195faa29dbcadc67063b9b.bindTooltip(
+                `<div>
+                     Kellet's Bluff
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_072c0aa4ea195faa29dbcadc67063b9b.setIcon(icon_20a0fcdaea68719ec9dc5c96e68b5019);
+            
+    
+            var marker_2dc180728700259ded3db0005360a259 = L.marker(
+                [48.156876, -122.67077],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_07b1e9b6ca36ab455574ba4186af750e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24529773e8ec9c65c8a79be5430a8642 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f9940a1a05a71c6ea202b1868b2e049e = $(`<div id="html_f9940a1a05a71c6ea202b1868b2e049e" style="width: 100.0%; height: 100.0%;">         <b>Keystone Jetty</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Artificial Reef, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 26<br>         Mean Rate: 0.60/hr<br>         Transects: 228         </div>`)[0];
+                popup_24529773e8ec9c65c8a79be5430a8642.setContent(html_f9940a1a05a71c6ea202b1868b2e049e);
+            
+        
+
+        marker_2dc180728700259ded3db0005360a259.bindPopup(popup_24529773e8ec9c65c8a79be5430a8642)
+        ;
+
+        
+    
+    
+            marker_2dc180728700259ded3db0005360a259.bindTooltip(
+                `<div>
+                     Keystone Jetty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2dc180728700259ded3db0005360a259.setIcon(icon_07b1e9b6ca36ab455574ba4186af750e);
+            
+    
+            var marker_7a37069837657261a726eaf434804986 = L.marker(
+                [48.157998, -122.668452],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_d0c6481078a55cf9b6a29f163b3abfad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e60cf20f6ed8e84ee72dffc7dff29688 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de36f5bac82e6dc08f54fd3b2f18a0fa = $(`<div id="html_de36f5bac82e6dc08f54fd3b2f18a0fa" style="width: 100.0%; height: 100.0%;">         <b>Keystone Jetty - Pilings</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Artificial Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 3         </div>`)[0];
+                popup_e60cf20f6ed8e84ee72dffc7dff29688.setContent(html_de36f5bac82e6dc08f54fd3b2f18a0fa);
+            
+        
+
+        marker_7a37069837657261a726eaf434804986.bindPopup(popup_e60cf20f6ed8e84ee72dffc7dff29688)
+        ;
+
+        
+    
+    
+            marker_7a37069837657261a726eaf434804986.bindTooltip(
+                `<div>
+                     Keystone Jetty - Pilings
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7a37069837657261a726eaf434804986.setIcon(icon_d0c6481078a55cf9b6a29f163b3abfad);
+            
+    
+            var marker_392816f739172c0004649538260200bd = L.marker(
+                [48.03919, -122.402904],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_aa17913a362328a54d4e3405ce09aa33 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_060932eca62c56e30507bec0f26db610 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7d3497d28cacf676835170af9b7628df = $(`<div id="html_7d3497d28cacf676835170af9b7628df" style="width: 100.0%; height: 100.0%;">         <b>Langley Tire Reef</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 841<br>         Mean Rate: 14.82/hr<br>         Transects: 212         </div>`)[0];
+                popup_060932eca62c56e30507bec0f26db610.setContent(html_7d3497d28cacf676835170af9b7628df);
+            
+        
+
+        marker_392816f739172c0004649538260200bd.bindPopup(popup_060932eca62c56e30507bec0f26db610)
+        ;
+
+        
+    
+    
+            marker_392816f739172c0004649538260200bd.bindTooltip(
+                `<div>
+                     Langley Tire Reef
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_392816f739172c0004649538260200bd.setIcon(icon_aa17913a362328a54d4e3405ce09aa33);
+            
+    
+            var marker_3de8e6e139a8dfc71a5182e549da210e = L.marker(
+                [48.526141, -122.972398],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_a7578c94716390bccd047a0d4b74e1f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_609f4df4466a04198cb238b65c4390d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_952074c5f48e3efb41c4aab20188f989 = $(`<div id="html_952074c5f48e3efb41c4aab20188f989" style="width: 100.0%; height: 100.0%;">         <b>Larry's Lair</b><br>         <hr>         Basin: San Juan<br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 61         </div>`)[0];
+                popup_609f4df4466a04198cb238b65c4390d7.setContent(html_952074c5f48e3efb41c4aab20188f989);
+            
+        
+
+        marker_3de8e6e139a8dfc71a5182e549da210e.bindPopup(popup_609f4df4466a04198cb238b65c4390d7)
+        ;
+
+        
+    
+    
+            marker_3de8e6e139a8dfc71a5182e549da210e.bindTooltip(
+                `<div>
+                     Larry's Lair
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3de8e6e139a8dfc71a5182e549da210e.setIcon(icon_a7578c94716390bccd047a0d4b74e1f1);
+            
+    
+            var marker_273313b28b02b475e55d33fbb3e18288 = L.marker(
+                [47.2842, -122.48315],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_2d644871f0b206705a635b24870ebfc5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6cc6a8b978d7fcf00eee1ba70dea1979 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73c254408b400a17749c391f3f5dfa64 = $(`<div id="html_73c254408b400a17749c391f3f5dfa64" style="width: 100.0%; height: 100.0%;">         <b>Les Davis Marine Park</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.11/hr<br>         Transects: 57         </div>`)[0];
+                popup_6cc6a8b978d7fcf00eee1ba70dea1979.setContent(html_73c254408b400a17749c391f3f5dfa64);
+            
+        
+
+        marker_273313b28b02b475e55d33fbb3e18288.bindPopup(popup_6cc6a8b978d7fcf00eee1ba70dea1979)
+        ;
+
+        
+    
+    
+            marker_273313b28b02b475e55d33fbb3e18288.bindTooltip(
+                `<div>
+                     Les Davis Marine Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_273313b28b02b475e55d33fbb3e18288.setIcon(icon_2d644871f0b206705a635b24870ebfc5);
+            
+    
+            var marker_9ddeb2de67175a8b1ab6c4d8ad2dcfc5 = L.marker(
+                [48.515401, -123.152515],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_395e5c44099fabc73debc4b9eb338ca6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_afba114c18f7c2170ab616b04aa18d2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb9725376e8ca805396f80407d5912f4 = $(`<div id="html_cb9725376e8ca805396f80407d5912f4" style="width: 100.0%; height: 100.0%;">         <b>Lime Kiln</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 7         </div>`)[0];
+                popup_afba114c18f7c2170ab616b04aa18d2b.setContent(html_cb9725376e8ca805396f80407d5912f4);
+            
+        
+
+        marker_9ddeb2de67175a8b1ab6c4d8ad2dcfc5.bindPopup(popup_afba114c18f7c2170ab616b04aa18d2b)
+        ;
+
+        
+    
+    
+            marker_9ddeb2de67175a8b1ab6c4d8ad2dcfc5.bindTooltip(
+                `<div>
+                     Lime Kiln
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9ddeb2de67175a8b1ab6c4d8ad2dcfc5.setIcon(icon_395e5c44099fabc73debc4b9eb338ca6);
+            
+    
+            var marker_b2a1a1ef1413fe8f462e697a8707b1aa = L.marker(
+                [47.288135, -122.489],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_ed63cac9d12d0d1890fbd3e1efe7638d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7df76acfd660a863040ceae863547cb9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8ff87ab9e5852f9ce533b3709315651 = $(`<div id="html_f8ff87ab9e5852f9ce533b3709315651" style="width: 100.0%; height: 100.0%;">         <b>Lobster Shop Wall</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 55         </div>`)[0];
+                popup_7df76acfd660a863040ceae863547cb9.setContent(html_f8ff87ab9e5852f9ce533b3709315651);
+            
+        
+
+        marker_b2a1a1ef1413fe8f462e697a8707b1aa.bindPopup(popup_7df76acfd660a863040ceae863547cb9)
+        ;
+
+        
+    
+    
+            marker_b2a1a1ef1413fe8f462e697a8707b1aa.bindTooltip(
+                `<div>
+                     Lobster Shop Wall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b2a1a1ef1413fe8f462e697a8707b1aa.setIcon(icon_ed63cac9d12d0d1890fbd3e1efe7638d);
+            
+    
+            var marker_ea167d2e6107cb86796e77ce1d81178b = L.marker(
+                [47.540152, -122.397713],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_263ba9d767e3fd89039d9a022cf36449 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36930d0e6a53ff0605ad8bd5224674f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb3e9db94b25d3fcffbafb9a6e6afde7 = $(`<div id="html_cb3e9db94b25d3fcffbafb9a6e6afde7" style="width: 100.0%; height: 100.0%;">         <b>Lowman Beach Park</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 7         </div>`)[0];
+                popup_36930d0e6a53ff0605ad8bd5224674f1.setContent(html_cb3e9db94b25d3fcffbafb9a6e6afde7);
+            
+        
+
+        marker_ea167d2e6107cb86796e77ce1d81178b.bindPopup(popup_36930d0e6a53ff0605ad8bd5224674f1)
+        ;
+
+        
+    
+    
+            marker_ea167d2e6107cb86796e77ce1d81178b.bindTooltip(
+                `<div>
+                     Lowman Beach Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea167d2e6107cb86796e77ce1d81178b.setIcon(icon_263ba9d767e3fd89039d9a022cf36449);
+            
+    
+            var marker_cdebdc6487964401bb2b74ddb3baf898 = L.marker(
+                [47.362792, -122.439769],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_87821455b3610ad91245249e4f67a598 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ccbf1a03d34fec814fae171f2c1e8124 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_140ee1c92219ae3a3cc6b755f1b46a9e = $(`<div id="html_140ee1c92219ae3a3cc6b755f1b46a9e" style="width: 100.0%; height: 100.0%;">         <b>Maury Island Barges</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 14         </div>`)[0];
+                popup_ccbf1a03d34fec814fae171f2c1e8124.setContent(html_140ee1c92219ae3a3cc6b755f1b46a9e);
+            
+        
+
+        marker_cdebdc6487964401bb2b74ddb3baf898.bindPopup(popup_ccbf1a03d34fec814fae171f2c1e8124)
+        ;
+
+        
+    
+    
+            marker_cdebdc6487964401bb2b74ddb3baf898.bindTooltip(
+                `<div>
+                     Maury Island Barges
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cdebdc6487964401bb2b74ddb3baf898.setIcon(icon_87821455b3610ad91245249e4f67a598);
+            
+    
+            var marker_b2f88d82d5bfada7552ffed01df8f508 = L.marker(
+                [47.569882, -123.012899],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_b74c0aa0f041fbc57ffedf39ffede33e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2b5146dc8f4ae1b471babff5dd0f574 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c7f2a920ab163c8f98125873196a5c5a = $(`<div id="html_c7f2a920ab163c8f98125873196a5c5a" style="width: 100.0%; height: 100.0%;">         <b>Mike's Beach Resort</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Artificial Reef<br>         <hr>         Total Pycno: 3<br>         Mean Rate: 6.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_c2b5146dc8f4ae1b471babff5dd0f574.setContent(html_c7f2a920ab163c8f98125873196a5c5a);
+            
+        
+
+        marker_b2f88d82d5bfada7552ffed01df8f508.bindPopup(popup_c2b5146dc8f4ae1b471babff5dd0f574)
+        ;
+
+        
+    
+    
+            marker_b2f88d82d5bfada7552ffed01df8f508.bindTooltip(
+                `<div>
+                     Mike's Beach Resort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b2f88d82d5bfada7552ffed01df8f508.setIcon(icon_b74c0aa0f041fbc57ffedf39ffede33e);
+            
+    
+            var marker_f0108ff804e9b605cd247d66d5257848 = L.marker(
+                [47.94664, -122.309245],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_77adf9448ed66d3cd5d527540554f927 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3b9b6b3741c17dfb2dc1a94117e1e0b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_36aa0363051235dad9fefee9cf836671 = $(`<div id="html_36aa0363051235dad9fefee9cf836671" style="width: 100.0%; height: 100.0%;">         <b>Mukilteo Lighthouse</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 5<br>         Mean Rate: 0.49/hr<br>         Transects: 65         </div>`)[0];
+                popup_3b9b6b3741c17dfb2dc1a94117e1e0b2.setContent(html_36aa0363051235dad9fefee9cf836671);
+            
+        
+
+        marker_f0108ff804e9b605cd247d66d5257848.bindPopup(popup_3b9b6b3741c17dfb2dc1a94117e1e0b2)
+        ;
+
+        
+    
+    
+            marker_f0108ff804e9b605cd247d66d5257848.bindTooltip(
+                `<div>
+                     Mukilteo Lighthouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f0108ff804e9b605cd247d66d5257848.setIcon(icon_77adf9448ed66d3cd5d527540554f927);
+            
+    
+            var marker_cfa79c0472dbf67d747ad60830a208b8 = L.marker(
+                [47.950451, -122.299001],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_42861d2a3c893b5bc0d02b8eb49a68d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff566ae2aa8ae484daa672f53f1eb2bb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ee7c602d9559fbe698ff38c06f2895b = $(`<div id="html_9ee7c602d9559fbe698ff38c06f2895b" style="width: 100.0%; height: 100.0%;">         <b>Mukilteo T-Dock</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 0.08/hr<br>         Transects: 101         </div>`)[0];
+                popup_ff566ae2aa8ae484daa672f53f1eb2bb.setContent(html_9ee7c602d9559fbe698ff38c06f2895b);
+            
+        
+
+        marker_cfa79c0472dbf67d747ad60830a208b8.bindPopup(popup_ff566ae2aa8ae484daa672f53f1eb2bb)
+        ;
+
+        
+    
+    
+            marker_cfa79c0472dbf67d747ad60830a208b8.bindTooltip(
+                `<div>
+                     Mukilteo T-Dock
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cfa79c0472dbf67d747ad60830a208b8.setIcon(icon_42861d2a3c893b5bc0d02b8eb49a68d3);
+            
+    
+            var marker_fe33966eccfe162abe225a8316899424 = L.marker(
+                [47.60568, -122.497408],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_e04addf6d46fdca51ba30786c32e41f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d1bd5139c5942310121292223b93a4ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dcbaad9700eca5720a192d8bda482ab7 = $(`<div id="html_dcbaad9700eca5720a192d8bda482ab7" style="width: 100.0%; height: 100.0%;">         <b>Norrander's</b><br>         <hr>         Basin: Central<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 57         </div>`)[0];
+                popup_d1bd5139c5942310121292223b93a4ed.setContent(html_dcbaad9700eca5720a192d8bda482ab7);
+            
+        
+
+        marker_fe33966eccfe162abe225a8316899424.bindPopup(popup_d1bd5139c5942310121292223b93a4ed)
+        ;
+
+        
+    
+    
+            marker_fe33966eccfe162abe225a8316899424.bindTooltip(
+                `<div>
+                     Norrander's
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fe33966eccfe162abe225a8316899424.setIcon(icon_e04addf6d46fdca51ba30786c32e41f7);
+            
+    
+            var marker_b9e492d43f2be28704986a5ba6c278f0 = L.marker(
+                [48.14372132, -122.7801511],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_0f51e88c3e2e00b14adb375f5d36f039 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2ea733506c280bcdc4395ac5f6fed062 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a84e690bbf4b5f94ebddc72d422d1708 = $(`<div id="html_a84e690bbf4b5f94ebddc72d422d1708" style="width: 100.0%; height: 100.0%;">         <b>North Beach</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 14         </div>`)[0];
+                popup_2ea733506c280bcdc4395ac5f6fed062.setContent(html_a84e690bbf4b5f94ebddc72d422d1708);
+            
+        
+
+        marker_b9e492d43f2be28704986a5ba6c278f0.bindPopup(popup_2ea733506c280bcdc4395ac5f6fed062)
+        ;
+
+        
+    
+    
+            marker_b9e492d43f2be28704986a5ba6c278f0.bindTooltip(
+                `<div>
+                     North Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9e492d43f2be28704986a5ba6c278f0.setIcon(icon_0f51e88c3e2e00b14adb375f5d36f039);
+            
+    
+            var marker_e985b6287e9277c99b1741b5435c4967 = L.marker(
+                [48.41883, -122.67067],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_29dc4339d321052744037ac696c26dd9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_96fd89a1bb34374d80d0d5b4abc2b293 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3c8cb8ce041b3f4c664b7177af085867 = $(`<div id="html_3c8cb8ce041b3f4c664b7177af085867" style="width: 100.0%; height: 100.0%;">         <b>Northwest Island</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 43         </div>`)[0];
+                popup_96fd89a1bb34374d80d0d5b4abc2b293.setContent(html_3c8cb8ce041b3f4c664b7177af085867);
+            
+        
+
+        marker_e985b6287e9277c99b1741b5435c4967.bindPopup(popup_96fd89a1bb34374d80d0d5b4abc2b293)
+        ;
+
+        
+    
+    
+            marker_e985b6287e9277c99b1741b5435c4967.bindTooltip(
+                `<div>
+                     Northwest Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e985b6287e9277c99b1741b5435c4967.setIcon(icon_29dc4339d321052744037ac696c26dd9);
+            
+    
+            var marker_24b4a5ee7fa206ca85a943279e895bae = L.marker(
+                [48.604259, -123.09296],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_9d6472385498765e60f6068e51b3710e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4e13c3f0a55bdec15cf3aa4cb9df5ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ae0dec6c9a1f3ef0957c5571e5bb606 = $(`<div id="html_2ae0dec6c9a1f3ef0957c5571e5bb606" style="width: 100.0%; height: 100.0%;">         <b>O'Neal Island</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 4<br>         Mean Rate: 0.44/hr<br>         Transects: 17         </div>`)[0];
+                popup_c4e13c3f0a55bdec15cf3aa4cb9df5ab.setContent(html_2ae0dec6c9a1f3ef0957c5571e5bb606);
+            
+        
+
+        marker_24b4a5ee7fa206ca85a943279e895bae.bindPopup(popup_c4e13c3f0a55bdec15cf3aa4cb9df5ab)
+        ;
+
+        
+    
+    
+            marker_24b4a5ee7fa206ca85a943279e895bae.bindTooltip(
+                `<div>
+                     O'Neal Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_24b4a5ee7fa206ca85a943279e895bae.setIcon(icon_9d6472385498765e60f6068e51b3710e);
+            
+    
+            var marker_a33786ca216ef01d8d3f3c27a24060a4 = L.marker(
+                [47.447568, -123.112392],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_7588ac05d07d97f881d8ef1b16247616 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb4331a34ca122cccc49a7e89c7fe215 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40d588e1197e87ad8b7bd63d492c4d52 = $(`<div id="html_40d588e1197e87ad8b7bd63d492c4d52" style="width: 100.0%; height: 100.0%;">         <b>Octopus Hole</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 43<br>         Mean Rate: 2.87/hr<br>         Transects: 79         </div>`)[0];
+                popup_fb4331a34ca122cccc49a7e89c7fe215.setContent(html_40d588e1197e87ad8b7bd63d492c4d52);
+            
+        
+
+        marker_a33786ca216ef01d8d3f3c27a24060a4.bindPopup(popup_fb4331a34ca122cccc49a7e89c7fe215)
+        ;
+
+        
+    
+    
+            marker_a33786ca216ef01d8d3f3c27a24060a4.bindTooltip(
+                `<div>
+                     Octopus Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a33786ca216ef01d8d3f3c27a24060a4.setIcon(icon_7588ac05d07d97f881d8ef1b16247616);
+            
+    
+            var marker_29ced54ecaec2c49426f152d67154f15 = L.marker(
+                [47.313981, -122.528086],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_f6952f8b6767e18740228d5a0945717f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c5996996ff7a9aec2e86b1872ff9702 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ea6e844f23c0ebbbfe4f9a076a9e139 = $(`<div id="html_6ea6e844f23c0ebbbfe4f9a076a9e139" style="width: 100.0%; height: 100.0%;">         <b>Owen Beach</b><br>         <hr>         Basin: Central<br>         Habitats: Soft Bottom<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 1.60/hr<br>         Transects: 15         </div>`)[0];
+                popup_2c5996996ff7a9aec2e86b1872ff9702.setContent(html_6ea6e844f23c0ebbbfe4f9a076a9e139);
+            
+        
+
+        marker_29ced54ecaec2c49426f152d67154f15.bindPopup(popup_2c5996996ff7a9aec2e86b1872ff9702)
+        ;
+
+        
+    
+    
+            marker_29ced54ecaec2c49426f152d67154f15.bindTooltip(
+                `<div>
+                     Owen Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_29ced54ecaec2c49426f152d67154f15.setIcon(icon_f6952f8b6767e18740228d5a0945717f);
+            
+    
+            var marker_c4266e8c0e409b1542fde5025ad2b485 = L.marker(
+                [49.346019, -123.304703],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_33fffd4c6123313ffd5bac17201c04cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_40b53fed6ad469a0acda1ed71355d96c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48c891804617c543230a711b8959ebd7 = $(`<div id="html_48c891804617c543230a711b8959ebd7" style="width: 100.0%; height: 100.0%;">         <b>Passage Island</b><br>         <hr>         Basin: Howe Sound<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 0.33/hr<br>         Transects: 26         </div>`)[0];
+                popup_40b53fed6ad469a0acda1ed71355d96c.setContent(html_48c891804617c543230a711b8959ebd7);
+            
+        
+
+        marker_c4266e8c0e409b1542fde5025ad2b485.bindPopup(popup_40b53fed6ad469a0acda1ed71355d96c)
+        ;
+
+        
+    
+    
+            marker_c4266e8c0e409b1542fde5025ad2b485.bindTooltip(
+                `<div>
+                     Passage Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c4266e8c0e409b1542fde5025ad2b485.setIcon(icon_33fffd4c6123313ffd5bac17201c04cb);
+            
+    
+            var marker_8b0af16ecfac4fb8467712674361739d = L.marker(
+                [48.481855, -123.094404],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_edfc56a1a4dcad8535f26e20c801934e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e11b121d7ba7f195bb8db44b08820fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56d7f2f748e5ba7041a8f0a88348d969 = $(`<div id="html_56d7f2f748e5ba7041a8f0a88348d969" style="width: 100.0%; height: 100.0%;">         <b>Pile Point</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 54         </div>`)[0];
+                popup_9e11b121d7ba7f195bb8db44b08820fb.setContent(html_56d7f2f748e5ba7041a8f0a88348d969);
+            
+        
+
+        marker_8b0af16ecfac4fb8467712674361739d.bindPopup(popup_9e11b121d7ba7f195bb8db44b08820fb)
+        ;
+
+        
+    
+    
+            marker_8b0af16ecfac4fb8467712674361739d.bindTooltip(
+                `<div>
+                     Pile Point
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8b0af16ecfac4fb8467712674361739d.setIcon(icon_edfc56a1a4dcad8535f26e20c801934e);
+            
+    
+            var marker_4c7f4541b24a028d8761612d0861f9c3 = L.marker(
+                [48.56323, -123.02555],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_7490e5eb0d9ee5c873cfe74d7f69c701 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4a45f07339bd3d26fedb99629d0fed8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c06de26f89f4f95d19885b014f9f851 = $(`<div id="html_0c06de26f89f4f95d19885b014f9f851" style="width: 100.0%; height: 100.0%;">         <b>Point Caution</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 5         </div>`)[0];
+                popup_f4a45f07339bd3d26fedb99629d0fed8.setContent(html_0c06de26f89f4f95d19885b014f9f851);
+            
+        
+
+        marker_4c7f4541b24a028d8761612d0861f9c3.bindPopup(popup_f4a45f07339bd3d26fedb99629d0fed8)
+        ;
+
+        
+    
+    
+            marker_4c7f4541b24a028d8761612d0861f9c3.bindTooltip(
+                `<div>
+                     Point Caution
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c7f4541b24a028d8761612d0861f9c3.setIcon(icon_7490e5eb0d9ee5c873cfe74d7f69c701);
+            
+    
+            var marker_04e6fc11211d147cb121b054b69d267a = L.marker(
+                [47.333038, -122.519207],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_4bde330a399d6c0d3aed508fe3a9e601 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ccf71dbffb148687227c40587bbf3f39 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6fb36b0b271832d85da92ae0d532c91f = $(`<div id="html_6fb36b0b271832d85da92ae0d532c91f" style="width: 100.0%; height: 100.0%;">         <b>Point Dalco</b><br>         <hr>         Basin: Central<br>         Habitats: Kelp Forest<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_ccf71dbffb148687227c40587bbf3f39.setContent(html_6fb36b0b271832d85da92ae0d532c91f);
+            
+        
+
+        marker_04e6fc11211d147cb121b054b69d267a.bindPopup(popup_ccf71dbffb148687227c40587bbf3f39)
+        ;
+
+        
+    
+    
+            marker_04e6fc11211d147cb121b054b69d267a.bindTooltip(
+                `<div>
+                     Point Dalco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_04e6fc11211d147cb121b054b69d267a.setIcon(icon_4bde330a399d6c0d3aed508fe3a9e601);
+            
+    
+            var marker_22fd5fceee4ea49169188d815ef2ce4e = L.marker(
+                [47.319055, -122.544862],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_f21c29293b1ab6309333b65203b2a27f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2995e8374b00677991eabb611da6410 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5c48fd948b2b3dcb1dcb792defae9e35 = $(`<div id="html_5c48fd948b2b3dcb1dcb792defae9e35" style="width: 100.0%; height: 100.0%;">         <b>Point Defiance North Wall</b><br>         <hr>         Basin: Central<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 7         </div>`)[0];
+                popup_e2995e8374b00677991eabb611da6410.setContent(html_5c48fd948b2b3dcb1dcb792defae9e35);
+            
+        
+
+        marker_22fd5fceee4ea49169188d815ef2ce4e.bindPopup(popup_e2995e8374b00677991eabb611da6410)
+        ;
+
+        
+    
+    
+            marker_22fd5fceee4ea49169188d815ef2ce4e.bindTooltip(
+                `<div>
+                     Point Defiance North Wall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22fd5fceee4ea49169188d815ef2ce4e.setIcon(icon_f21c29293b1ab6309333b65203b2a27f);
+            
+    
+            var marker_6df09fad1aed204f7b99a99f2837e7cd = L.marker(
+                [47.314675, -122.547696],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_280e3043c21d5aae6290c87b34c90db1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_984f8d5826552b273e414e79824bb2a9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8243a15e9ec51d485e30c29936aa89c1 = $(`<div id="html_8243a15e9ec51d485e30c29936aa89c1" style="width: 100.0%; height: 100.0%;">         <b>Point Defiance West Kelp Beds</b><br>         <hr>         Basin: Central<br>         Habitats: Kelp Forest<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 4         </div>`)[0];
+                popup_984f8d5826552b273e414e79824bb2a9.setContent(html_8243a15e9ec51d485e30c29936aa89c1);
+            
+        
+
+        marker_6df09fad1aed204f7b99a99f2837e7cd.bindPopup(popup_984f8d5826552b273e414e79824bb2a9)
+        ;
+
+        
+    
+    
+            marker_6df09fad1aed204f7b99a99f2837e7cd.bindTooltip(
+                `<div>
+                     Point Defiance West Kelp Beds
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6df09fad1aed204f7b99a99f2837e7cd.setIcon(icon_280e3043c21d5aae6290c87b34c90db1);
+            
+    
+            var marker_c93d51678ccd7dc45a9917147330006f = L.marker(
+                [48.560418, -122.988549],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_28ed2fcc1433208fa2731b299e7959d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b75c130076e5ec0e0814b485fe0e3356 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_74f81b0926918a85866f0c69fe2b2e62 = $(`<div id="html_74f81b0926918a85866f0c69fe2b2e62" style="width: 100.0%; height: 100.0%;">         <b>Point George</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 4         </div>`)[0];
+                popup_b75c130076e5ec0e0814b485fe0e3356.setContent(html_74f81b0926918a85866f0c69fe2b2e62);
+            
+        
+
+        marker_c93d51678ccd7dc45a9917147330006f.bindPopup(popup_b75c130076e5ec0e0814b485fe0e3356)
+        ;
+
+        
+    
+    
+            marker_c93d51678ccd7dc45a9917147330006f.bindTooltip(
+                `<div>
+                     Point George
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c93d51678ccd7dc45a9917147330006f.setIcon(icon_28ed2fcc1433208fa2731b299e7959d4);
+            
+    
+            var marker_5f400c7e19af074fad6714f33dd6bb3e = L.marker(
+                [48.115774, -122.750321],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_11ae266aeb10ffe0c1d3f68431b8e278 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dadd3a06695f3ef2098cd849bc0ce5d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dec9cd51ed939cadd86155101edb14b3 = $(`<div id="html_dec9cd51ed939cadd86155101edb14b3" style="width: 100.0%; height: 100.0%;">         <b>Point Hudson</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 4<br>         Mean Rate: 0.60/hr<br>         Transects: 56         </div>`)[0];
+                popup_dadd3a06695f3ef2098cd849bc0ce5d7.setContent(html_dec9cd51ed939cadd86155101edb14b3);
+            
+        
+
+        marker_5f400c7e19af074fad6714f33dd6bb3e.bindPopup(popup_dadd3a06695f3ef2098cd849bc0ce5d7)
+        ;
+
+        
+    
+    
+            marker_5f400c7e19af074fad6714f33dd6bb3e.bindTooltip(
+                `<div>
+                     Point Hudson
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f400c7e19af074fad6714f33dd6bb3e.setIcon(icon_11ae266aeb10ffe0c1d3f68431b8e278);
+            
+    
+            var marker_f13652854139b24d4951d660229d1efe = L.marker(
+                [47.299244, -122.502268],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_dc023443a226673cbfef926634522e43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c0472fbf857d645903510f2f961f964a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cdb0606c95397119bdcdb5dccf2cd8e9 = $(`<div id="html_cdb0606c95397119bdcdb5dccf2cd8e9" style="width: 100.0%; height: 100.0%;">         <b>Point Ruston</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 3<br>         Mean Rate: 0.08/hr<br>         Transects: 62         </div>`)[0];
+                popup_c0472fbf857d645903510f2f961f964a.setContent(html_cdb0606c95397119bdcdb5dccf2cd8e9);
+            
+        
+
+        marker_f13652854139b24d4951d660229d1efe.bindPopup(popup_c0472fbf857d645903510f2f961f964a)
+        ;
+
+        
+    
+    
+            marker_f13652854139b24d4951d660229d1efe.bindTooltip(
+                `<div>
+                     Point Ruston
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f13652854139b24d4951d660229d1efe.setIcon(icon_dc023443a226673cbfef926634522e43);
+            
+    
+            var marker_0690fbc19d36ad7fa930fcf8299121f4 = L.marker(
+                [47.763705, -122.853794],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_1cc12f1e9b946fe794adb6806a7fbdb2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7b36bf4a4c3d3898e6d4ddb12d605488 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1617fde145720690748d748be8df5721 = $(`<div id="html_1617fde145720690748d748be8df5721" style="width: 100.0%; height: 100.0%;">         <b>Point Whitney Shellfish Lab</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 7<br>         Mean Rate: 1.51/hr<br>         Transects: 51         </div>`)[0];
+                popup_7b36bf4a4c3d3898e6d4ddb12d605488.setContent(html_1617fde145720690748d748be8df5721);
+            
+        
+
+        marker_0690fbc19d36ad7fa930fcf8299121f4.bindPopup(popup_7b36bf4a4c3d3898e6d4ddb12d605488)
+        ;
+
+        
+    
+    
+            marker_0690fbc19d36ad7fa930fcf8299121f4.bindTooltip(
+                `<div>
+                     Point Whitney Shellfish Lab
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0690fbc19d36ad7fa930fcf8299121f4.setIcon(icon_1cc12f1e9b946fe794adb6806a7fbdb2);
+            
+    
+            var marker_7a0510f2364d0db8a66490e4e2e67c72 = L.marker(
+                [47.905306, -122.376914],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_0cd07c4ce3ea200a6f7cbfcd9d11ce98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76036385eba395ce78e080a89fadb225 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b79d0059157681a710a42a78f2d136cd = $(`<div id="html_b79d0059157681a710a42a78f2d136cd" style="width: 100.0%; height: 100.0%;">         <b>Possession Point Fingers</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.01/hr<br>         Transects: 247         </div>`)[0];
+                popup_76036385eba395ce78e080a89fadb225.setContent(html_b79d0059157681a710a42a78f2d136cd);
+            
+        
+
+        marker_7a0510f2364d0db8a66490e4e2e67c72.bindPopup(popup_76036385eba395ce78e080a89fadb225)
+        ;
+
+        
+    
+    
+            marker_7a0510f2364d0db8a66490e4e2e67c72.bindTooltip(
+                `<div>
+                     Possession Point Fingers
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7a0510f2364d0db8a66490e4e2e67c72.setIcon(icon_0cd07c4ce3ea200a6f7cbfcd9d11ce98);
+            
+    
+            var marker_ccdc88122d31a494887ba84bf1d071d7 = L.marker(
+                [47.761821, -122.849161],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_71148d9e4e7da08f08c14c244093f763 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4eff90f47afa8e5d1adcee325515da73 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f29aaefc6cd1e2c6f3ff626980aa709b = $(`<div id="html_f29aaefc6cd1e2c6f3ff626980aa709b" style="width: 100.0%; height: 100.0%;">         <b>Pulali Point</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 3.81/hr<br>         Transects: 2         </div>`)[0];
+                popup_4eff90f47afa8e5d1adcee325515da73.setContent(html_f29aaefc6cd1e2c6f3ff626980aa709b);
+            
+        
+
+        marker_ccdc88122d31a494887ba84bf1d071d7.bindPopup(popup_4eff90f47afa8e5d1adcee325515da73)
+        ;
+
+        
+    
+    
+            marker_ccdc88122d31a494887ba84bf1d071d7.bindTooltip(
+                `<div>
+                     Pulali Point
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ccdc88122d31a494887ba84bf1d071d7.setIcon(icon_71148d9e4e7da08f08c14c244093f763);
+            
+    
+            var marker_5c5fd71e3bed9c010c4ef3ff0583ad48 = L.marker(
+                [47.735708, -122.85479],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_8e87cb18bfc47040ebe1081c15c519a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_805e0b574bd31566f2aedb2b00ad10fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_118526fc3495407c0beb64ed70ee3a85 = $(`<div id="html_118526fc3495407c0beb64ed70ee3a85" style="width: 100.0%; height: 100.0%;">         <b>Pulali Point West Wall</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 3<br>         Mean Rate: 3.67/hr<br>         Transects: 5         </div>`)[0];
+                popup_805e0b574bd31566f2aedb2b00ad10fc.setContent(html_118526fc3495407c0beb64ed70ee3a85);
+            
+        
+
+        marker_5c5fd71e3bed9c010c4ef3ff0583ad48.bindPopup(popup_805e0b574bd31566f2aedb2b00ad10fc)
+        ;
+
+        
+    
+    
+            marker_5c5fd71e3bed9c010c4ef3ff0583ad48.bindTooltip(
+                `<div>
+                     Pulali Point West Wall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5c5fd71e3bed9c010c4ef3ff0583ad48.setIcon(icon_8e87cb18bfc47040ebe1081c15c519a1);
+            
+    
+            var marker_f62b58c8bf8b75b8e646a1ea412e8b91 = L.marker(
+                [47.34892, -122.325934],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_b9df05ca885d19aab451fad8566162d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d90763a402e6a3678ae723e5a617d59 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_926be292169682769f1fe30e1cd19154 = $(`<div id="html_926be292169682769f1fe30e1cd19154" style="width: 100.0%; height: 100.0%;">         <b>Redondo Beach</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.12/hr<br>         Transects: 50         </div>`)[0];
+                popup_6d90763a402e6a3678ae723e5a617d59.setContent(html_926be292169682769f1fe30e1cd19154);
+            
+        
+
+        marker_f62b58c8bf8b75b8e646a1ea412e8b91.bindPopup(popup_6d90763a402e6a3678ae723e5a617d59)
+        ;
+
+        
+    
+    
+            marker_f62b58c8bf8b75b8e646a1ea412e8b91.bindTooltip(
+                `<div>
+                     Redondo Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f62b58c8bf8b75b8e646a1ea412e8b91.setIcon(icon_b9df05ca885d19aab451fad8566162d7);
+            
+    
+            var marker_95cc2d44b3d503147f6680c7126f4801 = L.marker(
+                [48.418732, -122.665668],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_8a0d1c018549a93eaf0c4a795a5df338 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_657a1b59a29a89d17e53ba5b841aa2cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20edd6557f436f1d64fff92e34772595 = $(`<div id="html_20edd6557f436f1d64fff92e34772595" style="width: 100.0%; height: 100.0%;">         <b>Rosario Beach Urchin Rocks</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 0.09/hr<br>         Transects: 58         </div>`)[0];
+                popup_657a1b59a29a89d17e53ba5b841aa2cd.setContent(html_20edd6557f436f1d64fff92e34772595);
+            
+        
+
+        marker_95cc2d44b3d503147f6680c7126f4801.bindPopup(popup_657a1b59a29a89d17e53ba5b841aa2cd)
+        ;
+
+        
+    
+    
+            marker_95cc2d44b3d503147f6680c7126f4801.bindTooltip(
+                `<div>
+                     Rosario Beach Urchin Rocks
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_95cc2d44b3d503147f6680c7126f4801.setIcon(icon_8a0d1c018549a93eaf0c4a795a5df338);
+            
+    
+            var marker_34cbad2f04cef0ccc3a85f982887dc83 = L.marker(
+                [48.415477, -122.66477],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_3e40af818c5f4c93e56547a6247af017 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16df08621d2e647ceb075cd972f5d407 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b7cef10e4d209b28f836a6b614fa0f0a = $(`<div id="html_b7cef10e4d209b28f836a6b614fa0f0a" style="width: 100.0%; height: 100.0%;">         <b>Rosario Head</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 6         </div>`)[0];
+                popup_16df08621d2e647ceb075cd972f5d407.setContent(html_b7cef10e4d209b28f836a6b614fa0f0a);
+            
+        
+
+        marker_34cbad2f04cef0ccc3a85f982887dc83.bindPopup(popup_16df08621d2e647ceb075cd972f5d407)
+        ;
+
+        
+    
+    
+            marker_34cbad2f04cef0ccc3a85f982887dc83.bindTooltip(
+                `<div>
+                     Rosario Head
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34cbad2f04cef0ccc3a85f982887dc83.setIcon(icon_3e40af818c5f4c93e56547a6247af017);
+            
+    
+            var marker_20d989d31681028a1fe8ded0631449f5 = L.marker(
+                [47.630199, -122.940635],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_2114c911e1fd96a25862e787b6f00d07 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a7cc923f0ffb50fbcecde182e49d9f4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_590acde36aa8ace6d84eedc288ca1f6d = $(`<div id="html_590acde36aa8ace6d84eedc288ca1f6d" style="width: 100.0%; height: 100.0%;">         <b>Rosie's Ravine</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 5<br>         Mean Rate: 9.33/hr<br>         Transects: 3         </div>`)[0];
+                popup_2a7cc923f0ffb50fbcecde182e49d9f4.setContent(html_590acde36aa8ace6d84eedc288ca1f6d);
+            
+        
+
+        marker_20d989d31681028a1fe8ded0631449f5.bindPopup(popup_2a7cc923f0ffb50fbcecde182e49d9f4)
+        ;
+
+        
+    
+    
+            marker_20d989d31681028a1fe8ded0631449f5.bindTooltip(
+                `<div>
+                     Rosie's Ravine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_20d989d31681028a1fe8ded0631449f5.setIcon(icon_2114c911e1fd96a25862e787b6f00d07);
+            
+    
+            var marker_b6c77528d19ef2af4299b2a9f8fe2942 = L.marker(
+                [48.168709, -123.711306],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_2d3a516f742cb975a6b76167199a0975 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_be1285e2507c6354c7bb492c8a7c3094 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5098beb87acf4a245ee402c1e76caba = $(`<div id="html_b5098beb87acf4a245ee402c1e76caba" style="width: 100.0%; height: 100.0%;">         <b>Salt Creek</b><br>         <hr>         Basin: Strait of Juan de Fuca<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 10<br>         Mean Rate: 6.00/hr<br>         Transects: 10         </div>`)[0];
+                popup_be1285e2507c6354c7bb492c8a7c3094.setContent(html_b5098beb87acf4a245ee402c1e76caba);
+            
+        
+
+        marker_b6c77528d19ef2af4299b2a9f8fe2942.bindPopup(popup_be1285e2507c6354c7bb492c8a7c3094)
+        ;
+
+        
+    
+    
+            marker_b6c77528d19ef2af4299b2a9f8fe2942.bindTooltip(
+                `<div>
+                     Salt Creek
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b6c77528d19ef2af4299b2a9f8fe2942.setIcon(icon_2d3a516f742cb975a6b76167199a0975);
+            
+    
+            var marker_faaeaa825dc0042c3f5de40fe2bb67fb = L.marker(
+                [47.372727, -122.327878],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_01350475126a7713a81d1fdf097e7844 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64474a3e88e58cf16cc4a44c0a40c172 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_15c99df0d9a0ab478ab849ed3e0ebedc = $(`<div id="html_15c99df0d9a0ab478ab849ed3e0ebedc" style="width: 100.0%; height: 100.0%;">         <b>Saltwater State Park</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.02/hr<br>         Transects: 121         </div>`)[0];
+                popup_64474a3e88e58cf16cc4a44c0a40c172.setContent(html_15c99df0d9a0ab478ab849ed3e0ebedc);
+            
+        
+
+        marker_faaeaa825dc0042c3f5de40fe2bb67fb.bindPopup(popup_64474a3e88e58cf16cc4a44c0a40c172)
+        ;
+
+        
+    
+    
+            marker_faaeaa825dc0042c3f5de40fe2bb67fb.bindTooltip(
+                `<div>
+                     Saltwater State Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_faaeaa825dc0042c3f5de40fe2bb67fb.setIcon(icon_01350475126a7713a81d1fdf097e7844);
+            
+    
+            var marker_d620b551a20e593a295529532a031a19 = L.marker(
+                [48.423927, -122.675213],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_8e66015b61f60eedc70d2c38c7eee4cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25a01d6779889b44afd5c4a11cbba2e1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70a301315a7ef12ff41b0e6eb91322fa = $(`<div id="html_70a301315a7ef12ff41b0e6eb91322fa" style="width: 100.0%; height: 100.0%;">         <b>Sares Head</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 3         </div>`)[0];
+                popup_25a01d6779889b44afd5c4a11cbba2e1.setContent(html_70a301315a7ef12ff41b0e6eb91322fa);
+            
+        
+
+        marker_d620b551a20e593a295529532a031a19.bindPopup(popup_25a01d6779889b44afd5c4a11cbba2e1)
+        ;
+
+        
+    
+    
+            marker_d620b551a20e593a295529532a031a19.bindTooltip(
+                `<div>
+                     Sares Head
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d620b551a20e593a295529532a031a19.setIcon(icon_8e66015b61f60eedc70d2c38c7eee4cc);
+            
+    
+            var marker_c698505757f57213e6fc077de6f13b68 = L.marker(
+                [47.651043, -122.845563],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_89828373bf52c28d44463ec70d8962cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0fa0b4f9524666cc74ac4b22b35b424d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3318da321638b73b2193698ca2ecd52d = $(`<div id="html_3318da321638b73b2193698ca2ecd52d" style="width: 100.0%; height: 100.0%;">         <b>Scenic Beach State Park</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 75<br>         Mean Rate: 13.19/hr<br>         Transects: 27         </div>`)[0];
+                popup_0fa0b4f9524666cc74ac4b22b35b424d.setContent(html_3318da321638b73b2193698ca2ecd52d);
+            
+        
+
+        marker_c698505757f57213e6fc077de6f13b68.bindPopup(popup_0fa0b4f9524666cc74ac4b22b35b424d)
+        ;
+
+        
+    
+    
+            marker_c698505757f57213e6fc077de6f13b68.bindTooltip(
+                `<div>
+                     Scenic Beach State Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c698505757f57213e6fc077de6f13b68.setIcon(icon_89828373bf52c28d44463ec70d8962cb);
+            
+    
+            var marker_327a3a1b10d0b1cd858cadd8a16b7e65 = L.marker(
+                [47.64656, -122.826454],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_214fa65f064d4786164892c30b3ed452 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86b0f244fe3e1147fec794b7fc2b5136 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_167f044adaa5953dbadcac7ef92077da = $(`<div id="html_167f044adaa5953dbadcac7ef92077da" style="width: 100.0%; height: 100.0%;">         <b>Seabeck Bay</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Eelgrass<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_86b0f244fe3e1147fec794b7fc2b5136.setContent(html_167f044adaa5953dbadcac7ef92077da);
+            
+        
+
+        marker_327a3a1b10d0b1cd858cadd8a16b7e65.bindPopup(popup_86b0f244fe3e1147fec794b7fc2b5136)
+        ;
+
+        
+    
+    
+            marker_327a3a1b10d0b1cd858cadd8a16b7e65.bindTooltip(
+                `<div>
+                     Seabeck Bay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_327a3a1b10d0b1cd858cadd8a16b7e65.setIcon(icon_214fa65f064d4786164892c30b3ed452);
+            
+    
+            var marker_2431e09c17743e58ca8ab8c48b226a8a = L.marker(
+                [48.267835, -124.297926],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_7f76062dceafdd2e44e7ccce5385ef82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ecab406eabfebaeecadc707e5e2bf0ba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff9344939e13788cd1d709c5cf137465 = $(`<div id="html_ff9344939e13788cd1d709c5cf137465" style="width: 100.0%; height: 100.0%;">         <b>Sekiu</b><br>         <hr>         Basin: Strait of Juan de Fuca<br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 59<br>         Mean Rate: 3.00/hr<br>         Transects: 60         </div>`)[0];
+                popup_ecab406eabfebaeecadc707e5e2bf0ba.setContent(html_ff9344939e13788cd1d709c5cf137465);
+            
+        
+
+        marker_2431e09c17743e58ca8ab8c48b226a8a.bindPopup(popup_ecab406eabfebaeecadc707e5e2bf0ba)
+        ;
+
+        
+    
+    
+            marker_2431e09c17743e58ca8ab8c48b226a8a.bindTooltip(
+                `<div>
+                     Sekiu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2431e09c17743e58ca8ab8c48b226a8a.setIcon(icon_7f76062dceafdd2e44e7ccce5385ef82);
+            
+    
+            var marker_f32edae71434bfd88a2d0af8522a307d = L.marker(
+                [48.5887, -123.021767],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_d2ffa1e74671e4f812d1e3ae8e6c76d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_81a7a9f321906481a0ff2f8ef070f092 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_00d3b802fae7375ae215286bcb758349 = $(`<div id="html_00d3b802fae7375ae215286bcb758349" style="width: 100.0%; height: 100.0%;">         <b>Shirttail Reef</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 8         </div>`)[0];
+                popup_81a7a9f321906481a0ff2f8ef070f092.setContent(html_00d3b802fae7375ae215286bcb758349);
+            
+        
+
+        marker_f32edae71434bfd88a2d0af8522a307d.bindPopup(popup_81a7a9f321906481a0ff2f8ef070f092)
+        ;
+
+        
+    
+    
+            marker_f32edae71434bfd88a2d0af8522a307d.bindTooltip(
+                `<div>
+                     Shirttail Reef
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f32edae71434bfd88a2d0af8522a307d.setIcon(icon_d2ffa1e74671e4f812d1e3ae8e6c76d4);
+            
+    
+            var marker_bf324bd2ed7b265a13e828653b58f0a8 = L.marker(
+                [48.491072, -122.690203],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_079a0d443346db2658046fa0aaea21f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_48c15b9fbe2c8187267c252f1839ed23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_003a279bafa215bd823a8f550a8cf39e = $(`<div id="html_003a279bafa215bd823a8f550a8cf39e" style="width: 100.0%; height: 100.0%;">         <b>Skyline</b><br>         <hr>         Basin: San Juan<br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 81         </div>`)[0];
+                popup_48c15b9fbe2c8187267c252f1839ed23.setContent(html_003a279bafa215bd823a8f550a8cf39e);
+            
+        
+
+        marker_bf324bd2ed7b265a13e828653b58f0a8.bindPopup(popup_48c15b9fbe2c8187267c252f1839ed23)
+        ;
+
+        
+    
+    
+            marker_bf324bd2ed7b265a13e828653b58f0a8.bindTooltip(
+                `<div>
+                     Skyline
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf324bd2ed7b265a13e828653b58f0a8.setIcon(icon_079a0d443346db2658046fa0aaea21f1);
+            
+    
+            var marker_10edb2b1fd629994138827af6dc77cea = L.marker(
+                [48.317517, -122.849206],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_b524c61de749ccc2791dfffedf8ad72c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d1fe626322e9404d4188210fddacb72a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c60ceedc8ead5f19cbd410cc22a133d1 = $(`<div id="html_c60ceedc8ead5f19cbd410cc22a133d1" style="width: 100.0%; height: 100.0%;">         <b>Smith Island</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 6         </div>`)[0];
+                popup_d1fe626322e9404d4188210fddacb72a.setContent(html_c60ceedc8ead5f19cbd410cc22a133d1);
+            
+        
+
+        marker_10edb2b1fd629994138827af6dc77cea.bindPopup(popup_d1fe626322e9404d4188210fddacb72a)
+        ;
+
+        
+    
+    
+            marker_10edb2b1fd629994138827af6dc77cea.bindTooltip(
+                `<div>
+                     Smith Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10edb2b1fd629994138827af6dc77cea.setIcon(icon_b524c61de749ccc2791dfffedf8ad72c);
+            
+    
+            var marker_1f591fc989a068ca4e7de610221d255f = L.marker(
+                [48.003363, -122.301536],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_eb7150034d04480d56c25ab749684a50 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5aa13a78ee5cd56bce005ba684e5e725 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f2e84628ba4b2d48b2df6309e9ccacca = $(`<div id="html_f2e84628ba4b2d48b2df6309e9ccacca" style="width: 100.0%; height: 100.0%;">         <b>South Hat Island</b><br>         <hr>         Basin: Whidbey<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 2<br>         Mean Rate: 1.38/hr<br>         Transects: 3         </div>`)[0];
+                popup_5aa13a78ee5cd56bce005ba684e5e725.setContent(html_f2e84628ba4b2d48b2df6309e9ccacca);
+            
+        
+
+        marker_1f591fc989a068ca4e7de610221d255f.bindPopup(popup_5aa13a78ee5cd56bce005ba684e5e725)
+        ;
+
+        
+    
+    
+            marker_1f591fc989a068ca4e7de610221d255f.bindTooltip(
+                `<div>
+                     South Hat Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f591fc989a068ca4e7de610221d255f.setIcon(icon_eb7150034d04480d56c25ab749684a50);
+            
+    
+            var marker_c9ec1a624d005c740c93fa37038c873a = L.marker(
+                [48.441679, -122.931917],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_331422b1b193d0f8f3a9615a987f448f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0bdb49d8e5a64d4d20b11df6ca6cb0c9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a868c3cd6fe0371718ec48d26ac2ddd = $(`<div id="html_5a868c3cd6fe0371718ec48d26ac2ddd" style="width: 100.0%; height: 100.0%;">         <b>Strawberry Falls</b><br>         <hr>         Basin: San Juan<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 4         </div>`)[0];
+                popup_0bdb49d8e5a64d4d20b11df6ca6cb0c9.setContent(html_5a868c3cd6fe0371718ec48d26ac2ddd);
+            
+        
+
+        marker_c9ec1a624d005c740c93fa37038c873a.bindPopup(popup_0bdb49d8e5a64d4d20b11df6ca6cb0c9)
+        ;
+
+        
+    
+    
+            marker_c9ec1a624d005c740c93fa37038c873a.bindTooltip(
+                `<div>
+                     Strawberry Falls
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c9ec1a624d005c740c93fa37038c873a.setIcon(icon_331422b1b193d0f8f3a9615a987f448f);
+            
+    
+            var marker_62f8dde46a8c454a4c2deff1d8fe3d96 = L.marker(
+                [48.76691, -122.918814],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_a2aee30b4d6798ae55136300d4e53054 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_836290bc436c24f436e3c035381c05ba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c429ae4a18b38c0147e6b187d42cd146 = $(`<div id="html_c429ae4a18b38c0147e6b187d42cd146" style="width: 100.0%; height: 100.0%;">         <b>Sucia Island - Lawson's Bluff</b><br>         <hr>         Basin: San Juan<br>         Habitats: Kelp Forest, Natural Reef<br>         <hr>         Total Pycno: 1<br>         Mean Rate: 0.08/hr<br>         Transects: 57         </div>`)[0];
+                popup_836290bc436c24f436e3c035381c05ba.setContent(html_c429ae4a18b38c0147e6b187d42cd146);
+            
+        
+
+        marker_62f8dde46a8c454a4c2deff1d8fe3d96.bindPopup(popup_836290bc436c24f436e3c035381c05ba)
+        ;
+
+        
+    
+    
+            marker_62f8dde46a8c454a4c2deff1d8fe3d96.bindTooltip(
+                `<div>
+                     Sucia Island - Lawson's Bluff
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_62f8dde46a8c454a4c2deff1d8fe3d96.setIcon(icon_a2aee30b4d6798ae55136300d4e53054);
+            
+    
+            var marker_bbacd4035672c80f2baf58e5d70f0c5c = L.marker(
+                [47.435212, -123.119796],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_880f8b92145c3a4b954835924889cd96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0eb9462fa0afef4336276f45d79384a7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c5238de640ff305da94ea04f2f74f12d = $(`<div id="html_c5238de640ff305da94ea04f2f74f12d" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 66<br>         Mean Rate: 3.72/hr<br>         Transects: 94         </div>`)[0];
+                popup_0eb9462fa0afef4336276f45d79384a7.setContent(html_c5238de640ff305da94ea04f2f74f12d);
+            
+        
+
+        marker_bbacd4035672c80f2baf58e5d70f0c5c.bindPopup(popup_0eb9462fa0afef4336276f45d79384a7)
+        ;
+
+        
+    
+    
+            marker_bbacd4035672c80f2baf58e5d70f0c5c.bindTooltip(
+                `<div>
+                     Sund Rock
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bbacd4035672c80f2baf58e5d70f0c5c.setIcon(icon_880f8b92145c3a4b954835924889cd96);
+            
+    
+            var marker_0ea420c7083189866b1e25476edc9699 = L.marker(
+                [47.435963, -123.119565],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_78d7f57d3aa784889984e743f0ad9208 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee66616adb0f5d7203b0be44e757b93f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee4815282a3798d95e08c9927e9c7006 = $(`<div id="html_ee4815282a3798d95e08c9927e9c7006" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock North</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 6<br>         Mean Rate: 1.79/hr<br>         Transects: 28         </div>`)[0];
+                popup_ee66616adb0f5d7203b0be44e757b93f.setContent(html_ee4815282a3798d95e08c9927e9c7006);
+            
+        
+
+        marker_0ea420c7083189866b1e25476edc9699.bindPopup(popup_ee66616adb0f5d7203b0be44e757b93f)
+        ;
+
+        
+    
+    
+            marker_0ea420c7083189866b1e25476edc9699.bindTooltip(
+                `<div>
+                     Sund Rock North
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0ea420c7083189866b1e25476edc9699.setIcon(icon_78d7f57d3aa784889984e743f0ad9208);
+            
+    
+            var marker_497216d9181f8f71094d945dd0c8ac19 = L.marker(
+                [47.434327, -123.119777],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_e423d03aa0b7e4619b67f66a10d2c5d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c545ca97f30434cd4fe96209963261a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eee60a62908f9e04f0555fc005290cf1 = $(`<div id="html_eee60a62908f9e04f0555fc005290cf1" style="width: 100.0%; height: 100.0%;">         <b>Sund Rock South</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 16<br>         Mean Rate: 1.74/hr<br>         Transects: 27         </div>`)[0];
+                popup_9c545ca97f30434cd4fe96209963261a.setContent(html_eee60a62908f9e04f0555fc005290cf1);
+            
+        
+
+        marker_497216d9181f8f71094d945dd0c8ac19.bindPopup(popup_9c545ca97f30434cd4fe96209963261a)
+        ;
+
+        
+    
+    
+            marker_497216d9181f8f71094d945dd0c8ac19.bindTooltip(
+                `<div>
+                     Sund Rock South
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_497216d9181f8f71094d945dd0c8ac19.setIcon(icon_e423d03aa0b7e4619b67f66a10d2c5d0);
+            
+    
+            var marker_f090c880aa52534564876af34a327da9 = L.marker(
+                [47.179051, -122.592],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_febcad1c0e7fbb793ce0473ccae0f41d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a13148ecc310286a2666b2e80f70608b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50dafd8ccfe5abea6a2665630bd382e2 = $(`<div id="html_50dafd8ccfe5abea6a2665630bd382e2" style="width: 100.0%; height: 100.0%;">         <b>Sunnyside Beach Park</b><br>         <hr>         Basin: South<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 53         </div>`)[0];
+                popup_a13148ecc310286a2666b2e80f70608b.setContent(html_50dafd8ccfe5abea6a2665630bd382e2);
+            
+        
+
+        marker_f090c880aa52534564876af34a327da9.bindPopup(popup_a13148ecc310286a2666b2e80f70608b)
+        ;
+
+        
+    
+    
+            marker_f090c880aa52534564876af34a327da9.bindTooltip(
+                `<div>
+                     Sunnyside Beach Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f090c880aa52534564876af34a327da9.setIcon(icon_febcad1c0e7fbb793ce0473ccae0f41d);
+            
+    
+            var marker_faa3b0b104fe0308953e0323c58f3040 = L.marker(
+                [47.349115, -122.555572],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_10dc5184ef5ab1c24fa339e08e073a20 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7dfe053f75405ece86a8692223d61343 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f281e2c1c341191ad1cc12196a4dfdda = $(`<div id="html_f281e2c1c341191ad1cc12196a4dfdda" style="width: 100.0%; height: 100.0%;">         <b>Sunrise Beach State Park</b><br>         <hr>         Basin: Central<br>         Habitats: Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 22         </div>`)[0];
+                popup_7dfe053f75405ece86a8692223d61343.setContent(html_f281e2c1c341191ad1cc12196a4dfdda);
+            
+        
+
+        marker_faa3b0b104fe0308953e0323c58f3040.bindPopup(popup_7dfe053f75405ece86a8692223d61343)
+        ;
+
+        
+    
+    
+            marker_faa3b0b104fe0308953e0323c58f3040.bindTooltip(
+                `<div>
+                     Sunrise Beach State Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_faa3b0b104fe0308953e0323c58f3040.setIcon(icon_10dc5184ef5ab1c24fa339e08e073a20);
+            
+    
+            var marker_7ecd8139796fabd17e66f70ba03cbba6 = L.marker(
+                [47.265961, -122.550229],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_25fc9a0c071416fc2074bb1c72c77bc6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d7d19340c7db66a3d7d8829d4a4f898 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0a7ef658b315f30e922c2ffea531efb = $(`<div id="html_b0a7ef658b315f30e922c2ffea531efb" style="width: 100.0%; height: 100.0%;">         <b>Tacoma Narrows</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 4         </div>`)[0];
+                popup_6d7d19340c7db66a3d7d8829d4a4f898.setContent(html_b0a7ef658b315f30e922c2ffea531efb);
+            
+        
+
+        marker_7ecd8139796fabd17e66f70ba03cbba6.bindPopup(popup_6d7d19340c7db66a3d7d8829d4a4f898)
+        ;
+
+        
+    
+    
+            marker_7ecd8139796fabd17e66f70ba03cbba6.bindTooltip(
+                `<div>
+                     Tacoma Narrows
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ecd8139796fabd17e66f70ba03cbba6.setIcon(icon_25fc9a0c071416fc2074bb1c72c77bc6);
+            
+    
+            var marker_481b018369c5ca6231beed7e8dfd3cf8 = L.marker(
+                [47.283592, -122.547394],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_2727f74f187f8103c87b11fad6d1b8d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b636de19b29e0c0c0d85deb842f53c1c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ba60fcad7aa96ccfc9a9c8202ebd2918 = $(`<div id="html_ba60fcad7aa96ccfc9a9c8202ebd2918" style="width: 100.0%; height: 100.0%;">         <b>Tacoma Narrows - Point Evans</b><br>         <hr>         Basin: South<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 1         </div>`)[0];
+                popup_b636de19b29e0c0c0d85deb842f53c1c.setContent(html_ba60fcad7aa96ccfc9a9c8202ebd2918);
+            
+        
+
+        marker_481b018369c5ca6231beed7e8dfd3cf8.bindPopup(popup_b636de19b29e0c0c0d85deb842f53c1c)
+        ;
+
+        
+    
+    
+            marker_481b018369c5ca6231beed7e8dfd3cf8.bindTooltip(
+                `<div>
+                     Tacoma Narrows - Point Evans
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_481b018369c5ca6231beed7e8dfd3cf8.setIcon(icon_2727f74f187f8103c87b11fad6d1b8d0);
+            
+    
+            var marker_094df0a064b2ecd26eea6f16db06d86c = L.marker(
+                [47.721325, -122.88082],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_80745611429b4d370051c4144b96c00c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21cf94c1bea4e9a8187ab937e92de381 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a074a9c18d10439dc53f7bd85239ed9 = $(`<div id="html_5a074a9c18d10439dc53f7bd85239ed9" style="width: 100.0%; height: 100.0%;">         <b>The Pinnacle</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 4<br>         Mean Rate: 9.60/hr<br>         Transects: 1         </div>`)[0];
+                popup_21cf94c1bea4e9a8187ab937e92de381.setContent(html_5a074a9c18d10439dc53f7bd85239ed9);
+            
+        
+
+        marker_094df0a064b2ecd26eea6f16db06d86c.bindPopup(popup_21cf94c1bea4e9a8187ab937e92de381)
+        ;
+
+        
+    
+    
+            marker_094df0a064b2ecd26eea6f16db06d86c.bindTooltip(
+                `<div>
+                     The Pinnacle
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_094df0a064b2ecd26eea6f16db06d86c.setIcon(icon_80745611429b4d370051c4144b96c00c);
+            
+    
+            var marker_86d0418c67010cdee6303b32285d01cc = L.marker(
+                [47.45313, -122.378457],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_2012aa2a5eed65962fa74ee12807e1e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da21d2b19be07b25168d0803a03afbaf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e71efa3c412f6e7d17462db0b5042315 = $(`<div id="html_e71efa3c412f6e7d17462db0b5042315" style="width: 100.0%; height: 100.0%;">         <b>Three Tree Point</b><br>         <hr>         Basin: Central<br>         Habitats: Artificial Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 24         </div>`)[0];
+                popup_da21d2b19be07b25168d0803a03afbaf.setContent(html_e71efa3c412f6e7d17462db0b5042315);
+            
+        
+
+        marker_86d0418c67010cdee6303b32285d01cc.bindPopup(popup_da21d2b19be07b25168d0803a03afbaf)
+        ;
+
+        
+    
+    
+            marker_86d0418c67010cdee6303b32285d01cc.bindTooltip(
+                `<div>
+                     Three Tree Point
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86d0418c67010cdee6303b32285d01cc.setIcon(icon_2012aa2a5eed65962fa74ee12807e1e3);
+            
+    
+            var marker_866259715f528855a9bb31c9a2641a58 = L.marker(
+                [47.247113, -122.554303],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_60f92e207398e0515c3cedc67fa39e29 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb7de3a74441a2f6640980dadbba79ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53338ae4148d5812614801c7fcc43d59 = $(`<div id="html_53338ae4148d5812614801c7fcc43d59" style="width: 100.0%; height: 100.0%;">         <b>Titlow Beach Park</b><br>         <hr>         Basin: Central<br>         Habitats: Eelgrass, Kelp Forest, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 3<br>         Mean Rate: 0.10/hr<br>         Transects: 50         </div>`)[0];
+                popup_fb7de3a74441a2f6640980dadbba79ae.setContent(html_53338ae4148d5812614801c7fcc43d59);
+            
+        
+
+        marker_866259715f528855a9bb31c9a2641a58.bindPopup(popup_fb7de3a74441a2f6640980dadbba79ae)
+        ;
+
+        
+    
+    
+            marker_866259715f528855a9bb31c9a2641a58.bindTooltip(
+                `<div>
+                     Titlow Beach Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_866259715f528855a9bb31c9a2641a58.setIcon(icon_60f92e207398e0515c3cedc67fa39e29);
+            
+    
+            var marker_ed185a4c8da4466a109a7ff70b003141 = L.marker(
+                [47.605289, -122.981388],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_42baeb0c4c7a4e3df9076f55e03aa2d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d624cd2b520f1f2ce524b5c550373b34 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b3a9de756f17532f452c7d8ae6c5cae3 = $(`<div id="html_b3a9de756f17532f452c7d8ae6c5cae3" style="width: 100.0%; height: 100.0%;">         <b>Triton Cove</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 59<br>         Mean Rate: 4.77/hr<br>         Transects: 64         </div>`)[0];
+                popup_d624cd2b520f1f2ce524b5c550373b34.setContent(html_b3a9de756f17532f452c7d8ae6c5cae3);
+            
+        
+
+        marker_ed185a4c8da4466a109a7ff70b003141.bindPopup(popup_d624cd2b520f1f2ce524b5c550373b34)
+        ;
+
+        
+    
+    
+            marker_ed185a4c8da4466a109a7ff70b003141.bindTooltip(
+                `<div>
+                     Triton Cove
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed185a4c8da4466a109a7ff70b003141.setIcon(icon_42baeb0c4c7a4e3df9076f55e03aa2d1);
+            
+    
+            var marker_a2d98f8a83d45d4787c7ce75031a5a39 = L.marker(
+                [47.604708, -122.980735],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_50ac7d5e6dceaf59c88c853e87d054de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e3c7528b65e3fbbd45cadc70bee4db5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_51095e34a37a928137f37c6ad8ec0e01 = $(`<div id="html_51095e34a37a928137f37c6ad8ec0e01" style="width: 100.0%; height: 100.0%;">         <b>Triton Head</b><br>         <hr>         Basin: Hood Canal<br>         Habitats: Natural Reef<br>         <hr>         Total Pycno: 10<br>         Mean Rate: 9.36/hr<br>         Transects: 4         </div>`)[0];
+                popup_e3c7528b65e3fbbd45cadc70bee4db5d.setContent(html_51095e34a37a928137f37c6ad8ec0e01);
+            
+        
+
+        marker_a2d98f8a83d45d4787c7ce75031a5a39.bindPopup(popup_e3c7528b65e3fbbd45cadc70bee4db5d)
+        ;
+
+        
+    
+    
+            marker_a2d98f8a83d45d4787c7ce75031a5a39.bindTooltip(
+                `<div>
+                     Triton Head
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2d98f8a83d45d4787c7ce75031a5a39.setIcon(icon_50ac7d5e6dceaf59c88c853e87d054de);
+            
+    
+            var marker_70a8c9b132cc68fab124e1cdfda764dc = L.marker(
+                [48.102921, -122.778725],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_5674c2064548661de5eee89bf545d486 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef9ef8ca11c7f6d75dd31bee7f9fc04f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2bc4bde3135d9dc06add25132970e8ec = $(`<div id="html_2bc4bde3135d9dc06add25132970e8ec" style="width: 100.0%; height: 100.0%;">         <b>Wreck of the Ranger</b><br>         <hr>         Basin: Admiralty Inlet<br>         Habitats: Artificial Reef, Eelgrass, Soft Bottom<br>         <hr>         Total Pycno: 3<br>         Mean Rate: 0.90/hr<br>         Transects: 20         </div>`)[0];
+                popup_ef9ef8ca11c7f6d75dd31bee7f9fc04f.setContent(html_2bc4bde3135d9dc06add25132970e8ec);
+            
+        
+
+        marker_70a8c9b132cc68fab124e1cdfda764dc.bindPopup(popup_ef9ef8ca11c7f6d75dd31bee7f9fc04f)
+        ;
+
+        
+    
+    
+            marker_70a8c9b132cc68fab124e1cdfda764dc.bindTooltip(
+                `<div>
+                     Wreck of the Ranger
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_70a8c9b132cc68fab124e1cdfda764dc.setIcon(icon_5674c2064548661de5eee89bf545d486);
+            
+    
+            var marker_6e8843f57851fb042e91b81971d4930a = L.marker(
+                [47.246737, -122.603261],
+                {
+}
+            ).addTo(marker_cluster_e6261cdfdefd275a400489b41ee11f99);
+        
+    
+            var icon_9dd3fc631d47028ff89c66ab92e1b800 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfba41a6fdae35147c1a4371b124a78a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_350eabdd0b00a040fab18dba50ea396b = $(`<div id="html_350eabdd0b00a040fab18dba50ea396b" style="width: 100.0%; height: 100.0%;">         <b>Z's Reef</b><br>         <hr>         Basin: South<br>         Habitats: Eelgrass, Natural Reef, Soft Bottom<br>         <hr>         Total Pycno: 0<br>         Mean Rate: 0.00/hr<br>         Transects: 20         </div>`)[0];
+                popup_dfba41a6fdae35147c1a4371b124a78a.setContent(html_350eabdd0b00a040fab18dba50ea396b);
+            
+        
+
+        marker_6e8843f57851fb042e91b81971d4930a.bindPopup(popup_dfba41a6fdae35147c1a4371b124a78a)
+        ;
+
+        
+    
+    
+            marker_6e8843f57851fb042e91b81971d4930a.bindTooltip(
+                `<div>
+                     Z's Reef
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6e8843f57851fb042e91b81971d4930a.setIcon(icon_9dd3fc631d47028ff89c66ab92e1b800);
+            
+    
+            marker_cluster_e6261cdfdefd275a400489b41ee11f99.addTo(map_634fa598f2658a10928f725ee9c5c674);
+        
+</script>
+</html>

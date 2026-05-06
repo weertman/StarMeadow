@@ -1,0 +1,35 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local Python/Conda environments
+.venv/
+venv/
+.env/
+.conda-env/
+conda-meta/
+
+# Logs and transient run artifacts
+*.log
+run_all_output.log
+logs/
+
+# Private collaborator correspondence / email exports
+emails/
+
+# Large/opaque archived generated bundle; keep reproducible outputs as normal files instead
+outputs/Archive.zip
+
+# Local investigation artifacts should live outside this repo
+.hermes/

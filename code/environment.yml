@@ -1,0 +1,23 @@
+name: star_meadow
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas>=2.0
+  - numpy>=1.24
+  - matplotlib>=3.7
+  - seaborn>=0.12
+  - scipy>=1.10
+  - scikit-learn>=1.3
+  - statsmodels>=0.14
+  # Geospatial dependencies
+  - geopandas>=0.14
+  - fiona>=1.9
+  - pyproj>=3.6
+  - shapely>=2.0
+  - pip
+  - pip:
+    - pypdf>=4.0
+    - folium>=0.14
+

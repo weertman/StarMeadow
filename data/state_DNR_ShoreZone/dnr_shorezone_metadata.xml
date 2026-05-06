@@ -1,0 +1,265 @@
+﻿<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Washington Dept of Natural Resouces / Aquatic Resources Div. / Nearshore Habitat Program</origin>
+        <pubdate>20010101</pubdate>
+        <title>Washington State ShoreZone Inventory </title>
+        <onlink>https://fortress.wa.gov/dnr/adminsa/gisdata/datadownload/state_DNR_ShoreZone.zip</onlink>
+        <onlink>http://data-wadnr.opendata.arcgis.com/</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Other components of the ShoreZone Inventory can be found in separate data layers and tables. The entire Washington State ShoreZone Inventory is comprised of the linear features in this data (szline.shp) and an associated tabular data file (xshrline.dbf) as well as polygon features (szpoly.shp), point features (szpt.shp) and their associated tabular data files (xshrpoly.dbf and xshrpt.dbf). The point data file szlnend.shp contains the endpoints for each shoreline unit. The overall ShoreZone Inventory dataset is an inventory of Washington State's saltwater shorelines conducted between 1994 and 2000 using the ShoreZone Mapping System. Physical and biological resources are described, along with information on the inventory data collection. The majority of the ShoreZone spatial data is line data, with some polygons and points. The inventory divides the shoreline into homogenous physical segments, the average linear segment length is 0.5 miles (0.8 km). Each spatial unit record has many corresponding tabular across-shore component records that describe the unit in more detail. The ShoreZone Inventory systematically characterizes shoreline morphology, substrate, wave exposure and biota. The inventory divides the shoreline into homogenous stretches called units. Within each unit, the shoreline is further divided into a series of across-shore components. Units are usually represented spatially by line segments, but can be polygons or points. Information on the unit and on its components is recorded in tables. These tables are then linked to spatial data, allowing a wide range of feature information to be illustrated on maps or analyzed numerically. Inventory information was collected from a helicopter during low tides. Video imagery of the shoreline was recorded, along with locational information (GPS). From the helicopter a geomorphologist and a marine ecologist recorded continuous commentary on the physical and biological features along the shoreline. Following the survey,the videotapes were taken back to the office for interpretation and classification. The geomorphologist divided the shoreline into units on orthophoto maps and described each unit. Next the marine ecologist added information on the living resources in each unit. Features such as eroding cliffs, sand and gravel beaches, sandflats and wetlands are some of geomorphic forms mapped. Visible macrobiotic, such as wetland grasses, intertidal algae, and subtidal vegetation such as eelgrass or kelp, are also mapped.</abstract>
+      <purpose>The Washington State ShoreZone Inventory can be used to better understand and manage Washington's coastal ecosystems. The inventory is useful for identifying the location of sensitive resources, for characterizing the distribution of habitats, and for identifying rare features. For example, maps of the inventory data can illustrate the distribution of eelgrass. Data can also be analyzed numerically to characterize abundance, such as the percentage of a shoreline that has been modified, or the relative abundance of different types of shorelines.</purpose>
+      <supplinf>Further information on this dataset is available in The Washington State ShoreZone Inventory User's Manual and The Washington State ShoreZone Inventory Data Dictionary. The data dictionary in particular contains more detailed descriptions of bio-bands. Both of these documents are available online at http://www.dnr.wa.gov</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>19940101</begdate>
+          <enddate>20000101</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-125</westbc>
+        <eastbc>-122</eastbc>
+        <northbc>49.0</northbc>
+        <southbc>46.25</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>nearshore habitat</themekey>
+        <themekey>aquatic vegetation</themekey>
+        <themekey>shoreline modification</themekey>
+        <themekey>marine shoreline</themekey>
+        <themekey>estuary</themekey>
+        <themekey>seagrass</themekey>
+        <themekey>eelgrass</themekey>
+        <themekey>surfgrass</themekey>
+        <themekey>kelp</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Categories</themekt>
+        <themekey>biota</themekey>
+        <themekey>environment</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Hood Canal</placekey>
+        <placekey>Puget Sound</placekey>
+        <placekey>Strait of Georgia</placekey>
+        <placekey>Strait of Juan de Fuca</placekey>
+        <placekey>Washington State</placekey>
+        <placekey>San Juan Islands</placekey>
+      </place>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>The Washington State Department of Natural Resources (DNR) provides these geographic data "as is." DNR makes no guarantee or warranty concerning the accuracy of information contained in the geographic data. DNR further makes no warranties, either expressed or implied as to any other matter whatsoever, including, without limitation, the condition of the product, or its fitness for any particular purpose. The burden for determining fitness for use lies entirely with the user. Although these data have been processed successfully on computers of DNR, no warranty, expressed or implied, is made by DNR regarding the use of these data on any other system, nor does the fact of distribution constitute or imply any such warranty.
+In no event shall the DNR have any liability whatsoever for payment of any consequential, incidental, indirect, special, or tort damages of any kind, including, but not limited to, any loss of profits arising out of use of or reliance on the geographic data or arising out of the delivery, installation, operation, or support by DNR.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Washington State Dept of Natural Resources / Aquatic Resources Division</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>1111 Washington St SE, 1st Floor</address>
+          <address>P.O. Box 47027</address>
+          <city>Olympia</city>
+          <state>WA</state>
+          <postal>98504-7027</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>360-902-1100</cntvoice>
+        <cntfax>360-902-1786</cntfax>
+        <cntemail>nearshore@dnr.wa.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>Washington Department of Natural Resources</datacred>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>The attributes are based on interpreted videotape, photos and direct observations of a geomorphologist and a marine ecologist all recorded from a helicopter traveling at approximately 60 knots and 300 feet (approx. 90 meters) above the ground. The inventory is a valuable regional data set because it surveyed thousands of miles using consistent methods during a relatively short time frame. However, it cannot replace higher resolution techniques or site-specific surveys. The accuracy of ShoreZone attributes has not been quantified.</attraccr>
+      <qattracc>
+        <attraccv>None</attraccv>
+        <attracce>No formal accuracy assessment was conducted.</attracce>
+      </qattracc>
+    </attracc>
+    <logic>The data are considered consistent if all attribute values fall within the relevant domains and the tabular records have matching spatial features.</logic>
+    <complete>The dataset is considered complete if all required attributes are populated.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Spatial data is based on the WA State Dept of Natural Resources digital shoreline (water level line) developed from sources at a scale of 1:24,000.</horizpar>
+        <qhorizpa>
+          <horizpav>12</horizpav>
+          <horizpae>Accuracy estimated from source data.</horizpae>
+        </qhorizpa>
+      </horizpa>
+    </posacc>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Coastal and Ocean Resources</origin>
+            <pubdate>20000101</pubdate>
+            <title>Washington State ShoreZone Inventory - Video imagery</title>
+          </citeinfo>
+        </srccite>
+        <typesrc>None</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19940101</begdate>
+              <enddate>20000101</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>Washington State ShoreZone Inventory - Video imagery</srccitea>
+        <srccontr>Video imagery of the shoreline was recorded, along with locational information (GPS) during helicopter flights during low tides.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Washington Dept of Natural Resouces / Aquatic Resources Div. / Nearshore Habitat Program</origin>
+            <pubdate>20000101</pubdate>
+            <title>Washington State ShoreZone Inventory - field observations</title>
+          </citeinfo>
+        </srccite>
+        <typesrc>None</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19940101</begdate>
+              <enddate>20000101</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>Washington State ShoreZone Inventory - field observations</srccitea>
+        <srccontr>Recorded survey observations of geomorphologist and marine ecologist on the physical and biological features along the shoreline during helicopter flight during low tides.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Washington Dept of Natural Resouces / Aquatic Resources Div. </origin>
+            <pubdate>20010101</pubdate>
+            <title>Washington Water Level Line</title>
+          </citeinfo>
+        </srccite>
+        <srcscale>24000</srcscale>
+        <typesrc>hardDisk</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>
+              <caldate>20010101</caldate>
+            </sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>Washington Water Level Line</srccitea>
+        <srccontr>The WA State Dept of Natural Resources digital shoreline (water level line) provided the base layer for the inventory.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Washington Department of Natural Resources</origin>
+            <pubdate>19990101</pubdate>
+            <title>Dept of Natural Resources orthophotos</title>
+          </citeinfo>
+        </srccite>
+        <srcscale>24000</srcscale>
+        <typesrc>hardcopyPhoto</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19900101</begdate>
+              <enddate>19990101</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>Dept of Natural Resources orthophotos</srccitea>
+        <srccontr>Dept of Natural Resources orthophotos were used in conjunction with survey information and helicopter videography to delineate zones and assign attributes.</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>Main information source is low-tide, aerial imagery collected during minus tides (below MLLW) in June of the year. Survey data was collected by a marine ecologist, coastal geomorphologist, and a navigator who fly in a helicopter at flight speeds of 60 knots and about 300 feet in altitude. A geomorphologist interpreted the survey data: he defined delineated homogenous units on the DNR orthophotos, and described the units and components in tabular data. A marine ecologist then added tabular data on biological resources. Spatial data is based on the WA State Dept of Natural Resources digital shoreline (water level line).</procdesc>
+        <procdate>20000630</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Washington Dept of Natural Resouces / Aquatic Resources Div. / Nearshore Habitat Program</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <address>P.O. Box 47027</address>
+          <city>Olympia</city>
+          <state>WA</state>
+          <postal>98504-7027</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>360-902-1100</cntvoice>
+        <cntfax>3609021786</cntfax>
+        <cntemail>nearshore@dnr.wa.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>The Washington State Department of Natural Resources (DNR) provides these geographic data "as is." DNR makes no guarantee or warranty concerning the accuracy of information contained in the geographic data. DNR further makes no warranties, either expressed or implied as to any other matter whatsoever, including, without limitation, the condition of the product, or its fitness for any particular purpose. The burden for determining fitness for use lies entirely with the user. Although these data have been processed successfully on computers of DNR, no warranty, expressed or implied, is made by DNR regarding the use of these data on any other system, nor does the fact of distribution constitute or imply any such warranty.
+In no event shall the DNR have any liability whatsoever for payment of any consequential, incidental, indirect, special, or tort damages of any kind, including, but not limited to, any loss of profits arising out of use of or reliance on the geographic data or arising out of the delivery, installation, operation, or support by DNR.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Esri File Geodatabase </formname>
+          <formvern>Esri File Geodatabase 10.4</formvern>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://www.dnr.wa.gov/GISOpenData </networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>none</fees>
+      <ordering>Download from http://www.dnr.wa.gov/GISOpenData </ordering>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20170531</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Washington Dept of Natural Resouces / Aquatic Resources Div. / Nearshore Habitat Program</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <address>P.O. Box 47027</address>
+          <city>Olympia</city>
+          <state>WA</state>
+          <postal>98504-7027</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>360-902-1100</cntvoice>
+        <cntemail>nearshore@dnr.wa.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+  </metainfo>
+</metadata>
