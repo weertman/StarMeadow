@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CONDA_BIN="${CONDA_BIN:-/home/weertman/miniforge3/bin/conda}"
+ENV_NAME="${ENV_NAME:-star_meadow}"
+
+if [[ ! -x "$CONDA_BIN" ]]; then
+  echo "Error: conda not found at $CONDA_BIN" >&2
+  echo "Set CONDA_BIN=/path/to/conda if needed." >&2
+  exit 1
+fi
+
+run_py() {
+  local script="$1"
+  echo
+  echo "==> $script"
+  "$CONDA_BIN" run -n "$ENV_NAME" python "$REPO_ROOT/$script"
+}
+
+cd "$REPO_ROOT"
+
+# Survey and size statistical analyses
+run_py code/diver_only_stats_for_report.py
+run_py code/length_distribution_shape_stats_for_report.py
+
+# ShoreZone statistical summary used by manuscript tables/text
+run_py scripts/analysis/shorezone_stats_for_report.py
+
+# Main and supplemental figures
+run_py code/figure_1_site_map.py
+run_py code/figure_2_habitat_eelgrass_size.py
+run_py code/figure_3_basin_eelgrass_encounter_rate.py
+run_py code/figure_4_shorezone.py
+run_py code/supplemental_figure_1_effort_basin_map.py
+run_py code/supplemental_figure_2_length_by_habitat_eelgrass_status.py
+run_py code/supplemental_figure_3_continuous_eelgrass_map.py
+run_py code/supplemental_figure_4_shorezone_vs_diver_eelgrass.py
+run_py code/supplemental_figure_5_survey_statistical_summary.py
+
+# Supplemental statistical tables
+run_py scripts/tables/build_supplemental_statistical_tables.py
+run_py scripts/tables/build_doc_friendly_supplemental_tables.py
+
+echo
+echo "Publication outputs rebuilt under outputs/publication_figures/."

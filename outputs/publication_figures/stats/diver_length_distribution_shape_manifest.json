@@ -1,0 +1,14 @@
+{
+  "script":"code\/length_distribution_shape_stats_for_report.py",
+  "input":"data\/PycnoLengthCLean_12_31_2025.csv",
+  "outputs":[
+    "outputs\/publication_figures\/stats\/diver_length_site_eelgrass_distribution_shape_tests.csv",
+    "outputs\/publication_figures\/stats\/diver_s2_habitat_distribution_shape_tests.csv",
+    "outputs\/publication_figures\/stats\/diver_length_distribution_shape_report.md"
+  ],
+  "positive_length_rows":1954,
+  "sites":48,
+  "n_permutations":10000,
+  "n_bootstrap":10000,
+  "rng_seed":20260506
+}

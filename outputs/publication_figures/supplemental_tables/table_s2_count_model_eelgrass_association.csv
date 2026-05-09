@@ -1,0 +1,9 @@
+Model,Family,Adjustment,IRR for eelgrass-at-site,95% CI,p,Rows,Sites
+NB: eelgrass only,Negative binomial,Survey effort only,8.78,3.59–21.46,<0.001,"3,978",133
+NB: + habitat,Negative binomial,Survey effort + habitat,5.15,2.45–10.84,<0.001,"3,978",133
+NB: + basin,Negative binomial,Survey effort + basin,6.06,1.67–21.95,0.006,"3,978",133
+NB: + basin + habitat,Negative binomial,Survey effort + basin + habitat,4.28,1.49–12.27,0.007,"3,978",133
+Poisson: eelgrass only,Poisson,Survey effort only,9.03,3.80–21.47,<0.001,"3,978",133
+Poisson: + habitat,Poisson,Survey effort + habitat,5.57,2.65–11.69,<0.001,"3,978",133
+Poisson: + basin,Poisson,Survey effort + basin,6.32,2.23–17.90,<0.001,"3,978",133
+Poisson: + basin + habitat,Poisson,Survey effort + basin + habitat,3.84,1.65–8.94,0.002,"3,978",133

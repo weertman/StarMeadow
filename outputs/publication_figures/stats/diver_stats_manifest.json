@@ -1,0 +1,17 @@
+{
+  "script": "code/diver_only_stats_for_report.py",
+  "output_dir": "outputs/publication_figures/stats",
+  "outputs": [
+    "diver_count_model_results.csv",
+    "diver_fig1_site_summary.csv",
+    "diver_fig2_habitat_eelgrass_summary.csv",
+    "diver_fig2_length_site_summaries.csv",
+    "diver_fig2_length_summary.csv",
+    "diver_fig3_basin_eelgrass_summary.csv",
+    "diver_length_bootstrap.csv",
+    "diver_length_site_eelgrass_distribution_shape_tests.csv",
+    "diver_s2_habitat_distribution_shape_tests.csv",
+    "diver_stats_input_audit.csv",
+    "diver_stats_report.md"
+  ]
+}

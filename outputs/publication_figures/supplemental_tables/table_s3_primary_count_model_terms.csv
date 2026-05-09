@@ -1,0 +1,15 @@
+Primary adjusted model term,Term group,IRR,95% CI,p
+Eelgrass recorded at site,Focal eelgrass term,4.28,1.49–12.27,0.007
+Basin: Hood Canal,Basin covariate,36.39,9.13–145.14,<0.001
+Basin: Whidbey,Basin covariate,27.96,10.31–75.85,<0.001
+Basin: Strait of Juan de Fuca,Basin covariate,18.92,7.24–49.43,<0.001
+Basin: Strait of Georgia,Basin covariate,18.00,5.56–58.30,<0.001
+Basin: Admiralty Inlet,Basin covariate,4.13,1.15–14.89,0.030
+Basin: Howe Sound,Basin covariate,2.07,0.37–11.55,0.406
+Basin: San Juan,Basin covariate,1.25,0.24–6.45,0.787
+Basin: South,Basin covariate,0.21,0.04–1.14,0.070
+Habitat: Soft Bottom,Habitat covariate,3.12,1.31–7.42,0.010
+Habitat: Eelgrass,Habitat covariate,1.34,0.63–2.87,0.450
+Habitat: Artificial Reef,Habitat covariate,1.17,0.41–3.33,0.769
+Habitat: Kelp Forest,Habitat covariate,0.64,0.29–1.43,0.281
+Habitat: Sponge Garden,Habitat covariate,0.00,0.00–0.00,<0.001

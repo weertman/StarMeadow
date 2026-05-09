@@ -1,0 +1,8 @@
+Metric,Value
+Survey sites with complete ShoreZone features,104
+One-hot encoded ShoreZone features,77
+"Cross-validated R^2, mean ± SD",0.104 ± 0.263
+Prediction vs observed Pearson r,0.291
+Prediction vs observed p,0.003
+"RMSE, individuals hr^-1",5.08
+"MAE, individuals hr^-1",2.64

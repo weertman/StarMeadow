@@ -1,7 +1,0 @@
-,MeanEncounterRate,MeanEncounterRate,MeanEncounterRate,HasDetection,HasDetection,TotalPycnoCount,NTransectLocations
-,mean,std,count,sum,mean,sum,mean
-HabitatRichness,,,,,,,
-1,1.4364,3.0902,60,19,0.3167,86,2.5333
-2,3.1136,7.5575,40,20,0.5,1280,4.2
-3,1.5303,3.1455,26,17,0.6538,1051,5.1923
-4,1.4939,2.3721,13,10,0.7692,237,5.6154
