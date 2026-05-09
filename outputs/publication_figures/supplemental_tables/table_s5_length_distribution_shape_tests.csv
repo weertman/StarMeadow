@@ -1,0 +1,13 @@
+Panel/contrast,Comparison,N individuals,N sites,KS D,KS CI or p/q,Energy distance,Energy CI or p/q,Sparse
+Soft Bottom only,Eelgrass at site vs No eelgrass at site,"1,052 vs 59",11 vs 10,0.623,p=0.001; q=0.006,4.009,p=0.001; q=0.005,No
+Natural Reef only,Eelgrass at site vs No eelgrass at site,98 vs 180,9 vs 23,0.316,p=0.370; q=0.616,1.953,p=0.344; q=0.573,No
+Overall positive length distribution,Eelgrass at site vs No eelgrass at site,"1,698 vs 256",17 vs 31,0.259,p=0.110; q=0.275,1.600,p=0.051; q=0.126,No
+Kelp Forest only,Eelgrass at site vs No eelgrass at site,22 vs 2,2 vs 1,0.409,p=1.000; q=1.000,1.828,p=1.000; q=1.000,Yes
+Artificial Reef only,Eelgrass at site vs No eelgrass at site,384 vs 15,5 vs 5,0.353,p=0.659; q=0.824,1.566,p=0.643; q=0.803,Yes
+S2 panel: Eelgrass at site,Eelgrass vs Artificial Reef,142 vs 384,6 vs 5,0.513,0.22–0.81,2.475,0.85–4.77,No
+S2 panel: Eelgrass at site,Soft Bottom vs Eelgrass,"1,052 vs 142",11 vs 6,0.459,0.20–0.59,2.038,0.80–2.72,No
+S2 panel: Eelgrass at site,Eelgrass vs Natural Reef,142 vs 98,6 vs 9,0.441,0.21–0.91,3.112,1.04–6.21,No
+S2 panel: Eelgrass at site,Soft Bottom vs Natural Reef,"1,052 vs 98",11 vs 9,0.406,0.24–0.86,2.192,1.26–5.12,No
+S2 panel: Eelgrass at site,Artificial Reef vs Natural Reef,384 vs 98,5 vs 9,0.371,0.23–0.81,1.970,1.20–4.69,No
+S2 panel: Eelgrass at site,Soft Bottom vs Artificial Reef,"1,052 vs 384",11 vs 5,0.123,0.05–0.67,0.549,0.17–3.44,No
+S2 panel: No eelgrass at site,Soft Bottom vs Natural Reef,59 vs 180,10 vs 23,0.502,0.18–0.72,3.820,0.89–5.37,No

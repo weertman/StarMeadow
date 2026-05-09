@@ -1,0 +1,3 @@
+Agreement contrast,Test,Statistic,df,p,Effect,Effect value
+shorezone_three_category_by_diver_binary,chi-square,12.09,2,0.002,Cramers_V,0.341
+shorezone_any_eelgrass_by_diver_binary,Fisher exact,3.55,,0.005,phi,0.265

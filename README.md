@@ -1,214 +1,297 @@
 # StarMeadow
 
-Publication-oriented analysis repository for *Pycnopodia helianthoides* (sunflower sea star) encounter rates, size distributions, habitat associations, eelgrass-site effects, and ShoreZone-informed recovery hypotheses in the Salish Sea.
+Reproducible publication materials for the StarMeadow analysis of sunflower sea star (*Pycnopodia helianthoides*) survey encounters, body-size distributions, eelgrass-associated habitat patterns, and ShoreZone habitat context in the Salish Sea.
 
-This repository is being prepared as the shared code/data/figure backbone for a manuscript with collaborators. It contains the analysis scripts, canonical input data tables, generated output products, environment specification, and documentation needed to reproduce and refine the current results.
+This repository is intentionally publication-focused. It is not a complete archive of every exploratory analysis run during project development. The GitHub-facing surface is meant to be sparse, readable, and sharable: it keeps the code, data tables, figures, captions, statistical tables, and environment files that directly support the manuscript.
 
-## Current status
+## Manuscript focus
 
-Last documentation refresh: 2026-05-06.
+The analysis asks where *P. helianthoides* were encountered during surveys and whether encounter rates and size distributions were associated with eelgrass-linked, protected shoreline habitats. The current manuscript emphasizes three linked results:
 
-This repo now reflects the current 2025-named data files in `data/`, which include some records with 2026 dates that still need human/data-curation review.
+1. *P. helianthoides* encounters were unevenly distributed among surveyed sites and habitats.
+2. Sites where eelgrass was recorded had higher expected encounter rates after accounting for survey effort, basin, and survey-level habitat.
+3. A Whidbey Basin cluster of protected, continuously mapped eelgrass sites appears to be an especially important remaining/recovering concentration within the study area.
 
-| Item | Current value |
-|---|---:|
-| Survey/transect records | 3,998 |
-| Unique surveyed sites in count table | 139 |
-| Site-coordinate records | 240 |
-| Basins in count table | 10 |
-| Habitat types in count table | 6 |
-| Total *Pycnopodia* counted | 2,654 |
-| Total survey effort | 51,060 minutes |
-| Transect-level detection rate | 14.7% |
-| Count date range after known typo fix | 2020-07-04 to 2026-08-06 |
-| Length-table rows | 5,511 |
-| Positive-length individuals | 1,957 |
-| Positive size range | 1 to 85 cm |
-| Mean positive size | 19.37 cm |
-
-Data-quality notes that matter for interpretation:
-
-- `data/PycnoCountCLean_12_31_2025.csv` and `data/PycnoLengthCLean_12_31_2025.csv` contain one unparseable/blank date each after the known `2/20/0204` -> `2/20/2024` fix.
-- The length file contains one non-numeric/bad length value.
-- The count file includes dates extending into 2026 despite the `12_31_2025` filename; confirm whether these are valid newer entries or data-entry issues.
-- Exact site-name joins between survey data and `data/Site_LatLong.csv` are incomplete; some coordinate-only sites may be unsurveyed/priority sites, while some count-data sites need coordinate/name cleanup.
-- `Region` values are not normalized; most analyses rely on `Basin` instead.
+ShoreZone products are used as independent, older habitat-context layers, not as contemporaneous field truth. The ShoreZone source metadata report ground-condition dates from 1994-2000, with the Washington State ShoreZone Inventory published in 2001; these mapped layers pre-date the 2022-2025 surveys by roughly two decades.
 
 ## Repository layout
 
 ```text
 StarMeadow/
-├── code/                     # Numbered Python analysis scripts and shared utilities
-│   ├── run_all.py             # Runs the available analysis scripts sequentially
-│   ├── utils.py               # Shared data loading, paths, plotting helpers
-│   ├── shorezone_utils.py     # ShoreZone/GIS loading and spatial-join helpers
-│   ├── environment.yml        # Conda environment specification
-│   ├── 01_*.py ... 16_*.py    # Core, mapping, and ShoreZone/recovery analyses
-│   └── 19_probability_density_map.py
-├── data/                     # Canonical input data and ShoreZone GIS data
-├── outputs/                  # Generated tables, figures, maps, and model artifacts
-├── docs/                     # Manuscript/project planning documents
-├── scripts/                  # Repo helper scripts
-├── ENVIRONMENT.md            # Python/Conda setup and verification notes
-└── README.md                 # This file
+├── README.md
+├── ENVIRONMENT.md
+├── code/
+│   ├── figure_*.py                         # main manuscript figure scripts
+│   ├── supplemental_figure_*.py            # supplemental figure scripts
+│   ├── diver_only_stats_for_report.py      # survey count-model analysis
+│   ├── length_distribution_shape_stats_for_report.py
+│   ├── 15_shorezone_site_analysis.py       # retained ShoreZone preprocessing script
+│   ├── 16_shorezone_recovery_analysis.py   # retained ShoreZone modeling script
+│   ├── utils.py
+│   └── shorezone_utils.py
+├── data/
+│   ├── PycnoCountCLean_12_31_2025.csv
+│   ├── PycnoLengthCLean_12_31_2025.csv
+│   ├── Site_LatLong.csv
+│   └── state_DNR_ShoreZone/                # metadata only; full FileGDB not tracked
+├── docs/
+│   └── DATA_NOTES.md
+├── scripts/
+│   ├── build_publication_outputs
+│   ├── run_pipeline
+│   ├── analysis/
+│   └── tables/
+└── outputs/
+    ├── 15_shorezone_site_analysis/         # minimal derived ShoreZone inputs
+    ├── 16_shorezone_recovery_analysis/     # minimal derived ShoreZone inputs
+    └── publication_figures/                # manuscript figures, captions, stats, tables
 ```
 
-Private collaborator correspondence exported from email is intentionally excluded from git via `.gitignore`.
+## Quick start
 
-## Canonical inputs
-
-### Count data
-
-`data/PycnoCountCLean_12_31_2025.csv`
-
-Survey/transect-level table used by `utils.load_data()`.
-
-Important columns:
-
-- `Date`
-- `Survey.Time`
-- `Region`
-- `SiteName`
-- `Basin`
-- `Water.Temperature..F.`
-- `DepthBin`
-- `Transect..`
-- `HabitatType`
-- `Pycno.notes..disease.presence..behavior..etc..`
-- `Pycnopodia_count`
-
-The loader computes:
-
-```text
-Encounter.Rate.Hr = (Pycnopodia_count / Survey.Time) * 60
-```
-
-### Length data
-
-`data/PycnoLengthCLean_12_31_2025.csv`
-
-Individual/observation-level size table used by `utils.load_length_data()`. The loader converts `Length(cm)` to numeric `Length_cm`; positive values are treated as measured individuals, while zero-length records represent no-observation rows and should not be interpreted as zero-size animals.
-
-### Site coordinates
-
-`data/Site_LatLong.csv`
-
-Coordinate table used by mapping and ShoreZone scripts. One positive longitude is currently handled by map code by flipping it negative, but the source table should still be reviewed.
-
-### ShoreZone GIS data
-
-`data/state_DNR_ShoreZone/`
-
-Washington State DNR ShoreZone FileGDB-style data and metadata used by scripts 15, 15b, 16, and 19.
-
-Important interpretation note: older documentation described a 250 m buffer method, but the active current `15_shorezone_site_analysis.py` path uses a 3 km nearest-neighbor join from each site to the nearest ShoreZone segment. Under nearest-neighbor mode, output “diversity” metrics are compatibility placeholders rather than true local habitat-diversity estimates.
-
-## Analysis scripts
-
-| Script | Purpose |
-|---|---|
-| `01_encounter_rate_analysis.py` | Encounter rates by habitat, basin, depth, and habitat-depth combinations |
-| `02_size_structure_analysis.py` | Size distributions by habitat, depth, basin, and season |
-| `03_clustering_analysis.py` | Site clustering by habitat composition |
-| `04_temporal_analysis.py` | Annual/monthly/temporal effort and observation trends |
-| `05_statistical_summary.py` | Statistical tests and publication-style summary tables |
-| `06_eelgrass_site_analysis.py` | Site-level eelgrass effects and four-category habitat classification |
-| `07_size_clustering_analysis.py` | Size-bin/site clustering and eelgrass-size comparisons |
-| `08_combined_clustering_analysis.py` | Combined habitat and size clustering visualizations |
-| `09_size_prediction_analysis.py` | Size prediction models from habitat summaries |
-| `10_eelgrass_size_relationship.py` | Eelgrass-site relationships with individual and site-level size |
-| `11_habitat_diversity_analysis.py` | Habitat richness/diversity vs abundance with spatial-coverage controls |
-| `12_eelgrass_basin_analysis.py` | Eelgrass effects while controlling for basin/geography |
-| `13_static_maps.py` | Static site/effort/encounter/eelgrass/basin/hotspot maps |
-| `14_interactive_maps.py` | Folium interactive site and encounter maps |
-| `15_shorezone_site_analysis.py` | ShoreZone nearest-neighbor site join and site-level feature export |
-| `15b_site_coverage_map.py` | Interactive coverage/diagnostic map and embedded analysis report |
-| `16_shorezone_recovery_analysis.py` | ShoreZone recovery/refugia/model/priority-site analyses |
-| `19_probability_density_map.py` | Segment-level predicted encounter-rate map from trained model |
-
-`run_all.py` runs the current analysis pipeline through `19_probability_density_map.py`. The previous `20_publication_figures.py` script and generated `outputs/20_publication_figures/` products were removed because manuscript figures will be rebuilt from scratch.
-
-## Current high-level findings from existing outputs
-
-These values come from the current input tables and existing generated outputs; they should be revalidated after the clean environment rerun.
-
-Encounter-rate summary by habitat from `outputs/01_encounter_rate_analysis/encounter_rate_summary.csv`:
-
-| Habitat | Mean rate (Pycno/hr) | Detection interpretation |
-|---|---:|---|
-| Soft Bottom | 8.673 | Highest mean encounter rate in current outputs |
-| Eelgrass | 4.104 | Second-highest mean encounter rate |
-| Artificial Reef | 1.789 | Lower than soft bottom/eelgrass |
-| Kelp Forest | 0.911 | Low mean rate |
-| Natural Reef | 0.875 | Low mean rate |
-| Sponge Garden | 0.000 | Present in current data but no detections in current summary |
-
-Manuscript framing from `docs/Outline.docx` emphasizes:
-
-- Whether habitat type affects *P. helianthoides* recruitment/encounter patterns.
-- Whether habitat or geography is more important in driving recruitment/recovery patterns.
-- Whether eelgrass/soft-bottom/hard-bottom context can inform conservation, restoration, or critical-habitat thinking.
-- A figure set covering surveyed sites, encounter rates by habitat and space, reef habitat with/without eelgrass at site level, length by habitat/space, and settlement-related collaborator work.
-
-## Environment setup
-
-Use the Conda environment documented in `ENVIRONMENT.md`.
-
-Quick start on this machine:
+From the repository root:
 
 ```bash
 /home/weertman/miniforge3/bin/conda env create -f code/environment.yml
+./scripts/build_publication_outputs
 ```
 
-If it already exists:
+If the environment already exists:
 
 ```bash
 /home/weertman/miniforge3/bin/conda env update -n star_meadow -f code/environment.yml --prune
+./scripts/build_publication_outputs
 ```
 
-Verify:
+The build command runs the publication statistical analyses, figure scripts, ShoreZone summary script, and supplemental-table builders. Outputs are written under:
+
+```text
+outputs/publication_figures/
+```
+
+`./scripts/run_pipeline` is kept as a compatibility wrapper and calls the same publication-only build script.
+
+## Environment
+
+The intended environment is documented in `ENVIRONMENT.md` and specified in:
+
+```text
+code/environment.yml
+```
+
+On the analysis workstation, the canonical Conda executable is:
+
+```text
+/home/weertman/miniforge3/bin/conda
+```
+
+The expected environment name is:
+
+```text
+star_meadow
+```
+
+Do not run the analysis with bare system `python3`; the system Python on the analysis workstation lacks several required packages.
+
+To verify the environment:
 
 ```bash
 /home/weertman/miniforge3/bin/conda run -n star_meadow python --version
-/home/weertman/miniforge3/bin/conda run -n star_meadow python -m py_compile code/*.py
+/home/weertman/miniforge3/bin/conda run -n star_meadow python - <<'PY'
+import pandas, numpy, matplotlib, seaborn, scipy, sklearn, geopandas, fiona, pyproj, shapely, folium, joblib, statsmodels
+print('StarMeadow environment ready')
+PY
 ```
 
-## Running analyses
+## Data files
 
-Preferred helper:
+Canonical manuscript input tables:
+
+| File | Purpose |
+|---|---|
+| `data/PycnoCountCLean_12_31_2025.csv` | Survey-row count data used for encounter-rate and count-model analyses. |
+| `data/PycnoLengthCLean_12_31_2025.csv` | Individual/row-level length data used for size-distribution analyses. |
+| `data/Site_LatLong.csv` | Site coordinates used for mapping and spatial joins. |
+| `data/state_DNR_ShoreZone/dnr_shorezone_metadata.xml` | Public ShoreZone metadata. |
+| `data/state_DNR_ShoreZone/dnr_shorezone_metadata.html` | Human-readable ShoreZone metadata. |
+
+Additional data notes and known quirks are documented in:
+
+```text
+docs/DATA_NOTES.md
+```
+
+Important coordinate note: `data/Site_LatLong.csv` contains exact site locations. Confirm sharing permissions before public release if exact locations are considered sensitive.
+
+## ShoreZone data policy
+
+The full Washington DNR ShoreZone FileGDB payload is not tracked in this sparse publication repository. Only metadata and the minimal derived products directly used by the manuscript are tracked.
+
+Tracked derived ShoreZone products:
+
+```text
+outputs/15_shorezone_site_analysis/site_shorezone_pycno_summary.csv
+outputs/15_shorezone_site_analysis/shorezone_ZOS_UNIT_proportions.csv
+outputs/16_shorezone_recovery_analysis/feature_importance_permutation.csv
+```
+
+These files support the current ShoreZone figures, tables, and manuscript text. For long-term public reproducibility, the preferred next improvement is to add a concise ShoreZone preprocessing note or script that downloads/locates the public source data and regenerates these minimal derived products.
+
+## Main figure scripts
+
+| Figure | Script | Output examples |
+|---|---|---|
+| Fig 1 | `code/figure_1_site_map.py` | `outputs/publication_figures/submission/Fig1.tif` |
+| Fig 2 | `code/figure_2_habitat_eelgrass_size.py` | `outputs/publication_figures/submission/Fig2.tif` |
+| Fig 3 | `code/figure_3_basin_eelgrass_encounter_rate.py` | `outputs/publication_figures/submission/Fig3.tif` |
+| Fig 4 | `code/figure_4_shorezone.py` | `outputs/publication_figures/submission/Fig4.tif` |
+
+## Supplemental figure scripts
+
+| Figure | Script | Output examples |
+|---|---|---|
+| S1 Fig | `code/supplemental_figure_1_effort_basin_map.py` | `outputs/publication_figures/submission/S1_Fig.tif` |
+| S2 Fig | `code/supplemental_figure_2_length_by_habitat_eelgrass_status.py` | `outputs/publication_figures/submission/S2_Fig.tif` |
+| S3 Fig | `code/supplemental_figure_3_continuous_eelgrass_map.py` | `outputs/publication_figures/submission/S3_Fig.tif` |
+| S4 Fig | `code/supplemental_figure_4_shorezone_vs_diver_eelgrass.py` | `outputs/publication_figures/submission/S4_Fig.tif` |
+| S5 Fig | `code/supplemental_figure_5_survey_statistical_summary.py` | `outputs/publication_figures/submission/S5_Fig.tif` |
+
+Historical note: one script filename still contains `diver` from earlier drafts. The manuscript and figure language should use `survey`.
+
+## Statistical analyses
+
+Survey count-model analysis:
+
+```text
+code/diver_only_stats_for_report.py
+```
+
+This script generates negative-binomial count models and Poisson sensitivity models, using survey duration as an effort offset and site-clustered standard errors. The main manuscript reports coefficients as incidence-rate ratios (IRRs).
+
+Length distribution-shape analysis:
+
+```text
+code/length_distribution_shape_stats_for_report.py
+```
+
+This script generates site-aware and descriptive length-distribution contrasts used by the manuscript, S2 Fig, S5 Fig, and supplemental tables.
+
+ShoreZone statistical summary:
+
+```text
+scripts/analysis/shorezone_stats_for_report.py
+```
+
+This script summarizes the ShoreZone model and group comparisons used in Fig 4, S3 Fig, S4 Fig, S5-related text, and supplemental tables.
+
+Primary statistical outputs are written to:
+
+```text
+outputs/publication_figures/stats/
+outputs/publication_figures/qc/shorezone_report_stats/   # generated locally; not tracked by default
+```
+
+## Supplemental statistical tables
+
+The combined supplemental table file is:
+
+```text
+outputs/publication_figures/supplemental_tables/supplemental_statistical_tables.md
+```
+
+Tracked table CSVs:
+
+```text
+outputs/publication_figures/supplemental_tables/table_s1_survey_analysis_input_summary.csv
+outputs/publication_figures/supplemental_tables/table_s2_count_model_eelgrass_association.csv
+outputs/publication_figures/supplemental_tables/table_s3_primary_count_model_terms.csv
+outputs/publication_figures/supplemental_tables/table_s4_descriptive_cells_and_sparse_flags.csv
+outputs/publication_figures/supplemental_tables/table_s5_length_distribution_shape_tests.csv
+outputs/publication_figures/supplemental_tables/table_s6a_shorezone_model_summary.csv
+outputs/publication_figures/supplemental_tables/table_s6b_shorezone_top_prediction_loss_features.csv
+outputs/publication_figures/supplemental_tables/table_s7a_shorezone_fig4b_group_summary.csv
+outputs/publication_figures/supplemental_tables/table_s7b_shorezone_fig4b_tests.csv
+outputs/publication_figures/supplemental_tables/table_s7c_shorezone_eelgrass_agreement_tests.csv
+```
+
+Table-building scripts:
+
+```text
+scripts/tables/build_supplemental_statistical_tables.py
+scripts/tables/build_doc_friendly_supplemental_tables.py
+scripts/tables/build_docx_supplemental_tables.py
+scripts/tables/build_google_docs_copy_paste_html.py
+```
+
+The Google Docs copy-paste HTML outputs are useful for manuscript drafting but are intentionally not tracked.
+
+## Captions and manuscript-facing outputs
+
+Captions are kept separately from figure images:
+
+```text
+outputs/publication_figures/captions.md
+```
+
+PLOS-style submission TIFFs are in:
+
+```text
+outputs/publication_figures/submission/
+```
+
+Editable/source PNG/PDF versions are in:
+
+```text
+outputs/publication_figures/sources/
+```
+
+## Rebuilding individual components
+
+Run one script at a time with the Conda environment:
 
 ```bash
-./scripts/run_pipeline
+/home/weertman/miniforge3/bin/conda run -n star_meadow python code/figure_1_site_map.py
+/home/weertman/miniforge3/bin/conda run -n star_meadow python code/diver_only_stats_for_report.py
+/home/weertman/miniforge3/bin/conda run -n star_meadow python scripts/tables/build_supplemental_statistical_tables.py
 ```
 
-Direct command:
+Or rebuild the full publication surface:
 
 ```bash
-cd code
-/home/weertman/miniforge3/bin/conda run -n star_meadow python run_all.py
+./scripts/build_publication_outputs
 ```
 
-Generated outputs are written to `outputs/<script_stem>/`.
+## What is intentionally excluded from GitHub
 
-## Reproducibility and publication cleanup priorities
+The `.gitignore` is strict by design. It keeps local research history available on the analysis machine while preventing older or private material from becoming part of the public publication repository.
 
-Before treating outputs as manuscript-final:
+Excluded from the GitHub-facing surface:
 
-1. Create/verify the Conda environment and rerun the full current pipeline with a timestamped log.
-2. Reconcile 2026 dates in the `12_31_2025` files.
-3. Fix or explicitly flag the remaining bad date/length values.
-4. Normalize/join site names between survey and coordinate tables.
-5. Decide whether the ShoreZone analysis should remain nearest-neighbor, return to a 250 m buffer approach, or report both.
-6. Treat ShoreZone model/priority-map outputs as exploratory unless validation improves.
-7. Build new publication figures from scratch after analysis outputs are revalidated; the old publication-figure script/output set has been removed.
+- older exploratory scripts from the numbered pre-publication pipeline
+- older generated outputs under `outputs/01_*` through older analysis folders
+- the full ShoreZone FileGDB payload
+- internal manuscript drafts and collaborator planning notes
+- local QC/check/audit files
+- Google Docs copy-paste helper HTML/TSV/DOCX outputs
+- caches, logs, archives, local agent files, and operating-system cruft
 
-## GitHub/publication sharing notes
+If a file is needed for the paper and is ignored, move it into one of the publication-facing paths or adjust `.gitignore` intentionally rather than force-adding ad hoc files.
 
-This repository is intended for code/data sharing with collaborators and eventually publication support. Before making it public, review:
+## Reproducibility status
 
-- Data-sharing permissions for the survey tables.
-- Whether all site coordinates can be public.
-- Whether generated output files should be committed or regenerated by users.
-- Whether manuscript drafts/outlines should remain in the repository or move to a private writing workspace.
+Current status:
 
-Email exports and private correspondence are excluded from git by default.
+- publication figure scripts are tracked
+- final publication figure outputs are tracked
+- supplemental statistical tables are tracked
+- old exploratory pipeline code and outputs are not tracked on the publication branch
+- minimal derived ShoreZone inputs are tracked
+- full ShoreZone source data are not tracked
+
+Known reproducibility caveat:
+
+The current repository contains derived ShoreZone inputs rather than the full third-party ShoreZone geodatabase. This keeps the repository small and publication-focused, but a fully independent public rerun from raw ShoreZone source data would require restoring or documenting the ShoreZone preprocessing step.
+
+## Citation and license
+
+Citation and license information should be added before public release, after the manuscript target, data-sharing permissions, and repository visibility are finalized.

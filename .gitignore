@@ -1,35 +1,204 @@
+# StarMeadow publication-repo ignore policy
+#
+# Goal: keep local exploratory work available on this machine while making the
+# GitHub-facing repository sparse, reproducible, and publication-focused.
+# If a generated/private file is already tracked, this ignore file will not
+# remove it by itself; untrack with `git rm --cached <path>` to keep the local
+# copy while removing it from GitHub.
+
+# -----------------------------------------------------------------------------
 # OS/editor noise
+# -----------------------------------------------------------------------------
 .DS_Store
+**/.DS_Store
 Thumbs.db
 *.swp
 *.swo
+*~
 
-# Python caches
+# -----------------------------------------------------------------------------
+# Python/R/Jupyter caches and local environments
+# -----------------------------------------------------------------------------
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .ipynb_checkpoints/
-
-# Local Python/Conda environments
 .venv/
 venv/
 .env/
 .conda-env/
 conda-meta/
 
-# Logs and transient run artifacts
+# -----------------------------------------------------------------------------
+# Logs, local run artifacts, agent scratch, private correspondence
+# -----------------------------------------------------------------------------
 *.log
 run_all_output.log
 logs/
-
-# Private collaborator correspondence / email exports
+.hermes/
 emails/
 
-# Large/opaque archived generated bundle; keep reproducible outputs as normal files instead
-outputs/Archive.zip
+# -----------------------------------------------------------------------------
+# Local archives and opaque bundles
+# -----------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+!outputs/publication_figures/share/*.tex
 
-# Local investigation artifacts should live outside this repo
-.hermes/
+# -----------------------------------------------------------------------------
+# Third-party raw ShoreZone FileGDB bundle.
+# Publication repo should use source/download instructions or minimal derived
+# inputs, not commit the full geodatabase payload unless redistribution is
+# explicitly approved.
+# -----------------------------------------------------------------------------
+data/state_DNR_ShoreZone/*.lyr
+data/state_DNR_ShoreZone/*.gdb/
+!data/state_DNR_ShoreZone/dnr_shorezone_metadata.html
+!data/state_DNR_ShoreZone/dnr_shorezone_metadata.xml
+
+# -----------------------------------------------------------------------------
+# Internal manuscript/planning documents.
+# Public repo should not expose collaborator working docs or internal strategy.
+# -----------------------------------------------------------------------------
+docs/Outline.docx
+docs/MANUSCRIPT_CONTEXT.md
+docs/NEXT_STEPS.md
+docs/diver_only_stats_plan_critique.md
+docs/publication_repo_cleanup_audit_*.md
+README.html
+
+# Old exploratory code kept locally but not on sparse publication GitHub
+code/01_encounter_rate_analysis.py
+code/02_size_structure_analysis.py
+code/03_clustering_analysis.py
+code/04_temporal_analysis.py
+code/05_statistical_summary.py
+code/06_eelgrass_site_analysis.py
+code/07_size_clustering_analysis.py
+code/08_combined_clustering_analysis.py
+code/09_size_prediction_analysis.py
+code/10_eelgrass_size_relationship.py
+code/11_habitat_diversity_analysis.py
+code/12_eelgrass_basin_analysis.py
+code/13_static_maps.py
+code/14_interactive_maps.py
+code/15b_site_coverage_map.py
+code/19_probability_density_map.py
+code/run_all.py
+
+# -----------------------------------------------------------------------------
+# Old exploratory generated outputs: keep local, remove from GitHub.
+# Whitelist only the minimal derived ShoreZone CSVs that current publication
+# scripts still read directly.
+# -----------------------------------------------------------------------------
+outputs/*
+!outputs/publication_figures/
+!outputs/15_shorezone_site_analysis/
+outputs/15_shorezone_site_analysis/*
+!outputs/15_shorezone_site_analysis/site_shorezone_pycno_summary.csv
+!outputs/15_shorezone_site_analysis/shorezone_ZOS_UNIT_proportions.csv
+!outputs/16_shorezone_recovery_analysis/
+outputs/16_shorezone_recovery_analysis/*
+!outputs/16_shorezone_recovery_analysis/feature_importance_permutation.csv
+
+# -----------------------------------------------------------------------------
+# Current publication outputs: keep final figures, captions, final stats/tables,
+# and compact machine-readable source tables. Ignore intermediate QC, internal
+# drafts, manuscript prose, collaborator share bundles, and copy-paste helpers.
+# -----------------------------------------------------------------------------
+outputs/publication_figures/*
+!outputs/publication_figures/submission/
+!outputs/publication_figures/sources/
+!outputs/publication_figures/stats/
+!outputs/publication_figures/supplemental_tables/
+!outputs/publication_figures/captions.md
+
+# Final figure submission images
+outputs/publication_figures/submission/*
+!outputs/publication_figures/submission/Fig1.tif
+!outputs/publication_figures/submission/Fig2.tif
+!outputs/publication_figures/submission/Fig3.tif
+!outputs/publication_figures/submission/Fig4.tif
+!outputs/publication_figures/submission/S1_Fig.tif
+!outputs/publication_figures/submission/S2_Fig.tif
+!outputs/publication_figures/submission/S3_Fig.tif
+!outputs/publication_figures/submission/S4_Fig.tif
+!outputs/publication_figures/submission/S5_Fig.tif
+
+# Figure source PDFs/PNGs used for review/submission provenance
+outputs/publication_figures/sources/*
+!outputs/publication_figures/sources/Fig1_site_map_draft.pdf
+!outputs/publication_figures/sources/Fig1_site_map_draft.png
+!outputs/publication_figures/sources/Fig2_habitat_eelgrass_size_draft.pdf
+!outputs/publication_figures/sources/Fig2_habitat_eelgrass_size_draft.png
+!outputs/publication_figures/sources/Fig3_basin_eelgrass_encounter_rate_draft.pdf
+!outputs/publication_figures/sources/Fig3_basin_eelgrass_encounter_rate_draft.png
+!outputs/publication_figures/sources/Fig4_shorezone_draft.pdf
+!outputs/publication_figures/sources/Fig4_shorezone_draft.png
+!outputs/publication_figures/sources/S1_Fig_effort_basin_map_draft.pdf
+!outputs/publication_figures/sources/S1_Fig_effort_basin_map_draft.png
+!outputs/publication_figures/sources/S2_length_distribution_by_habitat_eelgrass_status_draft.pdf
+!outputs/publication_figures/sources/S2_length_distribution_by_habitat_eelgrass_status_draft.png
+!outputs/publication_figures/sources/S3_Fig_continuous_eelgrass_encounter_map_draft.pdf
+!outputs/publication_figures/sources/S3_Fig_continuous_eelgrass_encounter_map_draft.png
+!outputs/publication_figures/sources/S4_shorezone_vs_diver_eelgrass_draft.pdf
+!outputs/publication_figures/sources/S4_shorezone_vs_diver_eelgrass_draft.png
+!outputs/publication_figures/sources/S5_survey_statistical_summary.pdf
+!outputs/publication_figures/sources/S5_survey_statistical_summary.png
+
+# Final statistical outputs required by supplemental tables/figure S5
+outputs/publication_figures/stats/*
+!outputs/publication_figures/stats/diver_count_model_results.csv
+!outputs/publication_figures/stats/diver_stats_input_audit.csv
+!outputs/publication_figures/stats/diver_length_bootstrap.csv
+!outputs/publication_figures/stats/diver_length_site_eelgrass_distribution_shape_tests.csv
+!outputs/publication_figures/stats/diver_s2_habitat_distribution_shape_tests.csv
+!outputs/publication_figures/stats/diver_length_distribution_shape_manifest.json
+!outputs/publication_figures/stats/diver_stats_manifest.json
+!outputs/publication_figures/stats/diver_stats_report.md
+!outputs/publication_figures/stats/diver_length_distribution_shape_report.md
+
+# Supplemental statistical tables: keep canonical CSV/markdown and optional PDF;
+# ignore DOCX/HTML/TSV/copy-paste working products unless explicitly submitted.
+outputs/publication_figures/supplemental_tables/*
+!outputs/publication_figures/supplemental_tables/table_s1_survey_analysis_input_summary.csv
+!outputs/publication_figures/supplemental_tables/table_s2_count_model_eelgrass_association.csv
+!outputs/publication_figures/supplemental_tables/table_s3_primary_count_model_terms.csv
+!outputs/publication_figures/supplemental_tables/table_s4_descriptive_cells_and_sparse_flags.csv
+!outputs/publication_figures/supplemental_tables/table_s5_length_distribution_shape_tests.csv
+!outputs/publication_figures/supplemental_tables/table_s6a_shorezone_model_summary.csv
+!outputs/publication_figures/supplemental_tables/table_s6b_shorezone_top_prediction_loss_features.csv
+!outputs/publication_figures/supplemental_tables/table_s7a_shorezone_fig4b_group_summary.csv
+!outputs/publication_figures/supplemental_tables/table_s7b_shorezone_fig4b_tests.csv
+!outputs/publication_figures/supplemental_tables/table_s7c_shorezone_eelgrass_agreement_tests.csv
+!outputs/publication_figures/supplemental_tables/supplemental_statistical_tables.md
+!outputs/publication_figures/supplemental_tables/supplemental_statistical_tables_doc_friendly.pdf
+
+# Internal/generated publication subdirectories
+outputs/publication_figures/qc/
+outputs/publication_figures/share/
+outputs/publication_figures/basemap_options/
+outputs/publication_figures/supplemental_tables/google_docs_copy_paste_html/
+outputs/publication_figures/supplemental_tables/*.docx
+outputs/publication_figures/supplemental_tables/*.html
+outputs/publication_figures/supplemental_tables/*.tsv
+
+# Draft manuscript prose / internal summaries living under outputs
+outputs/publication_figures/*methods_results*.md
+outputs/publication_figures/*style_transferred*.md
+outputs/publication_figures/final_statistical_results_summary_biologist_paragraph.md
+outputs/publication_figures/shorezone_methods_results_draft.md
+outputs/publication_figures/diver_only_stats_plan.md
+
+# -----------------------------------------------------------------------------
+# Internal review/design helpers not part of the public publication pipeline
+# -----------------------------------------------------------------------------
+scripts/figure_1_basemap_options.py

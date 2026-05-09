@@ -1,0 +1,11 @@
+Feature,Prediction loss,SE
+Eelgrass: continuous,0.292,0.065
+BC shoreline type: Sand beach,0.069,0.028
+Low-exposure sand/gravel habitat,0.050,0.013
+Oyster beds: absent,0.036,0.006
+Oyster beds: patchy,0.009,0.004
+Fucus band: patchy,0.009,0.002
+Eelgrass: absent,0.005,0.002
+Supratidal + two intertidal + subtidal components,0.005,0.003
+Eelgrass: patchy,0.004,0.003
+Ulva green algae: absent,0.003,0.002

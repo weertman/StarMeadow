@@ -1,0 +1,5 @@
+Contrast,Test,Statistic,p
+protected_continuous_eelgrass_vs_all_other,Mann-Whitney U,532.50,0.003
+continuous_eelgrass_vs_other_zos,Mann-Whitney U,631.00,0.008
+four_fig4b_groups,Kruskal-Wallis,11.42,0.010
+protected_or_very_protected_vs_other_exposure,Mann-Whitney U,1863.00,0.023

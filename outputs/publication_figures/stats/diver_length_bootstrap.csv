@@ -1,0 +1,5 @@
+comparison,metric,method,effect_cm,ci_low_cm,ci_high_cm,bootstrap_p_two_sided_about_zero,eelgrass_sites,no_eelgrass_sites,caveat
+Eelgrass at site - No eelgrass at site,site_mean_length_cm,site-cluster bootstrap (20000 resamples),0.03323570600737469,-6.826010385123636,6.9290657368061845,0.9869,17,31,Site-level length summaries; conditional on observed/measured individuals.
+Eelgrass at site - No eelgrass at site,site_median_length_cm,site-cluster bootstrap (20000 resamples),0.24193548387096797,-6.815962998102467,7.379743833017057,0.9577,17,31,Site-level length summaries; conditional on observed/measured individuals.
+Eelgrass at site - No eelgrass at site,individual_length_cm,Mann-Whitney U sensitivity; individuals not independent,2.0,,,0.8621320887691324,17,31,Sensitivity only; U=218804.5; treats individuals as independent.
+Eelgrass at site - No eelgrass at site,individual_length_distribution,Kolmogorov-Smirnov sensitivity; individuals not independent,0.2588845332744405,,,1.2657852257500036e-13,17,31,Sensitivity only; treats individuals as independent.
